@@ -3,8 +3,9 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import { LuArrowLeft, LuArrowRight } from 'react-icons/lu'
 import { InternalHero } from '../components/InternalHero'
 import { parseBlogMarkdownBlocks } from '../content/blogMarkdown'
-import { getBlogPostBySlug } from '../content/blogContent'
+import { blogPosts, getBlogPostBySlug } from '../content/blogContent'
 import { siteContent } from '../content/siteContent'
+import { getRelatedEntries } from '../content/relatedContent'
 import { gsap, ScrollTrigger, useGSAP } from '../animations/gsap'
 import sty from './InternalPages.module.scss'
 const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') ? state.from : fallback
@@ -46,9 +47,10 @@ export function BlogPostPage() {
   }
 
   const blocks = parseBlogMarkdownBlocks(post.body)
+  const relatedPosts = getRelatedEntries(blogPosts, post.slug)
 
   return (
-    <div className={sty.page} ref={pageRef}>
+    <div className={sty.page} ref={pageRef} key={post.slug}>
       <InternalHero
         title={post.title}
         intro={post.excerpt ?? post.body.split('\n')[0]}
@@ -75,10 +77,21 @@ export function BlogPostPage() {
         </div>
       </article>
 
-      <section className={sty.articleCta}>
+      <section className={sty.relatedNotes} aria-labelledby="related-notes-title">
         <div className="lg-wrapper">
-          <div data-text-reveal-group="scrub"><h2 data-text-reveal="heading">{blogPostCopy?.articleCtaTitle ?? 'Read the project archive.'}</h2></div>
-          <Link className="button button--ghost" to="/projects">{blogPostCopy?.articleCtaLabel ?? 'View projects'}<LuArrowRight aria-hidden="true" focusable="false" /></Link>
+          <div className={sty.relatedNotesHeader} data-text-reveal-group="scrub">
+            <div><p className="eyebrow" data-text-reveal="copy">[ MORE NOTES ]</p><h2 id="related-notes-title" data-text-reveal="heading">Read other notes</h2></div>
+            <Link className="button button--ghost" to="/blog">View all notes<LuArrowRight aria-hidden="true" focusable="false" /></Link>
+          </div>
+          <div className={sty.relatedNotesList}>
+            {relatedPosts.map((relatedPost) => (
+              <Link className={sty.postRow} key={relatedPost.slug} to={`/blog/${relatedPost.slug}`} state={{ from: location.pathname }}>
+                <div className={sty.postMeta}><span>{relatedPost.date}</span></div>
+                <div><h3>{relatedPost.title}</h3><p>{relatedPost.excerpt ?? relatedPost.body.split('\n')[0]}</p></div>
+                <span aria-hidden="true"><LuArrowRight focusable="false" /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </div>

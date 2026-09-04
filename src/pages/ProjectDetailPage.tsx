@@ -4,15 +4,12 @@ import { siteContent, type ImageAsset, type Project } from '../content/siteConte
 import sty from './ProjectDetailPage.module.scss'
 import { ScrollOpacityText } from '../components/ScrollOpacityText'
 import { ProjectStack } from '../components/ProjectStack'
+import { getRelatedEntries } from '../content/relatedContent'
 
 const sectionLabel = (index: string, label: string) => `[ ${index} / ${label} ]`
 
 const getProjectImage = (project: Project): ImageAsset | undefined => project.image ?? project.gallery[0]
 
-const getRelatedProjects = (projects: Project[], currentIndex: number): Project[] =>
-  projects
-    .filter((_, index) => index !== currentIndex)
-    .slice(0, 2)
 const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') ? state.from : fallback
 
 function ProjectVisual({ image, className = '', loading = 'lazy' }: { image?: ImageAsset; className?: string; loading?: 'eager' | 'lazy' }) {
@@ -51,13 +48,13 @@ export function ProjectDetailPage() {
   }
 
   const projects = siteContent.projects
-  const relatedProjects = getRelatedProjects(projects, projectIndex)
+  const relatedProjects = getRelatedEntries(projects, project.slug)
   const openingImage = getProjectImage(project)
   const imagePair = project.gallery.slice(0, 2)
   const detailImages = project.gallery.slice(2, 4)
 
   return (
-    <main className={sty.page}>
+    <main className={sty.page} key={project.slug}>
       <section className={sty.hero} data-text-reveal-group="entry" aria-labelledby="project-title">
         <div className="lg-wrapper">
           <div className={sty.heroInner}>

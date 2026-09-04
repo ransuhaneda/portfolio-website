@@ -190,6 +190,18 @@
 .articleCta p { margin-block: 0; }
 .articleCta h2 { margin-block-start: var(--space-xs); text-transform: uppercase; @include mix.type-style(h4); }
 
+.relatedNotes > :global(.lg-wrapper) > * { padding-block: var(--space-xl); }
+.relatedNotesHeader { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-lg); justify-content: space-between; }
+.relatedNotesHeader h2,
+.relatedNotesHeader p,
+.relatedNotesList h3 { margin-block: 0; }
+.relatedNotesHeader h2,
+.relatedNotesList h3 { text-transform: uppercase; }
+.relatedNotesHeader h2 { margin-block-start: var(--space-xs); @include mix.type-style(h4); }
+.relatedNotesList { padding-block-start: var(--space-lg); }
+.relatedNotesList h3 { @include mix.type-style(h5); transition: color var(--motion-fast) var(--motion-ease-standard); }
+.relatedNotesList .postRow:hover h3 { color: var(--color-action-primary); }
+
 .availabilityMeta { display: flex; flex-wrap: wrap; gap: var(--space-md); color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; @include mix.type-style(body-xs); }
 .availabilityMeta span { display: inline-flex; align-items: center; gap: var(--space-xs); }
 .availabilityMeta span:first-child { color: var(--color-text-primary); }
@@ -249,6 +261,7 @@
   .postRow > div:nth-child(2) { grid-column: span 8; }
   .postRow > span:last-child { grid-column: span 1; text-align: right; }
   .articleCta > :global(.lg-wrapper) > * { flex-direction: row; align-items: center; }
+  .relatedNotesHeader { flex-direction: row; align-items: center; }
   .contactGrid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
   .contactGrid aside { grid-column: span 4; }
   .contactFormWrap { grid-column: 5 / span 8; padding-inline-start: var(--space-lg); border-inline-start: 1px solid var(--color-border-default); }
