@@ -143,6 +143,10 @@
 .postRow:hover h2 { color: var(--color-action-primary); }
 .postMeta { display: flex; flex-wrap: wrap; align-content: start; gap: var(--space-xs); color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; @include mix.type-style(body-xs); }
 .yearGroup { padding-block-start: var(--space-lg); }
+.blogFilters { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-md); }
+.blogFilters label { display: grid; flex: 1 1 auto; min-width: 0; gap: var(--space-xs); }
+.blogFilters input,
+.blogFilters select { width: 100%; min-width: 0; min-height: var(--target-min-size); padding: var(--space-sm); color: var(--color-text-primary); background: var(--color-background-page); border: 1px solid var(--color-border-default); font: inherit; }
 .yearHeading { padding-block-end: var(--space-xs); }
 .yearHeading span:first-child { color: var(--color-action-primary); }
 .postRow h2 { text-transform: uppercase; @include mix.type-style(h5); transition: color var(--motion-fast) var(--motion-ease-standard); }

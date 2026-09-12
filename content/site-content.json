@@ -141,11 +141,12 @@
     ],
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-about-workspace/1600/1100.jpg",
-      "alt": "Editorial workspace image used as a visual placeholder for Lance Carteciano about page.",
+      "alt": "Decorative stock photograph; not a personal workspace photograph.",
       "caption": "Public-safe placeholder visual. Replace with an approved project image when one is available."
     }
   },
   "resume": {
+    "download": { "href": "/files/carteciano_lance-resume.pdf", "label": "Download resume (PDF)" },
     "eyebrow": "Resume",
     "headline": "Frontend Web Developer and Graphic Designer",
     "summary": "Frontend developer and graphic designer with production experience in WordPress maintenance, Elementor systems, React implementation, responsive UI, and visual asset work.",
@@ -250,7 +251,7 @@
     ],
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-resume-profile/1600/1100.jpg",
-      "alt": "Editorial resume image used as a visual placeholder for Lance Carteciano profile details."
+      "alt": "Decorative stock photograph; not a profile photograph."
     }
   },
   "contact": {
@@ -310,7 +311,7 @@
     "methodsSectionIntro": "Email is best for details. LinkedIn works for role conversations.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-contact-desk/1600/1100.jpg",
-      "alt": "Editorial desk image used as a visual placeholder for contact information."
+      "alt": "Decorative stock photograph; not a personal workspace photograph."
     }
   },
   "projects": [
@@ -355,20 +356,20 @@
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
-          "alt": "Editorial website planning image used as a placeholder for WordPress maintenance work.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Client screenshots are intentionally not shown."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
-          "alt": "Editorial website planning image used as a placeholder for the WordPress maintenance case study."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
-          "alt": "Editorial interface planning image used as a placeholder for Elementor cleanup work."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
-          "alt": "Editorial website interface image used as a placeholder for the WordPress maintenance outcome."
+          "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
       "overview": "This entry covers my current WordPress maintenance work rather than one finished project. I help keep company and client sites stable, consistent, and easier to update while requests continue to come in.",
@@ -423,20 +424,20 @@
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-insight-index-1/1600/1100.jpg",
-          "alt": "Editorial responsive layout image used as a placeholder for ABCDE Creative Studio work.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Production screenshots can replace this later."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-insight-index-1/1600/1100.jpg",
-          "alt": "Editorial responsive layout image used as a placeholder for the ABCDE Creative Studio case study."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-insight-index-2/1600/1100.jpg",
-          "alt": "Editorial frontend interface image used as a placeholder for ABCDE Creative Studio implementation."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-insight-index-2/1600/1100.jpg",
-          "alt": "Editorial frontend interface image used as a placeholder for ABCDE Creative Studio outcome."
+          "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
       "overview": "At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I focused on layout, accessibility, and reusable sections.",
@@ -499,11 +500,11 @@
         },
         {
           "src": "https://picsum.photos/seed/portfolio-debase-files/1600/1100.jpg",
-          "alt": "Editorial file utility image used as a placeholder for Debase file transformations."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-debase-validation/1600/1100.jpg",
-          "alt": "Editorial interface detail used as a placeholder for Debase validation states."
+          "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
       "overview": "Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.",
@@ -564,20 +565,20 @@
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-1/1600/1100.jpg",
-          "alt": "Editorial dashboard image used as a placeholder for the Nsight Index project.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual for the Laravel blog management system."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-1/1600/1100.jpg",
-          "alt": "Editorial dashboard image used as a placeholder for the Nsight Index case study."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-2/1600/1100.jpg",
-          "alt": "Editorial content dashboard image used as a placeholder for Nsight Index scope."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-2/1600/1100.jpg",
-          "alt": "Editorial content dashboard image used as a placeholder for Nsight Index outcome."
+          "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
       "overview": "Nsight Index is a Laravel training project built around a working publishing flow. Authors can manage posts and readers can comment, like, save, and browse content by category.",
@@ -634,20 +635,20 @@
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-1/1600/1100.jpg",
-          "alt": "Editorial content editor image used as a placeholder for the portfolio CMS case study.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual for the content system behind this portfolio."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-1/1600/1100.jpg",
-          "alt": "Editorial content editor image used as a placeholder for the portfolio content system."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-2/1600/1100.jpg",
-          "alt": "Editorial file and interface image used as a placeholder for the portfolio content workflow."
+          "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-2/1600/1100.jpg",
-          "alt": "Editorial content interface image used as a placeholder for the portfolio content system outcome."
+          "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
       "overview": "This portfolio uses one JSON file for the main site copy and project data. A prebuild script turns that source into React content, public Markdown, a sitemap, and machine-readable indexes.",
@@ -707,17 +708,17 @@
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-1/1600/1100.jpg",
-          "alt": "Editorial editorial project visual 1 used as a placeholder for React GSAP animation experiment.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-2/1600/1100.jpg",
-          "alt": "Editorial editorial project visual 2 used as a placeholder for React GSAP animation experiment.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-3/1600/1100.jpg",
-          "alt": "Editorial editorial project visual 3 used as a placeholder for React GSAP animation experiment.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
         }
       ]
@@ -766,17 +767,17 @@
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-1/1600/1100.jpg",
-          "alt": "Editorial editorial project visual 1 used as a placeholder for Tetherly bio link app.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-2/1600/1100.jpg",
-          "alt": "Editorial editorial project visual 2 used as a placeholder for Tetherly bio link app.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-3/1600/1100.jpg",
-          "alt": "Editorial editorial project visual 3 used as a placeholder for Tetherly bio link app.",
+          "alt": "Decorative stock photograph; not a project screenshot.",
           "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
         }
       ]
@@ -926,7 +927,7 @@
     },
     "contact": {
       "title": "Get in touch",
-      "intro": "Tell me about the frontend role or project you want to discuss.",
+      "intro": "Tell me about the frontend role or project you want to discuss. Draft email opens your mail app; review and send it there. Nothing is sent by this site.",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",
@@ -953,7 +954,7 @@
     "intro": "The case studies explain the problem, my responsibility, what I did, and the result. Experiments are labeled separately.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-projects-grid/1600/1100.jpg",
-      "alt": "Editorial project grid image used as a visual placeholder for the projects archive.",
+      "alt": "Decorative stock photograph; not a project screenshot.",
       "caption": "Public-safe placeholder visual. Replace with an approved project image when one is available."
     },
     "roleLabelPrefix": "Role",
@@ -977,11 +978,17 @@
   },
   "blogPage": {
     "eyebrow": "Notes",
+    "searchLabel": "Search notes",
+    "categoryLabel": "Category",
+    "allLabel": "All",
+    "resetLabel": "Reset filters",
+    "emptyMessage": "No notes match these filters.",
+    "rssLabel": "Subscribe via RSS",
     "title": "Notes from the work behind the pages.",
     "intro": "Short notes on case-study writing, content systems, and the practical decisions that keep a portfolio maintainable.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-blog-index/1600/1100.jpg",
-      "alt": "Editorial image used as a visual placeholder for the blog archive.",
+      "alt": "Decorative stock photograph for the notes archive.",
       "caption": "Public-safe placeholder visual. Replace with an approved project image when one is available."
     }
   },
@@ -993,7 +1000,7 @@
     "startProjectLabel": "Contact me",
     "snapshotTitle": "Project snapshot",
     "galleryTitle": "Supporting visuals",
-    "galleryIntro": "Some projects still use placeholders until I have screenshots that are safe to publish.",
+    "galleryIntro": "Decorative stock photograph, not a project screenshot. Supporting project imagery is not available here yet.",
     "nextProjectEyebrow": "Next project",
     "nextProjectLabel": "View next project",
     "similarWorkEyebrow": "Need help with something similar?",

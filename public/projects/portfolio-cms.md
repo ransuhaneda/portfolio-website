@@ -12,10 +12,19 @@ The content system behind this site. One JSON file feeds the React pages, genera
 ## Overview
 This portfolio uses one JSON file for the main site copy and project data. A prebuild script turns that source into React content, public Markdown, a sitemap, and machine-readable indexes.
 
-## Challenge
+## Problem
 The site needed to work as a human portfolio and as a machine-readable content source without keeping duplicate copy in separate places.
 
-## Approach
+## My responsibility
+Frontend developer
+
+- Git-backed CMS
+- Content Architecture
+- Markdown Generation
+- Cloudflare Pages Functions
+- React Content Rendering
+
+## What I did
 The React pages and generation script read from the same source. Blog posts stay in Markdown. This keeps me from updating the same copy in several places.
 
 - Kept main site copy in content/site-content.json.

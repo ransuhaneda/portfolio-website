@@ -1,5 +1,5 @@
 /*
-  X-Robots-Tag: index, follow
+  X-Content-Type-Options: nosniff
   Content-Signal: search=yes, ai-input=yes, ai-train=no
   Link: </llms.txt>; rel="alternate"; type="text/markdown"
   Link: </llms-full.txt>; rel="alternate"; type="text/markdown"

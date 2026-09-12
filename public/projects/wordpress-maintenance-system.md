@@ -12,10 +12,19 @@ Ongoing WordPress work across company and client sites. I maintain pages, clean 
 ## Overview
 This entry covers my current WordPress maintenance work rather than one finished project. I help keep company and client sites stable, consistent, and easier to update while requests continue to come in.
 
-## Challenge
+## Problem
 Several sites needed regular updates, cleaner Elementor structure, and admin workflows that the SEO and content teams could use without breaking layout consistency.
 
-## Approach
+## My responsibility
+Frontend web developer / graphic designer
+
+- WordPress Maintenance
+- Elementor System Cleanup
+- Frontend Styling
+- Admin Workflow Support
+- Hosting Handoff Support
+
+## What I did
 I focus on the parts that make the next update safer: reusable Elementor classes, global styles, clearer content fields, and documented handoffs.
 
 - Maintained 8 active websites across company and client work.

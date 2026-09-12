@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useId, type CSSProperties } from 'react'
 import type { IconType } from 'react-icons'
 import {
   SiAlpinedotjs, SiBootstrap, SiCloudflare, SiCpanel, SiFigma, SiGithubactions,
@@ -29,13 +29,14 @@ const icons = {
 }
 
 export function ProjectStack({ items, ariaLabel, reverseFlow = false }: ProjectStackProps) {
+  const instanceId = useId()
   const orderedItems = reverseFlow ? [...items].reverse() : items
   return (
     <ul className={`${sty.root}`} aria-label={ariaLabel}>
       {orderedItems.map((item, index) => {
         // SAFETY: Object.hasOwn proves item is a key of the closed icon registry.
         const Icon: IconType = Object.hasOwn(icons, item) ? icons[item as keyof typeof icons] : FaCode
-        const tooltipId = `project-stack-tooltip-${index}-${item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+        const tooltipId = `${instanceId}-project-stack-tooltip-${index}`
         return (
           <li key={item} aria-label={item} aria-describedby={tooltipId}>
             <div className={sty.iconBox} style={(() => {

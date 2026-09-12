@@ -93,6 +93,8 @@ export function ContactForm({ contact, recipientEmail, showIntro = true }: Conta
 
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors)
+      const firstField = errors.name ? 'name' : errors.email ? 'email' : 'message'
+      event.currentTarget.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus()
       return
     }
 
@@ -117,6 +119,8 @@ export function ContactForm({ contact, recipientEmail, showIntro = true }: Conta
       ) : null}
 
       <form className={sty.form} onSubmit={handleSubmit} noValidate>
+        {!showIntro ? <p>{contact.intro}</p> : null}
+        <div role="alert">{Object.values(formErrors).filter(Boolean).join(' ')}</div>
         <div className={sty.field}>
           <label htmlFor={nameInputId}>{contact.nameLabel} *</label>
           <input

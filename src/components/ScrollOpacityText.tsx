@@ -1,5 +1,5 @@
 import { useCallback, useRef } from 'react'
-import { gsap, useGSAP } from '../animations/gsap'
+import { gsap, ScrollTrigger, useGSAP } from '../animations/gsap'
 
 type ScrollOpacityTextProps = {
   children: string
@@ -26,6 +26,10 @@ export function ScrollOpacityText({ children, className, as: Tag = 'div', id }: 
     const letters = lettersRef.current.filter(Boolean)
     const trigger = triggerRef.current
     if (!trigger || !letters.length) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.set(letters, { opacity: 1 })
+      return
+    }
 
     gsap.set(letters, { opacity: 0.3 })
     gsap.to(letters, {

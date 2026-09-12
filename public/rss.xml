@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel><title>Lance Carteciano — Blog</title>
+<link>https://384721.xyz/blog</link><description>Short notes on case-study writing, content systems, and the practical decisions that keep a portfolio maintainable.</description>
+<atom:link href="https://384721.xyz/rss.xml" rel="self" type="application/rss+xml" />
+<item><title>A passing build is not a finished interface</title><link>https://384721.xyz/blog/build-correctness-is-not-visual-correctness</link><guid isPermaLink="true">https://384721.xyz/blog/build-correctness-is-not-visual-correctness</guid>
+<pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate><category>Frontend quality</category>
+<description>Why frontend work needs a rendered check after the code passes: layout, hierarchy, wrapping, and containment only exist in the browser.</description><content:encoded>&lt;div&gt;&lt;p&gt;A successful build answers one question: can the project compile? It does not answer whether the interface communicates the right hierarchy, holds together at the requested widths, or looks like the approved design.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;That distinction is easy to miss when a change is small. A component can type-check while its heading wraps one line too early. A grid can render every item while the visual order is wrong. A section can have the correct classes while a long label escapes its container on mobile.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Start with the requested boundary&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Before changing CSS or component structure, I write down what the screen is supposed to contain. That means identifying the actual DOM boundary, the order of the content, and which wrapper owns width and spacing.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;This prevents a common shortcut: solving a screenshot mismatch by moving an element visually while leaving the underlying hierarchy wrong. A transform may make one viewport look closer, but it can break reading order, keyboard navigation, or the next breakpoint.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The fix should match the responsibility. If the data order is wrong, change the data or render order. If the wrapper is too narrow, adjust the wrapper token. If a decorative layer is covering content, fix containment and stacking instead of hiding the symptom.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Check the browser, not only the source&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;A rendered check catches problems that static inspection cannot. I look at the desktop composition first, then at a narrow viewport where wrapping and overflow expose the weak points.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The useful questions are concrete:&lt;/p&gt;&lt;/div&gt;
+&lt;ul&gt;&lt;li&gt;Does the visual order match the intended reading order?&lt;/li&gt;&lt;li&gt;Are headings, metadata, and actions grouped as designed?&lt;/li&gt;&lt;li&gt;Does text wrap without pushing cards or controls outside their container?&lt;/li&gt;&lt;li&gt;Are decorative effects quiet enough to preserve contrast and focus?&lt;/li&gt;&lt;li&gt;Does the spacing still feel intentional when the viewport changes?&lt;/li&gt;&lt;/ul&gt;
+&lt;div&gt;&lt;p&gt;A screenshot is evidence of the current output, not proof that every viewport is correct. I use it to compare structure and proportion, then inspect the relevant styles and components to find the cause.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Keep fixes in the existing system&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Most visual corrections should reuse the project&amp;#39;s tokens, wrappers, and component patterns. A one-off margin can make a screenshot pass while creating a second spacing language that is harder to maintain.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;I prefer the nearest established spacing variable, the existing wrapper class, and the component&amp;#39;s current layout model. If a value really carries structural intent—such as an image width, a minimum width, or a text measure—it can stay local. The important part is knowing why it is local.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;This also keeps content changes separate from layout changes. When content comes from a source file, update that source first and regenerate its mirrors. Do not patch generated output just because it is the file visible in the browser.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Verify the failure mode you changed&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;After a fix, I check the original failure again instead of stopping at a green command. If the issue was mobile overflow, inspect the narrow view. If it was reversed technology ordering, inspect the rendered sequence. If it was cramped copy, compare line length and section rhythm at both target widths.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The goal is not to make one screenshot look acceptable. It is to confirm that the implementation now expresses the intended structure and remains predictable when the content or viewport changes.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Finished means rendered and explainable&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Builds, lint, and type checks are valuable guardrails. They are not substitutes for seeing the interface.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;A finished frontend change has two kinds of evidence: the code passes its checks, and the browser shows the right boundary, hierarchy, wrapping, and containment. That second check takes less time than explaining later why a technically correct page still feels wrong.&lt;/p&gt;&lt;/div&gt;</content:encoded></item>
+<item><title>A Git release workflow for small teams</title><link>https://384721.xyz/blog/git-release-workflow-for-small-teams</link><guid isPermaLink="true">https://384721.xyz/blog/git-release-workflow-for-small-teams</guid>
+<pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate><category>Git workflow</category>
+<description>A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake.</description><content:encoded>&lt;div&gt;&lt;p&gt;A small team does not need a complicated Git process. It does need a clear boundary between work in progress, integrated work, and what is in production.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The workflow I use keeps &lt;code&gt;development&lt;/code&gt; as the integration branch and &lt;code&gt;main&lt;/code&gt; as the production branch. Short-lived feature or fix branches merge into &lt;code&gt;development&lt;/code&gt;. A release is one explicit merge into &lt;code&gt;main&lt;/code&gt;, followed by an annotated tag. After that, &lt;code&gt;development&lt;/code&gt; fast-forwards to the released &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Start work from development&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Feature and fix branches start from an up-to-date &lt;code&gt;development&lt;/code&gt; branch. The branch name describes the work, such as &lt;code&gt;feat/blog-post&lt;/code&gt; or &lt;code&gt;fix/mobile-header&lt;/code&gt;.&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git switch development
+git pull --ff-only origin development
+git switch -c feat/blog-post
+git push -u origin feat/blog-post&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;&lt;p&gt;Keeping work branches short makes review easier. Commits stay focused and use a Conventional Commit prefix when it helps explain the change: &lt;code&gt;feat:&lt;/code&gt;, &lt;code&gt;fix:&lt;/code&gt;, &lt;code&gt;docs:&lt;/code&gt;, or &lt;code&gt;chore:&lt;/code&gt;.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;I add specific files rather than every file in the working tree. That matters when generated files, screenshots, or another unfinished change are present.&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git status --short
+git diff
+git add content/blog/2026-08-21-git-workflow-for-small-teams.md
+git diff --cached
+git commit -m &amp;quot;docs: add git release workflow post&amp;quot;
+git push&lt;/code&gt;&lt;/pre&gt;
+&lt;section&gt;&lt;h2&gt;Merge focused work into development&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;The branch is reviewed and validated before it is merged. For this portfolio, content changes run &lt;code&gt;pnpm run prebuild&lt;/code&gt;; structural changes also run &lt;code&gt;pnpm build&lt;/code&gt;. Browser checks belong in the dedicated &lt;code&gt;.playwright/&lt;/code&gt; folders when the change affects rendered behavior.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The merge into &lt;code&gt;development&lt;/code&gt; preserves the work branch in history:&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git switch development
+git pull --ff-only origin development
+git merge --no-ff feat/blog-post -m &amp;quot;Merge branch &amp;#39;feat/blog-post&amp;#39; into development&amp;quot;
+git push origin development&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;&lt;p&gt;A merge commit records the integration boundary without rewriting the individual commits from the work branch. Squashing or rebasing a completed branch would remove that history, so I do not use either unless the project explicitly asks for it.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Release from validated development&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Most releases do not need another branch. If &lt;code&gt;development&lt;/code&gt; already contains the validated work and no release-only changes are required, it is the release source.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;Before merging, I fetch both long-lived branches and check four conditions:&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git fetch --all --prune
+git switch development &amp;amp;&amp;amp; git pull --ff-only origin development
+git switch main &amp;amp;&amp;amp; git pull --ff-only origin main
+
+RELEASE_SOURCE=development
+VERSION=0.0.7
+
+git merge-base --is-ancestor main &amp;quot;$RELEASE_SOURCE&amp;quot;
+git log --oneline main..&amp;quot;$RELEASE_SOURCE&amp;quot;
+git diff --quiet main &amp;quot;$RELEASE_SOURCE&amp;quot; &amp;amp;&amp;amp; exit 1
+git tag --list &amp;quot;v$VERSION&amp;quot;
+git ls-remote --tags origin &amp;quot;refs/tags/v$VERSION&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;&lt;p&gt;The ancestry check prevents an unexpected branch divergence from being hidden by a release merge. The tree-difference check prevents an unchanged release. The local and remote tag checks prevent reusing a published version.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;A &lt;code&gt;release/vX.Y.Z&lt;/code&gt; branch is only useful when it contains release preparation, stabilization, or a release-blocking fix. A branch that points at the unchanged &lt;code&gt;development&lt;/code&gt; tip adds ceremony without adding a review boundary.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Merge once, tag once, publish together&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;The production merge is explicit and non-fast-forward. The annotated tag points at that merge commit so the version identifies the exact release boundary.&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git switch main
+git merge --no-ff &amp;quot;$RELEASE_SOURCE&amp;quot; -m &amp;quot;chore(release): publish v$VERSION&amp;quot;
+git tag -a &amp;quot;v$VERSION&amp;quot; -m &amp;quot;v$VERSION&amp;quot;
+git push --atomic origin main &amp;quot;v$VERSION&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;&lt;p&gt;&lt;code&gt;--atomic&lt;/code&gt; publishes the branch and tag as one remote update. If either reference cannot be published, neither should move. I inspect the merge and tag before pushing when the release is consequential.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Fast-forward development after the release&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;After &lt;code&gt;main&lt;/code&gt; is published, &lt;code&gt;development&lt;/code&gt; should catch up without a second content-identical merge commit:&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git switch development
+git pull --ff-only origin development
+git merge --ff-only main
+git push origin development&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;&lt;p&gt;The release merge already contains the release source as a parent, so a fast-forward keeps both long-lived branches aligned while preserving the one release boundary.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Clean up only after verifying history&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Short-lived branches are deleted only after the merge and remote state are verified. First check which local branches are merged into &lt;code&gt;main&lt;/code&gt;, then remove the specific work branch locally and remotely.&lt;/p&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;git fetch --all --prune
+git branch --merged main
+git branch -d feat/blog-post
+git push origin --delete feat/blog-post
+git branch -vv&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;&lt;p&gt;The cleanup is part of the workflow, not a substitute for checking history. A branch is safe to delete when its commits are reachable from the intended integration or release branch and the remote deletion is confirmed.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;The workflow in one line&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Use &lt;code&gt;feat/*&lt;/code&gt; or &lt;code&gt;fix/*&lt;/code&gt; branches for focused work, merge them into &lt;code&gt;development&lt;/code&gt;, release validated &lt;code&gt;development&lt;/code&gt; into &lt;code&gt;main&lt;/code&gt; once with an annotated tag, fast-forward &lt;code&gt;development&lt;/code&gt;, and delete branches only after verifying reachability. The process is small enough to follow and explicit enough to explain what reached production.&lt;/p&gt;&lt;/div&gt;</content:encoded></item>
+<item><title>Why this portfolio uses a Git-backed content system</title><link>https://384721.xyz/blog/git-backed-portfolio-cms</link><guid isPermaLink="true">https://384721.xyz/blog/git-backed-portfolio-cms</guid>
+<pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate><category>Content systems</category>
+<description>How JSON and Markdown keep the portfolio&#39;s visible pages, mirrors, and project notes in sync.</description><content:encoded>&lt;div&gt;&lt;p&gt;This portfolio keeps its editable content in the repository. Site copy lives in JSON. Blog and project notes live in Markdown. A prebuild script generates the public mirrors, sitemap entries, and agent-readable navigation files.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;That is more deliberate than a tiny hosted CMS, but it solves a real problem: portfolio copy changes in several places unless one source owns it.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;One source prevents drift&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;A project title can appear in a card, a detail page, a project index, and a resume entry. A contact address can be correct in the footer and stale in a generated page. Editing each copy by hand makes it easy to miss one.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The editable content file is the source of truth. React pages read from it, and the prebuild script creates derived Markdown and metadata files. Generated files are outputs, not a second place to edit.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;This arrangement also gives each change a visible diff. A reviewer can see whether a title, description, or link changed without comparing screenshots manually.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Markdown mirrors make the site inspectable&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;The visual routes are for people. Files such as &lt;code&gt;/llms-full.txt&lt;/code&gt;, &lt;code&gt;/projects.md&lt;/code&gt;, and individual project pages expose the same material in a form that is quick to read, search, or inspect without scraping layout.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The mirrors support accessibility, search, and agent workflows. They also make content review a file review. If a claim is outdated, the source file and its generated copies have a predictable relationship.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The generated files should not be edited directly. The next prebuild can replace them, so a direct change would be temporary and easy to lose.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Git keeps the rewrite visible&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;When content is stored in files, a rewrite appears in a diff. I can review changed claims, spot placeholder text, and see whether a project page was updated everywhere before building.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;Git also preserves the history of those edits. A future maintainer can identify when a description changed, which files changed together, and whether the update was content-only or part of a structural change.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;For this workflow, a focused content commit can be validated with &lt;code&gt;pnpm run prebuild&lt;/code&gt;. A structural change also runs &lt;code&gt;pnpm build&lt;/code&gt;, and rendered changes get a browser check.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;This is not a general-purpose CMS&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;The system does not provide every feature of a hosted CMS. It favors a small set of files, predictable generation, and reviewable changes.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;That trade-off fits a portfolio that is edited by its developer. The content remains portable, the outputs can be regenerated, and a rewrite does not disappear inside an opaque admin interface.&lt;/p&gt;&lt;/div&gt;</content:encoded></item>
+<item><title>Writing portfolio case studies people can trust</title><link>https://384721.xyz/blog/writing-useful-portfolio-case-studies</link><guid isPermaLink="true">https://384721.xyz/blog/writing-useful-portfolio-case-studies</guid>
+<pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate><category>Content systems</category>
+<description>A practical way to turn real project work into a case study without inflating the scope or losing the useful details.</description><content:encoded>&lt;div&gt;&lt;p&gt;A portfolio case study should help a reader understand the work without reconstructing it from adjectives. Name the problem, explain the part you handled, and show what changed.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The scope does not need to be dramatic. A maintenance project, migration, small React build, or training project can all be useful when the description is accurate.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Start with the actual scope&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Separate production work, personal projects, and tutorial-based experiments. They can share a visual system, but they should not make the same promise.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;A maintenance task can include responsive fixes, content organization, reusable classes, admin fields, deployment handoff, or spam cleanup. Those details describe the work more accurately than calling the project a transformation.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;A practice build can still demonstrate how you structure components or solve an interface problem. Labeling it as client work removes useful context and makes the case study harder to trust.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Put proof beside the claim&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;Every important detail needs a source. A number can come from a resume. A feature description can come from the repository. A project timeline can come from the work log. If a detail cannot be traced, remove it or label it as an estimate.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;This applies to performance claims, team size, page counts, integrations, and business outcomes. A sentence that sounds plausible is not evidence.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The source does not need to interrupt the page. A short note in the editing file, a linked project artifact, or a clear methodology is enough to make the claim reviewable later.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Describe decisions, not just deliverables&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;“Built a website” is a deliverable. “Moved editable project content into JSON, generated Markdown mirrors during prebuild, and kept React pages reading from one source” describes decisions and their effect.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;The same approach works for smaller changes. Say which page was adjusted, which constraint shaped the solution, and what another person can verify in the result. Screenshots can show the surface; the written case study should explain the system behind it.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;Include the work people usually skip&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;The unglamorous parts often answer the reader&amp;#39;s real questions: reusable styles, admin fields, responsive corrections, content migration, accessibility fixes, deployment handoff, and cleanup after launch.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;They also show where the work stopped. If analytics were not available, do not imply a conversion result. If a redesign was not shipped, call it a prototype. Clear boundaries are part of the evidence.&lt;/p&gt;&lt;/div&gt;
+&lt;section&gt;&lt;h2&gt;A useful case study is a record&lt;/h2&gt;&lt;/section&gt;
+&lt;div&gt;&lt;p&gt;A strong case study does not need a manufactured story arc. It needs enough context for a hiring manager, client, or collaborator to decide whether the work matches their problem.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;Use the smallest accurate claim, place the proof near it, and leave the reader with a clear account of what changed.&lt;/p&gt;&lt;/div&gt;</content:encoded></item>
+</channel></rss>

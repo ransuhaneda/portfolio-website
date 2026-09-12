@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { publicUrl } from '../content/publicUrl'
 import sty from './InternalHero.module.scss'
 
 type InternalHeroProps = {
@@ -27,7 +28,7 @@ export function InternalHero({ title, intro, beforeTitle, media, actions }: Inte
 
           {media ? (
             <figure className={sty.media}>
-              <img src={media.src} alt={media.alt} />
+              <img src={publicUrl(media.src)} alt={media.alt} />
               {media.caption ? <figcaption>{media.caption}</figcaption> : null}
             </figure>
           ) : null}

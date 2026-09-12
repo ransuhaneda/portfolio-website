@@ -3,9 +3,10 @@ title: "A Git release workflow for small teams"
 slug: "git-release-workflow-for-small-teams"
 date: "2026-08-21"
 status: "published"
+category: "git-workflow"
 excerpt: "A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake."
 coverImage: "https://picsum.photos/seed/git-release-workflow-small-teams/1600/900.jpg"
-coverAlt: "Terminal window showing a Git branch graph beside a notebook with release notes."
+coverAlt: "Decorative stock photograph; not a screenshot of the Git workflow."
 ---
 A small team does not need a complicated Git process. It does need a clear boundary between work in progress, integrated work, and what is in production.
 

@@ -1,6 +1,7 @@
 # Why this portfolio uses a Git-backed content system
 
 - Date: 2026-07-22
+- Category: Content systems
 - Excerpt: How JSON and Markdown keep the portfolio's visible pages, mirrors, and project notes in sync.
 - Cover image: https://picsum.photos/seed/git-backed-portfolio-cms/1600/900.jpg
 

@@ -1,6 +1,7 @@
 import { LuArrowRight, LuCheck, LuLock } from 'react-icons/lu'
 import { InternalHero } from '../components/InternalHero'
 import { siteContent } from '../content/siteContent'
+import { publicUrl } from '../content/publicUrl'
 import sty from './DesignSystemPage.module.scss'
 
 const colors = [
@@ -48,7 +49,7 @@ export function DesignSystemPage() {
           <div className={sty.fieldDemo}><label htmlFor="design-system-field">Field label</label><input id="design-system-field" placeholder="Click or tab to focus" /><small>Production focus and field treatment.</small></div>
           <div className={sty.surfaceDemo}><article><span>Card overlay</span><h3>Raised card</h3><p>Low-contrast border and restrained radius.</p></article><article><span>Top divider only</span><h3>Quiet group</h3><p>Many sections need no surrounding card.</p></article></div>
           <div className={sty.dividers}><span /><span /><span /></div>
-          {projectImage ? <figure className={sty.imageDemo}><img src={projectImage.src} alt={projectImage.alt} /><figcaption>Production image treatment</figcaption></figure> : null}
+          {projectImage ? <figure className={sty.imageDemo}><img src={publicUrl(projectImage.src)} alt={projectImage.alt} /><figcaption>Production image treatment</figcaption></figure> : null}
         </div></div></div>
       </section>
 

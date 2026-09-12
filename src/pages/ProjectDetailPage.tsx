@@ -5,20 +5,21 @@ import sty from './ProjectDetailPage.module.scss'
 import { ScrollOpacityText } from '../components/ScrollOpacityText'
 import { ProjectStack } from '../components/ProjectStack'
 import { getRelatedEntries } from '../content/relatedContent'
+import { publicUrl } from '../content/publicUrl'
 
 const sectionLabel = (index: string, label: string) => `[ ${index} / ${label} ]`
 
 const getProjectImage = (project: Project): ImageAsset | undefined => project.image ?? project.gallery[0]
 
-const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') ? state.from : fallback
+const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') && !state.from.startsWith('//') ? state.from : fallback
 
 function ProjectVisual({ image, className = '', loading = 'lazy' }: { image?: ImageAsset; className?: string; loading?: 'eager' | 'lazy' }) {
   if (!image) return <div className={`${sty.visualPlaceholder} ${className}`} aria-label="Project visual placeholder" />
 
   return (
     <figure className={`${sty.visual} ${className}`}>
-      <img src={image.src} alt={image.alt} loading={loading} />
-      {image.caption ? <figcaption>{image.caption}</figcaption> : null}
+      <img src={publicUrl(image.src)} alt={image.src.startsWith('https://picsum.photos/') ? '' : image.alt} loading={loading} />
+      {image.src.startsWith('https://picsum.photos/') ? <figcaption>{siteContent.projectDetailPage?.galleryIntro}</figcaption> : image.caption ? <figcaption>{image.caption}</figcaption> : null}
     </figure>
   )
 }
@@ -33,7 +34,7 @@ export function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <main className={sty.page}>
+      <div className={sty.page}>
         <section className={sty.notFound} data-text-reveal-group="entry">
           <div className="lg-wrapper">
             <div>
@@ -43,7 +44,7 @@ export function ProjectDetailPage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     )
   }
 
@@ -54,7 +55,7 @@ export function ProjectDetailPage() {
   const detailImages = project.gallery.slice(2, 4)
 
   return (
-    <main className={sty.page} key={project.slug}>
+    <div className={sty.page} key={project.slug}>
       <section className={sty.hero} data-text-reveal-group="entry" aria-labelledby="project-title">
         <div className="lg-wrapper">
           <div className={sty.heroInner}>
@@ -238,6 +239,6 @@ export function ProjectDetailPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

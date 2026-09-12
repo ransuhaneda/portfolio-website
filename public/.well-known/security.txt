@@ -1,5 +1,4 @@
-Contact: mailto:hello@example.com
+Contact: mailto:cartecianolance@gmail.com
 Expires: 2027-06-25T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://example.com/.well-known/security.txt
-Policy: https://example.com/contact
+Canonical: https://384721.xyz/.well-known/security.txt
