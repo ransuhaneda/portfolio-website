@@ -3,9 +3,10 @@ title: "Why this portfolio uses a Git-backed content system"
 slug: "git-backed-portfolio-cms"
 date: "2026-07-22"
 status: "published"
+category: "content-systems"
 excerpt: "How JSON and Markdown keep the portfolio's visible pages, mirrors, and project notes in sync."
 coverImage: "https://picsum.photos/seed/git-backed-portfolio-cms/1600/900.jpg"
-coverAlt: "File editor beside a notebook, used as a placeholder cover for a note about the portfolio content system."
+coverAlt: "Decorative stock photograph; not a screenshot of the portfolio content system."
 ---
 This portfolio keeps its editable content in the repository. Site copy lives in JSON. Blog and project notes live in Markdown. A prebuild script generates the public mirrors, sitemap entries, and agent-readable navigation files.
 

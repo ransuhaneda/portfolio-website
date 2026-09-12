@@ -2,6 +2,8 @@ import { createHash } from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import siteContent from '../content/site-content.json' with { type: 'json' }
+import { blogCategories, parseBlogPost, selectPublishedBlogPosts, validateSlug } from '../src/content/blogSchema.ts'
+import { escapeHtml, renderBlogHtml } from '../src/content/blogMarkdown.ts'
 
 const root = path.resolve(import.meta.dirname, '..')
 const publicDir = path.join(root, 'public')
@@ -13,59 +15,47 @@ const location = process.env.CONTACT_LOCATION || siteContent.site.location
 const featuredProjectSlugs = new Set(siteContent.home.featuredProjects.slugs)
 const featuredProjects = siteContent.projects.filter((project) => featuredProjectSlugs.has(project.slug))
 
-const parseFrontmatter = (markdown) => {
-  const match = markdown.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/)
-  if (!match) {
-    throw new Error('Blog markdown is missing frontmatter.')
-  }
-
-  const frontmatter = Object.fromEntries(
-    match[1]
-      .split('\n')
-      .map((line) => line.trim())
-      .filter(Boolean)
-      .map((line) => {
-        const separatorIndex = line.indexOf(':')
-        const key = line.slice(0, separatorIndex).trim()
-        const rawValue = line.slice(separatorIndex + 1).trim()
-        return [key, rawValue.replace(/^"|"$/g, '')]
-      }),
-  )
-
-  return {
-    frontmatter,
-    body: match[2].trim(),
-  }
-}
-
 const loadPublishedBlogPosts = async () => {
-  const entries = await fs.readdir(blogDir, { withFileTypes: true }).catch(() => [])
+  const entries = await fs.readdir(blogDir, { withFileTypes: true })
   const markdownFiles = entries.filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
 
   const posts = await Promise.all(
     markdownFiles.map(async (entry) => {
       const filePath = path.join(blogDir, entry.name)
       const markdown = await fs.readFile(filePath, 'utf8')
-      const { frontmatter, body } = parseFrontmatter(markdown)
-      return {
-        title: frontmatter.title ?? '',
-        slug: frontmatter.slug ?? '',
-        date: frontmatter.date ?? '',
-        status: frontmatter.status ?? 'draft',
-        coverImage: frontmatter.coverImage || undefined,
-        coverAlt: frontmatter.coverAlt || undefined,
-        excerpt: frontmatter.excerpt || undefined,
-        body,
+      try {
+        return parseBlogPost(markdown)
+      } catch (error) {
+        throw new Error(`${entry.name}: ${error.message}`, { cause: error })
       }
     }),
   )
 
-  return posts
-    .filter((post) => post.status === 'published')
-    .sort((left, right) => right.date.localeCompare(left.date))
+  return selectPublishedBlogPosts(posts)
 }
 
 const blogPosts = await loadPublishedBlogPosts()
+const projectSlugs = new Set()
+for (const project of siteContent.projects) {
+  validateSlug(project.slug)
+  if (projectSlugs.has(project.slug)) throw new Error(`Duplicate project slug: ${project.slug}`)
+  projectSlugs.add(project.slug)
+}
+const categoryLabel = (post) => blogCategories.find((category) => category.id === post.category).label
+const canonicalUrl = 'https://384721.xyz'
+const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel><title>${escapeHtml(siteContent.site.name)} — Blog</title>
+<link>${canonicalUrl}/blog</link><description>${escapeHtml(siteContent.blogPage.intro)}</description>
+<atom:link href="${canonicalUrl}/rss.xml" rel="self" type="application/rss+xml" />
+${blogPosts.map((post) => {
+  const url = `${canonicalUrl}/blog/${post.slug}`
+  return `<item><title>${escapeHtml(post.title)}</title><link>${url}</link><guid isPermaLink="true">${url}</guid>
+<pubDate>${new Date(`${post.date}T00:00:00Z`).toUTCString()}</pubDate><category>${escapeHtml(categoryLabel(post))}</category>
+<description>${escapeHtml(post.excerpt)}</description><content:encoded>${escapeHtml(renderBlogHtml(post.body, url))}</content:encoded></item>`
+}).join('\n')}
+</channel></rss>
+`
 
 const routes = [
   { path: '/', md: '/index.md', title: 'Home', description: siteContent.site.description },
@@ -157,6 +147,8 @@ const resumeMd = `# Resume
 
 ${siteContent.resume.summary}
 
+[${siteContent.resume.download.label}](${siteUrl}${siteContent.resume.download.href})
+
 ## Skills
 ${bullets(siteContent.resume.skills)}
 
@@ -211,10 +203,15 @@ ${project.summary}
 ## Overview
 ${project.overview}
 
-## Challenge
+## Problem
 ${project.challenge}
 
-## Approach
+## My responsibility
+${project.role}
+
+${bullets(project.scope)}
+
+## What I did
 ${project.approachSummary}
 
 ${bullets(project.approach)}
@@ -239,6 +236,7 @@ const blogMarkdown = Object.fromEntries(
     `# ${post.title}
 
 - Date: ${post.date}
+- Category: ${categoryLabel(post)}
 ${post.excerpt ? `- Excerpt: ${post.excerpt}` : ''}
 ${post.coverImage ? `- Cover image: ${post.coverImage}` : ''}
 
@@ -384,6 +382,21 @@ await fs.mkdir(path.join(publicDir, 'projects'), { recursive: true })
 await fs.mkdir(path.join(publicDir, 'blog'), { recursive: true })
 await fs.mkdir(skillDir, { recursive: true })
 
+// The manifest records exact owned files; never glob-delete public assets.
+const manifestPath = path.join(publicDir, '.generated-mirrors.json')
+const previousMirrors = JSON.parse(await fs.readFile(manifestPath, 'utf8').catch((error) => {
+  if (error.code === 'ENOENT') return '[]'
+  throw error
+}))
+const ownedPath = /^\/(?:blog|projects)\/[a-z0-9]+(?:-[a-z0-9]+)*\.md$/
+if (!Array.isArray(previousMirrors) || previousMirrors.some((entry) => !ownedPath.test(entry))) {
+  throw new Error('Invalid generated mirror manifest.')
+}
+const currentMirrors = [...Object.keys(blogMarkdown), ...Object.keys(projectMarkdown)].sort()
+for (const stale of previousMirrors.filter((entry) => !currentMirrors.includes(entry))) {
+  await fs.rm(path.join(publicDir, stale), { force: true })
+}
+
 for (const [relativePath, content] of Object.entries(pageMarkdown)) {
   const filePath = path.join(publicDir, relativePath)
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -393,5 +406,9 @@ for (const [relativePath, content] of Object.entries(pageMarkdown)) {
 await fs.writeFile(path.join(publicDir, 'llms.txt'), llms, 'utf8')
 await fs.writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull, 'utf8')
 await fs.writeFile(path.join(publicDir, 'sitemap.xml'), sitemap, 'utf8')
+await fs.writeFile(path.join(publicDir, 'rss.xml'), rss, 'utf8')
+await fs.writeFile(path.join(publicDir, '.well-known', 'security.txt'), `Contact: mailto:${email}\nExpires: 2027-06-25T00:00:00.000Z\nPreferred-Languages: en\nCanonical: ${siteUrl}/.well-known/security.txt\n`, 'utf8')
+await fs.writeFile(manifestPath, JSON.stringify(currentMirrors, null, 2) + '\n', 'utf8')
+await fs.writeFile(path.join(root, 'src/content/publishedBlogPosts.json'), JSON.stringify(blogPosts, null, 2) + '\n', 'utf8')
 await fs.writeFile(path.join(skillDir, 'SKILL.md'), skillMd, 'utf8')
 await fs.writeFile(path.join(publicDir, '.well-known', 'agent-skills', 'index.json'), JSON.stringify(agentIndex, null, 2), 'utf8')

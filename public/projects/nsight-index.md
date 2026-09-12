@@ -12,10 +12,19 @@ A Laravel blog system with author and reader flows for posts, comments, categori
 ## Overview
 Nsight Index is a Laravel training project built around a working publishing flow. Authors can manage posts and readers can comment, like, save, and browse content by category.
 
-## Challenge
+## Problem
 The project needed a practical content workflow where authors could manage posts and readers could interact with published content.
 
-## Approach
+## My responsibility
+Full-stack training project
+
+- Laravel Development
+- Content Workflow
+- Reader Interaction Flows
+- Media Handling
+- Interface Implementation
+
+## What I did
 I focused the case study on the author and reader flows that work today. Unfinished admin ideas stay out of the public claims.
 
 - Built post, category, comment, like, and saved-post flows.

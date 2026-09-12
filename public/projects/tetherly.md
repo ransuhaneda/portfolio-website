@@ -11,10 +11,19 @@ An unfinished React and TypeScript bio link app. It stays in the archive while I
 ## Overview
 Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. It is in the archive because the main flow is still being worked on.
 
-## Challenge
+## Problem
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
 
-## Approach
+## My responsibility
+Frontend developer
+
+- Product UI Practice
+- React Components
+- TypeScript Structure
+- Profile Card System
+- Responsive SCSS
+
+## What I did
 I focused on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.
 
 - Built the app with React, TypeScript, and SCSS.

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { LuExternalLink, LuGlobe, LuMail, LuMapPin } from 'react-icons/lu'
 import { getLinktreeUrl, siteContent } from '../content/siteContent'
 import { BrandIcon } from './BrandIcon'
+import { publicUrl } from '../content/publicUrl'
 import sty from './SiteFooter.module.scss'
 
 function getBrandParts(name: string) {
@@ -56,7 +57,7 @@ export function SiteFooter() {
                 {moreLinks.map((link) => (
                   <li key={`${link.to}-${link.label}`}>
                     {link.to.startsWith('/#') || link.to.startsWith('#') || link.to.startsWith('http')
-                      ? <a href={link.to}>{link.label}</a>
+                      ? <a href={publicUrl(link.to)}>{link.label}</a>
                       : <Link to={link.to}>{link.label}</Link>}
                   </li>
                 ))}

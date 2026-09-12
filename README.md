@@ -2,9 +2,9 @@
 
 A case-study portfolio for Lance Carteciano, built with React, TypeScript, SCSS, and Vite. The site presents frontend, WordPress, and design-to-code work through reusable pages and project detail routes.
 
-## Project status
+## Public launch status
 
-This is a private, actively developed portfolio project (`package.json` sets version `0.1.0`).
+Intended production: https://384721.xyz on Cloudflare Pages. GitHub Pages is a noindex preview under `/portfolio-website/`. Launch approval and deployment are separate operator steps. The default build is public-only; admin source is retained but not shipped, and Cloudflare admin routes fail closed.
 
 ## Features
 
@@ -16,9 +16,11 @@ This is a private, actively developed portfolio project (`package.json` sets ver
   - `/public/*.md` and `/public/projects/*.md`
   - `/public/llms.txt` and `/public/llms-full.txt`
   - `/public/sitemap.xml`
-  - `/public/.well-known/agent-skills/site-navigation/index.json`
+  - `/public/.well-known/agent-skills/index.json` and `site-navigation/SKILL.md`
 - Cloudflare Pages support through `wrangler.toml`, `_headers`, `_redirects`, and `functions/[[path]].ts`
-- Optional GitHub-backed admin/CMS application at `/admin/`
+- Published-only local blog search and categories, URL filters, full-content `/rss.xml`
+- Route-specific initial HTML and client-navigation metadata
+- Web resume plus unchanged approved PDF download
 
 ## Stack
 
@@ -31,13 +33,13 @@ This is a private, actively developed portfolio project (`package.json` sets ver
 
 ## Requirements
 
-- Node.js compatible with the versions required by the dependencies in `package.json`
+- Node.js 24 (generation imports erasable TypeScript directly)
 - pnpm
 
 ## Install and run locally
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
@@ -75,38 +77,15 @@ pnpm preview
 
 `pnpm dev` and `pnpm build` run this step automatically. Generated files are written to `public/` and should not be edited directly.
 
-## Environment variables
+## Maintenance
 
-Copy `.env.example` to `.env` when you need local values:
+No secrets or environment file are required for the public build. Keep production URLs and contact copy in JSON. Blog posts require a category as well as title, slug, date, status and excerpt. After edits during a running dev session, rerun prebuild to refresh the published snapshot.
 
-```bash
-cp .env.example .env
-```
-
-| Variable | Used for |
-| --- | --- |
-| `SITE_URL` | Canonical URL in generated links and the sitemap |
-| `CONTACT_EMAIL` | Generated contact-page email override |
-| `CONTACT_LOCATION` | Generated contact-page location override |
-| `GITHUB_CLIENT_ID` | GitHub OAuth for the admin/CMS function |
-| `GITHUB_CLIENT_SECRET` | GitHub OAuth for the admin/CMS function |
-| `ADMIN_ALLOWED_GITHUB_LOGIN` | GitHub login allowed to use the CMS |
-| `ADMIN_SESSION_SECRET` | Session signing for the CMS |
-| `GITHUB_OWNER` | Repository owner used by the CMS |
-| `GITHUB_REPO` | Repository used by the CMS |
-| `CMS_TARGET_BRANCH` | Branch targeted by CMS changes (defaults to `main` when unset) |
-
-Do not commit real credentials or session secrets. The checked-in `.env.example` contains placeholders only.
-
-For a canonical production URL, set `SITE_URL` before building:
-
-```bash
-SITE_URL=https://your-domain.example pnpm build
-```
+See [maintenance/deployment](agent-generated-docs/maintenance-deployment.md) for publishing rules, preview builds, generated files, PDF integrity and deferred CMS security risks. See [launch checklist](agent-generated-docs/launch-checklist.md) for required independent gates.
 
 ## Cloudflare Pages
 
-The repository is configured for a Cloudflare Pages build output of `dist/` (`wrangler.toml`). Set the production environment variables in the Pages project rather than committing them. The Pages Function serves markdown when a request includes `Accept: text/markdown` and handles the optional admin/CMS API routes.
+Build command: `pnpm build`; output: `dist/`. Deploy from repository source so Pages includes `functions/[[path]].ts`, which handles Markdown negotiation and admin containment. Do not enable admin for launch. Deployment is not authorized by running local checks.
 
 ## Repository layout
 
@@ -114,7 +93,7 @@ The repository is configured for a Cloudflare Pages build output of `dist/` (`wr
 content/       Editable site and blog content
 public/        Generated markdown, metadata, and static assets
 src/           Public React application and SCSS
-admin/         Optional CMS React application
+admin/         Deferred CMS source (not in public build)
 functions/     Cloudflare Pages Function
 scripts/       Content and agent-file generation scripts
 ```

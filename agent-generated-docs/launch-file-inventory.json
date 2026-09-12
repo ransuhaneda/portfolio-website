@@ -1,0 +1,855 @@
+{
+  "trackedCount": 170,
+  "entries": [
+    {
+      "path": ".env.example",
+      "classification": "deferred",
+      "finding": "Intentionally not read: environment/credential template excluded; no public build env required."
+    },
+    {
+      "path": ".github/workflows/deploy-pages.yml",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": ".gitignore",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "AGENTS.md",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "CONTEXT.md",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "README.md",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "admin/index.html",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/App.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/adminTypes.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/api/adminApi.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/hooks/useActivity.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/hooks/useBlogEditor.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/hooks/useMediaUploader.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/hooks/useProjectEditor.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/lib/adminHelpers.test.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/lib/adminHelpers.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/main.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/DashboardScreen.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/ActivitySection.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/AdminHeader.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/AdminIcon.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/AdminUi.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/BlogEditorSection.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/LoginScreen.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/MediaUploaderSection.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/ProjectEditorSection.tsx",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/screens/dashboard/dashboardTypes.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/styles/admin.scss",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "admin/src/types.ts",
+      "classification": "inspected",
+      "finding": "Full source inspected; retained but not built. Deferred CMS category/schema, validation, async-edit and security risks documented in maintenance guide."
+    },
+    {
+      "path": "agent-generated-docs/HOMEPAGE_FIGMA_FIX_TASKS.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/color-token-migration-plan.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/design-system-restructure-plan.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/design-system.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/git-branch-release-workflow.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/margin-reset-audit.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/project-scss-reference.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "agent-generated-docs/typography-system.md",
+      "classification": "inspected",
+      "finding": "Historical/reference guidance inspected; approved scope and current source take precedence. Existing docs retained; dated token lists may drift."
+    },
+    {
+      "path": "content/blog/2026-07-22-draft-notes-on-case-study-writing.md",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "content/blog/2026-07-22-lightweight-git-backed-portfolio-cms.md",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "content/blog/2026-08-21-git-workflow-for-small-teams.md",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "content/blog/2026-08-26-build-correctness-is-not-visual-correctness.md",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "content/site-content.json",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "docs/portfolio-project-design-variables.json",
+      "classification": "generated",
+      "finding": "Full JSON parsed and all 796 token leaves traversed; responsive typography inspected. 36 zero values; source export, not runtime CSS. Not every color alias manually reconciled."
+    },
+    {
+      "path": "eslint.config.js",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "functions/[[path]].ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "index.html",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "oxlint.config.ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "package.json",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "classification": "generated",
+      "finding": "Inspected importer, engine constraints, integrity and dependency snapshots; no dependency changes. Not a dependency vulnerability certification."
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "public/.well-known/agent-skills/index.json",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/.well-known/agent-skills/site-navigation/SKILL.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/.well-known/security.txt",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/_headers",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "public/_redirects",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "public/about.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/blog.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/blog/build-correctness-is-not-visual-correctness.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/blog/git-backed-portfolio-cms.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/blog/git-release-workflow-for-small-teams.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/blog/writing-useful-portfolio-case-studies.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/contact.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/design-system.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/favicon.svg",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "public/images/home/featured-project-1.png",
+      "classification": "binary",
+      "finding": "Visually inspected generic device mockup; placeholder, not project evidence. Usage rights not established by visual review."
+    },
+    {
+      "path": "public/images/home/featured-project-2.png",
+      "classification": "binary",
+      "finding": "Visually inspected generic device mockup; placeholder, not project evidence. Usage rights not established by visual review."
+    },
+    {
+      "path": "public/images/home/featured-project-3.png",
+      "classification": "binary",
+      "finding": "Visually inspected generic device mockup; placeholder, not project evidence. Usage rights not established by visual review."
+    },
+    {
+      "path": "public/images/home/featured-project-4.png",
+      "classification": "binary",
+      "finding": "Visually inspected generic device mockup; placeholder, not project evidence. Usage rights not established by visual review."
+    },
+    {
+      "path": "public/images/home/project-cover-mask.png",
+      "classification": "binary",
+      "finding": "Texture/mask asset; not project evidence."
+    },
+    {
+      "path": "public/images/projects/debase-live-homepage.png",
+      "classification": "binary",
+      "finding": "Visually inspected actual Debase workbench; alt supported."
+    },
+    {
+      "path": "public/index.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/llms-full.txt",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/llms.txt",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/abcde-creative.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/debase.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/gsap-animation.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/nsight-index.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/portfolio-cms.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/tetherly.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/projects/wordpress-maintenance-system.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/resume.md",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/robots.txt",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "public/site.webmanifest",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "public/sitemap.xml",
+      "classification": "generated",
+      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
+    },
+    {
+      "path": "scripts/check-color-tokens.mjs",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "scripts/generate-agent-files.mjs",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/animations/gsap.ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/animations/useDirectionalContentSwap.ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/animations/useScrollTextAnimations.ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/app/routes.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/BrandIcon.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ContactForm.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ContactForm.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/FeaturedProjectCarousel.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/FeaturedProjectCarousel.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/InternalHero.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/InternalHero.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/PageHeader.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/PageHeader.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ProjectCard.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ProjectCard.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ProjectStack.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ProjectStack.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/ScrollOpacityText.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/Section.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/Section.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/SiteFooter.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/SiteFooter.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/SiteHeader.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/SiteHeader.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/StatList.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/components/StatList.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/content/blogContent.ts",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "src/content/blogMarkdown.ts",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "src/content/relatedContent.test.ts",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "src/content/relatedContent.ts",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "src/content/siteContent.ts",
+      "classification": "inspected",
+      "finding": "Integration inspection and/or parent blog handoff coverage; publication, filtering and renderer regressions exercised."
+    },
+    {
+      "path": "src/layouts/RootLayout.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/main.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/AboutPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/BlogPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/BlogPostPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/ContactPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/DesignSystemPage.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/DesignSystemPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/HomePage.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/HomePage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/InternalPages.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/NotFoundPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/ProjectDetailPage.module.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/ProjectDetailPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/ProjectsPage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/pages/ResumePage.tsx",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/base.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/grid.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/index.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/layout.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/main.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/mixins.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/patterns.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/tokens.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/styles/utilities.scss",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/effect/index.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/effect/rules/no-service-constructor-imports.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/index.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-chained-type-assertions.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-conditional-empty-object-spread.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-known-value-widening.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-module-mocking.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-object-parameters.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-reflect-apply.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-reflect-get.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-runtime-typeof.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-shape-in-symbol-names.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-unknown-parameters.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-unknown-returns.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-unknown-type-aliases.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-unsafe-dictionary-type.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/no-widen-then-assert.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/rules/require-safety-comment-for-type-assertion.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/shared/dictionary-types.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/shared/lexical-type-parameters.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tools/oxlint/anti-slop/shared/reflect-method.ts",
+      "classification": "inspected",
+      "finding": "Full rule/shared helper inspected; AST heuristics, not semantic proofs. Effect plugin opt-in unused. Rules unchanged; Oxlint passes."
+    },
+    {
+      "path": "tsconfig.app.json",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "tsconfig.json",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "tsconfig.node.json",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "vite.config.ts",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    },
+    {
+      "path": "wrangler.toml",
+      "classification": "inspected",
+      "finding": "Direct source inspection; no additional launch-blocking finding. Existing conventions retained."
+    }
+  ]
+}

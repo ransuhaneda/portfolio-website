@@ -3,9 +3,10 @@ title: "Writing portfolio case studies people can trust"
 slug: "writing-useful-portfolio-case-studies"
 date: "2026-07-22"
 status: "published"
+category: "content-systems"
 excerpt: "A practical way to turn real project work into a case study without inflating the scope or losing the useful details."
 coverImage: "https://picsum.photos/seed/portfolio-case-study-writing/1600/900.jpg"
-coverAlt: "Notebook beside a laptop, used as a placeholder cover for a note about case-study writing."
+coverAlt: "Decorative stock photograph; not a case-study artifact."
 ---
 A portfolio case study should help a reader understand the work without reconstructing it from adjectives. Name the problem, explain the part you handled, and show what changed.
 

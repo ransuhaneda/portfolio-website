@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { siteContent } from '../content/siteContent'
@@ -14,6 +14,7 @@ function getBrandParts(name: string) {
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
   const location = useLocation()
   const brand = getBrandParts(siteContent.site.name)
   const navItems = siteContent.siteChrome?.headerNav ?? [
@@ -30,11 +31,14 @@ export function SiteHeader() {
   }, [location.pathname])
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : ''
-
-    return () => {
-      document.body.style.overflow = ''
+    if (!isMenuOpen) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setIsMenuOpen(false)
+      menuButtonRef.current?.focus()
     }
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
   }, [isMenuOpen])
 
   return (
@@ -59,6 +63,7 @@ export function SiteHeader() {
           </nav>
 
           <button
+            ref={menuButtonRef}
             type="button"
             className={sty.menuButton}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

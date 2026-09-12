@@ -1,6 +1,7 @@
 # A passing build is not a finished interface
 
 - Date: 2026-08-26
+- Category: Frontend quality
 - Excerpt: Why frontend work needs a rendered check after the code passes: layout, hierarchy, wrapping, and containment only exist in the browser.
 - Cover image: https://picsum.photos/seed/visual-interface-verification/1600/900.jpg
 

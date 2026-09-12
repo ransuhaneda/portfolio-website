@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run prebuild && vite",
-    "build": "pnpm run prebuild && tsc -b && vite build",
+    "build": "pnpm run prebuild && tsc -b && vite build && node scripts/generate-route-shells.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "prebuild": "node ./scripts/generate-agent-files.mjs",
