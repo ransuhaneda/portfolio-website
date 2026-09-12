@@ -11,10 +11,19 @@ A tutorial-based React and GSAP practice build. It stays in the archive as an an
 ## Overview
 I built this React and GSAP project while following a public tutorial. It is useful as a record of animation practice, but I do not present it as original client work.
 
-## Challenge
+## Problem
 The goal was to practice scroll and interface animation in React while understanding how tutorial patterns map into a real codebase.
 
-## Approach
+## My responsibility
+Frontend practice
+
+- React Animation Study
+- GSAP Timing
+- Scroll Interaction Practice
+- Responsive Motion
+- Code Attribution
+
+## What I did
 I used the build to practice GSAP setup, timing, scroll interaction, and responsive behavior in React.
 
 - Followed a public tutorial inspired by Zentry and JavaScript Mastery.

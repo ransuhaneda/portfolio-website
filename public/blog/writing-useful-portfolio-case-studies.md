@@ -1,6 +1,7 @@
 # Writing portfolio case studies people can trust
 
 - Date: 2026-07-22
+- Category: Content systems
 - Excerpt: A practical way to turn real project work into a case study without inflating the scope or losing the useful details.
 - Cover image: https://picsum.photos/seed/portfolio-case-study-writing/1600/900.jpg
 

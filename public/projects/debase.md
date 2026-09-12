@@ -12,10 +12,19 @@ A browser tool for encoding and decoding text and files as Base64, Base64URL, or
 ## Overview
 Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
 
-## Challenge
+## Problem
 The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output without turning decoded active content into a browser security risk.
 
-## Approach
+## My responsibility
+Frontend developer
+
+- Browser-local File Processing
+- Base64 and Base64URL
+- Data URL Handling
+- Safe Output Previews
+- Automated Testing
+
+## What I did
 I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.
 
 - Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.

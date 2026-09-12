@@ -12,10 +12,19 @@ Frontend work for the ABCDE Creative Studio website and related client projects.
 ## Overview
 At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I focused on layout, accessibility, and reusable sections.
 
-## Challenge
+## Problem
 The pages needed to match the Figma direction across screen sizes without losing accessibility or becoming difficult to maintain.
 
-## Approach
+## My responsibility
+Web developer
+
+- Frontend Implementation
+- Responsive UI
+- Figma Translation
+- Reusable Components
+- Deployment Support
+
+## What I did
 I looked for repeated layout and spacing patterns instead of treating each mockup as a separate page. That made the pages easier to adjust and test.
 
 - Worked on 3 web projects, including the studio website.

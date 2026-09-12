@@ -1,12 +1,13 @@
 import { InternalHero } from '../components/InternalHero'
 import { Section } from '../components/Section'
+import { publicUrl } from '../content/publicUrl'
 import { siteContent } from '../content/siteContent'
 import sty from './InternalPages.module.scss'
 
 export function ResumePage() {
   return (
     <div className={sty.page}>
-      <InternalHero title={siteContent.resume.headline} intro={siteContent.resume.summary} />
+      <InternalHero title={siteContent.resume.headline} intro={siteContent.resume.summary} actions={<a className="button button--primary" href={publicUrl(siteContent.resume.download.href)} download>{siteContent.resume.download.label}</a>} />
 
       <section className={sty.resumeStats} data-text-reveal-group="scrub" aria-label={siteContent.resume.highlightsSectionTitle}>
         <div className="lg-wrapper">

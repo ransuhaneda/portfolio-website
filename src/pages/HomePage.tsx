@@ -3,6 +3,7 @@ import { LuArrowDown, LuArrowRight, LuArrowUpRight, LuCalendarCheck } from 'reac
 import { ContactForm } from '../components/ContactForm'
 import { FeaturedProjectCarousel } from '../components/FeaturedProjectCarousel'
 import { blogPosts } from '../content/blogContent'
+import { readingMinutes } from '../content/publicUrl'
 import { siteContent, type HomeStatTone } from '../content/siteContent'
 import sty from './HomePage.module.scss'
 
@@ -135,7 +136,7 @@ export function HomePage() {
               <div className={sty.notesGrid} data-text-reveal="copy">
                 {blogPosts.slice(0, 3).map((post) => (
                   <Link className={sty.noteCard} key={post.slug} to={`/blog/${post.slug}`} state={{ from: '/' }}>
-                    <div className={sty.noteMeta}>{post.date} <span aria-hidden="true">·</span> 1 min</div>
+                    <div className={sty.noteMeta}>{post.date} <span aria-hidden="true">·</span> {readingMinutes(post.body)} min read</div>
                     <h3>{post.title}</h3>
                     <p>{post.excerpt ?? post.body.split('\n')[0]}</p>
                     <span className={sty.noteRead}>Read article<LuArrowUpRight className={sty.noteArrow} aria-hidden="true" focusable="false" /></span>

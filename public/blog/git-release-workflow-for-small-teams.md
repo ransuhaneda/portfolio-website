@@ -1,6 +1,7 @@
 # A Git release workflow for small teams
 
 - Date: 2026-08-21
+- Category: Git workflow
 - Excerpt: A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake.
 - Cover image: https://picsum.photos/seed/git-release-workflow-small-teams/1600/900.jpg
 

@@ -14,14 +14,14 @@ Why frontend work needs a rendered check after the code passes: layout, hierarch
 
 A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake.
 
-## [Writing portfolio case studies people can trust](https://384721.xyz/blog/writing-useful-portfolio-case-studies.md)
-
-- Date: 2026-07-22
-
-A practical way to turn real project work into a case study without inflating the scope or losing the useful details.
-
 ## [Why this portfolio uses a Git-backed content system](https://384721.xyz/blog/git-backed-portfolio-cms.md)
 
 - Date: 2026-07-22
 
 How JSON and Markdown keep the portfolio's visible pages, mirrors, and project notes in sync.
+
+## [Writing portfolio case studies people can trust](https://384721.xyz/blog/writing-useful-portfolio-case-studies.md)
+
+- Date: 2026-07-22
+
+A practical way to turn real project work into a case study without inflating the scope or losing the useful details.

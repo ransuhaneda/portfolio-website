@@ -3,9 +3,10 @@ title: "A passing build is not a finished interface"
 slug: "build-correctness-is-not-visual-correctness"
 date: "2026-08-26"
 status: "published"
+category: "frontend-quality"
 excerpt: "Why frontend work needs a rendered check after the code passes: layout, hierarchy, wrapping, and containment only exist in the browser."
 coverImage: "https://picsum.photos/seed/visual-interface-verification/1600/900.jpg"
-coverAlt: "Laptop showing a web interface beside a notebook with layout measurements."
+coverAlt: "Decorative stock photograph; not evidence of interface verification."
 ---
 A successful build answers one question: can the project compile? It does not answer whether the interface communicates the right hierarchy, holds together at the requested widths, or looks like the approved design.
 

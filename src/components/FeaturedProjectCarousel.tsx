@@ -5,6 +5,7 @@ import { useDirectionalContentSwap, type SwapDirection } from '../animations/use
 import type { Project } from '../content/siteContent'
 import sty from './FeaturedProjectCarousel.module.scss'
 import { ProjectStack } from './ProjectStack'
+import { publicUrl } from '../content/publicUrl'
 
 type FeaturedProjectCarouselProps = {
   projects: Project[]
@@ -36,7 +37,7 @@ function prepareImage(src: string) {
       }
     }
     image.onerror = finish
-    image.src = src
+    image.src = publicUrl(src)
 
     if (image.complete) {
       image.decode?.().catch(() => undefined).finally(finish)
@@ -128,6 +129,7 @@ export function FeaturedProjectCarousel({
     openProject()
   }
   const handleGridKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget) return
     if (event.key !== 'Enter' && event.key !== ' ') return
     event.preventDefault()
     openProject()
@@ -203,8 +205,8 @@ export function FeaturedProjectCarousel({
         </div>
 
         <figure ref={mediaRef} className={sty.featuredMedia}>
-          {activeProject.image ? <img src={activeProject.image.src} alt={activeProject.image.alt} /> : null}
-          <figcaption>Fig. {position} — {activeProject.title}, {activeProject.year}</figcaption>
+          {activeProject.image ? <img src={publicUrl(activeProject.image.src)} alt={activeProject.image.alt} /> : null}
+          <figcaption>{activeProject.image?.alt}</figcaption>
         </figure>
       </div>
 

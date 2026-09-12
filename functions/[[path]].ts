@@ -3,6 +3,7 @@ interface Env {
     fetch(request: Request): Promise<Response>
   }
   ADMIN_ALLOWED_GITHUB_LOGIN?: string
+  ADMIN_ENABLED?: string
   ADMIN_SESSION_SECRET?: string
   CMS_TARGET_BRANCH?: string
   GITHUB_CLIENT_ID?: string
@@ -374,7 +375,8 @@ const serializeCookie = (request: Request, name: string, value: string, maxAge: 
 const clearCookie = (request: Request, name: string): string =>
   `${name}=; Max-Age=0; ${getCookieAttributes(request)}`
 
-const toMarkdownPath = (pathname: string): string | null => {
+const toMarkdownPath = (path: string): string | null => {
+  const pathname = path.replace(/\/+$/, '') || '/'
   if (pathname === '/') return '/index.md'
   if (pathname.endsWith('.md')) return pathname
   if (pathname === '/about') return '/about.md'
@@ -663,7 +665,8 @@ const resolveMediaFilename = (originalName: string, mimeType: string): string =>
   return `${filename}.${extensionForMimeType(mimeType)}`
 }
 
-const sanitizeCommitMessage = (value: JsonValue, fallback: string): string => {
+const sanitizeCommitMessage = (value: JsonValue | undefined, fallback: string): string => {
+  if (value === undefined) return fallback
   if (!isString(value)) return fallback
   const normalized = value.replace(/\s+/g, ' ').trim()
   if (!normalized) return fallback
@@ -720,7 +723,7 @@ const readJsonBody = async (request: Request): Promise<JsonValue | Response> => 
   }
 }
 
-const parseRequestBody = async <T>(request: Request, parser: (value: JsonValue) => value is T): Promise<T | Response> => {
+const parseRequestBody = async <T extends JsonValue>(request: Request, parser: (value: JsonValue) => value is T): Promise<T | Response> => {
   const payload = await readJsonBody(request)
   if (payload instanceof Response) return payload
   if (!parser(payload)) return jsonResponse({ error: 'Request body failed validation.' }, { status: 400 })
@@ -784,7 +787,7 @@ const readSession = async (request: Request, env: Env): Promise<AdminSession | n
 }
 
 const validateSessionIdentity = async (env: Env, session: AdminSession): Promise<boolean> => {
-  if (!env.ADMIN_ALLOWED_GITHUB_LOGIN) return true
+  if (!env.ADMIN_ALLOWED_GITHUB_LOGIN) return false
 
   try {
     const user = await fetchGitHubJson<GitHubAuthenticatedUser>(`${GITHUB_API_BASE}/user`, {
@@ -1413,6 +1416,7 @@ const handleAdminBlogUpdate = async (context: PagesContext, slug: string): Promi
   if (blogValidationError) {
     return jsonResponse({ error: blogValidationError }, { status: 400 })
   }
+  if (!validateBlogPost(body.post)) return jsonResponse({ error: 'Invalid blog post.' }, { status: 400 })
 
   const existingPost = await loadGitHubBlogPostBySlug(env, session.accessToken, branch, slug)
   if (existingPost && !body.sha) {
@@ -1604,9 +1608,13 @@ export const onRequest = async (context: PagesContext): Promise<Response> => {
   const accept = request.headers.get('accept') ?? ''
   const url = new URL(request.url)
 
-  if (url.pathname.startsWith(ADMIN_PREFIX)) {
-    const response = await handleAdminRequest(context, url.pathname)
-    if (response) return response
+  // Public launch: retain CMS source, but do not expose UI or API routes.
+  if (/^\/(?:admin|api\/admin)(?:\/|$)/i.test(url.pathname)) {
+    const configured = env.ADMIN_ENABLED === 'true' && [env.ADMIN_ALLOWED_GITHUB_LOGIN, env.ADMIN_SESSION_SECRET, env.GITHUB_CLIENT_ID, env.GITHUB_CLIENT_SECRET, env.GITHUB_OWNER, env.GITHUB_REPO, env.CMS_TARGET_BRANCH].every((value) => value?.trim())
+    if (!configured) return new Response(request.method === 'HEAD' ? null : 'Not found', { status: 404, headers: adminHeaders() })
+    if (url.pathname.startsWith(ADMIN_PREFIX)) {
+      return await handleAdminRequest(context, url.pathname) ?? jsonResponse({ error: 'Not found' }, { status: 404 })
+    }
   }
 
   if ((request.method === 'GET' || request.method === 'HEAD') && accept.includes('text/markdown')) {
@@ -1616,16 +1624,18 @@ export const onRequest = async (context: PagesContext): Promise<Response> => {
       const markdownUrl = new URL(markdownPath, url)
       const assetResponse = await env.ASSETS.fetch(new Request(markdownUrl, request))
 
-      if (assetResponse.ok) {
+      const contentType = assetResponse.headers.get('content-type')?.split(';')[0].trim()
+      if (assetResponse.ok && (contentType === 'text/markdown' || contentType === 'text/plain')) {
         const headers = new Headers(assetResponse.headers)
         headers.set('content-type', 'text/markdown; charset=utf-8')
-        headers.set('vary', 'Accept')
+        headers.append('Vary', 'Accept')
         return new Response(request.method === 'HEAD' ? null : await assetResponse.text(), {
           status: assetResponse.status,
           statusText: assetResponse.statusText,
           headers,
         })
       }
+      return new Response(request.method === 'HEAD' ? null : 'Not found', { status: 404, headers: { 'Content-Type': 'text/plain; charset=utf-8', Vary: 'Accept' } })
     }
   }
 
@@ -1633,8 +1643,8 @@ export const onRequest = async (context: PagesContext): Promise<Response> => {
   const headers = new Headers(response.headers)
   headers.append('Link', '</llms.txt>; rel="alternate"; type="text/markdown"')
   headers.append('Link', '</.well-known/agent-skills/index.json>; rel="agent-skills"')
-  headers.set('Vary', 'Accept')
-  return new Response(response.body, {
+  headers.append('Vary', 'Accept')
+  return new Response(request.method === 'HEAD' ? null : response.body, {
     status: response.status,
     statusText: response.statusText,
     headers,

@@ -1,4 +1,4 @@
-import rawContent from '../../content/site-content.json'
+import rawContent from '../../content/site-content.json' with { type: 'json' }
 
 export type SocialLink = {
   label: string
@@ -198,6 +198,7 @@ export type SiteContent = {
     heroImage?: ImageAsset
   }
   resume: {
+    download: { href: string; label: string }
     eyebrow?: string
     headline: string
     summary: string
@@ -243,6 +244,12 @@ export type SiteContent = {
   }
   blogPage?: {
     eyebrow?: string
+    searchLabel: string
+    categoryLabel: string
+    allLabel: string
+    resetLabel: string
+    emptyMessage: string
+    rssLabel: string
     title: string
     intro: string
     heroImage?: ImageAsset
@@ -303,7 +310,7 @@ export type SiteContent = {
 }
 
 export const siteContent: SiteContent = (
-  // SAFETY: Generated site-content.json is validated against the SiteContent contract during prebuild.
+  // SAFETY: Repository-owned JSON is statically checked for compatibility by the TypeScript build.
   rawContent as SiteContent
 )
 

@@ -95,21 +95,22 @@ Why frontend work needs a rendered check after the code passes: layout, hierarch
 
 A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake.
 
-## [Writing portfolio case studies people can trust](https://384721.xyz/blog/writing-useful-portfolio-case-studies.md)
-
-- Date: 2026-07-22
-
-A practical way to turn real project work into a case study without inflating the scope or losing the useful details.
-
 ## [Why this portfolio uses a Git-backed content system](https://384721.xyz/blog/git-backed-portfolio-cms.md)
 
 - Date: 2026-07-22
 
 How JSON and Markdown keep the portfolio's visible pages, mirrors, and project notes in sync.
 
+## [Writing portfolio case studies people can trust](https://384721.xyz/blog/writing-useful-portfolio-case-studies.md)
+
+- Date: 2026-07-22
+
+A practical way to turn real project work into a case study without inflating the scope or losing the useful details.
+
 # A passing build is not a finished interface
 
 - Date: 2026-08-26
+- Category: Frontend quality
 - Excerpt: Why frontend work needs a rendered check after the code passes: layout, hierarchy, wrapping, and containment only exist in the browser.
 - Cover image: https://picsum.photos/seed/visual-interface-verification/1600/900.jpg
 
@@ -162,6 +163,7 @@ A finished frontend change has two kinds of evidence: the code passes its checks
 # A Git release workflow for small teams
 
 - Date: 2026-08-21
+- Category: Git workflow
 - Excerpt: A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake.
 - Cover image: https://picsum.photos/seed/git-release-workflow-small-teams/1600/900.jpg
 
@@ -277,9 +279,51 @@ The cleanup is part of the workflow, not a substitute for checking history. A br
 
 Use `feat/*` or `fix/*` branches for focused work, merge them into `development`, release validated `development` into `main` once with an annotated tag, fast-forward `development`, and delete branches only after verifying reachability. The process is small enough to follow and explicit enough to explain what reached production.
 
+# Why this portfolio uses a Git-backed content system
+
+- Date: 2026-07-22
+- Category: Content systems
+- Excerpt: How JSON and Markdown keep the portfolio's visible pages, mirrors, and project notes in sync.
+- Cover image: https://picsum.photos/seed/git-backed-portfolio-cms/1600/900.jpg
+
+This portfolio keeps its editable content in the repository. Site copy lives in JSON. Blog and project notes live in Markdown. A prebuild script generates the public mirrors, sitemap entries, and agent-readable navigation files.
+
+That is more deliberate than a tiny hosted CMS, but it solves a real problem: portfolio copy changes in several places unless one source owns it.
+
+## One source prevents drift
+
+A project title can appear in a card, a detail page, a project index, and a resume entry. A contact address can be correct in the footer and stale in a generated page. Editing each copy by hand makes it easy to miss one.
+
+The editable content file is the source of truth. React pages read from it, and the prebuild script creates derived Markdown and metadata files. Generated files are outputs, not a second place to edit.
+
+This arrangement also gives each change a visible diff. A reviewer can see whether a title, description, or link changed without comparing screenshots manually.
+
+## Markdown mirrors make the site inspectable
+
+The visual routes are for people. Files such as `/llms-full.txt`, `/projects.md`, and individual project pages expose the same material in a form that is quick to read, search, or inspect without scraping layout.
+
+The mirrors support accessibility, search, and agent workflows. They also make content review a file review. If a claim is outdated, the source file and its generated copies have a predictable relationship.
+
+The generated files should not be edited directly. The next prebuild can replace them, so a direct change would be temporary and easy to lose.
+
+## Git keeps the rewrite visible
+
+When content is stored in files, a rewrite appears in a diff. I can review changed claims, spot placeholder text, and see whether a project page was updated everywhere before building.
+
+Git also preserves the history of those edits. A future maintainer can identify when a description changed, which files changed together, and whether the update was content-only or part of a structural change.
+
+For this workflow, a focused content commit can be validated with `pnpm run prebuild`. A structural change also runs `pnpm build`, and rendered changes get a browser check.
+
+## This is not a general-purpose CMS
+
+The system does not provide every feature of a hosted CMS. It favors a small set of files, predictable generation, and reviewable changes.
+
+That trade-off fits a portfolio that is edited by its developer. The content remains portable, the outputs can be regenerated, and a rewrite does not disappear inside an opaque admin interface.
+
 # Writing portfolio case studies people can trust
 
 - Date: 2026-07-22
+- Category: Content systems
 - Excerpt: A practical way to turn real project work into a case study without inflating the scope or losing the useful details.
 - Cover image: https://picsum.photos/seed/portfolio-case-study-writing/1600/900.jpg
 
@@ -321,52 +365,14 @@ A strong case study does not need a manufactured story arc. It needs enough cont
 
 Use the smallest accurate claim, place the proof near it, and leave the reader with a clear account of what changed.
 
-# Why this portfolio uses a Git-backed content system
-
-- Date: 2026-07-22
-- Excerpt: How JSON and Markdown keep the portfolio's visible pages, mirrors, and project notes in sync.
-- Cover image: https://picsum.photos/seed/git-backed-portfolio-cms/1600/900.jpg
-
-This portfolio keeps its editable content in the repository. Site copy lives in JSON. Blog and project notes live in Markdown. A prebuild script generates the public mirrors, sitemap entries, and agent-readable navigation files.
-
-That is more deliberate than a tiny hosted CMS, but it solves a real problem: portfolio copy changes in several places unless one source owns it.
-
-## One source prevents drift
-
-A project title can appear in a card, a detail page, a project index, and a resume entry. A contact address can be correct in the footer and stale in a generated page. Editing each copy by hand makes it easy to miss one.
-
-The editable content file is the source of truth. React pages read from it, and the prebuild script creates derived Markdown and metadata files. Generated files are outputs, not a second place to edit.
-
-This arrangement also gives each change a visible diff. A reviewer can see whether a title, description, or link changed without comparing screenshots manually.
-
-## Markdown mirrors make the site inspectable
-
-The visual routes are for people. Files such as `/llms-full.txt`, `/projects.md`, and individual project pages expose the same material in a form that is quick to read, search, or inspect without scraping layout.
-
-The mirrors support accessibility, search, and agent workflows. They also make content review a file review. If a claim is outdated, the source file and its generated copies have a predictable relationship.
-
-The generated files should not be edited directly. The next prebuild can replace them, so a direct change would be temporary and easy to lose.
-
-## Git keeps the rewrite visible
-
-When content is stored in files, a rewrite appears in a diff. I can review changed claims, spot placeholder text, and see whether a project page was updated everywhere before building.
-
-Git also preserves the history of those edits. A future maintainer can identify when a description changed, which files changed together, and whether the update was content-only or part of a structural change.
-
-For this workflow, a focused content commit can be validated with `pnpm run prebuild`. A structural change also runs `pnpm build`, and rendered changes get a browser check.
-
-## This is not a general-purpose CMS
-
-The system does not provide every feature of a hosted CMS. It favors a small set of files, predictable generation, and reviewable changes.
-
-That trade-off fits a portfolio that is edited by its developer. The content remains portable, the outputs can be regenerated, and a rewrite does not disappear inside an opaque admin interface.
-
 ## Resume
 # Resume
 
 ## Frontend Web Developer and Graphic Designer
 
 Frontend developer and graphic designer with production experience in WordPress maintenance, Elementor systems, React implementation, responsive UI, and visual asset work.
+
+[Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
 ## Skills
 - React
@@ -437,10 +443,19 @@ Ongoing WordPress work across company and client sites. I maintain pages, clean 
 ## Overview
 This entry covers my current WordPress maintenance work rather than one finished project. I help keep company and client sites stable, consistent, and easier to update while requests continue to come in.
 
-## Challenge
+## Problem
 Several sites needed regular updates, cleaner Elementor structure, and admin workflows that the SEO and content teams could use without breaking layout consistency.
 
-## Approach
+## My responsibility
+Frontend web developer / graphic designer
+
+- WordPress Maintenance
+- Elementor System Cleanup
+- Frontend Styling
+- Admin Workflow Support
+- Hosting Handoff Support
+
+## What I did
 I focus on the parts that make the next update safer: reusable Elementor classes, global styles, clearer content fields, and documented handoffs.
 
 - Maintained 8 active websites across company and client work.
@@ -480,10 +495,19 @@ Frontend work for the ABCDE Creative Studio website and related client projects.
 ## Overview
 At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I focused on layout, accessibility, and reusable sections.
 
-## Challenge
+## Problem
 The pages needed to match the Figma direction across screen sizes without losing accessibility or becoming difficult to maintain.
 
-## Approach
+## My responsibility
+Web developer
+
+- Frontend Implementation
+- Responsive UI
+- Figma Translation
+- Reusable Components
+- Deployment Support
+
+## What I did
 I looked for repeated layout and spacing patterns instead of treating each mockup as a separate page. That made the pages easier to adjust and test.
 
 - Worked on 3 web projects, including the studio website.
@@ -523,10 +547,19 @@ A browser tool for encoding and decoding text and files as Base64, Base64URL, or
 ## Overview
 Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
 
-## Challenge
+## Problem
 The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output without turning decoded active content into a browser security risk.
 
-## Approach
+## My responsibility
+Frontend developer
+
+- Browser-local File Processing
+- Base64 and Base64URL
+- Data URL Handling
+- Safe Output Previews
+- Automated Testing
+
+## What I did
 I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.
 
 - Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.
@@ -566,10 +599,19 @@ A Laravel blog system with author and reader flows for posts, comments, categori
 ## Overview
 Nsight Index is a Laravel training project built around a working publishing flow. Authors can manage posts and readers can comment, like, save, and browse content by category.
 
-## Challenge
+## Problem
 The project needed a practical content workflow where authors could manage posts and readers could interact with published content.
 
-## Approach
+## My responsibility
+Full-stack training project
+
+- Laravel Development
+- Content Workflow
+- Reader Interaction Flows
+- Media Handling
+- Interface Implementation
+
+## What I did
 I focused the case study on the author and reader flows that work today. Unfinished admin ideas stay out of the public claims.
 
 - Built post, category, comment, like, and saved-post flows.
@@ -607,10 +649,19 @@ The content system behind this site. One JSON file feeds the React pages, genera
 ## Overview
 This portfolio uses one JSON file for the main site copy and project data. A prebuild script turns that source into React content, public Markdown, a sitemap, and machine-readable indexes.
 
-## Challenge
+## Problem
 The site needed to work as a human portfolio and as a machine-readable content source without keeping duplicate copy in separate places.
 
-## Approach
+## My responsibility
+Frontend developer
+
+- Git-backed CMS
+- Content Architecture
+- Markdown Generation
+- Cloudflare Pages Functions
+- React Content Rendering
+
+## What I did
 The React pages and generation script read from the same source. Blog posts stay in Markdown. This keeps me from updating the same copy in several places.
 
 - Kept main site copy in content/site-content.json.
@@ -649,10 +700,19 @@ A tutorial-based React and GSAP practice build. It stays in the archive as an an
 ## Overview
 I built this React and GSAP project while following a public tutorial. It is useful as a record of animation practice, but I do not present it as original client work.
 
-## Challenge
+## Problem
 The goal was to practice scroll and interface animation in React while understanding how tutorial patterns map into a real codebase.
 
-## Approach
+## My responsibility
+Frontend practice
+
+- React Animation Study
+- GSAP Timing
+- Scroll Interaction Practice
+- Responsive Motion
+- Code Attribution
+
+## What I did
 I used the build to practice GSAP setup, timing, scroll interaction, and responsive behavior in React.
 
 - Followed a public tutorial inspired by Zentry and JavaScript Mastery.
@@ -689,10 +749,19 @@ An unfinished React and TypeScript bio link app. It stays in the archive while I
 ## Overview
 Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. It is in the archive because the main flow is still being worked on.
 
-## Challenge
+## Problem
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
 
-## Approach
+## My responsibility
+Frontend developer
+
+- Product UI Practice
+- React Components
+- TypeScript Structure
+- Profile Card System
+- Responsive SCSS
+
+## What I did
 I focused on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.
 
 - Built the app with React, TypeScript, and SCSS.

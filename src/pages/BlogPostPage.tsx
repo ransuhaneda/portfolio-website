@@ -2,17 +2,20 @@ import { useRef } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { LuArrowLeft, LuArrowRight } from 'react-icons/lu'
 import { InternalHero } from '../components/InternalHero'
-import { parseBlogMarkdownBlocks } from '../content/blogMarkdown'
-import { getBlogPostBySlug } from '../content/blogContent'
+import { parseBlogMarkdownBlocks, renderBlogInline } from '../content/blogMarkdown'
+import { blogPosts, getBlogPostBySlug } from '../content/blogContent'
 import { siteContent } from '../content/siteContent'
+import { getRelatedEntries } from '../content/relatedContent'
+import { publicUrl, readingMinutes } from '../content/publicUrl'
 import { gsap, ScrollTrigger, useGSAP } from '../animations/gsap'
 import sty from './InternalPages.module.scss'
-const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') ? state.from : fallback
+const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') && !state.from.startsWith('//') ? state.from : fallback
 
 export function BlogPostPage() {
   const { slug } = useParams()
   const location = useLocation()
-  const backPath = getInternalBackPath(location.state, '/blog')
+  const archivePath = `/blog${location.search}`
+  const backPath = getInternalBackPath(location.state, archivePath)
   const post = slug ? getBlogPostBySlug(slug) : undefined
   const blogPostCopy = siteContent.blogPostPage
   const backLabel = backPath === '/' ? 'Back to home' : (blogPostCopy?.backToBlogLabel ?? 'Back to notes')
@@ -46,9 +49,11 @@ export function BlogPostPage() {
   }
 
   const blocks = parseBlogMarkdownBlocks(post.body)
+  const inline = (text: string) => ({ __html: renderBlogInline(text, `${siteContent.site.siteUrl}/blog/${post.slug}`, import.meta.env.BASE_URL) })
+  const relatedPosts = getRelatedEntries(blogPosts, post.slug)
 
   return (
-    <div className={sty.page} ref={pageRef}>
+    <div className={sty.page} ref={pageRef} key={post.slug}>
       <InternalHero
         title={post.title}
         intro={post.excerpt ?? post.body.split('\n')[0]}
@@ -57,28 +62,40 @@ export function BlogPostPage() {
 
       {post.coverImage ? (
         <section className={sty.articleCover}>
-          <div className="lg-wrapper"><figure><img src={post.coverImage} alt={post.coverAlt ?? post.title} /><figcaption>Cover image: {post.title}</figcaption></figure></div>
+          <div className="lg-wrapper"><figure><img src={publicUrl(post.coverImage)} alt={post.coverAlt ?? post.title} /><figcaption>{post.coverAlt}</figcaption></figure></div>
         </section>
       ) : null}
       <div className={sty.readingProgress} data-reading-progress aria-label="Reading progress"><span className={sty.readingProgressFill} data-reading-progress-fill /></div>
 
       <article className={sty.article} data-article data-text-reveal-group="scrub">
         <div className="sm-wrapper">
+          <p>{post.date} · {readingMinutes(post.body)} min read</p>
           <div className={sty.articleBody} data-text-reveal="copy">
             {blocks.map((block, index) => {
               if (block.type === 'code') return <pre className={sty.codeBlock} key={`${post.slug}-${index}`} data-language={block.language}><code>{block.code}</code></pre>
-              if (block.type === 'list') return <ul key={`${post.slug}-${index}`}>{block.items.map((item) => <li key={item}>{item}</li>)}</ul>
-              if (block.type === 'section') return <section key={`${post.slug}-${index}`}><h2>{block.heading}</h2>{block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</section>
-              return <div key={`${post.slug}-${index}`}>{block.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+              if (block.type === 'list') return <ul key={`${post.slug}-${index}`}>{block.items.map((item) => <li key={item} dangerouslySetInnerHTML={inline(item)} />)}</ul>
+              if (block.type === 'section') return <section key={`${post.slug}-${index}`}><h2 dangerouslySetInnerHTML={inline(block.heading)} />{block.paragraphs.map((paragraph) => <p key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</section>
+              return <div key={`${post.slug}-${index}`}>{block.paragraphs.map((paragraph) => <p key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</div>
             })}
           </div>
         </div>
       </article>
 
-      <section className={sty.articleCta}>
+      <section className={sty.relatedNotes} aria-labelledby="related-notes-title">
         <div className="lg-wrapper">
-          <div data-text-reveal-group="scrub"><h2 data-text-reveal="heading">{blogPostCopy?.articleCtaTitle ?? 'Read the project archive.'}</h2></div>
-          <Link className="button button--ghost" to="/projects">{blogPostCopy?.articleCtaLabel ?? 'View projects'}<LuArrowRight aria-hidden="true" focusable="false" /></Link>
+          <div className={sty.relatedNotesHeader} data-text-reveal-group="scrub">
+            <div><p className="eyebrow" data-text-reveal="copy">[ MORE NOTES ]</p><h2 id="related-notes-title" data-text-reveal="heading">Read other notes</h2></div>
+            <Link className="button button--ghost" to={archivePath}>View all notes<LuArrowRight aria-hidden="true" focusable="false" /></Link>
+          </div>
+          <div className={sty.relatedNotesList}>
+            {relatedPosts.map((relatedPost) => (
+              <Link className={sty.postRow} key={relatedPost.slug} to={`/blog/${relatedPost.slug}${location.search}`} state={{ from: archivePath }}>
+                <div className={sty.postMeta}><span>{relatedPost.date}</span></div>
+                <div><h3>{relatedPost.title}</h3><p>{relatedPost.excerpt ?? relatedPost.body.split('\n')[0]}</p></div>
+                <span aria-hidden="true"><LuArrowRight focusable="false" /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </div>

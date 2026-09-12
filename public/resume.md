@@ -4,6 +4,8 @@
 
 Frontend developer and graphic designer with production experience in WordPress maintenance, Elementor systems, React implementation, responsive UI, and visual asset work.
 
+[Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
+
 ## Skills
 - React
 - TypeScript

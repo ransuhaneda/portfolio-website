@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { siteContent, type Project } from '../content/siteContent'
 import sty from './ProjectCard.module.scss'
 import { ProjectStack } from './ProjectStack'
+import { publicUrl } from '../content/publicUrl'
 
 type ProjectCardProps = {
   project: Project
@@ -22,6 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   }
 
   const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.target !== event.currentTarget) return
     if (event.key !== 'Enter' && event.key !== ' ') return
     event.preventDefault()
     navigate(projectPath, { state: { from: location.pathname } })
@@ -37,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       onKeyDown={handleCardKeyDown}
     >
       <Link to={`/projects/${project.slug}`} state={{ from: location.pathname }} className={sty.imageLink}>
-        {project.image ? <img src={project.image.src} alt={project.image.alt} className={sty.image} /> : null}
+        {project.image ? <img src={publicUrl(project.image.src)} alt={project.image.alt} className={sty.image} /> : null}
       </Link>
 
       <div className={sty.content} data-text-reveal="copy">
