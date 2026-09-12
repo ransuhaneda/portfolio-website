@@ -46,7 +46,7 @@ Next owner is Ransu or an explicitly authorized release/deployment operator. No 
 
 Known local limitation: Vite preview /about and /unknown-final-qa return HTTP 200 homepage initial metadata, while /about/ and /about/index.html return correct About metadata. Explicit-shell and filesystem-adapter tests do not prove deployed Cloudflare clean-URL/404 behavior. GitHub preview may render React while retaining HTTP 404. Live host behavior remains unverified, not a proven Cloudflare source defect.
 
-Accepted nonblocking observations: 565.85 kB main JS chunk warning, minor “1 notes” grammar and subtle desktop invalid-email focus styling. CMS default-disable is containment only; category serialization, async races, upload/body validation and other security risks require dedicated review before enablement. Do not enable it for this launch.
+Accepted nonblocking observations: 565.85 kB main JS chunk warning and subtle desktop invalid-email focus styling. The singular archive count wording was corrected after QA. CMS default-disable is containment only; category serialization, async races, upload/body validation and other security risks require dedicated review before enablement. Do not enable it for this launch.
 
 Earlier audit/scope/checklist status lines are historical checkpoints; this handoff and the completed independent reviewer card establish current local approval. External checklist items remain open. Source/artifact changes require renewed affected verification/review.
 

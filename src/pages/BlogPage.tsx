@@ -44,7 +44,7 @@ export function BlogPage() {
             <button className="button button--ghost" type="button" onClick={() => setParams(updateBlogFilters(updateBlogFilters(params, 'q', ''), 'category', ''), { preventScrollReset: true })}>{copy?.resetLabel}</button>
             <a href={`${import.meta.env.BASE_URL}rss.xml`}>{copy?.rssLabel}</a>
           </div>
-          <div role="status" aria-live="polite">{filteredPosts.length ? `${filteredPosts.length} notes` : copy?.emptyMessage}</div>
+          <div role="status" aria-live="polite">{filteredPosts.length ? `${filteredPosts.length} ${filteredPosts.length === 1 ? 'note' : 'notes'}` : copy?.emptyMessage}</div>
           {groups.map((group) => (
             <div className={sty.yearGroup} key={group.year}>
               {group.posts.map((post) => (
