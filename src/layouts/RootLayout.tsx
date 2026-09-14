@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react'
-import { Outlet, useLocation, useNavigationType } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
 import { siteContent } from '../content/siteContent'
@@ -8,9 +8,9 @@ import { useScrollTextAnimations } from '../animations/useScrollTextAnimations'
 
 export function RootLayout() {
   const location = useLocation()
-  const navigationType = useNavigationType()
   const isHomePage = location.pathname === '/'
   const mainRef = useScrollTextAnimations(location.pathname)
+
 
   useEffect(() => {
     document.head.querySelectorAll('title, meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[property^="article:"], link[rel="canonical"]').forEach((node) => node.remove())
@@ -24,10 +24,8 @@ export function RootLayout() {
       return
     }
 
-    if (navigationType === 'POP') return
-
     window.scrollTo(0, 0)
-  }, [location.hash, location.pathname, navigationType])
+  }, [location.hash, location.pathname])
 
   return (
     <div className="site-shell">

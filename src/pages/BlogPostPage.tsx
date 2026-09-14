@@ -71,8 +71,8 @@ export function BlogPostPage() {
             {blocks.map((block, index) => {
               if (block.type === 'code') return <pre className={sty.codeBlock} key={`${post.slug}-${index}`} data-language={block.language}><code>{block.code}</code></pre>
               if (block.type === 'list') return <ul key={`${post.slug}-${index}`}>{block.items.map((item) => <li key={item} dangerouslySetInnerHTML={inline(item)} />)}</ul>
-              if (block.type === 'section') return <section key={`${post.slug}-${index}`}><PretextText as="h2" measure="heading" text={block.heading} dangerouslySetInnerHTML={inline(block.heading)} />{block.paragraphs.map((paragraph) => <PretextText measure="prose" text={paragraph} key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</section>
-              return <div key={`${post.slug}-${index}`}>{block.paragraphs.map((paragraph) => <PretextText measure="prose" text={paragraph} key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</div>
+              if (block.type === 'section') return <section key={`${post.slug}-${index}`}><PretextText as="h2" measure="heading" dangerouslySetInnerHTML={inline(block.heading)} />{block.paragraphs.map((paragraph) => <PretextText measure="prose" key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</section>
+              return <div key={`${post.slug}-${index}`}>{block.paragraphs.map((paragraph) => <PretextText measure="prose" key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</div>
             })}
           </div>
         </div>

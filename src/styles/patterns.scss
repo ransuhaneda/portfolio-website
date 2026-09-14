@@ -46,11 +46,11 @@
 }
 
 .measure-prose {
-  width: var(--pretext-inline-size, 100%);
+  max-width: var(--measure-prose);
 }
 
 .measure-intro {
-  width: var(--pretext-inline-size, 100%);
+  max-width: var(--measure-intro);
 }
 
 .not-found {
