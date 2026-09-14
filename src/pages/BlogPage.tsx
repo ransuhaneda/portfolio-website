@@ -1,6 +1,7 @@
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { LuArrowRight } from 'react-icons/lu'
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
 import { blogCategories, blogPosts, type BlogPost } from '../content/blogContent'
 import { filterBlogPosts, getBlogFilters, updateBlogFilters } from '../content/blogFilters'
 import { siteContent } from '../content/siteContent'
@@ -35,22 +36,23 @@ export function BlogPage() {
 
       <section className={sty.blogArchive}>
         <div className="lg-wrapper">
-          <div className={sty.blogFilters}>
-            <label>{copy?.searchLabel}<input type="search" value={query} onChange={(event) => setParams(updateBlogFilters(params, 'q', event.target.value), { preventScrollReset: true })} /></label>
-            <label>{copy?.categoryLabel}<select value={category} onChange={(event) => setParams(updateBlogFilters(params, 'category', event.target.value), { preventScrollReset: true })}>
-              <option value="">{copy?.allLabel}</option>
-              {blogCategories.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
-            </select></label>
-            <button className="button button--ghost" type="button" onClick={() => setParams(updateBlogFilters(updateBlogFilters(params, 'q', ''), 'category', ''), { preventScrollReset: true })}>{copy?.resetLabel}</button>
-            <a href={`${import.meta.env.BASE_URL}rss.xml`}>{copy?.rssLabel}</a>
+          <div className={sty.blogToolbar}>
+            <div className={sty.blogFilters}>
+              <label>{copy?.searchLabel}<input aria-label={copy?.searchLabel} placeholder={copy?.searchPlaceholder} type="search" value={query} onChange={(event) => setParams(updateBlogFilters(params, 'q', event.target.value), { preventScrollReset: true })} /></label>
+              <label>{copy?.categoryLabel}<select value={category} onChange={(event) => setParams(updateBlogFilters(params, 'category', event.target.value), { preventScrollReset: true })}>
+                <option value="">{copy?.allLabel}</option>
+                {blogCategories.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
+              </select></label>
+              <button className="button button--ghost" type="button" onClick={() => setParams(updateBlogFilters(updateBlogFilters(params, 'q', ''), 'category', ''), { preventScrollReset: true })}>{copy?.resetLabel}</button>
+            </div>
           </div>
-          <div role="status" aria-live="polite">{filteredPosts.length ? `${filteredPosts.length} ${filteredPosts.length === 1 ? 'note' : 'notes'}` : copy?.emptyMessage}</div>
+          <div className={sty.blogResultCount} role="status" aria-live="polite">{filteredPosts.length ? `${filteredPosts.length} ${filteredPosts.length === 1 ? 'note' : 'notes'}` : copy?.emptyMessage}</div>
           {groups.map((group) => (
             <div className={sty.yearGroup} key={group.year}>
               {group.posts.map((post) => (
                 <Link className={sty.postRow} key={post.slug} to={`/blog/${post.slug}${location.search}`} state={{ from: `/blog${location.search}` }}>
                   <div className={sty.postMeta} data-text-reveal="copy"><span>{formatDate(post.date)}</span><span>{readingMinutes(post.body)} min read</span></div>
-                  <div><h2 data-text-reveal="copy">{post.title}</h2><p data-text-reveal="copy">{post.excerpt ?? post.body.split('\n')[0]}</p></div>
+                  <div><PretextText as="h2" measure="heading" reveal="copy">{post.title}</PretextText><PretextText measure="prose" reveal="copy">{post.excerpt ?? post.body.split('\n')[0]}</PretextText></div>
                   <span aria-hidden="true"><LuArrowRight focusable="false" /></span>
                 </Link>
               ))}

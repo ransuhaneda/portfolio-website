@@ -245,11 +245,11 @@ export type SiteContent = {
   blogPage?: {
     eyebrow?: string
     searchLabel: string
+    searchPlaceholder?: string
     categoryLabel: string
     allLabel: string
     resetLabel: string
     emptyMessage: string
-    rssLabel: string
     title: string
     intro: string
     heroImage?: ImageAsset

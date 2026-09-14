@@ -390,7 +390,7 @@
       "year": "2025",
       "client": "ABCDE Creative Studio",
       "kind": "case-study",
-      "status": "professional work",
+      "status": "",
       "summary": "Frontend work for the ABCDE Creative Studio website and related client projects. I turned Figma designs into responsive React pages and reusable sections.",
       "role": "Web developer",
       "stack": [
@@ -403,7 +403,12 @@
         "GitHub Actions",
         "Cloudflare"
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "Visit website",
+          "href": "https://abcdecreative.com/"
+        }
+      ],
       "challenge": "The pages needed to match the Figma direction across screen sizes without losing accessibility or becoming difficult to maintain.",
       "approach": [
         "Worked on 3 web projects, including the studio website.",
@@ -473,10 +478,6 @@
         {
           "label": "Live site",
           "href": "https://debase.384721.xyz"
-        },
-        {
-          "label": "GitHub repository",
-          "href": "https://github.com/ransuhaneda/debase"
         }
       ],
       "challenge": "The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output without turning decoded active content into a browser security risk.",
@@ -979,11 +980,11 @@
   "blogPage": {
     "eyebrow": "Notes",
     "searchLabel": "Search notes",
+    "searchPlaceholder": "Search by title or keyword",
     "categoryLabel": "Category",
     "allLabel": "All",
     "resetLabel": "Reset filters",
     "emptyMessage": "No notes match these filters.",
-    "rssLabel": "Subscribe via RSS",
     "title": "Notes from the work behind the pages.",
     "intro": "Short notes on case-study writing, content systems, and the practical decisions that keep a portfolio maintainable.",
     "heroImage": {
