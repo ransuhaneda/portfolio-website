@@ -33,7 +33,7 @@
 }
 
 .notesHeader [data-pretext] {
-  width: min(100%, var(--pretext-inline-size, 100%));
+  width: min(100%, 34rem);
   max-width: 100%;
 }
 .noteCard:hover, .noteCard:focus-visible { transform: translateY(-0.35rem); border-color: var(--color-action-primary); background: var(--color-surface-overlay); }
@@ -100,16 +100,34 @@
   width: 100%;
   max-width: 100%;
   align-content: start;
+  align-self: start;
   min-width: 0;
   gap: var(--space-md);
 }
 
+.heroAside {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
+}
+
 .heroGrid > *,
 .heroSupport > *,
+.heroAside > *,
 .index > div > *,
 .sectionInner > *,
 .skillsGrid > *,
 .contactGrid > * { min-width: 0; }
+
+.heroGrid > .index {
+  grid-column: 1 / -1;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-inline);
+}
 
 .heroSupport > p {
   margin-block: 0;
@@ -287,11 +305,15 @@
 }
 
 .contactCopy p {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2xs);
   color: var(--color-form-helper);
+}
+
+.contactEmailLine {
+  white-space: nowrap;
+}
+
+.contactEmailLine a {
+  white-space: nowrap;
 }
 
 @include mix.mq(sm) {
@@ -315,7 +337,7 @@
   }
 
   .heroGrid > h1 { grid-column: span 7; }
-  .heroSupport { grid-column: span 5; }
+  .heroAside { grid-column: 8 / span 5; }
   .practiceCopy > div { grid-column: span 5; }
   .practiceCopy > p { grid-column: 6 / span 7; }
   .skillsGrid > div { grid-column: span 4; }
@@ -323,4 +345,14 @@
   .skillsGrid > .skillGroups { grid-column: 5 / span 8; padding-inline-start: var(--space-lg); border-inline-start: 1px solid var(--color-border-default); }
   .contactCopy { grid-column: span 4; }
   .contactGrid > :last-child { grid-column: 5 / span 8; }
+}
+
+@include mix.mq(xl) {
+  .heroGrid > h1 { grid-column: span 8; }
+  .heroAside { grid-column: 9 / span 4; }
+}
+
+@media (min-width: 48rem) and (max-width: 75rem) {
+  .heroGrid > h1 { grid-column: 1 / -1; }
+  .heroAside { grid-column: 1 / -1; grid-row: 2; }
 }

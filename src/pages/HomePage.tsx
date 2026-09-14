@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { LuArrowDown, LuArrowRight, LuArrowUpRight, LuCalendarCheck } from 'react-icons/lu'
+import { LuArrowDown, LuArrowRight, LuArrowUpRight } from 'react-icons/lu'
 import { ContactForm } from '../components/ContactForm'
 import { FeaturedProjectCarousel } from '../components/FeaturedProjectCarousel'
 import { PretextText } from '../components/PretextText'
@@ -23,7 +23,7 @@ function renderAccentedTitle(title: string, accentPhrase?: string) {
 
 export function HomePage() {
   const hero = siteContent.home.hero
-  const title = hero.titleLines.join(' ')
+  const title = hero.title
   const skillGroups = siteContent.home.skills.groups
 
   return (
@@ -38,8 +38,10 @@ export function HomePage() {
 
             <div className={sty.heroGrid}>
               <PretextText as="h1" measure="heading" reveal="heading" text={title}>{renderAccentedTitle(title, hero.accentPhrase)}</PretextText>
-              <div className={sty.heroSupport}>
-                <PretextText measure="intro" reveal="copy">{hero.description || siteContent.site.tagline}</PretextText>
+              <div className={sty.heroAside}>
+                <div className={sty.heroSupport}>
+                  <PretextText measure="intro" reveal="copy">{hero.description || siteContent.site.tagline}</PretextText>
+                </div>
                 {hero.index?.length ? (
                   <dl className={sty.index} data-text-reveal="copy">
                     {hero.index.map((item) => (
@@ -47,7 +49,7 @@ export function HomePage() {
                     ))}
                   </dl>
                 ) : null}
-                <div className="button-row">
+                <div className={`${sty.heroActions} button-row`}>
                   <a className="button button--primary" href="#selected-work">{siteContent.home.cta.primaryLabel}<LuArrowDown aria-hidden="true" focusable="false" /></a>
                   {siteContent.home.cta.secondaryLabel ? (
                     <Link className="button button--ghost" to="/resume">{siteContent.home.cta.secondaryLabel}<LuArrowRight aria-hidden="true" focusable="false" /></Link>
@@ -79,7 +81,7 @@ export function HomePage() {
           <div className={sty.sectionInner} data-text-reveal-group="scrub">
             <div className={sty.practiceCopy}>
               <div>
-                <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.bio.titleLines.join(' ')}</PretextText>
+                <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.bio.title}</PretextText>
               </div>
               <PretextText measure="prose" reveal="copy">{siteContent.home.bio.description}</PretextText>
             </div>
@@ -153,11 +155,10 @@ export function HomePage() {
           <div className={sty.contactGrid} data-text-reveal-group="scrub">
             <div className={sty.contactCopy}>
               <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.contact.title}</PretextText>
-              <PretextText measure="intro" reveal="copy" text={`${siteContent.contact.availability}. Reach directly at ${siteContent.site.email}.`}><LuCalendarCheck aria-hidden="true" className={sty.inlineIcon} focusable="false" />
-                {siteContent.contact.availability}. Reach directly at 
-                <a href={`mailto:${siteContent.site.email}`}>
-                  {siteContent.site.email}
-                </a>.
+              <PretextText measure="intro" reveal="copy" text={`${siteContent.contact.availability}. Reach directly at ${siteContent.site.email}.`}>
+                <span className={sty.contactMessage}>
+                  {siteContent.contact.availability}. <span className={sty.contactEmailLine}>Reach directly at <a href={`mailto:${siteContent.site.email}`}>{siteContent.site.email}</a>.</span>
+                </span>
               </PretextText>
             </div>
             <ContactForm contact={siteContent.home.contact} recipientEmail={siteContent.site.email} showIntro={false} />
