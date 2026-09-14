@@ -56,9 +56,11 @@ export function ProjectDetailPage() {
               <ProjectStack items={project.stack} reverseFlow ariaLabel={`${project.title} technologies`} />
             <dl className={sty.metaTable} data-text-reveal="copy" aria-label="Project metadata">
               <div className={sty.statusRow}><dt>Status</dt><dd className={sty.statusContent}>
-                <span className={sty.statusIndicator}><span aria-hidden="true" /></span>
                 {project.links?.length ? <span className={sty.projectLinks}>
-                  {project.links.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}<LuExternalLink aria-hidden="true" focusable="false" /></a>)}
+                  {project.links.map((link, index) => <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                    {index === 0 ? <span className={sty.statusIndicator} aria-label="Online"><span aria-hidden="true" /></span> : null}
+                    {link.label}<LuExternalLink aria-hidden="true" focusable="false" />
+                  </a>)}
                 </span> : null}
               </dd></div>
               <div><dt>{detailCopy?.roleLabel ?? 'Role'}</dt><dd>{project.role}</dd></div>

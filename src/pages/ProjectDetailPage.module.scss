@@ -143,17 +143,48 @@
 }
 
 .statusIndicator {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
+  justify-content: center;
+  flex: 0 0 0.75rem;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.statusIndicator::before {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-action-primary);
+  border-radius: 50%;
+  content: '';
+  opacity: 0;
+  transform: scale(0.45);
+  transform-origin: center;
+  animation: statusPulse 1.8s var(--motion-ease-standard) infinite;
 }
 
 .statusIndicator > span {
-  width: 0.5rem;
-  height: 0.5rem;
+  position: relative;
+  z-index: 1;
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 50%;
   background: var(--color-action-primary);
-  box-shadow: 0 0 0 0.2rem var(--color-focus-ring);
+  box-shadow: 0 0 0 0.15rem var(--color-focus-ring);
+}
+
+@keyframes statusPulse {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.45);
+  }
+
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
 }
 
 .projectLinks {
@@ -172,6 +203,14 @@
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-sm);
   transition: color var(--motion-emphasized) var(--motion-ease-emphasized), border-color var(--motion-emphasized) var(--motion-ease-emphasized), background-color var(--motion-emphasized) var(--motion-ease-emphasized);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statusIndicator::before {
+    animation: none;
+    opacity: 0.35;
+    transform: scale(1.35);
+  }
 }
 
 .projectLinks a:hover {
