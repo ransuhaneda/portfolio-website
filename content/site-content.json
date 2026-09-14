@@ -265,7 +265,7 @@
     "availabilityLocationLabel": "Location",
     "form": {
       "title": "Get in touch",
-      "intro": "Share the role or project you want to discuss. The form prepares an email for you to review before opening your mail app.",
+      "intro": "Share the role or project you want to discuss.",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",
@@ -285,8 +285,6 @@
       "mailtoEmailLabel": "Email",
       "mailtoMessageLabel": "Message"
     },
-    "formSectionTitle": "Start a conversation",
-    "formSectionIntro": "The form prepares an email so you can review it before sending.",
     "methods": [
       {
         "title": "Email",
@@ -307,8 +305,6 @@
         "description": "Browse public code projects and current experiments."
       }
     ],
-    "methodsSectionTitle": "Contact options",
-    "methodsSectionIntro": "Email is best for details. LinkedIn works for role conversations.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-contact-desk/1600/1100.jpg",
       "alt": "Decorative stock photograph; not a personal workspace photograph."
@@ -787,11 +783,7 @@
   "home": {
     "hero": {
       "eyebrow": "Portfolio of Lance Carteciano",
-      "titleLines": [
-        "Frontend developer",
-        "building responsive",
-        "websites."
-      ],
+      "title": "Frontend developer building responsive websites.",
       "description": "I turn designs into responsive pages with React, TypeScript, and WordPress. My visual design background helps me keep the details consistent.",
       "accentPhrase": "Frontend web developer",
       "dateline": {
@@ -836,26 +828,23 @@
     },
     "bio": {
       "eyebrow": "What I do",
-      "titleLines": [
-        "I turn design direction",
-        "into working pages."
-      ],
-      "description": "Some projects start from a Figma file. Others start from a page that has become hard to edit. I work through the structure, build the reusable parts, and check the result in the browser."
+      "title": "Frontend development with an eye for design.",
+      "description": "I build responsive interfaces with React, TypeScript, and WordPress. My background in graphic design shapes how I work with typography, layout, and the details of each page."
     },
     "stats": [
       {
-        "value": "8",
-        "label": "active sites maintained",
+        "value": "Responsive interfaces",
+        "label": "Figma designs translated into pages that adapt across screen sizes, with attention to layout and accessibility.",
         "tone": "accent"
       },
       {
-        "value": "4",
-        "label": "Elementor migrations supported",
+        "value": "Reusable components",
+        "label": "Shared UI patterns and styles that keep pages consistent without rebuilding the same pieces.",
         "tone": "accent-2"
       },
       {
-        "value": "3",
-        "label": "WordPress themes or templates built",
+        "value": "Editable websites",
+        "label": "WordPress templates and content fields that make everyday updates straightforward.",
         "tone": "accent-3"
       }
     ],
@@ -928,7 +917,7 @@
     },
     "contact": {
       "title": "Get in touch",
-      "intro": "Tell me about the frontend role or project you want to discuss. Draft email opens your mail app; review and send it there. Nothing is sent by this site.",
+      "intro": "",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",

@@ -25,9 +25,9 @@ I turn designs into responsive pages with React, TypeScript, and WordPress. My v
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site. One JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## Homepage stats
-- 8: active sites maintained
-- 4: Elementor migrations supported
-- 3: WordPress themes or templates built
+- Responsive interfaces: Figma designs translated into pages that adapt across screen sizes, with attention to layout and accessibility.
+- Reusable components: Shared UI patterns and styles that keep pages consistent without rebuilding the same pieces.
+- Editable websites: WordPress templates and content fields that make everyday updates straightforward.
 
 ## Highlighted skills
 - React

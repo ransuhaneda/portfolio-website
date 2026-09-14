@@ -74,7 +74,7 @@ ${siteContent.site.tagline}
 ${siteContent.home.hero.eyebrow}
 
 ## Homepage hero
-${siteContent.home.hero.titleLines.join(' ')}
+${siteContent.home.hero.title}
 
 ${siteContent.home.hero.description}
 

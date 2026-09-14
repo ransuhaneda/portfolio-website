@@ -140,7 +140,7 @@ export type SiteContent = {
   home: {
     hero: {
       eyebrow: string
-      titleLines: string[]
+      title: string
       description: string
       accentPhrase?: string
       dateline?: {
@@ -166,7 +166,7 @@ export type SiteContent = {
     }
     bio: {
       eyebrow: string
-      titleLines: string[]
+      title: string
       description: string
     }
     stats: HomeStat[]
@@ -222,11 +222,7 @@ export type SiteContent = {
     availabilityStatusLabel: string
     availabilityLocationLabel: string
     form: ContactFormContent
-    formSectionTitle: string
-    formSectionIntro: string
     methods: ContactMethod[]
-    methodsSectionTitle: string
-    methodsSectionIntro: string
     heroImage?: ImageAsset
   }
   projectsPage?: {
