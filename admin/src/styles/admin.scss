@@ -36,7 +36,7 @@ body {
 }
 
 .admin-login-card {
-  max-width: var(--measure-intro);
+  width: min(100%, var(--measure-intro));
 }
 
 .admin-hero,
@@ -89,14 +89,12 @@ body {
 }
 
 .admin-hero h1 {
-  max-width: 16ch;
   @include mix.type-style(h1);
   text-wrap: balance;
 }
 
 .admin-hero p:not(.admin-kicker),
 .admin-copy {
-  max-width: var(--measure-intro);
   margin: 0;
   color: var(--color-text-muted);
   @include mix.type-style(body-lg);

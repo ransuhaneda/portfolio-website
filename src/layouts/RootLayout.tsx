@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { Outlet, useLocation, useNavigationType } from 'react-router-dom'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
@@ -13,20 +13,20 @@ export function RootLayout() {
   const mainRef = useScrollTextAnimations(location.pathname)
 
   useEffect(() => {
-    document.head.querySelectorAll('title, meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[property^="article:"], link[rel="canonical"], link[type="application/rss+xml"]').forEach((node) => node.remove())
-    document.head.insertAdjacentHTML('beforeend', metadataTags(location.pathname, import.meta.env.BASE_URL !== '/', import.meta.env.BASE_URL))
+    document.head.querySelectorAll('title, meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[property^="article:"], link[rel="canonical"]').forEach((node) => node.remove())
+    document.head.insertAdjacentHTML('beforeend', metadataTags(location.pathname, import.meta.env.BASE_URL !== '/'))
   }, [location.pathname])
 
-  useEffect(() => {
-    if (navigationType === 'POP') return
-
+  useLayoutEffect(() => {
     if (location.hash) {
       const target = document.getElementById(decodeURIComponent(location.hash.slice(1)))
       target?.scrollIntoView({ behavior: 'smooth' })
       return
     }
 
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    if (navigationType === 'POP') return
+
+    window.scrollTo(0, 0)
   }, [location.hash, location.pathname, navigationType])
 
   return (

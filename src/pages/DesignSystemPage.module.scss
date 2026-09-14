@@ -21,7 +21,7 @@
 .gridDemo span { display: grid; min-width: 0; height: 6rem; place-items: center; color: var(--color-text-muted); background: var(--color-surface-card); @include mix.type-style(body-xs); }
 .wrapperList, .surfaceDemo { display: grid; gap: var(--space-sm); margin-block-start: var(--space-md); }
 .wrapperList article { display: flex; justify-content: space-between; padding: var(--space-sm); border: 1px solid var(--color-border-default); }
-.fieldDemo { display: grid; max-width: 40rem; gap: var(--space-xs); }
+.fieldDemo { display: grid; width: min(100%, 40rem); gap: var(--space-xs); }
 .fieldDemo label { @include mix.type-style(body-xs, 700); }
 .fieldDemo input { min-height: var(--target-min-size); padding: var(--form-field-padding); color: var(--color-text-primary); background: var(--color-background-page); border: 1px solid var(--color-border-default); border-radius: var(--form-field-radius); }
 .surfaceDemo article { padding: var(--space-md); border: 1px solid var(--color-border-default); border-radius: var(--card-radius); background: var(--color-surface-card); }

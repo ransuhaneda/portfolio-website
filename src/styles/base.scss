@@ -157,7 +157,7 @@ html {
 }
 
 body {
-  margin-block: 0;
+  margin: 0;
   overflow-x: hidden;
   background: var(--color-background-page);
   color: var(--color-text-primary);
@@ -191,6 +191,17 @@ h2,
 h3,
 h4 {
   text-wrap: balance;
+}
+
+h5,
+h6 {
+  text-wrap: pretty;
+}
+
+[data-pretext] {
+  width: min(var(--pretext-inline-size, 100%), 100%);
+  min-width: 0;
+  max-width: 100%;
 }
 
 h1 {

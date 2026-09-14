@@ -16,12 +16,26 @@
   scroll-margin-top: var(--header-height);
 }
 
-.notesInner { display: grid; gap: var(--space-lg); padding-block: var(--space-xl); }
-.notesHeader { display: grid; justify-items: center; gap: var(--space-2xs); text-align: center; }
+.notesInner { display: grid; width: 100%; max-width: 100%; min-width: 0; gap: var(--space-lg); padding-block: var(--space-xl); }
+.notesInner > *,
+.notesGrid,
+.noteCard > * { min-width: 0; }
+.notesHeader { display: grid; min-width: 0; justify-items: center; gap: var(--space-2xs); text-align: center; }
 .notesHeader span { color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; @include mix.type-style(body-xs); }
 .notesHeader h2 { margin-block: 0; color: var(--color-action-primary); text-transform: uppercase; @include mix.type-style(h2); }
 .notesGrid { display: grid; gap: var(--space-sm); }
-.noteCard { display: grid; align-content: start; gap: var(--space-xs); padding: var(--space-md); color: inherit; text-decoration: none; border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); transition: transform var(--motion-emphasized) var(--motion-ease-emphasized), border-color var(--motion-fast) var(--motion-ease-standard), background-color var(--motion-fast) var(--motion-ease-standard); }
+.noteCard { display: grid; min-width: 0; align-content: start; gap: var(--space-xs); padding: var(--space-md); color: inherit; text-decoration: none; border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); transition: transform var(--motion-emphasized) var(--motion-ease-emphasized), border-color var(--motion-fast) var(--motion-ease-standard), background-color var(--motion-fast) var(--motion-ease-standard); }
+
+.notesGrid,
+.noteCard {
+  width: 100%;
+  max-width: 100%;
+}
+
+.notesHeader [data-pretext] {
+  width: min(100%, var(--pretext-inline-size, 100%));
+  max-width: 100%;
+}
 .noteCard:hover, .noteCard:focus-visible { transform: translateY(-0.35rem); border-color: var(--color-action-primary); background: var(--color-surface-overlay); }
 .noteCard:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 0.2rem; }
 .noteCard:hover h3, .noteCard:focus-visible h3 { color: var(--color-action-primary); }
@@ -39,6 +53,7 @@
 
 .dateline {
   display: flex;
+  min-width: 0;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-md);
@@ -52,6 +67,9 @@
 
 .heroGrid {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   gap: var(--space-lg);
   padding-block-start: var(--space-lg);
 }
@@ -79,9 +97,19 @@
 
 .heroSupport {
   display: grid;
+  width: 100%;
+  max-width: 100%;
   align-content: start;
+  min-width: 0;
   gap: var(--space-md);
 }
+
+.heroGrid > *,
+.heroSupport > *,
+.index > div > *,
+.sectionInner > *,
+.skillsGrid > *,
+.contactGrid > * { min-width: 0; }
 
 .heroSupport > p {
   margin-block: 0;
@@ -99,6 +127,7 @@
 
 .index > div {
   display: flex;
+  min-width: 0;
   gap: var(--space-md);
   align-items: baseline;
   justify-content: space-between;
@@ -114,13 +143,20 @@
 }
 
 .index dd {
+  min-width: 0;
+  max-width: 100%;
   margin-block: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
   @include mix.type-style(body-sm);
 }
 
 .sectionInner,
 .skillsGrid,
 .contactGrid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding-block: var(--space-xl);
 }
 

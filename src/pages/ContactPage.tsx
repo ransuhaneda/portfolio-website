@@ -1,6 +1,7 @@
 import { LuCircleDot, LuGithub, LuLinkedin, LuMail, LuMapPin } from 'react-icons/lu'
 import { ContactForm } from '../components/ContactForm'
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
 import { siteContent } from '../content/siteContent'
 import sty from './InternalPages.module.scss'
 
@@ -31,7 +32,7 @@ export function ContactPage() {
         <div className="lg-wrapper">
           <div className={sty.contactGrid} data-text-reveal-group="scrub">
             <aside>
-              <h2 data-text-reveal="heading">{siteContent.contact.methodsSectionTitle}</h2>
+              <PretextText as="h2" measure="heading" reveal="heading">{siteContent.contact.methodsSectionTitle}</PretextText>
               <div className={sty.contactMethods} data-text-reveal="copy">
                 {siteContent.contact.methods.map((method) => {
                   const Icon = getContactIcon(method.title)
@@ -46,8 +47,8 @@ export function ContactPage() {
               </div>
             </aside>
             <div className={sty.contactFormWrap}>
-              <h2 data-text-reveal="heading">{siteContent.contact.formSectionTitle}</h2>
-              <p data-text-reveal="copy">{siteContent.contact.formSectionIntro}</p>
+              <PretextText as="h2" measure="heading" reveal="heading">{siteContent.contact.formSectionTitle}</PretextText>
+              <PretextText measure="intro" reveal="copy">{siteContent.contact.formSectionIntro}</PretextText>
               <ContactForm contact={siteContent.contact.form} recipientEmail={siteContent.site.email} showIntro={false} />
             </div>
           </div>

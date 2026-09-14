@@ -1,4 +1,5 @@
 import { useCallback, useRef } from 'react'
+import { measureNaturalWidth, prepareWithSegments } from '@chenglou/pretext'
 import { gsap, ScrollTrigger, useGSAP } from '../animations/gsap'
 
 type ScrollOpacityTextProps = {
@@ -11,6 +12,30 @@ type ScrollOpacityTextProps = {
 export function ScrollOpacityText({ children, className, as: Tag = 'div', id }: ScrollOpacityTextProps) {
   const triggerRef = useRef<HTMLElement>(null)
   const lettersRef = useRef<HTMLSpanElement[]>([])
+
+  useGSAP(() => {
+    const element = triggerRef.current
+    const parent = element?.parentElement
+    if (!element || !parent) return
+
+    const setWidth = () => {
+      const availableWidth = parent.getBoundingClientRect().width
+      const style = window.getComputedStyle(element)
+      const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`
+      const letterSpacing = Number.parseFloat(style.letterSpacing) || 0
+      const measurableText = style.textTransform === 'uppercase' ? children.toLocaleUpperCase() : children
+      const prepared = prepareWithSegments(measurableText, font, { letterSpacing })
+      const naturalWidth = measureNaturalWidth(prepared)
+      element.style.setProperty('--pretext-inline-size', `${Math.min(availableWidth, Math.ceil(naturalWidth + 1))}px`)
+    }
+
+    const resizeObserver = new ResizeObserver(setWidth)
+    resizeObserver.observe(parent)
+    setWidth()
+    void document.fonts?.ready.then(setWidth)
+
+    return () => resizeObserver.disconnect()
+  }, { scope: triggerRef, dependencies: [children], revertOnUpdate: true })
 
   const setLettersRef = useCallback((ref: HTMLSpanElement | null) => {
     if (!ref) return
@@ -51,7 +76,7 @@ export function ScrollOpacityText({ children, className, as: Tag = 'div', id }: 
   // SAFETY: Every allowed Tag accepts an HTMLElement-compatible ref at runtime.
   const polymorphicRef = triggerRef as never
   return (
-    <Tag ref={polymorphicRef} id={id} className={className} aria-label={children}>
+    <Tag ref={polymorphicRef} id={id} className={className} aria-label={children} data-pretext={Tag === 'p' ? 'prose' : 'heading'}>
       {Array.from(children).map((letter, index) => (
         <span
           key={`${letter}-${index}`}

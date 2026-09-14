@@ -1,11 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { LuArrowLeft, LuArrowRight, LuExternalLink } from 'react-icons/lu'
 import { useDirectionalContentSwap, type SwapDirection } from '../animations/useDirectionalContentSwap'
 import type { Project } from '../content/siteContent'
 import sty from './FeaturedProjectCarousel.module.scss'
 import { ProjectStack } from './ProjectStack'
-import { publicUrl } from '../content/publicUrl'
+import { PretextText } from './PretextText'
+
 
 type FeaturedProjectCarouselProps = {
   projects: Project[]
@@ -14,39 +15,6 @@ type FeaturedProjectCarouselProps = {
   stackAriaTemplate?: string
 }
 
-const imagePreparation = new Map<string, Promise<void>>()
-
-function prepareImage(src: string) {
-  const cached = imagePreparation.get(src)
-  if (cached) return cached
-
-  const promise = new Promise<void>((resolve) => {
-    const image = new Image()
-    let settled = false
-    const finish = () => {
-      if (settled) return
-      settled = true
-      resolve()
-    }
-
-    image.onload = () => {
-      if ('decode' in image) {
-        image.decode().catch(() => undefined).finally(finish)
-      } else {
-        finish()
-      }
-    }
-    image.onerror = finish
-    image.src = publicUrl(src)
-
-    if (image.complete) {
-      image.decode?.().catch(() => undefined).finally(finish)
-    }
-  })
-
-  imagePreparation.set(src, promise)
-  return promise
-}
 
 function getWrappedIndex(index: number, length: number) {
   return (index + length) % length
@@ -68,30 +36,15 @@ export function FeaturedProjectCarousel({
   const interactionLock = useRef(false)
   const scopeRef = useRef<HTMLDivElement>(null)
   const copyRef = useRef<HTMLDivElement>(null)
-  const mediaRef = useRef<HTMLElement>(null)
   const { swap, isAnimating } = useDirectionalContentSwap({
     scope: scopeRef,
     copy: copyRef,
-    media: mediaRef,
   })
 
   const activeProject = featuredProjects[activeIndex]
   const totalProjects = featuredProjects.length
   const isBusy = isPreparing || isAnimating
 
-  useEffect(() => {
-    if (!totalProjects) return
-
-    const adjacentIndices = [
-      getWrappedIndex(activeIndex - 1, totalProjects),
-      getWrappedIndex(activeIndex + 1, totalProjects),
-    ]
-
-    adjacentIndices.forEach((index) => {
-      const src = featuredProjects[index]?.image?.src
-      if (src) void prepareImage(src)
-    })
-  }, [activeIndex, featuredProjects, totalProjects])
 
   const handleNavigate = useCallback(async (direction: SwapDirection) => {
     if (!activeProject || totalProjects < 2 || interactionLock.current || isBusy) return
@@ -102,7 +55,6 @@ export function FeaturedProjectCarousel({
 
     interactionLock.current = true
     setIsPreparing(true)
-    if (nextProject.image?.src) await prepareImage(nextProject.image.src)
     setIsPreparing(false)
 
     try {
@@ -180,8 +132,8 @@ export function FeaturedProjectCarousel({
         <div ref={copyRef} className={sty.featuredCopy}>
           <span className={sty.featuredIndex}>{position}</span>
         
-            <h2>{activeProject.title}</h2>
-            <p>{activeProject.summary}</p>
+            <PretextText as="h2" measure="heading">{activeProject.title}</PretextText>
+            <PretextText measure="prose">{activeProject.summary}</PretextText>
             <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
           
 
@@ -203,11 +155,6 @@ export function FeaturedProjectCarousel({
             </Link>
           </div>
         </div>
-
-        <figure ref={mediaRef} className={sty.featuredMedia}>
-          {activeProject.image ? <img src={publicUrl(activeProject.image.src)} alt={activeProject.image.alt} /> : null}
-          <figcaption>{activeProject.image?.alt}</figcaption>
-        </figure>
       </div>
 
       <p className={sty.visuallyHidden} aria-live="polite">

@@ -1,4 +1,5 @@
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
 import { Section } from '../components/Section'
 import { publicUrl } from '../content/publicUrl'
 import { siteContent } from '../content/siteContent'
@@ -32,7 +33,7 @@ export function ResumePage() {
           <ol className={sty.experienceList} data-text-reveal="copy">
             {siteContent.resume.education.map((item) => (
               <li key={`${item.school}-${item.program}`}>
-                <div><h3>{item.program}</h3><p>{item.school}</p></div>
+                <div><PretextText as="h3" measure="heading">{item.program}</PretextText><PretextText measure="prose">{item.school}</PretextText></div>
                 <span>{item.period}</span>
                 <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
               </li>
@@ -45,7 +46,7 @@ export function ResumePage() {
         <ol className={sty.experienceList} data-text-reveal="copy">
           {siteContent.resume.experience.map((item) => (
             <li key={`${item.company}-${item.role}`}>
-              <div><h3>{item.role}</h3><p>{item.company}</p></div>
+              <div><PretextText as="h3" measure="heading">{item.role}</PretextText><PretextText measure="prose">{item.company}</PretextText></div>
               <span>{item.period}</span>
               <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
             </li>
