@@ -19,8 +19,8 @@ I turn designs into responsive pages with React, TypeScript, and WordPress. My v
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
 ## Featured case studies
-- [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 - [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
+- [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 - [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md): A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
