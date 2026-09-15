@@ -129,16 +129,17 @@ export function FeaturedProjectCarousel({
         onClick={handleGridClick}
         onKeyDown={handleGridKeyDown}
       >
+        <span className={sty.featuredIndex}>{position}</span>
         <div ref={copyRef} className={sty.featuredCopy}>
           <div className={sty.featuredOverview}>
-            <span className={sty.featuredIndex}>{position}</span>
-            <PretextText as="h2" measure="heading">{activeProject.title}</PretextText>
-            <PretextText measure="prose">{activeProject.summary}</PretextText>
+            <div>
+              <PretextText as="h2" measure="heading">{activeProject.title}</PretextText>
+              <PretextText measure="prose">{activeProject.summary}</PretextText>
+            </div>
+            <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
           </div>
 
           <div className={sty.featuredData}>
-
-             <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
             <dl className={sty.projectMeta}>
               <div><dt>Client</dt><dd>{activeProject.client}</dd></div>
               <div><dt>Role</dt><dd>{activeProject.role}</dd></div>

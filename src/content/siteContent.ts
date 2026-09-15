@@ -231,11 +231,6 @@ export type SiteContent = {
     intro: string
     roleLabelPrefix?: string
     stackAriaTemplate?: string
-    groups?: Array<{
-      title: string
-      description?: string
-      kinds: ProjectKind[]
-    }>
     heroImage?: ImageAsset
   }
   blogPage?: {

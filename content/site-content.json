@@ -312,73 +312,71 @@
   },
   "projects": [
     {
-      "slug": "wordpress-maintenance-system",
-      "title": "WordPress maintenance and Elementor system work",
+      "slug": "debase",
+      "title": "Debase browser-local Base64 tools",
       "year": "2026",
-      "client": "Tech Support Plus I.T Services",
+      "client": "Personal project",
       "kind": "case-study",
-      "status": "current work",
-      "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.",
-      "role": "Frontend web developer / graphic designer",
+      "status": "live site",
+      "summary": "A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.",
+      "role": "Frontend developer",
       "stack": [
-        "WordPress",
-        "Elementor",
-        "PHP",
-        "HTML",
-        "CSS",
-        "ACF",
-        "Code Snippets",
-        "cPanel",
-        "Hostinger"
+        "React",
+        "TypeScript",
+        "Vite",
+        "SCSS",
+        "Vitest",
+        "Playwright"
       ],
-      "links": [],
-      "challenge": "Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.",
+      "links": [
+        {
+          "label": "Live site",
+          "href": "https://debase.384721.xyz"
+        }
+      ],
+      "challenge": "The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.",
       "approach": [
-        "Maintained 8 active websites across company and client work.",
-        "Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.",
-        "Built 3 custom WordPress themes or templates and reusable branded sections.",
-        "Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.",
-        "Handled spam prevention, security cleanup, styling consistency, and deployment support."
+        "Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.",
+        "Kept payload text, output, decoded bytes, filenames, MIME details, and file sizes inside the browser.",
+        "Added strict validation, a 25 MiB raw-file limit, drag-and-drop, copy, swap, file picking, and downloads.",
+        "Limited inline previews to allowlisted raster images and bounded plain text while keeping active content download-only.",
+        "Covered the transformation logic and interface with Vitest, Testing Library, and Playwright."
       ],
       "outcome": [
-        "Company and client sites became easier to update because repeated sections now follow the same patterns.",
-        "Recurring maintenance work had clearer styling rules and less one-off editing.",
-        "SEO and content updates became safer through simpler admin workflows."
+        "The live tool handles common text and file transformations in the browser, so payload data stays on the device.",
+        "Clear validation and constrained previews make malformed or potentially active decoded content safer to handle.",
+        "The public repository documents the privacy boundary, size limit, deployment path, and verification commands."
       ],
-      "image": {
-        "src": "/images/home/featured-project-1.png",
-        "alt": "Editorial device mockup used as a placeholder for WordPress maintenance and Elementor system work."
-      },
       "gallery": [
         {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
-          "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Client screenshots are not shown."
+          "src": "/images/projects/debase-live-homepage.png",
+          "alt": "Debase homepage with encode and decode modes, format controls, source input, and result panel.",
+          "caption": "The live Debase workbench. Text and file processing stays in the browser."
         },
         {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
+          "src": "https://picsum.photos/seed/portfolio-debase-files/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
-          "alt": "Decorative stock photograph; not a project screenshot."
-        },
-        {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
+          "src": "https://picsum.photos/seed/portfolio-debase-validation/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
-      "overview": "This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in.",
-      "approachSummary": "I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.",
-      "resultSummary": "Repeated sections now follow clearer patterns, and content editors have fewer opportunities to break the layout.",
+      "overview": "Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.",
+      "approachSummary": "I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.",
+      "resultSummary": "Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.",
       "scope": [
-        "WordPress Maintenance",
-        "Elementor System Cleanup",
-        "Frontend Styling",
-        "Admin Workflow Support",
-        "Hosting Handoff Support"
+        "Browser-local File Processing",
+        "Base64 and Base64URL",
+        "Data URL Handling",
+        "Safe Output Previews",
+        "Automated Testing"
       ],
-      "reflection": "Maintenance is easier to hand over when the editing patterns are visible and repeatable."
+      "reflection": "I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.",
+      "image": {
+        "src": "/images/projects/debase-live-homepage.png",
+        "alt": "Debase homepage showing its browser-based Base64 encode and decode workbench."
+      }
     },
     {
       "slug": "abcde-creative",
@@ -454,71 +452,73 @@
       "reflection": "I check the real page at the widths people will use instead of stopping after the desktop mockup matches."
     },
     {
-      "slug": "debase",
-      "title": "Debase browser-local Base64 tools",
+      "slug": "wordpress-maintenance-system",
+      "title": "WordPress maintenance and Elementor system work",
       "year": "2026",
-      "client": "Personal project",
+      "client": "Tech Support Plus I.T Services",
       "kind": "case-study",
-      "status": "live site",
-      "summary": "A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.",
-      "role": "Frontend developer",
+      "status": "current work",
+      "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.",
+      "role": "Frontend web developer / graphic designer",
       "stack": [
-        "React",
-        "TypeScript",
-        "Vite",
-        "SCSS",
-        "Vitest",
-        "Playwright"
+        "WordPress",
+        "Elementor",
+        "PHP",
+        "HTML",
+        "CSS",
+        "ACF",
+        "Code Snippets",
+        "cPanel",
+        "Hostinger"
       ],
-      "links": [
-        {
-          "label": "Live site",
-          "href": "https://debase.384721.xyz"
-        }
-      ],
-      "challenge": "The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.",
+      "links": [],
+      "challenge": "Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.",
       "approach": [
-        "Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.",
-        "Kept payload text, output, decoded bytes, filenames, MIME details, and file sizes inside the browser.",
-        "Added strict validation, a 25 MiB raw-file limit, drag-and-drop, copy, swap, file picking, and downloads.",
-        "Limited inline previews to allowlisted raster images and bounded plain text while keeping active content download-only.",
-        "Covered the transformation logic and interface with Vitest, Testing Library, and Playwright."
+        "Maintained 8 active websites across company and client work.",
+        "Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.",
+        "Built 3 custom WordPress themes or templates and reusable branded sections.",
+        "Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.",
+        "Handled spam prevention, security cleanup, styling consistency, and deployment support."
       ],
       "outcome": [
-        "The live tool handles common text and file transformations in the browser, so payload data stays on the device.",
-        "Clear validation and constrained previews make malformed or potentially active decoded content safer to handle.",
-        "The public repository documents the privacy boundary, size limit, deployment path, and verification commands."
+        "Company and client sites became easier to update because repeated sections now follow the same patterns.",
+        "Recurring maintenance work had clearer styling rules and less one-off editing.",
+        "SEO and content updates became safer through simpler admin workflows."
       ],
+      "image": {
+        "src": "/images/home/featured-project-1.png",
+        "alt": "Editorial device mockup used as a placeholder for WordPress maintenance and Elementor system work."
+      },
       "gallery": [
         {
-          "src": "/images/projects/debase-live-homepage.png",
-          "alt": "Debase homepage with encode and decode modes, format controls, source input, and result panel.",
-          "caption": "The live Debase workbench. Text and file processing stays in the browser."
+          "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
+          "alt": "Decorative stock photograph; not a project screenshot.",
+          "caption": "Placeholder visual. Client screenshots are not shown."
         },
         {
-          "src": "https://picsum.photos/seed/portfolio-debase-files/1600/1100.jpg",
+          "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot."
         },
         {
-          "src": "https://picsum.photos/seed/portfolio-debase-validation/1600/1100.jpg",
+          "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
+          "alt": "Decorative stock photograph; not a project screenshot."
+        },
+        {
+          "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
-      "overview": "Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.",
-      "approachSummary": "I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.",
-      "resultSummary": "Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.",
+      "overview": "This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in.",
+      "approachSummary": "I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.",
+      "resultSummary": "Repeated sections now follow clearer patterns, and content editors have fewer opportunities to break the layout.",
       "scope": [
-        "Browser-local File Processing",
-        "Base64 and Base64URL",
-        "Data URL Handling",
-        "Safe Output Previews",
-        "Automated Testing"
+        "WordPress Maintenance",
+        "Elementor System Cleanup",
+        "Frontend Styling",
+        "Admin Workflow Support",
+        "Hosting Handoff Support"
       ],
-      "reflection": "I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.",
-      "image": {
-        "src": "/images/projects/debase-live-homepage.png",
-        "alt": "Debase homepage showing its browser-based Base64 encode and decode workbench."
-      }
+      "reflection": "Maintenance is easier to hand over when the editing patterns are visible and repeatable."
     },
     {
       "slug": "nsight-index",
@@ -661,13 +661,47 @@
       "reflection": "The system is worth keeping because one edit can update the page visitors see and the Markdown files machines can read."
     },
     {
-      "slug": "gsap-animation",
-      "title": "React GSAP animation experiment",
+      "slug": "yay-nay-feature-vote",
+      "title": "Yay Nay feature voting platform",
       "year": "2026",
-      "client": "Personal experiment",
-      "kind": "experiment",
-      "status": "tutorial-based archive",
-      "summary": "A React and GSAP practice build based on a public tutorial. It stays in the archive as an animation study, not as original client work.",
+      "client": "Personal project",
+      "kind": "case-study",
+      "status": "in progress",
+      "summary": "A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.",
+      "role": "Full-stack developer",
+      "stack": ["Laravel", "PHP", "Inertia", "React", "TypeScript", "Server-side rendering"],
+      "links": [{"label": "GitHub repository", "href": "https://github.com/ransuhaneda/yay-nay_feature-vote"}],
+      "challenge": "The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.",
+      "approach": [
+        "Built the application with Laravel, Inertia, React, and TypeScript.",
+        "Added feature creation, editing, detail pages, comments, and upvote flows.",
+        "Included authentication, profile settings, permissions, and server-side rendering support.",
+        "Kept the repository's in-progress status visible rather than presenting unfinished product work as complete."
+      ],
+      "outcome": [
+        "The repository documents a working foundation for feature requests, discussion, and voting.",
+        "The project gives the portfolio a full-stack example that combines Laravel routing and data handling with a React interface.",
+        "The public case study makes the current scope and ongoing status clear."
+      ],
+      "overview": "Yay Nay is an in-progress feature-voting platform. It combines Laravel with Inertia and React so people can submit feature requests, comment on them, and vote on priorities.",
+      "approachSummary": "I built the main feature and account flows across the Laravel backend and React interface, while keeping the repository's unfinished areas clearly scoped.",
+      "resultSummary": "The public repository shows a full-stack product foundation with feature requests, comments, upvotes, authentication, and server-side rendering support.",
+      "scope": ["Laravel Application Development", "Inertia and React", "Feature Voting Flows", "Authentication and Permissions", "Server-side Rendering"],
+      "reflection": "An in-progress product is still useful as a case study when the working flows, technical choices, and remaining scope are stated plainly.",
+      "gallery": [{
+        "src": "https://picsum.photos/seed/portfolio-yay-nay-feature-vote/1600/1100.jpg",
+        "alt": "Decorative stock photograph for the Yay Nay feature voting platform case study.",
+        "caption": "Placeholder visual. The public repository is the source for the current implementation details."
+      }]
+    },
+    {
+      "slug": "gsap-animation",
+      "title": "React GSAP animation study",
+      "year": "2026",
+      "client": "Personal project",
+      "kind": "case-study",
+      "status": "tutorial-based study",
+      "summary": "A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.",
       "role": "Frontend practice",
       "stack": [
         "React",
@@ -685,11 +719,11 @@
       "approach": [
         "Followed a public tutorial inspired by Zentry and JavaScript Mastery.",
         "Practiced GSAP setup, timing, layout choreography, and responsive behavior.",
-        "Kept this listed as an experiment so it is not mistaken for original client work."
+        "Kept the tutorial source and attribution visible so the study is not mistaken for original client work."
       ],
       "outcome": [
         "The project documents animation practice and code familiarity with GSAP in React.",
-        "It stays in the archive with clear attribution rather than being presented as a main case study."
+        "The case study keeps the tutorial attribution visible alongside the animation work."
       ],
       "overview": "I built this React and GSAP project while following a public tutorial. It records animation practice and is labeled as tutorial-based work.",
       "approachSummary": "I used the build to practice GSAP setup, timing, scroll interaction, and responsive behavior in React.",
@@ -725,9 +759,9 @@
       "title": "Tetherly bio link app",
       "year": "2026",
       "client": "Personal project",
-      "kind": "experiment",
+      "kind": "case-study",
       "status": "in progress",
-      "summary": "An unfinished React and TypeScript bio link app. It stays in the archive while I continue working on the main product flow.",
+      "summary": "An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.",
       "role": "Frontend developer",
       "stack": [
         "React",
@@ -748,9 +782,9 @@
       ],
       "outcome": [
         "The repository shows active product UI practice.",
-        "The archive entry states the project status and presents it as unfinished personal work."
+        "The case study states the project status and presents it as unfinished personal work."
       ],
-      "overview": "Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. It is in the archive because the main flow is still being worked on.",
+      "overview": "Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. The main flow is still being worked on.",
       "approachSummary": "I worked on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.",
       "resultSummary": "The repository shows the current frontend work and labels the app as unfinished.",
       "scope": [
@@ -940,31 +974,15 @@
   },
   "projectsPage": {
     "eyebrow": "Projects",
-    "title": "Selected work and experiments.",
-    "intro": "The case studies explain the problem, my responsibility, what I changed, and what followed. Experiments are labeled separately.",
+    "title": "Selected projects with enough context to be useful.",
+    "intro": "Each project explains the problem, my responsibility, what I changed, and what followed.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-projects-grid/1600/1100.jpg",
       "alt": "Decorative stock photograph; not a project screenshot.",
       "caption": "Public-safe placeholder visual. Replace with an approved project image when one is available."
     },
     "roleLabelPrefix": "Role",
-    "stackAriaTemplate": "{title} tools",
-    "groups": [
-      {
-        "title": "Case studies",
-        "description": "Professional work and public projects with their scope stated clearly.",
-        "kinds": [
-          "case-study"
-        ]
-      },
-      {
-        "title": "Experiments",
-        "description": "Practice builds and unfinished work, labeled as they are.",
-        "kinds": [
-          "experiment"
-        ]
-      }
-    ]
+    "stackAriaTemplate": "{title} tools"
   },
   "blogPage": {
     "eyebrow": "Notes",

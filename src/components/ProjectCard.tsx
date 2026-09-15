@@ -51,8 +51,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span>{roleLabelPrefix}: {project.role}</span>
         </div>
         <div className={sty.stackRow}>
-         {/* / {project.kind ? <span className={sty.kind}>{project.kind === 'case-study' ? 'Case study' : 'Experiment'}</span> : null} */}
-          <ProjectStack items={project.stack} ariaLabel={stackAriaLabel} />
+           <ProjectStack items={project.stack} ariaLabel={stackAriaLabel} />
         </div>
       </div>
     </article>

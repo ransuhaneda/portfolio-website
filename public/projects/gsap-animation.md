@@ -1,12 +1,12 @@
-# React GSAP animation experiment
+# React GSAP animation study
 
 - Year: 2026
-- Client: Personal experiment
+- Client: Personal project
 - Role: Frontend practice
 - Stack: React, Vite, GSAP, Tailwind CSS
 
 ## Summary
-A React and GSAP practice build based on a public tutorial. It stays in the archive as an animation study, not as original client work.
+A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.
 
 ## Overview
 I built this React and GSAP project while following a public tutorial. It records animation practice and is labeled as tutorial-based work.
@@ -28,13 +28,13 @@ I used the build to practice GSAP setup, timing, scroll interaction, and respons
 
 - Followed a public tutorial inspired by Zentry and JavaScript Mastery.
 - Practiced GSAP setup, timing, layout choreography, and responsive behavior.
-- Kept this listed as an experiment so it is not mistaken for original client work.
+- Kept the tutorial source and attribution visible so the study is not mistaken for original client work.
 
 ## Result
 The repository records my GSAP practice and credits the tutorial that shaped it.
 
 - The project documents animation practice and code familiarity with GSAP in React.
-- It stays in the archive with clear attribution rather than being presented as a main case study.
+- The case study keeps the tutorial attribution visible alongside the animation work.
 
 ## Project scope
 - React Animation Study
