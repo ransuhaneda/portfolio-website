@@ -1,8 +1,8 @@
 # Lance Carteciano
 
-> Frontend developer building responsive websites in the Philippines.
+> Frontend developer building responsive websites from the Philippines.
 
-I turn designs into responsive pages and keep the code and content easier to maintain. My background also includes WordPress and visual design.
+I build responsive pages, maintain WordPress sites, and keep the code and content easy to work with. My background also includes visual design.
 
 ## Preferred machine-readable entry points
 - [Site index](https://384721.xyz/index.md)

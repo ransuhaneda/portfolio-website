@@ -7,13 +7,13 @@
 - Homepage image: https://384721.xyz/images/home/featured-project-2.png
 
 ## Summary
-Frontend work for the ABCDE Creative Studio website and related client projects. I turned Figma designs into responsive React pages and reusable sections.
+Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 
 ## Overview
-At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I focused on layout, accessibility, and reusable sections.
+At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I handled layout, accessibility checks, and shared sections.
 
 ## Problem
-The pages needed to match the Figma direction across screen sizes without losing accessibility or becoming difficult to maintain.
+The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.
 
 ## My responsibility
 Web developer
@@ -25,7 +25,7 @@ Web developer
 - Deployment Support
 
 ## What I did
-I looked for repeated layout and spacing patterns instead of treating each mockup as a separate page. That made the pages easier to adjust and test.
+I compared the mockups for repeated layout and spacing patterns, then built those patterns into the frontend instead of treating every page as a separate piece.
 
 - Worked on 3 web projects, including the studio website.
 - Built at least 5 responsive pages from Figma mockups.
@@ -34,11 +34,11 @@ I looked for repeated layout and spacing patterns instead of treating each mocku
 - Supported delivery workflows through GitHub Actions and Cloudflare.
 
 ## Result
-The work produced responsive pages that stayed close to the design and gave later pages a more consistent frontend base.
+The pages stayed close to the design across screen sizes, while shared patterns gave later work a steadier starting point.
 
 - Responsive pages matched the design direction more closely across screen sizes.
 - Reusable patterns made later project work easier to maintain.
-- The delivery process had clearer build and deployment support.
+- The delivery process had a clearer build and deployment path.
 
 ## Project scope
 - Frontend Implementation
@@ -48,4 +48,4 @@ The work produced responsive pages that stayed close to the design and gave late
 - Deployment Support
 
 ## Reflection
-A good frontend translation keeps the energy of the design while making every section dependable across real viewport sizes.
+I check the real page at the widths people will use instead of stopping after the desktop mockup matches.

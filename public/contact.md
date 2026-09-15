@@ -1,6 +1,6 @@
 # Contact
 
-Let’s talk about frontend work.
+Tell me what needs building.
 
 I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.
 
