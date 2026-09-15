@@ -2,6 +2,7 @@ import { useId, useState, type ChangeEvent, type FormEvent } from 'react'
 import { LuSend } from 'react-icons/lu'
 import type { ContactFormContent } from '../content/siteContent'
 import sty from './ContactForm.module.scss'
+import { PretextText } from './PretextText'
 
 type ContactFormProps = {
   contact: ContactFormContent
@@ -113,13 +114,13 @@ export function ContactForm({ contact, recipientEmail, showIntro = true }: Conta
     <div className={sty.root}>
       {showIntro ? (
         <div className={sty.intro}>
-          <h2>{contact.title}</h2>
-          {contact.intro ? <p>{contact.intro}</p> : null}
+          <PretextText as="h2" measure="heading">{contact.title}</PretextText>
+          {contact.intro ? <PretextText measure="intro">{contact.intro}</PretextText> : null}
         </div>
       ) : null}
 
       <form className={sty.form} onSubmit={handleSubmit} noValidate>
-        {!showIntro ? <p>{contact.intro}</p> : null}
+        {!showIntro ? <PretextText measure="intro">{contact.intro}</PretextText> : null}
         <div role="alert">{Object.values(formErrors).filter(Boolean).join(' ')}</div>
         <div className={sty.field}>
           <label htmlFor={nameInputId}>{contact.nameLabel} *</label>

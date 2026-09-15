@@ -18,7 +18,7 @@ Intended production: https://384721.xyz on Cloudflare Pages. GitHub Pages is a n
   - `/public/sitemap.xml`
   - `/public/.well-known/agent-skills/index.json` and `site-navigation/SKILL.md`
 - Cloudflare Pages support through `wrangler.toml`, `_headers`, `_redirects`, and `functions/[[path]].ts`
-- Published-only local blog search and categories, URL filters, full-content `/rss.xml`
+- Published-only local blog search and categories with URL filters
 - Route-specific initial HTML and client-navigation metadata
 - Web resume plus unchanged approved PDF download
 

@@ -2,7 +2,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { siteContent, type Project } from '../content/siteContent'
 import sty from './ProjectCard.module.scss'
 import { ProjectStack } from './ProjectStack'
-import { publicUrl } from '../content/publicUrl'
+import { PretextText } from './PretextText'
+
 
 type ProjectCardProps = {
   project: Project
@@ -38,16 +39,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
       onClick={handleCardClick}
       onKeyDown={handleCardKeyDown}
     >
-      <Link to={`/projects/${project.slug}`} state={{ from: location.pathname }} className={sty.imageLink}>
-        {project.image ? <img src={publicUrl(project.image.src)} alt={project.image.alt} className={sty.image} /> : null}
-      </Link>
-
       <div className={sty.content} data-text-reveal="copy">
         <div className={sty.titleRow}>
-          <h2><Link to={`/projects/${project.slug}`} state={{ from: location.pathname }}>{project.title}</Link></h2>
+          <PretextText as="h2" measure="heading"><Link to={`/projects/${project.slug}`} state={{ from: location.pathname }}>{project.title}</Link></PretextText>
           <span className={sty.year}>{project.year}</span>
         </div>
-        <p>{project.summary}</p>
+        <PretextText measure="prose">{project.summary}</PretextText>
         <div className={sty.meta}>
           <span>{project.client}</span>
           {project.status ? <span>{project.status}</span> : null}

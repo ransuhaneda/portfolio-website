@@ -1,7 +1,8 @@
 import { LuArrowRight, LuCheck, LuLock } from 'react-icons/lu'
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
 import { siteContent } from '../content/siteContent'
-import { publicUrl } from '../content/publicUrl'
+
 import sty from './DesignSystemPage.module.scss'
 
 const colors = [
@@ -19,7 +20,7 @@ const spacing = ['2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
 
 export function DesignSystemPage() {
   const content = siteContent.designSystemPage
-  const projectImage = siteContent.projects.find((project) => project.image)?.image
+
   const section = (id: string) => content?.sections.find((item) => item.id === id)
 
   return (
@@ -27,34 +28,34 @@ export function DesignSystemPage() {
       <InternalHero title={content?.title ?? 'Design system reference'} intro={content?.intro ?? 'The reusable visual engine behind the site.'} />
 
       <section className={sty.block} id="color">
-        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><h2 data-text-reveal="heading">{section('color')?.title ?? 'Color'}</h2><p data-text-reveal="copy">{section('color')?.description}</p></header><div className={sty.swatches} data-text-reveal="copy">{colors.map(([name, token, role]) => <article key={token}><div style={{ background: `var(${token})` }} /><strong>{name}</strong><code>{token}</code><p>{role}</p></article>)}</div></div></div>
+        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><PretextText as="h2" measure="heading" reveal="heading">{section('color')?.title ?? 'Color'}</PretextText><PretextText measure="intro" reveal="copy">{section('color')?.description}</PretextText></header><div className={sty.swatches} data-text-reveal="copy">{colors.map(([name, token, role]) => <article key={token}><div style={{ background: `var(${token})` }} /><strong>{name}</strong><code>{token}</code><p>{role}</p></article>)}</div></div></div>
       </section>
 
       <section className={sty.block} id="type">
-        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><h2 data-text-reveal="heading">{section('type')?.title ?? 'Typography'}</h2><p data-text-reveal="copy">{section('type')?.description}</p></header><div className={sty.typeScale} data-text-reveal="copy">{(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const).map((role) => <div key={role}><code>{role.toUpperCase()}</code><p className={`text-${role}`}>Structure before decoration.</p></div>)}<div><code>BODY</code><p>Quattrocento keeps long-form copy readable and interface labels quiet.</p></div></div></div></div>
+        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><PretextText as="h2" measure="heading" reveal="heading">{section('type')?.title ?? 'Typography'}</PretextText><PretextText measure="intro" reveal="copy">{section('type')?.description}</PretextText></header><div className={sty.typeScale} data-text-reveal="copy">{(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const).map((role) => <div key={role}><code>{role.toUpperCase()}</code><p className={`text-${role}`}>Structure before decoration.</p></div>)}<div><code>BODY</code><p>Quattrocento keeps long-form copy readable and interface labels quiet.</p></div></div></div></div>
       </section>
 
       <section className={sty.block} id="spacing">
-        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><h2 data-text-reveal="heading">{section('spacing')?.title ?? 'Spacing'}</h2><p data-text-reveal="copy">{section('spacing')?.description}</p></header><div className={sty.spacingScale} data-text-reveal="copy">{spacing.map((size) => <div key={size}><code>{size.toUpperCase()}</code><span style={{ width: `var(--space-${size})` }} /><small>{`--space-${size}`}</small></div>)}</div></div></div>
+        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><PretextText as="h2" measure="heading" reveal="heading">{section('spacing')?.title ?? 'Spacing'}</PretextText><PretextText measure="intro" reveal="copy">{section('spacing')?.description}</PretextText></header><div className={sty.spacingScale} data-text-reveal="copy">{spacing.map((size) => <div key={size}><code>{size.toUpperCase()}</code><span style={{ width: `var(--space-${size})` }} /><small>{`--space-${size}`}</small></div>)}</div></div></div>
       </section>
 
       <section className={sty.block} id="grid">
-        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><h2 data-text-reveal="heading">{section('grid')?.title ?? 'Grid'}</h2><p data-text-reveal="copy">{section('grid')?.description}</p></header><div data-text-reveal="copy"><div className={sty.gridDemo}>{Array.from({ length: 12 }, (_, index) => <span key={index}>{index + 1}</span>)}</div><div className={sty.wrapperList}><article><code>SM</code><strong>700px</strong></article><article><code>MD</code><strong>960px</strong></article><article><code>LG</code><strong>1440px</strong></article></div></div></div></div>
+        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><PretextText as="h2" measure="heading" reveal="heading">{section('grid')?.title ?? 'Grid'}</PretextText><PretextText measure="intro" reveal="copy">{section('grid')?.description}</PretextText></header><div data-text-reveal="copy"><div className={sty.gridDemo}>{Array.from({ length: 12 }, (_, index) => <span key={index}>{index + 1}</span>)}</div><div className={sty.wrapperList}><article><code>SM</code><strong>700px</strong></article><article><code>MD</code><strong>960px</strong></article><article><code>LG</code><strong>1440px</strong></article></div></div></div></div>
       </section>
 
       <section className={sty.block} id="components">
-        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><h2 data-text-reveal="heading">{section('components')?.title ?? 'Components'}</h2><p data-text-reveal="copy">{section('components')?.description}</p></header><div className={sty.components}>
+        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><PretextText as="h2" measure="heading" reveal="heading">{section('components')?.title ?? 'Components'}</PretextText><PretextText measure="intro" reveal="copy">{section('components')?.description}</PretextText></header><div className={sty.components}>
           <div className="button-row"><button className="button button--primary">Primary<LuArrowRight aria-hidden="true" focusable="false" /></button><button className="button button--ghost">Secondary<LuCheck aria-hidden="true" focusable="false" /></button><button className="button" disabled>Disabled<LuLock aria-hidden="true" focusable="false" /></button></div>
           <ul className="tag-list"><li>Neutral</li><li className={sty.tagAcid}>Acid</li><li className={sty.tagFlare}>Flare</li><li className={sty.tagIris}>Iris</li></ul>
           <div className={sty.fieldDemo}><label htmlFor="design-system-field">Field label</label><input id="design-system-field" placeholder="Click or tab to focus" /><small>Production focus and field treatment.</small></div>
-          <div className={sty.surfaceDemo}><article><span>Card overlay</span><h3>Raised card</h3><p>Low-contrast border and restrained radius.</p></article><article><span>Top divider only</span><h3>Quiet group</h3><p>Many sections need no surrounding card.</p></article></div>
+          <div className={sty.surfaceDemo}><article><span>Card overlay</span><PretextText as="h3" measure="heading">Raised card</PretextText><PretextText measure="prose">Low-contrast border and restrained radius.</PretextText></article><article><span>Top divider only</span><PretextText as="h3" measure="heading">Quiet group</PretextText><PretextText measure="prose">Many sections need no surrounding card.</PretextText></article></div>
           <div className={sty.dividers}><span /><span /><span /></div>
-          {projectImage ? <figure className={sty.imageDemo}><img src={publicUrl(projectImage.src)} alt={projectImage.alt} /><figcaption>Production image treatment</figcaption></figure> : null}
+
         </div></div></div>
       </section>
 
       <section className={sty.block} id="motion">
-        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><h2 data-text-reveal="heading">{section('motion')?.title ?? 'Motion'}</h2><p data-text-reveal="copy">{section('motion')?.description}</p></header><div className={sty.motionDemo} tabIndex={0}><span>Hover or focus</span><strong>Restrained lift</strong></div></div></div>
+        <div className="lg-wrapper"><div className={sty.blockGrid} data-text-reveal-group="scrub"><header><PretextText as="h2" measure="heading" reveal="heading">{section('motion')?.title ?? 'Motion'}</PretextText><PretextText measure="intro" reveal="copy">{section('motion')?.description}</PretextText></header><div className={sty.motionDemo} tabIndex={0}><span>Hover or focus</span><strong>Restrained lift</strong></div></div></div>
       </section>
     </div>
   )

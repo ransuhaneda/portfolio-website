@@ -5,8 +5,7 @@
 }
 
 .inner,
-.copy,
-.media {
+.copy {
   display: grid;
 }
 
@@ -21,15 +20,12 @@
 }
 
 .copy h1,
-.intro,
-.media,
-.media figcaption {
+.intro {
   margin-block: 0;
 }
 
 .copy h1 {
   text-transform: uppercase;
-    max-width: 24ch;
 }
 
 .intro {
@@ -41,26 +37,6 @@
   @include mix.flex(row, null, center, var(--gap-inline), wrap);
 }
 
-.media {
-  align-content: end;
-  gap: var(--space-xs);
-}
-
-.media img {
-  width: 100%;
-  aspect-ratio: 1.5;
-  object-fit: cover;
-  background: var(--color-background-surface);
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
-}
-
-.media figcaption {
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs);
-}
 
 @include mix.mq(md) {
   .inner {
@@ -69,5 +45,4 @@
   }
 
   .copy { grid-column: 1 / -1; }
-  .media { grid-column: span 5; }
 }

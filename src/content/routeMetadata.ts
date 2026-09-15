@@ -25,7 +25,7 @@ export function getRouteMetadata(pathname: string) {
   }
 }
 
-export function metadataTags(path: string, preview: boolean, base: string) {
+export function metadataTags(path: string, preview: boolean) {
   const meta = getRouteMetadata(path)
   const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   return `<title>${escape(meta.title)}</title>
@@ -35,6 +35,5 @@ export function metadataTags(path: string, preview: boolean, base: string) {
 <meta property="og:description" content="${escape(meta.description)}" />
 <meta property="og:type" content="${meta.date ? 'article' : 'website'}" />
 ${meta.canonical ? `<link rel="canonical" href="${escape(meta.canonical)}" /><meta property="og:url" content="${escape(meta.canonical)}" />` : ''}
-${meta.date ? `<meta property="article:published_time" content="${meta.date}T00:00:00.000Z" />` : ''}
-<link rel="alternate" type="application/rss+xml" href="${base}rss.xml" title="Blog RSS" />`
+${meta.date ? `<meta property="article:published_time" content="${meta.date}T00:00:00.000Z" />` : ''}`
 }

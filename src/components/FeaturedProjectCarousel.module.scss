@@ -2,11 +2,17 @@
 
 .featuredCarousel {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   gap: var(--space-lg);
 }
 
 .featuredHeading {
   display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
@@ -22,6 +28,7 @@
 
 .featuredHeaderActions {
   display: flex;
+  min-width: 0;
   align-items: center;
   gap: var(--space-sm);
 }
@@ -70,6 +77,9 @@
 
 .featuredGrid {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   gap: var(--space-lg);
   cursor: pointer;
 }
@@ -81,22 +91,39 @@
 
 .featuredCopy {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   align-content: start;
   gap: var(--space-md);
 }
 
-// .featuredData {
-//   display: flex;
-//   flex-flow: column;
-//   gap: var(--space-lg);
-// }
-
 .featuredCopy h2,
-.featuredCopy p,
-.featuredMedia,
-.featuredMedia figcaption {
+.featuredCopy p {
   margin-block: 0;
 }
+
+.featuredOverview > p {
+  color: var(--color-text-muted);
+}
+
+.featuredOverview {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.featuredData {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  align-content: end;
+}
+
+.featuredHeading > *,
+.featuredGrid > *,
+.featuredCopy > *,
+.featuredData > *,
+.projectMeta > div { min-width: 0; }
 
 .featuredIndex {
   color: var(--color-action-primary);
@@ -121,7 +148,6 @@
   gap: var(--space-sm);
   padding-block-start: var(--space-sm);
   margin-block: 0;
-  border-top: 1px solid var(--color-border-default);
 }
 
 .projectMeta > div {
@@ -168,19 +194,6 @@
   color: var(--color-action-primary);
 }
 
-.featuredMedia {
-  display: grid;
-  align-content: start;
-  gap: var(--space-xs);
-}
-
-.featuredMedia img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
-}
 
 .visuallyHidden {
   position: absolute;
@@ -200,11 +213,9 @@
   }
 
   .featuredCopy {
-    grid-column: span 5;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .featuredMedia {
-    grid-column: 6 / span 7;
-    grid-row: 1;
-  }
+  .featuredData { grid-column: 2; }
 }

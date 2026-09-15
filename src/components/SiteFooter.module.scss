@@ -8,7 +8,9 @@
 }
 
 .border {
+  position: relative;
   width: 100%;
+  overflow: hidden;
   padding-block-start: 4rem;
   border-top: 1px solid var(--color-border-default);
 }
@@ -19,6 +21,9 @@
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
   width: 100%;
   padding-block: var(--space-lg) var(--space-2xl);
 }
@@ -34,10 +39,14 @@
 }
 
 .info {
+  position: relative;
+  z-index: 2;
   gap: var(--space-sm);
 }
 
 .links {
+  position: relative;
+  z-index: 2;
   gap: var(--space-lg);
 }
 
@@ -74,6 +83,11 @@
   @include mix.type-style(body-xs);
 }
 
+.navigation .heading,
+.contact .heading {
+  color: var(--color-text-primary);
+}
+
 .heading {
   margin-block-end: var(--space-xs);
   color: var(--color-text-muted);
@@ -82,7 +96,7 @@
   @include mix.type-style(body-xs, 700);
 }
 
-.linkList {
+.linkList, .contact {
   gap: var(--space-xs);
   padding: 0;
   list-style: none;
@@ -101,16 +115,16 @@
 
 .linkList a:hover,
 .contact a:hover,
-.socials a:hover,
-.featuredNavigation a:hover {
-  opacity: .62;
+.socials a:hover {
+  color: var(--color-action-primary);
 }
 
 .featuredNavigation {
+  position: relative;
   grid-column: 1 / -1;
   gap: 16px;
   margin-block: var(--space-xl) var(--space-lg);
-  justify-items: end;
+  justify-items: start;
 }
 
 .featuredNavigation a {
@@ -120,6 +134,43 @@
   line-height: .95;
   letter-spacing: -.03em;
   text-decoration: none;
+}
+
+.featuredLink {
+  position: relative;
+  display: grid;
+  width: fit-content;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.featuredLink > span {
+  grid-area: 1 / 1;
+}
+
+.featuredLinkHighlight {
+  position: absolute;
+  inset: 0;
+  color: var(--color-action-primary);
+  clip-path: circle(0 at var(--pointer-x, 50%) var(--pointer-y, 50%));
+  pointer-events: none;
+  transition: clip-path 420ms var(--motion-ease-emphasized);
+}
+
+.featuredLink:hover,
+.featuredLink:focus-visible {
+  color: var(--color-text-primary);
+}
+
+.featuredLink:hover .featuredLinkHighlight,
+.featuredLink:focus-visible .featuredLinkHighlight {
+  clip-path: circle(150% at var(--pointer-x, 50%) var(--pointer-y, 50%));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featuredLinkHighlight {
+    transition: none;
+  }
 }
 
 .bottom {
@@ -180,6 +231,7 @@
   .featuredNavigation {
     flex: 0 1 auto;
     margin-block: 0;
+    justify-items: end;
   }
 
   .bottom {

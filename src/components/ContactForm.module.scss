@@ -2,6 +2,9 @@
 
 .root {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   gap: var(--space-stack);
   padding: var(--space-md);
   background: var(--color-background-inverse);
@@ -24,6 +27,7 @@
 }
 
 .form {
+  min-width: 0;
   gap: var(--space-xs);
 }
 
@@ -50,6 +54,8 @@
 
 .field input,
 .field textarea {
+  min-width: 0;
+  max-width: 100%;
   width: 100%;
   padding: var(--form-field-padding);
   color: var(--color-text-primary);
@@ -86,6 +92,7 @@
 
   @include mix.button-base(body-xs);
   width: 100%;
+  min-width: 0;
   color: var(--color-text-primary);
   background: var(--color-text-inverse);
 }

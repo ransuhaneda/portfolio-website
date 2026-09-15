@@ -2,11 +2,13 @@ import { useRef } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { LuArrowLeft, LuArrowRight } from 'react-icons/lu'
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
+
 import { parseBlogMarkdownBlocks, renderBlogInline } from '../content/blogMarkdown'
 import { blogPosts, getBlogPostBySlug } from '../content/blogContent'
 import { siteContent } from '../content/siteContent'
 import { getRelatedEntries } from '../content/relatedContent'
-import { publicUrl, readingMinutes } from '../content/publicUrl'
+import { readingMinutes } from '../content/publicUrl'
 import { gsap, ScrollTrigger, useGSAP } from '../animations/gsap'
 import sty from './InternalPages.module.scss'
 const getInternalBackPath = (state: { from?: string } | null, fallback: string) => state?.from?.startsWith('/') && !state.from.startsWith('//') ? state.from : fallback
@@ -60,11 +62,6 @@ export function BlogPostPage() {
         beforeTitle={<Link className="backLink" to={backPath}><LuArrowLeft aria-hidden="true" focusable="false" />{backLabel}</Link>}
       />
 
-      {post.coverImage ? (
-        <section className={sty.articleCover}>
-          <div className="lg-wrapper"><figure><img src={publicUrl(post.coverImage)} alt={post.coverAlt ?? post.title} /><figcaption>{post.coverAlt}</figcaption></figure></div>
-        </section>
-      ) : null}
       <div className={sty.readingProgress} data-reading-progress aria-label="Reading progress"><span className={sty.readingProgressFill} data-reading-progress-fill /></div>
 
       <article className={sty.article} data-article data-text-reveal-group="scrub">
@@ -74,8 +71,8 @@ export function BlogPostPage() {
             {blocks.map((block, index) => {
               if (block.type === 'code') return <pre className={sty.codeBlock} key={`${post.slug}-${index}`} data-language={block.language}><code>{block.code}</code></pre>
               if (block.type === 'list') return <ul key={`${post.slug}-${index}`}>{block.items.map((item) => <li key={item} dangerouslySetInnerHTML={inline(item)} />)}</ul>
-              if (block.type === 'section') return <section key={`${post.slug}-${index}`}><h2 dangerouslySetInnerHTML={inline(block.heading)} />{block.paragraphs.map((paragraph) => <p key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</section>
-              return <div key={`${post.slug}-${index}`}>{block.paragraphs.map((paragraph) => <p key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</div>
+              if (block.type === 'section') return <section key={`${post.slug}-${index}`}><PretextText as="h2" measure="heading" dangerouslySetInnerHTML={inline(block.heading)} />{block.paragraphs.map((paragraph) => <PretextText measure="prose" key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</section>
+              return <div key={`${post.slug}-${index}`}>{block.paragraphs.map((paragraph) => <PretextText measure="prose" key={paragraph} dangerouslySetInnerHTML={inline(paragraph)} />)}</div>
             })}
           </div>
         </div>
@@ -84,14 +81,14 @@ export function BlogPostPage() {
       <section className={sty.relatedNotes} aria-labelledby="related-notes-title">
         <div className="lg-wrapper">
           <div className={sty.relatedNotesHeader} data-text-reveal-group="scrub">
-            <div><p className="eyebrow" data-text-reveal="copy">[ MORE NOTES ]</p><h2 id="related-notes-title" data-text-reveal="heading">Read other notes</h2></div>
+            <div><p className="eyebrow" data-text-reveal="copy">[ MORE NOTES ]</p><PretextText as="h2" id="related-notes-title" measure="heading" reveal="heading">Read other notes</PretextText></div>
             <Link className="button button--ghost" to={archivePath}>View all notes<LuArrowRight aria-hidden="true" focusable="false" /></Link>
           </div>
           <div className={sty.relatedNotesList}>
             {relatedPosts.map((relatedPost) => (
               <Link className={sty.postRow} key={relatedPost.slug} to={`/blog/${relatedPost.slug}${location.search}`} state={{ from: archivePath }}>
                 <div className={sty.postMeta}><span>{relatedPost.date}</span></div>
-                <div><h3>{relatedPost.title}</h3><p>{relatedPost.excerpt ?? relatedPost.body.split('\n')[0]}</p></div>
+                <div><PretextText as="h3" measure="heading">{relatedPost.title}</PretextText><PretextText measure="prose">{relatedPost.excerpt ?? relatedPost.body.split('\n')[0]}</PretextText></div>
                 <span aria-hidden="true"><LuArrowRight focusable="false" /></span>
               </Link>
             ))}

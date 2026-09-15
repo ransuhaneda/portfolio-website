@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import sty from './Section.module.scss'
+import { PretextText } from './PretextText'
 
 type SectionProps = {
   title: string
@@ -13,8 +14,8 @@ export function Section({ title, intro, children }: SectionProps) {
       <div className="lg-wrapper">
         <div className={sty.inner}>
           <div className={sty.heading}>
-            <h2 data-text-reveal="heading">{title}</h2>
-            {intro ? <p data-text-reveal="copy">{intro}</p> : null}
+            <PretextText as="h2" measure="heading" reveal="heading">{title}</PretextText>
+            {intro ? <PretextText measure="intro" reveal="copy">{intro}</PretextText> : null}
           </div>
           <div className={sty.content}>{children}</div>
         </div>
