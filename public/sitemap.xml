@@ -56,6 +56,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://384721.xyz/projects/yay-nay-feature-vote</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://384721.xyz/projects/wordpress-maintenance-system</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

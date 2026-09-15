@@ -429,6 +429,57 @@ Frontend developer and graphic designer with production experience maintaining W
 - Training covered PHP, Laravel, MySQL, HTML, CSS, JavaScript, frontend fundamentals, backend fundamentals, and database work.
 
 ## Projects
+# Yay Nay feature voting platform
+
+- Year: 2026
+- Client: Personal project
+- Role: Full-stack developer
+- Stack: Laravel, PHP, Inertia, React, TypeScript, Server-side rendering
+
+
+## Summary
+A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
+
+## Overview
+Yay Nay is an in-progress feature-voting platform. It combines Laravel with Inertia and React so people can submit feature requests, comment on them, and vote on priorities.
+
+## Problem
+The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.
+
+## My responsibility
+Full-stack developer
+
+- Laravel Application Development
+- Inertia and React
+- Feature Voting Flows
+- Authentication and Permissions
+- Server-side Rendering
+
+## What I did
+I built the main feature and account flows across the Laravel backend and React interface, while keeping the repository's unfinished areas clearly scoped.
+
+- Built the application with Laravel, Inertia, React, and TypeScript.
+- Added feature creation, editing, detail pages, comments, and upvote flows.
+- Included authentication, profile settings, permissions, and server-side rendering support.
+- Kept the repository's in-progress status visible rather than presenting unfinished product work as complete.
+
+## Result
+The public repository shows a full-stack product foundation with feature requests, comments, upvotes, authentication, and server-side rendering support.
+
+- The repository documents a working foundation for feature requests, discussion, and voting.
+- The project gives the portfolio a full-stack example that combines Laravel routing and data handling with a React interface.
+- The public case study makes the current scope and ongoing status clear.
+
+## Project scope
+- Laravel Application Development
+- Inertia and React
+- Feature Voting Flows
+- Authentication and Permissions
+- Server-side Rendering
+
+## Reflection
+An in-progress product is still useful as a case study when the working flows, technical choices, and remaining scope are stated plainly.
+
 # WordPress maintenance and Elementor system work
 
 - Year: 2026
@@ -686,16 +737,16 @@ I can update the portfolio from one main source, regenerate the public files, an
 ## Reflection
 The system is worth keeping because one edit can update the page visitors see and the Markdown files machines can read.
 
-# React GSAP animation experiment
+# React GSAP animation study
 
 - Year: 2026
-- Client: Personal experiment
+- Client: Personal project
 - Role: Frontend practice
 - Stack: React, Vite, GSAP, Tailwind CSS
 
 
 ## Summary
-A React and GSAP practice build based on a public tutorial. It stays in the archive as an animation study, not as original client work.
+A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.
 
 ## Overview
 I built this React and GSAP project while following a public tutorial. It records animation practice and is labeled as tutorial-based work.
@@ -717,13 +768,13 @@ I used the build to practice GSAP setup, timing, scroll interaction, and respons
 
 - Followed a public tutorial inspired by Zentry and JavaScript Mastery.
 - Practiced GSAP setup, timing, layout choreography, and responsive behavior.
-- Kept this listed as an experiment so it is not mistaken for original client work.
+- Kept the tutorial source and attribution visible so the study is not mistaken for original client work.
 
 ## Result
 The repository records my GSAP practice and credits the tutorial that shaped it.
 
 - The project documents animation practice and code familiarity with GSAP in React.
-- It stays in the archive with clear attribution rather than being presented as a main case study.
+- The case study keeps the tutorial attribution visible alongside the animation work.
 
 ## Project scope
 - React Animation Study
@@ -744,10 +795,10 @@ This tutorial build works as a record of practice because its source and limits 
 
 
 ## Summary
-An unfinished React and TypeScript bio link app. It stays in the archive while I continue working on the main product flow.
+An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.
 
 ## Overview
-Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. It is in the archive because the main flow is still being worked on.
+Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. The main flow is still being worked on.
 
 ## Problem
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
@@ -772,7 +823,7 @@ I worked on profile layout, reusable cards, and responsive SCSS while keeping th
 The repository shows the current frontend work and labels the app as unfinished.
 
 - The repository shows active product UI practice.
-- The archive entry states the project status and presents it as unfinished personal work.
+- The case study states the project status and presents it as unfinished personal work.
 
 ## Project scope
 - Product UI Practice
