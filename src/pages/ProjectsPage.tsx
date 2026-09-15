@@ -1,50 +1,21 @@
 import { InternalHero } from '../components/InternalHero'
-import { PretextText } from '../components/PretextText'
 import { ProjectCard } from '../components/ProjectCard'
-import { siteContent, type Project } from '../content/siteContent'
+import { siteContent } from '../content/siteContent'
 import sty from './InternalPages.module.scss'
 
-function getProjectGroups(): Array<{ title: string; description?: string; projects: Project[] }> {
-  const configuredGroups = siteContent.projectsPage?.groups
-
-  if (configuredGroups?.length) {
-    return configuredGroups
-      .map((group) => ({
-        title: group.title,
-        description: group.description,
-        projects: siteContent.projects.filter((project) => group.kinds.includes(project.kind ?? 'case-study')),
-      }))
-      .filter((group) => group.projects.length)
-  }
-
-  return [{ title: 'Projects', projects: siteContent.projects }]
-}
-
 export function ProjectsPage() {
-  const groups = getProjectGroups()
-
   return (
     <div className={sty.page}>
       <InternalHero
-        title={siteContent.projectsPage?.title ?? 'Case studies with enough context to be useful.'}
-        intro={siteContent.projectsPage?.intro ?? 'Selected frontend and design-to-code work presented as concise case studies.'}
+        title={siteContent.projectsPage?.title ?? 'Selected projects with enough context to be useful.'}
+        intro={siteContent.projectsPage?.intro ?? 'Selected frontend and design-to-code work presented with useful context.'}
       />
 
       <section className={sty.archiveSection}>
         <div className="lg-wrapper">
-          <div className={sty.projectGroups}>
-            {groups.map((group) => (
-              <section key={group.title} className={sty.projectGroup} data-text-reveal-group="scrub" aria-labelledby={`project-group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-                <header>
-                  <PretextText as="h2" measure="heading" reveal="heading" id={`project-group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{group.title}</PretextText>
-                  {group.description ? <PretextText measure="intro" reveal="copy">{group.description}</PretextText> : null}
-                </header>
-                <div className={sty.projectGrid}>
-                  {group.projects.map((project) => (
-                    <ProjectCard key={project.slug} project={project} />
-                  ))}
-                </div>
-              </section>
+          <div className={sty.projectGrid}>
+            {siteContent.projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
         </div>

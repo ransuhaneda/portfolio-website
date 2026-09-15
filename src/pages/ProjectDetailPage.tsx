@@ -201,7 +201,7 @@ export function ProjectDetailPage() {
             {relatedProjects.map((entry) => (
               <article className={sty.relatedCard} key={entry.slug}>
                 <Link to={`/projects/${entry.slug}`}>
-                  <span>{entry.year} / {entry.kind === 'experiment' ? 'Experiment' : 'Case study'}</span>
+                  <span>{entry.year}</span>
                   <PretextText as="h3" measure="heading" reveal="copy">{entry.title}</PretextText>
                 </Link>
               </article>

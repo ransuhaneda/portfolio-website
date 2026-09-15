@@ -2,6 +2,15 @@
 
 Case-study style project archive.
 
+## [Yay Nay feature voting platform](https://384721.xyz/projects/yay-nay-feature-vote.md)
+
+- Year: 2026
+- Client: Personal project
+- Role: Full-stack developer
+- Stack: Laravel, PHP, Inertia, React, TypeScript, Server-side rendering
+
+A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
+
 ## [WordPress maintenance and Elementor system work](https://384721.xyz/projects/wordpress-maintenance-system.md)
 
 - Year: 2026
@@ -47,14 +56,14 @@ A Laravel blog system with author and reader flows for posts, comments, categori
 
 The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
-## [React GSAP animation experiment](https://384721.xyz/projects/gsap-animation.md)
+## [React GSAP animation study](https://384721.xyz/projects/gsap-animation.md)
 
 - Year: 2026
-- Client: Personal experiment
+- Client: Personal project
 - Role: Frontend practice
 - Stack: React, Vite, GSAP, Tailwind CSS
 
-A React and GSAP practice build based on a public tutorial. It stays in the archive as an animation study, not as original client work.
+A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.
 
 ## [Tetherly bio link app](https://384721.xyz/projects/tetherly.md)
 
@@ -63,4 +72,4 @@ A React and GSAP practice build based on a public tutorial. It stays in the arch
 - Role: Frontend developer
 - Stack: React, TypeScript, SCSS
 
-An unfinished React and TypeScript bio link app. It stays in the archive while I continue working on the main product flow.
+An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.

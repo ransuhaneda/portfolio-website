@@ -6,10 +6,10 @@
 - Stack: React, TypeScript, SCSS
 
 ## Summary
-An unfinished React and TypeScript bio link app. It stays in the archive while I continue working on the main product flow.
+An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.
 
 ## Overview
-Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. It is in the archive because the main flow is still being worked on.
+Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. The main flow is still being worked on.
 
 ## Problem
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
@@ -34,7 +34,7 @@ I worked on profile layout, reusable cards, and responsive SCSS while keeping th
 The repository shows the current frontend work and labels the app as unfinished.
 
 - The repository shows active product UI practice.
-- The archive entry states the project status and presents it as unfinished personal work.
+- The case study states the project status and presents it as unfinished personal work.
 
 ## Project scope
 - Product UI Practice
