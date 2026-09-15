@@ -1,8 +1,8 @@
 {
   "site": {
     "name": "Lance Carteciano",
-    "tagline": "Frontend developer building responsive websites in the Philippines.",
-    "description": "I turn designs into responsive pages and keep the code and content easier to maintain. My background also includes WordPress and visual design.",
+    "tagline": "Frontend developer building responsive websites from the Philippines.",
+    "description": "I build responsive pages, maintain WordPress sites, and keep the code and content easy to work with. My background also includes visual design.",
     "email": "cartecianolance@gmail.com",
     "location": "Philippines",
     "siteUrl": "https://384721.xyz",
@@ -85,36 +85,36 @@
   },
   "about": {
     "eyebrow": "About",
-    "title": "I build responsive pages and the systems behind them.",
-    "intro": "Frontend development supported by hands-on WordPress work and visual design experience.",
+    "title": "I build responsive pages and keep them useful after launch.",
+    "intro": "I work across frontend development, WordPress maintenance, and visual design.",
     "bodySectionTitle": "Background",
     "processSectionTitle": "How I work",
-    "processSectionIntro": "I use the same practical loop whether I am building a new page or cleaning up an existing one.",
+    "processSectionIntro": "I use a short loop when I build a page or clean up an existing one.",
     "principlesSectionTitle": "Working principles",
     "toolsSectionTitle": "Tools I use often",
     "body": [
       "I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. Most of my day-to-day work is on WordPress: maintaining sites, cleaning up Elementor builds, making reusable templates, and improving how content is updated.",
-      "At ABCDE Creative Studio, I turned Figma designs into responsive React pages and checked accessibility while building them. My earlier print and social media design work taught me to pay attention to production details, not only the first screen.",
-      "I am most useful when a project needs both design judgment and practical implementation. I can take a visual direction, build the page, and leave it easier for the next person to edit."
+      "At ABCDE Creative Studio, I turned Figma designs into responsive React pages and checked accessibility while building them. My earlier print and social media design work taught me to pay attention to production details across the whole piece.",
+      "I work best when a project needs design judgment and implementation. I can take a visual direction, build the page, and leave the next person a clear way to edit it."
     ],
     "principles": [
-      "Make the page purpose clear before styling it.",
-      "Prefer reusable sections over repeated one-off fixes.",
-      "Check responsive behavior on real viewport sizes.",
-      "Leave the editor and the next developer a clear path forward."
+      "Understand what the page needs to do before styling it.",
+      "Turn repeated sections into reusable parts.",
+      "Check the page at real viewport sizes.",
+      "Leave the editor and the next developer enough context to continue."
     ],
     "process": [
       {
         "title": "Understand the page",
-        "description": "I read the content, current code, and constraints before I change the interface."
+        "description": "I read the content and current code first, then note the constraints that will shape the change."
       },
       {
         "title": "Build the reusable parts",
-        "description": "I turn repeated sections into components, classes, or fields instead of copying the same fix."
+        "description": "I turn repeated sections into components, classes, or fields so one fix can serve every matching section."
       },
       {
         "title": "Check the handoff",
-        "description": "I test the result and document the parts another person will need to edit."
+        "description": "I test the result and leave notes for the parts another person will need to edit."
       }
     ],
     "tools": [
@@ -149,8 +149,8 @@
     "download": { "href": "/files/carteciano_lance-resume.pdf", "label": "Download resume (PDF)" },
     "eyebrow": "Resume",
     "headline": "Frontend Web Developer and Graphic Designer",
-    "summary": "Frontend developer and graphic designer with production experience in WordPress maintenance, Elementor systems, React implementation, responsive UI, and visual asset work.",
-    "highlightsSectionTitle": "Quick proof",
+    "summary": "Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.",
+    "highlightsSectionTitle": "At a glance",
     "skillsSectionTitle": "Core skills",
     "experienceSectionTitle": "Experience",
     "educationSectionTitle": "Education and training",
@@ -221,7 +221,7 @@
         "highlights": [
           "Designed weekly social media graphics and branded marketing assets for 3 branches.",
           "Produced promotional assets for seasonal and recurring drink campaigns.",
-          "Worked with stakeholders to keep campaign visuals consistent with branch needs."
+          "Worked with stakeholders to keep campaign visuals aligned with branch needs."
         ]
       }
     ],
@@ -256,7 +256,7 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let’s talk about frontend work.",
+    "title": "Tell me what needs building.",
     "body": "I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.",
     "emailCtaPrefix": "Email",
     "availability": "Open to frontend roles and selected freelance work",
@@ -265,7 +265,7 @@
     "availabilityLocationLabel": "Location",
     "form": {
       "title": "Get in touch",
-      "intro": "Share the role or project you want to discuss. The form prepares an email for you to review before opening your mail app.",
+      "intro": "Share the role or project you want to discuss.",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",
@@ -285,8 +285,6 @@
       "mailtoEmailLabel": "Email",
       "mailtoMessageLabel": "Message"
     },
-    "formSectionTitle": "Start a conversation",
-    "formSectionIntro": "The form prepares an email so you can review it before sending.",
     "methods": [
       {
         "title": "Email",
@@ -307,8 +305,6 @@
         "description": "Browse public code projects and current experiments."
       }
     ],
-    "methodsSectionTitle": "Contact options",
-    "methodsSectionIntro": "Email is best for details. LinkedIn works for role conversations.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-contact-desk/1600/1100.jpg",
       "alt": "Decorative stock photograph; not a personal workspace photograph."
@@ -322,7 +318,7 @@
       "client": "Tech Support Plus I.T Services",
       "kind": "case-study",
       "status": "current work",
-      "summary": "Ongoing WordPress work across company and client sites. I maintain pages, clean up Elementor builds, make reusable sections, and support content updates and hosting handoffs.",
+      "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.",
       "role": "Frontend web developer / graphic designer",
       "stack": [
         "WordPress",
@@ -336,7 +332,7 @@
         "Hostinger"
       ],
       "links": [],
-      "challenge": "Several sites needed regular updates, cleaner Elementor structure, and admin workflows that the SEO and content teams could use without breaking layout consistency.",
+      "challenge": "Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.",
       "approach": [
         "Maintained 8 active websites across company and client work.",
         "Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.",
@@ -345,7 +341,7 @@
         "Handled spam prevention, security cleanup, styling consistency, and deployment support."
       ],
       "outcome": [
-        "Company and client sites became easier to update with more consistent section patterns.",
+        "Company and client sites became easier to update because repeated sections now follow the same patterns.",
         "Recurring maintenance work had clearer styling rules and less one-off editing.",
         "SEO and content updates became safer through simpler admin workflows."
       ],
@@ -357,7 +353,7 @@
         {
           "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Client screenshots are intentionally not shown."
+          "caption": "Placeholder visual. Client screenshots are not shown."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
@@ -372,9 +368,9 @@
           "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
-      "overview": "This entry covers my current WordPress maintenance work rather than one finished project. I help keep company and client sites stable, consistent, and easier to update while requests continue to come in.",
-      "approachSummary": "I focus on the parts that make the next update safer: reusable Elementor classes, global styles, clearer content fields, and documented handoffs.",
-      "resultSummary": "The sites are easier to update because repeated sections follow clearer patterns and content editors have fewer ways to break the layout.",
+      "overview": "This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in.",
+      "approachSummary": "I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.",
+      "resultSummary": "Repeated sections now follow clearer patterns, and content editors have fewer opportunities to break the layout.",
       "scope": [
         "WordPress Maintenance",
         "Elementor System Cleanup",
@@ -382,7 +378,7 @@
         "Admin Workflow Support",
         "Hosting Handoff Support"
       ],
-      "reflection": "Maintenance work becomes stronger when editing patterns are clear, repeatable, and safe for the next person who needs to update the site."
+      "reflection": "Maintenance is easier to hand over when the editing patterns are visible and repeatable."
     },
     {
       "slug": "abcde-creative",
@@ -390,8 +386,8 @@
       "year": "2025",
       "client": "ABCDE Creative Studio",
       "kind": "case-study",
-      "status": "professional work",
-      "summary": "Frontend work for the ABCDE Creative Studio website and related client projects. I turned Figma designs into responsive React pages and reusable sections.",
+      "status": "",
+      "summary": "Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.",
       "role": "Web developer",
       "stack": [
         "React",
@@ -403,8 +399,13 @@
         "GitHub Actions",
         "Cloudflare"
       ],
-      "links": [],
-      "challenge": "The pages needed to match the Figma direction across screen sizes without losing accessibility or becoming difficult to maintain.",
+      "links": [
+        {
+          "label": "Visit website",
+          "href": "https://abcdecreative.com/"
+        }
+      ],
+      "challenge": "The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.",
       "approach": [
         "Worked on 3 web projects, including the studio website.",
         "Built at least 5 responsive pages from Figma mockups.",
@@ -415,7 +416,7 @@
       "outcome": [
         "Responsive pages matched the design direction more closely across screen sizes.",
         "Reusable patterns made later project work easier to maintain.",
-        "The delivery process had clearer build and deployment support."
+        "The delivery process had a clearer build and deployment path."
       ],
       "image": {
         "src": "/images/home/featured-project-2.png",
@@ -440,9 +441,9 @@
           "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
-      "overview": "At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I focused on layout, accessibility, and reusable sections.",
-      "approachSummary": "I looked for repeated layout and spacing patterns instead of treating each mockup as a separate page. That made the pages easier to adjust and test.",
-      "resultSummary": "The work produced responsive pages that stayed close to the design and gave later pages a more consistent frontend base.",
+      "overview": "At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I handled layout, accessibility checks, and shared sections.",
+      "approachSummary": "I compared the mockups for repeated layout and spacing patterns, then built those patterns into the frontend instead of treating every page as a separate piece.",
+      "resultSummary": "The pages stayed close to the design across screen sizes, while shared patterns gave later work a steadier starting point.",
       "scope": [
         "Frontend Implementation",
         "Responsive UI",
@@ -450,7 +451,7 @@
         "Reusable Components",
         "Deployment Support"
       ],
-      "reflection": "A good frontend translation keeps the energy of the design while making every section dependable across real viewport sizes."
+      "reflection": "I check the real page at the widths people will use instead of stopping after the desktop mockup matches."
     },
     {
       "slug": "debase",
@@ -473,13 +474,9 @@
         {
           "label": "Live site",
           "href": "https://debase.384721.xyz"
-        },
-        {
-          "label": "GitHub repository",
-          "href": "https://github.com/ransuhaneda/debase"
         }
       ],
-      "challenge": "The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output without turning decoded active content into a browser security risk.",
+      "challenge": "The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.",
       "approach": [
         "Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.",
         "Kept payload text, output, decoded bytes, filenames, MIME details, and file sizes inside the browser.",
@@ -488,7 +485,7 @@
         "Covered the transformation logic and interface with Vitest, Testing Library, and Playwright."
       ],
       "outcome": [
-        "The live tool handles common text and file transformations without sending payload data to a server.",
+        "The live tool handles common text and file transformations in the browser, so payload data stays on the device.",
         "Clear validation and constrained previews make malformed or potentially active decoded content safer to handle.",
         "The public repository documents the privacy boundary, size limit, deployment path, and verification commands."
       ],
@@ -517,7 +514,7 @@
         "Safe Output Previews",
         "Automated Testing"
       ],
-      "reflection": "Small utilities become more trustworthy when their privacy boundary, validation behavior, content limits, and unsafe-output handling are explicit in both the interface and the codebase.",
+      "reflection": "I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.",
       "image": {
         "src": "/images/projects/debase-live-homepage.png",
         "alt": "Debase homepage showing its browser-based Base64 encode and decode workbench."
@@ -530,7 +527,7 @@
       "client": "Personal project",
       "kind": "case-study",
       "status": "public repository",
-      "summary": "A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media.",
+      "summary": "A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.",
       "role": "Full-stack training project",
       "stack": [
         "Laravel 12",
@@ -547,7 +544,7 @@
           "href": "https://github.com/ransuhaneda/nsight-index_blog-management-system"
         }
       ],
-      "challenge": "The project needed a practical content workflow where authors could manage posts and readers could interact with published content.",
+      "challenge": "The project needed one working path for authors to manage posts and readers to interact with published content.",
       "approach": [
         "Built post, category, comment, like, and saved-post flows.",
         "Used Blade views with Bootstrap, Tailwind CSS, and Alpine.js for interface work.",
@@ -556,7 +553,7 @@
       ],
       "outcome": [
         "The public repository shows a working Laravel content-management project with author and reader features.",
-        "The project gives a stronger backend example without overstating unfinished admin work."
+        "The project gives the portfolio a backend example while keeping unfinished admin work out of the claim."
       ],
       "image": {
         "src": "/images/home/featured-project-3.png",
@@ -582,8 +579,8 @@
         }
       ],
       "overview": "Nsight Index is a Laravel training project built around a working publishing flow. Authors can manage posts and readers can comment, like, save, and browse content by category.",
-      "approachSummary": "I focused the case study on the author and reader flows that work today. Unfinished admin ideas stay out of the public claims.",
-      "resultSummary": "The repository shows a working Laravel content system and gives the portfolio a backend example without presenting unfinished features as complete.",
+      "approachSummary": "I describe the author and reader flows that work today. Unfinished admin ideas stay out of the public claims.",
+      "resultSummary": "The repository shows a working Laravel content system and gives the portfolio a backend example while keeping unfinished features clearly marked.",
       "scope": [
         "Laravel Development",
         "Content Workflow",
@@ -591,7 +588,7 @@
         "Media Handling",
         "Interface Implementation"
       ],
-      "reflection": "Backend-heavy portfolio work is most useful when the public case study is honest about the flows that are actually working."
+      "reflection": "The useful part of this project is the working publishing flow, so that is what the case study describes."
     },
     {
       "slug": "portfolio-cms",
@@ -600,7 +597,7 @@
       "client": "Personal portfolio",
       "kind": "case-study",
       "status": "live site",
-      "summary": "The content system behind this site. One JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.",
+      "summary": "The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.",
       "role": "Frontend developer",
       "stack": [
         "React",
@@ -616,7 +613,7 @@
           "href": "https://384721.xyz"
         }
       ],
-      "challenge": "The site needed to work as a human portfolio and as a machine-readable content source without keeping duplicate copy in separate places.",
+      "challenge": "The site needed to serve people and machines while keeping project copy in one editable place.",
       "approach": [
         "Kept main site copy in content/site-content.json.",
         "Generated markdown mirrors for pages, projects, resume, blog, and LLM-friendly indexes.",
@@ -624,9 +621,9 @@
         "Used Cloudflare Pages functions to serve markdown when requested."
       ],
       "outcome": [
-        "The portfolio can be edited from one content source and still publish readable markdown mirrors.",
-        "The site is easier for humans and agents to inspect without scraping visual pages.",
-        "Future case studies and posts have a clearer source path."
+        "The portfolio can be edited from one source and still publish readable Markdown mirrors.",
+        "People and agents can inspect the content directly instead of scraping the visual pages.",
+        "New case studies and posts have a known place to start."
       ],
       "image": {
         "src": "/images/home/featured-project-4.png",
@@ -661,7 +658,7 @@
         "Cloudflare Pages Functions",
         "React Content Rendering"
       ],
-      "reflection": "A portfolio content system earns its keep when the same source can serve visitors, editors, and agents without duplicate copy drifting apart."
+      "reflection": "The system is worth keeping because one edit can update the page visitors see and the Markdown files machines can read."
     },
     {
       "slug": "gsap-animation",
@@ -670,7 +667,7 @@
       "client": "Personal experiment",
       "kind": "experiment",
       "status": "tutorial-based archive",
-      "summary": "A tutorial-based React and GSAP practice build. It stays in the archive as an animation study, not as original client work.",
+      "summary": "A React and GSAP practice build based on a public tutorial. It stays in the archive as an animation study, not as original client work.",
       "role": "Frontend practice",
       "stack": [
         "React",
@@ -684,7 +681,7 @@
           "href": "https://github.com/ransuhaneda/react-gsap-acd"
         }
       ],
-      "challenge": "The goal was to practice scroll and interface animation in React while understanding how tutorial patterns map into a real codebase.",
+      "challenge": "I used the project to practice scroll and interface animation in React and see how tutorial patterns fit into a real codebase.",
       "approach": [
         "Followed a public tutorial inspired by Zentry and JavaScript Mastery.",
         "Practiced GSAP setup, timing, layout choreography, and responsive behavior.",
@@ -692,11 +689,11 @@
       ],
       "outcome": [
         "The project documents animation practice and code familiarity with GSAP in React.",
-        "It stays in the archive with clear attribution instead of being framed as a main case study."
+        "It stays in the archive with clear attribution rather than being presented as a main case study."
       ],
-      "overview": "I built this React and GSAP project while following a public tutorial. It is useful as a record of animation practice, but I do not present it as original client work.",
+      "overview": "I built this React and GSAP project while following a public tutorial. It records animation practice and is labeled as tutorial-based work.",
       "approachSummary": "I used the build to practice GSAP setup, timing, scroll interaction, and responsive behavior in React.",
-      "resultSummary": "The repository records my GSAP practice with clear attribution to the tutorial that shaped it.",
+      "resultSummary": "The repository records my GSAP practice and credits the tutorial that shaped it.",
       "scope": [
         "React Animation Study",
         "GSAP Timing",
@@ -704,22 +701,22 @@
         "Responsive Motion",
         "Code Attribution"
       ],
-      "reflection": "Tutorial-based experiments still belong in a portfolio when they are labeled clearly and used to show focused practice rather than inflated authorship.",
+      "reflection": "This tutorial build works as a record of practice because its source and limits are stated clearly.",
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-1/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
+          "caption": "Placeholder visual. Public case-study imagery is generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-2/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
+          "caption": "Placeholder visual. Public case-study imagery is generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-gsap-animation-3/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
+          "caption": "Placeholder visual. Public case-study imagery is generic."
         }
       ]
     },
@@ -746,16 +743,16 @@
       "challenge": "The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.",
       "approach": [
         "Built the app with React, TypeScript, and SCSS.",
-        "Focused on product UI structure, profile presentation, and reusable card patterns.",
+        "Worked on product UI structure, profile presentation, and reusable card patterns.",
         "Kept the project marked as in progress until the product flow is more complete."
       ],
       "outcome": [
         "The repository shows active product UI practice.",
-        "The archive entry is honest about the project status and does not present it as finished client work."
+        "The archive entry states the project status and presents it as unfinished personal work."
       ],
       "overview": "Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. It is in the archive because the main flow is still being worked on.",
-      "approachSummary": "I focused on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.",
-      "resultSummary": "The repository shows the current frontend work without presenting the app as finished.",
+      "approachSummary": "I worked on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.",
+      "resultSummary": "The repository shows the current frontend work and labels the app as unfinished.",
       "scope": [
         "Product UI Practice",
         "React Components",
@@ -763,22 +760,22 @@
         "Profile Card System",
         "Responsive SCSS"
       ],
-      "reflection": "In-progress product UI can still communicate taste and structure when the case study is clear about what is finished and what is still moving.",
+      "reflection": "The unfinished interface still shows how I structure a product UI, and the published description states its status.",
       "gallery": [
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-1/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
+          "caption": "Placeholder visual. Public case-study imagery is generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-2/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
+          "caption": "Placeholder visual. Public case-study imagery is generic."
         },
         {
           "src": "https://picsum.photos/seed/portfolio-tetherly-3/1600/1100.jpg",
           "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Public case-study imagery is intentionally generic."
+          "caption": "Placeholder visual. Public case-study imagery is generic."
         }
       ]
     }
@@ -786,12 +783,8 @@
   "home": {
     "hero": {
       "eyebrow": "Portfolio of Lance Carteciano",
-      "titleLines": [
-        "Frontend developer",
-        "building responsive",
-        "websites."
-      ],
-      "description": "I turn designs into responsive pages with React, TypeScript, and WordPress. My visual design background helps me keep the details consistent.",
+      "title": "Frontend developer building responsive websites.",
+      "description": "I turn designs into responsive pages with React, TypeScript, and WordPress. My visual design background helps me catch inconsistencies in typography, spacing, and layout.",
       "accentPhrase": "Frontend web developer",
       "dateline": {
         "left": "Portfolio 2026",
@@ -822,7 +815,7 @@
     },
     "featuredProjects": {
       "title": "Featured work",
-      "intro": "Four projects that show frontend implementation, content systems, and the way I work through practical constraints.",
+      "intro": "Four projects covering frontend implementation, content systems, and the constraints I worked within.",
       "slugs": [
         "debase",
         "abcde-creative",
@@ -835,26 +828,23 @@
     },
     "bio": {
       "eyebrow": "What I do",
-      "titleLines": [
-        "I turn design direction",
-        "into working pages."
-      ],
-      "description": "Some projects start from a Figma file. Others start from a page that has become hard to edit. I work through the structure, build the reusable parts, and check the result in the browser."
+      "title": "Frontend development informed by design work.",
+      "description": "I build responsive interfaces with React, TypeScript, and WordPress. I bring typography, layout, and page details into the implementation because they affect how the finished page works."
     },
     "stats": [
       {
-        "value": "8",
-        "label": "active sites maintained",
+        "value": "Responsive interfaces",
+        "label": "Figma designs translated into pages that adapt across screen sizes, with attention to layout and accessibility.",
         "tone": "accent"
       },
       {
-        "value": "4",
-        "label": "Elementor migrations supported",
+        "value": "Reusable components",
+        "label": "Shared UI patterns and styles that keep pages consistent across related screens.",
         "tone": "accent-2"
       },
       {
-        "value": "3",
-        "label": "WordPress themes or templates built",
+        "value": "Editable websites",
+        "label": "WordPress templates and content fields that make everyday updates straightforward.",
         "tone": "accent-3"
       }
     ],
@@ -927,7 +917,7 @@
     },
     "contact": {
       "title": "Get in touch",
-      "intro": "Tell me about the frontend role or project you want to discuss. Draft email opens your mail app; review and send it there. Nothing is sent by this site.",
+      "intro": "",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",
@@ -951,7 +941,7 @@
   "projectsPage": {
     "eyebrow": "Projects",
     "title": "Selected work and experiments.",
-    "intro": "The case studies explain the problem, my responsibility, what I did, and the result. Experiments are labeled separately.",
+    "intro": "The case studies explain the problem, my responsibility, what I changed, and what followed. Experiments are labeled separately.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-projects-grid/1600/1100.jpg",
       "alt": "Decorative stock photograph; not a project screenshot.",
@@ -962,7 +952,7 @@
     "groups": [
       {
         "title": "Case studies",
-        "description": "Professional work and public projects with a clear scope.",
+        "description": "Professional work and public projects with their scope stated clearly.",
         "kinds": [
           "case-study"
         ]
@@ -979,13 +969,13 @@
   "blogPage": {
     "eyebrow": "Notes",
     "searchLabel": "Search notes",
+    "searchPlaceholder": "Search by title or keyword",
     "categoryLabel": "Category",
     "allLabel": "All",
     "resetLabel": "Reset filters",
     "emptyMessage": "No notes match these filters.",
-    "rssLabel": "Subscribe via RSS",
     "title": "Notes from the work behind the pages.",
-    "intro": "Short notes on case-study writing, content systems, and the practical decisions that keep a portfolio maintainable.",
+    "intro": "Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-blog-index/1600/1100.jpg",
       "alt": "Decorative stock photograph for the notes archive.",

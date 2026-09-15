@@ -13,7 +13,7 @@ A browser tool for encoding and decoding text and files as Base64, Base64URL, or
 Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
 
 ## Problem
-The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output without turning decoded active content into a browser security risk.
+The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
 
 ## My responsibility
 Frontend developer
@@ -36,7 +36,7 @@ I treated privacy and safe output handling as product requirements. The app vali
 ## Result
 Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.
 
-- The live tool handles common text and file transformations without sending payload data to a server.
+- The live tool handles common text and file transformations in the browser, so payload data stays on the device.
 - Clear validation and constrained previews make malformed or potentially active decoded content safer to handle.
 - The public repository documents the privacy boundary, size limit, deployment path, and verification commands.
 
@@ -48,4 +48,4 @@ Debase is live with a public TypeScript repository and automated unit, component
 - Automated Testing
 
 ## Reflection
-Small utilities become more trustworthy when their privacy boundary, validation behavior, content limits, and unsafe-output handling are explicit in both the interface and the codebase.
+I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.

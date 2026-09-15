@@ -9,7 +9,7 @@ Case-study style project archive.
 - Role: Frontend web developer / graphic designer
 - Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
 
-Ongoing WordPress work across company and client sites. I maintain pages, clean up Elementor builds, make reusable sections, and support content updates and hosting handoffs.
+Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.
 
 ## [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md)
 
@@ -18,7 +18,7 @@ Ongoing WordPress work across company and client sites. I maintain pages, clean 
 - Role: Web developer
 - Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
 
-Frontend work for the ABCDE Creative Studio website and related client projects. I turned Figma designs into responsive React pages and reusable sections.
+Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 
 ## [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md)
 
@@ -36,7 +36,7 @@ A browser tool for encoding and decoding text and files as Base64, Base64URL, or
 - Role: Full-stack training project
 - Stack: Laravel 12, PHP, Blade, Bootstrap, Tailwind CSS, Alpine.js, Spatie Media Library
 
-A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media.
+A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.
 
 ## [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md)
 
@@ -45,7 +45,7 @@ A Laravel blog system with author and reader flows for posts, comments, categori
 - Role: Frontend developer
 - Stack: React, TypeScript, JSON content, Markdown, Cloudflare Pages, Vite
 
-The content system behind this site. One JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
+The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## [React GSAP animation experiment](https://384721.xyz/projects/gsap-animation.md)
 
@@ -54,7 +54,7 @@ The content system behind this site. One JSON file feeds the React pages, genera
 - Role: Frontend practice
 - Stack: React, Vite, GSAP, Tailwind CSS
 
-A tutorial-based React and GSAP practice build. It stays in the archive as an animation study, not as original client work.
+A React and GSAP practice build based on a public tutorial. It stays in the archive as an animation study, not as original client work.
 
 ## [Tetherly bio link app](https://384721.xyz/projects/tetherly.md)
 

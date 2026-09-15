@@ -1,8 +1,11 @@
+import type { PointerEvent as ReactPointerEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { LuExternalLink, LuGlobe, LuMail, LuMapPin } from 'react-icons/lu'
 import { getLinktreeUrl, siteContent } from '../content/siteContent'
 import { BrandIcon } from './BrandIcon'
+import { PretextFooterCanvas } from './PretextFooterCanvas'
 import { publicUrl } from '../content/publicUrl'
+import publishedPosts from '../content/publishedBlogPosts.json' with { type: 'json' }
 import sty from './SiteFooter.module.scss'
 
 function getBrandParts(name: string) {
@@ -11,6 +14,22 @@ function getBrandParts(name: string) {
     primary: primary?.toUpperCase() ?? '',
     secondary: rest.join(' ').toUpperCase(),
   }
+}
+
+function updateFeaturedLinkPointer(event: ReactPointerEvent<HTMLAnchorElement>) {
+  const link = event.currentTarget
+  const bounds = link.getBoundingClientRect()
+  link.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`)
+  link.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`)
+}
+
+function FeaturedLink({ label, to }: { label: string; to: string }) {
+  return (
+    <Link className={sty.featuredLink} onPointerMove={updateFeaturedLinkPointer} to={to}>
+      <span>{label}</span>
+      <span className={sty.featuredLinkHighlight} aria-hidden="true">{label}</span>
+    </Link>
+  )
 }
 
 
@@ -28,10 +47,15 @@ export function SiteFooter() {
   const copyright = copyrightTemplate
     .replace('{year}', String(year))
     .replace('{siteName}', siteContent.site.name)
+  const pretextSource = [
+    ...siteContent.projects.flatMap((project) => [project.title, project.summary, project.approachSummary]),
+    ...publishedPosts.flatMap((post) => [post.title, post.excerpt]),
+  ].join('')
 
   return (
     <footer className={sty.root}>
       <div className={sty.border}>
+        <PretextFooterCanvas text={pretextSource} />
         <div className="lg-wrapper">
         <div className={sty.inner}>
           <div className={sty.info}>
@@ -44,11 +68,11 @@ export function SiteFooter() {
 
           <div className={sty.links}>
             <nav className={sty.featuredNavigation} aria-label="Featured pages">
-              <Link to="/">HOME</Link>
-              <Link to="/projects">PROJECTS</Link>
-              <Link to="/about">ABOUT</Link>
-              <Link to="/blog">NOTES</Link>
-              <Link to="/#contact">CONTACT</Link>
+              <FeaturedLink label="HOME" to="/" />
+              <FeaturedLink label="PROJECTS" to="/projects" />
+              <FeaturedLink label="ABOUT" to="/about" />
+              <FeaturedLink label="NOTES" to="/blog" />
+              <FeaturedLink label="CONTACT" to="/#contact" />
             </nav>
 
             <nav className={sty.navigation} aria-label="Footer">

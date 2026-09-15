@@ -30,26 +30,19 @@ export function ContactPage() {
       <section className={sty.contactSection}>
         <div className="lg-wrapper">
           <div className={sty.contactGrid} data-text-reveal-group="scrub">
-            <aside>
-              <h2 data-text-reveal="heading">{siteContent.contact.methodsSectionTitle}</h2>
-              <div className={sty.contactMethods} data-text-reveal="copy">
-                {siteContent.contact.methods.map((method) => {
-                  const Icon = getContactIcon(method.title)
+            <div className={sty.contactMethods} data-text-reveal="copy">
+              {siteContent.contact.methods.map((method) => {
+                const Icon = getContactIcon(method.title)
 
-                  return (
-                    <a key={method.title} href={method.href} target={method.href.startsWith('http') ? '_blank' : undefined} rel={method.href.startsWith('http') ? 'noreferrer' : undefined}>
-                      <span><Icon aria-hidden="true" focusable="false" /></span>
-                      <div><strong>{method.title}</strong><small>{method.label}</small></div>
-                    </a>
-                  )
-                })}
-              </div>
-            </aside>
-            <div className={sty.contactFormWrap}>
-              <h2 data-text-reveal="heading">{siteContent.contact.formSectionTitle}</h2>
-              <p data-text-reveal="copy">{siteContent.contact.formSectionIntro}</p>
-              <ContactForm contact={siteContent.contact.form} recipientEmail={siteContent.site.email} showIntro={false} />
+                return (
+                  <a key={method.title} href={method.href} target={method.href.startsWith('http') ? '_blank' : undefined} rel={method.href.startsWith('http') ? 'noreferrer' : undefined}>
+                    <span><Icon aria-hidden="true" focusable="false" /></span>
+                    <div><strong>{method.title}</strong><small>{method.label}</small></div>
+                  </a>
+                )
+              })}
             </div>
+            <ContactForm contact={siteContent.contact.form} recipientEmail={siteContent.site.email} showIntro={false} />
           </div>
         </div>
       </section>

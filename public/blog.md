@@ -1,6 +1,6 @@
 # Blog
 
-Short notes on case-study writing, content systems, and the practical decisions that keep a portfolio maintainable.
+Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
 
 ## [A passing build is not a finished interface](https://384721.xyz/blog/build-correctness-is-not-visual-correctness.md)
 
@@ -12,7 +12,7 @@ Why frontend work needs a rendered check after the code passes: layout, hierarch
 
 - Date: 2026-08-21
 
-A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake.
+A branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without extra ceremony.
 
 ## [Why this portfolio uses a Git-backed content system](https://384721.xyz/blog/git-backed-portfolio-cms.md)
 
@@ -24,4 +24,4 @@ How JSON and Markdown keep the portfolio's visible pages, mirrors, and project n
 
 - Date: 2026-07-22
 
-A practical way to turn real project work into a case study without inflating the scope or losing the useful details.
+A direct way to turn real project work into a case study while keeping the scope and useful details intact.

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { LuArrowDown, LuArrowRight, LuArrowUpRight, LuCalendarCheck } from 'react-icons/lu'
+import { LuArrowDown, LuArrowRight, LuArrowUpRight } from 'react-icons/lu'
 import { ContactForm } from '../components/ContactForm'
 import { FeaturedProjectCarousel } from '../components/FeaturedProjectCarousel'
+import { PretextText } from '../components/PretextText'
 import { blogPosts } from '../content/blogContent'
 import { readingMinutes } from '../content/publicUrl'
 import { siteContent, type HomeStatTone } from '../content/siteContent'
@@ -22,7 +23,7 @@ function renderAccentedTitle(title: string, accentPhrase?: string) {
 
 export function HomePage() {
   const hero = siteContent.home.hero
-  const title = hero.titleLines.join(' ')
+  const title = hero.title
   const skillGroups = siteContent.home.skills.groups
 
   return (
@@ -36,9 +37,11 @@ export function HomePage() {
             </div>
 
             <div className={sty.heroGrid}>
-              <h1 data-text-reveal="heading">{renderAccentedTitle(title, hero.accentPhrase)}</h1>
-              <div className={sty.heroSupport}>
-                <p data-text-reveal="copy">{hero.description || siteContent.site.tagline}</p>
+              <PretextText as="h1" measure="heading" reveal="heading" text={title}>{renderAccentedTitle(title, hero.accentPhrase)}</PretextText>
+              <div className={sty.heroAside}>
+                <div className={sty.heroSupport}>
+                  <PretextText measure="intro" reveal="copy">{hero.description || siteContent.site.tagline}</PretextText>
+                </div>
                 {hero.index?.length ? (
                   <dl className={sty.index} data-text-reveal="copy">
                     {hero.index.map((item) => (
@@ -46,7 +49,7 @@ export function HomePage() {
                     ))}
                   </dl>
                 ) : null}
-                <div className="button-row">
+                <div className={`${sty.heroActions} button-row`}>
                   <a className="button button--primary" href="#selected-work">{siteContent.home.cta.primaryLabel}<LuArrowDown aria-hidden="true" focusable="false" /></a>
                   {siteContent.home.cta.secondaryLabel ? (
                     <Link className="button button--ghost" to="/resume">{siteContent.home.cta.secondaryLabel}<LuArrowRight aria-hidden="true" focusable="false" /></Link>
@@ -78,9 +81,9 @@ export function HomePage() {
           <div className={sty.sectionInner} data-text-reveal-group="scrub">
             <div className={sty.practiceCopy}>
               <div>
-                                <h2 data-text-reveal="heading">{siteContent.home.bio.titleLines.join(' ')}</h2>
+                <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.bio.title}</PretextText>
               </div>
-              <p data-text-reveal="copy">{siteContent.home.bio.description}</p>
+              <PretextText measure="prose" reveal="copy">{siteContent.home.bio.description}</PretextText>
             </div>
             <div className={sty.stats} data-text-reveal="copy">
               {siteContent.home.stats.map((stat) => (
@@ -98,14 +101,14 @@ export function HomePage() {
         <div className="lg-wrapper">
           <div className={sty.skillsGrid} data-text-reveal-group="scrub">
             <div>
-              <h2 data-text-reveal="heading">{siteContent.home.skills.title}</h2>
-              <p data-text-reveal="copy">{siteContent.home.skills.description}</p>
+              <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.skills.title}</PretextText>
+              <PretextText measure="intro" reveal="copy">{siteContent.home.skills.description}</PretextText>
             </div>
             {skillGroups?.length ? (
               <div className={sty.skillGroups} data-text-reveal="copy">
                 {skillGroups.map((group) => (
                   <article key={group.title}>
-                    <h3>{group.title}</h3>
+                    <PretextText as="h3" measure="heading">{group.title}</PretextText>
                     <ul aria-label={`${group.title} skills`}>
                       {group.items.map((skill, index) => (
                         <li className={index % 3 === 1 ? sty.skillFlare : index % 3 === 2 ? sty.skillIris : undefined} key={skill}>{skill}</li>
@@ -130,15 +133,14 @@ export function HomePage() {
           <div className="lg-wrapper">
             <div className={sty.notesInner} data-text-reveal-group="scrub">
               <div className={sty.notesHeader}>
-                <span data-text-reveal="copy">Latest articles</span>
-                <h2 data-text-reveal="heading">Fresh from the blog</h2>
+                <PretextText as="h2" measure="heading" reveal="heading">Fresh from the blog</PretextText>
               </div>
               <div className={sty.notesGrid} data-text-reveal="copy">
                 {blogPosts.slice(0, 3).map((post) => (
                   <Link className={sty.noteCard} key={post.slug} to={`/blog/${post.slug}`} state={{ from: '/' }}>
                     <div className={sty.noteMeta}>{post.date} <span aria-hidden="true">·</span> {readingMinutes(post.body)} min read</div>
-                    <h3>{post.title}</h3>
-                    <p>{post.excerpt ?? post.body.split('\n')[0]}</p>
+                    <PretextText as="h3" measure="heading">{post.title}</PretextText>
+                    <PretextText measure="prose">{post.excerpt ?? post.body.split('\n')[0]}</PretextText>
                     <span className={sty.noteRead}>Read article<LuArrowUpRight className={sty.noteArrow} aria-hidden="true" focusable="false" /></span>
                   </Link>
                 ))}
@@ -152,13 +154,12 @@ export function HomePage() {
         <div className="lg-wrapper">
           <div className={sty.contactGrid} data-text-reveal-group="scrub">
             <div className={sty.contactCopy}>
-              <h2 data-text-reveal="heading">{siteContent.home.contact.title}</h2>
-              <p data-text-reveal="copy"><LuCalendarCheck aria-hidden="true" className={sty.inlineIcon} focusable="false" />
-                {siteContent.contact.availability}. Reach directly at 
-                <a href={`mailto:${siteContent.site.email}`}>
-                  {siteContent.site.email}
-                </a>.
-              </p>
+              <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.contact.title}</PretextText>
+              <PretextText measure="intro" reveal="copy" text={`${siteContent.contact.availability}. Reach directly at ${siteContent.site.email}.`}>
+                <span className={sty.contactMessage}>
+                  {siteContent.contact.availability}. <span className={sty.contactEmailLine}>Reach directly at <a href={`mailto:${siteContent.site.email}`}>{siteContent.site.email}</a>.</span>
+                </span>
+              </PretextText>
             </div>
             <ContactForm contact={siteContent.home.contact} recipientEmail={siteContent.site.email} showIntro={false} />
           </div>

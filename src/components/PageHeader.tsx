@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import sty from './PageHeader.module.scss'
+import { PretextText } from './PretextText'
 
 type PageHeaderProps = {
   title: string
@@ -10,8 +11,8 @@ type PageHeaderProps = {
 export function PageHeader({ title, intro, actions }: PageHeaderProps) {
   return (
     <header className={sty.root} data-text-reveal-group="entry">
-      <h1 data-text-reveal="heading">{title}</h1>
-      <p className={sty.intro} data-text-reveal="copy">{intro}</p>
+      <PretextText as="h1" measure="heading" reveal="heading">{title}</PretextText>
+      <PretextText className={sty.intro} measure="intro" reveal="copy">{intro}</PretextText>
       {actions ? <div className={sty.actions}>{actions}</div> : null}
     </header>
   )

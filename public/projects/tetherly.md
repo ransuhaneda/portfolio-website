@@ -24,17 +24,17 @@ Frontend developer
 - Responsive SCSS
 
 ## What I did
-I focused on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.
+I worked on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.
 
 - Built the app with React, TypeScript, and SCSS.
-- Focused on product UI structure, profile presentation, and reusable card patterns.
+- Worked on product UI structure, profile presentation, and reusable card patterns.
 - Kept the project marked as in progress until the product flow is more complete.
 
 ## Result
-The repository shows the current frontend work without presenting the app as finished.
+The repository shows the current frontend work and labels the app as unfinished.
 
 - The repository shows active product UI practice.
-- The archive entry is honest about the project status and does not present it as finished client work.
+- The archive entry states the project status and presents it as unfinished personal work.
 
 ## Project scope
 - Product UI Practice
@@ -44,4 +44,4 @@ The repository shows the current frontend work without presenting the app as fin
 - Responsive SCSS
 
 ## Reflection
-In-progress product UI can still communicate taste and structure when the case study is clear about what is finished and what is still moving.
+The unfinished interface still shows how I structure a product UI, and the published description states its status.

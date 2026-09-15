@@ -3,7 +3,6 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import siteContent from '../content/site-content.json' with { type: 'json' }
 import { blogCategories, parseBlogPost, selectPublishedBlogPosts, validateSlug } from '../src/content/blogSchema.ts'
-import { escapeHtml, renderBlogHtml } from '../src/content/blogMarkdown.ts'
 
 const root = path.resolve(import.meta.dirname, '..')
 const publicDir = path.join(root, 'public')
@@ -42,20 +41,6 @@ for (const project of siteContent.projects) {
   projectSlugs.add(project.slug)
 }
 const categoryLabel = (post) => blogCategories.find((category) => category.id === post.category).label
-const canonicalUrl = 'https://384721.xyz'
-const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel><title>${escapeHtml(siteContent.site.name)} — Blog</title>
-<link>${canonicalUrl}/blog</link><description>${escapeHtml(siteContent.blogPage.intro)}</description>
-<atom:link href="${canonicalUrl}/rss.xml" rel="self" type="application/rss+xml" />
-${blogPosts.map((post) => {
-  const url = `${canonicalUrl}/blog/${post.slug}`
-  return `<item><title>${escapeHtml(post.title)}</title><link>${url}</link><guid isPermaLink="true">${url}</guid>
-<pubDate>${new Date(`${post.date}T00:00:00Z`).toUTCString()}</pubDate><category>${escapeHtml(categoryLabel(post))}</category>
-<description>${escapeHtml(post.excerpt)}</description><content:encoded>${escapeHtml(renderBlogHtml(post.body, url))}</content:encoded></item>`
-}).join('\n')}
-</channel></rss>
-`
 
 const routes = [
   { path: '/', md: '/index.md', title: 'Home', description: siteContent.site.description },
@@ -89,7 +74,7 @@ ${siteContent.site.tagline}
 ${siteContent.home.hero.eyebrow}
 
 ## Homepage hero
-${siteContent.home.hero.titleLines.join(' ')}
+${siteContent.home.hero.title}
 
 ${siteContent.home.hero.description}
 
@@ -406,7 +391,6 @@ for (const [relativePath, content] of Object.entries(pageMarkdown)) {
 await fs.writeFile(path.join(publicDir, 'llms.txt'), llms, 'utf8')
 await fs.writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull, 'utf8')
 await fs.writeFile(path.join(publicDir, 'sitemap.xml'), sitemap, 'utf8')
-await fs.writeFile(path.join(publicDir, 'rss.xml'), rss, 'utf8')
 await fs.writeFile(path.join(publicDir, '.well-known', 'security.txt'), `Contact: mailto:${email}\nExpires: 2027-06-25T00:00:00.000Z\nPreferred-Languages: en\nCanonical: ${siteUrl}/.well-known/security.txt\n`, 'utf8')
 await fs.writeFile(manifestPath, JSON.stringify(currentMirrors, null, 2) + '\n', 'utf8')
 await fs.writeFile(path.join(root, 'src/content/publishedBlogPosts.json'), JSON.stringify(blogPosts, null, 2) + '\n', 'utf8')

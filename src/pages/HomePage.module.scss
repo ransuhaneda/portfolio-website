@@ -16,12 +16,26 @@
   scroll-margin-top: var(--header-height);
 }
 
-.notesInner { display: grid; gap: var(--space-lg); padding-block: var(--space-xl); }
-.notesHeader { display: grid; justify-items: center; gap: var(--space-2xs); text-align: center; }
+.notesInner { display: grid; width: 100%; max-width: 100%; min-width: 0; gap: var(--space-lg); padding-block: var(--space-xl); }
+.notesInner > *,
+.notesGrid,
+.noteCard > * { min-width: 0; }
+.notesHeader { display: grid; min-width: 0; justify-items: center; gap: var(--space-2xs); text-align: center; }
 .notesHeader span { color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; @include mix.type-style(body-xs); }
 .notesHeader h2 { margin-block: 0; color: var(--color-action-primary); text-transform: uppercase; @include mix.type-style(h2); }
 .notesGrid { display: grid; gap: var(--space-sm); }
-.noteCard { display: grid; align-content: start; gap: var(--space-xs); padding: var(--space-md); color: inherit; text-decoration: none; border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); transition: transform var(--motion-emphasized) var(--motion-ease-emphasized), border-color var(--motion-fast) var(--motion-ease-standard), background-color var(--motion-fast) var(--motion-ease-standard); }
+.noteCard { display: grid; min-width: 0; align-content: start; gap: var(--space-xs); padding: var(--space-md); color: inherit; text-decoration: none; border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); transition: transform var(--motion-emphasized) var(--motion-ease-emphasized), border-color var(--motion-fast) var(--motion-ease-standard), background-color var(--motion-fast) var(--motion-ease-standard); }
+
+.notesGrid,
+.noteCard {
+  width: 100%;
+  max-width: 100%;
+}
+
+.notesHeader [data-pretext] {
+  width: min(100%, 34rem);
+  max-width: 100%;
+}
 .noteCard:hover, .noteCard:focus-visible { transform: translateY(-0.35rem); border-color: var(--color-action-primary); background: var(--color-surface-overlay); }
 .noteCard:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 0.2rem; }
 .noteCard:hover h3, .noteCard:focus-visible h3 { color: var(--color-action-primary); }
@@ -39,6 +53,7 @@
 
 .dateline {
   display: flex;
+  min-width: 0;
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-md);
@@ -52,6 +67,9 @@
 
 .heroGrid {
   display: grid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   gap: var(--space-lg);
   padding-block-start: var(--space-lg);
 }
@@ -79,8 +97,36 @@
 
 .heroSupport {
   display: grid;
+  width: 100%;
+  max-width: 100%;
   align-content: start;
+  align-self: start;
+  min-width: 0;
   gap: var(--space-md);
+}
+
+.heroAside {
+  display: grid;
+  align-content: start;
+  gap: var(--space-sm);
+}
+
+.heroGrid > *,
+.heroSupport > *,
+.heroAside > *,
+.index > div > *,
+.sectionInner > *,
+.skillsGrid > *,
+.contactGrid > * { min-width: 0; }
+
+.heroGrid > .index {
+  grid-column: 1 / -1;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-inline);
 }
 
 .heroSupport > p {
@@ -99,6 +145,7 @@
 
 .index > div {
   display: flex;
+  min-width: 0;
   gap: var(--space-md);
   align-items: baseline;
   justify-content: space-between;
@@ -114,13 +161,20 @@
 }
 
 .index dd {
+  min-width: 0;
+  max-width: 100%;
   margin-block: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
   @include mix.type-style(body-sm);
 }
 
 .sectionInner,
 .skillsGrid,
 .contactGrid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding-block: var(--space-xl);
 }
 
@@ -162,7 +216,7 @@
 
 .stats strong {
   font-family: var(--font-display);
-  font-size: var(--type-h2-size);
+  @include mix.type-style(h5);
   line-height: 1;
 }
 
@@ -251,11 +305,15 @@
 }
 
 .contactCopy p {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-2xs);
   color: var(--color-form-helper);
+}
+
+.contactEmailLine {
+  white-space: nowrap;
+}
+
+.contactEmailLine a {
+  white-space: nowrap;
 }
 
 @include mix.mq(sm) {
@@ -279,7 +337,7 @@
   }
 
   .heroGrid > h1 { grid-column: span 7; }
-  .heroSupport { grid-column: span 5; }
+  .heroAside { grid-column: 8 / span 5; }
   .practiceCopy > div { grid-column: span 5; }
   .practiceCopy > p { grid-column: 6 / span 7; }
   .skillsGrid > div { grid-column: span 4; }
@@ -287,4 +345,14 @@
   .skillsGrid > .skillGroups { grid-column: 5 / span 8; padding-inline-start: var(--space-lg); border-inline-start: 1px solid var(--color-border-default); }
   .contactCopy { grid-column: span 4; }
   .contactGrid > :last-child { grid-column: 5 / span 8; }
+}
+
+@include mix.mq(xl) {
+  .heroGrid > h1 { grid-column: span 8; }
+  .heroAside { grid-column: 9 / span 4; }
+}
+
+@media (min-width: 48rem) and (max-width: 75rem) {
+  .heroGrid > h1 { grid-column: 1 / -1; }
+  .heroAside { grid-column: 1 / -1; grid-row: 2; }
 }

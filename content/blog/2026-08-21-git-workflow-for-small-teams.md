@@ -4,17 +4,17 @@ slug: "git-release-workflow-for-small-teams"
 date: "2026-08-21"
 status: "published"
 category: "git-workflow"
-excerpt: "A practical branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without release ceremony for its own sake."
+excerpt: "A branch, merge, tag, and cleanup workflow for teams that want reviewable Git history without extra ceremony."
 coverImage: "https://picsum.photos/seed/git-release-workflow-small-teams/1600/900.jpg"
 coverAlt: "Decorative stock photograph; not a screenshot of the Git workflow."
 ---
-A small team does not need a complicated Git process. It does need a clear boundary between work in progress, integrated work, and what is in production.
+A small team can use a simple Git process. It needs to know which work is still being reviewed, which work is integrated, and what is in production.
 
 The workflow I use keeps `development` as the integration branch and `main` as the production branch. Short-lived feature or fix branches merge into `development`. A release is one explicit merge into `main`, followed by an annotated tag. After that, `development` fast-forwards to the released `main`.
 
 ## Start work from development
 
-Feature and fix branches start from an up-to-date `development` branch. The branch name describes the work, such as `feat/blog-post` or `fix/mobile-header`.
+I start feature and fix branches from an up-to-date `development` branch. The branch name describes the work, such as `feat/blog-post` or `fix/mobile-header`.
 
 ```bash
 git switch development
@@ -23,7 +23,7 @@ git switch -c feat/blog-post
 git push -u origin feat/blog-post
 ```
 
-Keeping work branches short makes review easier. Commits stay focused and use a Conventional Commit prefix when it helps explain the change: `feat:`, `fix:`, `docs:`, or `chore:`.
+Short work branches are easier to review. I keep commits narrow and use a Conventional Commit prefix when it helps explain the change: `feat:`, `fix:`, `docs:`, or `chore:`.
 
 I add specific files rather than every file in the working tree. That matters when generated files, screenshots, or another unfinished change are present.
 
@@ -36,7 +36,7 @@ git commit -m "docs: add git release workflow post"
 git push
 ```
 
-## Merge focused work into development
+## Merge the work into development
 
 The branch is reviewed and validated before it is merged. For this portfolio, content changes run `pnpm run prebuild`; structural changes also run `pnpm build`. Browser checks belong in the dedicated `.playwright/` folders when the change affects rendered behavior.
 
@@ -49,7 +49,7 @@ git merge --no-ff feat/blog-post -m "Merge branch 'feat/blog-post' into developm
 git push origin development
 ```
 
-A merge commit records the integration boundary without rewriting the individual commits from the work branch. Squashing or rebasing a completed branch would remove that history, so I do not use either unless the project explicitly asks for it.
+A merge commit records the integration boundary without rewriting the work branch. I leave completed branch history intact unless the project calls for squashing or rebasing.
 
 ## Release from validated development
 
@@ -72,9 +72,9 @@ git tag --list "v$VERSION"
 git ls-remote --tags origin "refs/tags/v$VERSION"
 ```
 
-The ancestry check prevents an unexpected branch divergence from being hidden by a release merge. The tree-difference check prevents an unchanged release. The local and remote tag checks prevent reusing a published version.
+The ancestry check exposes an unexpected branch divergence before the release merge. The tree-difference check catches an unchanged release. The local and remote tag checks stop a published version from being reused.
 
-A `release/vX.Y.Z` branch is only useful when it contains release preparation, stabilization, or a release-blocking fix. A branch that points at the unchanged `development` tip adds ceremony without adding a review boundary.
+I use a `release/vX.Y.Z` branch only when it contains release preparation, stabilization, or a release-blocking fix. A branch pointing at the unchanged `development` tip adds ceremony without adding a review boundary.
 
 ## Merge once, tag once, publish together
 
@@ -100,7 +100,7 @@ git merge --ff-only main
 git push origin development
 ```
 
-The release merge already contains the release source as a parent, so a fast-forward keeps both long-lived branches aligned while preserving the one release boundary.
+The release merge already contains the release source as a parent. Fast-forwarding keeps both long-lived branches aligned and preserves one release boundary.
 
 ## Clean up only after verifying history
 
@@ -114,8 +114,8 @@ git push origin --delete feat/blog-post
 git branch -vv
 ```
 
-The cleanup is part of the workflow, not a substitute for checking history. A branch is safe to delete when its commits are reachable from the intended integration or release branch and the remote deletion is confirmed.
+Cleanup comes after the history check. I delete a branch when its commits are reachable from the intended integration or release branch and the remote deletion is confirmed.
 
 ## The workflow in one line
 
-Use `feat/*` or `fix/*` branches for focused work, merge them into `development`, release validated `development` into `main` once with an annotated tag, fast-forward `development`, and delete branches only after verifying reachability. The process is small enough to follow and explicit enough to explain what reached production.
+Use `feat/*` or `fix/*` branches for contained work, merge them into `development`, release validated `development` into `main` once with an annotated tag, fast-forward `development`, and delete branches after verifying reachability. Each step leaves a record of what reached production.

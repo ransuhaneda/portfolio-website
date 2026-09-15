@@ -7,6 +7,9 @@
 
 .root {
   gap: var(--space-sm);
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--color-border-default);
+  overflow-x: clip;
   cursor: pointer;
 }
 
@@ -16,27 +19,10 @@
 }
 
 .content {
+  min-width: 0;
   gap: var(--space-xs);
 }
 
-.imageLink {
-  display: block;
-  overflow: hidden;
-  border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
-  background: var(--color-background-surface);
-}
-
-.image {
-  width: 100%;
-  aspect-ratio: 1.2;
-  object-fit: cover;
-  transition: transform var(--motion-emphasized) var(--motion-ease-emphasized);
-}
-
-.imageLink:hover .image {
-  transform: scale(1.015);
-}
 
 .titleRow,
 .meta {
@@ -46,7 +32,16 @@
 }
 
 .titleRow {
+  min-width: 0;
   align-items: baseline;
+}
+
+.titleRow > * {
+  min-width: 0;
+}
+
+.titleRow h2 {
+  overflow-wrap: anywhere;
 }
 
 .content h2,

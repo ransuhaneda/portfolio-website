@@ -1,4 +1,5 @@
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
 import { ProjectCard } from '../components/ProjectCard'
 import { siteContent, type Project } from '../content/siteContent'
 import sty from './InternalPages.module.scss'
@@ -35,8 +36,8 @@ export function ProjectsPage() {
             {groups.map((group) => (
               <section key={group.title} className={sty.projectGroup} data-text-reveal-group="scrub" aria-labelledby={`project-group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
                 <header>
-                  <h2 data-text-reveal="heading" id={`project-group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{group.title}</h2>
-                  {group.description ? <p data-text-reveal="copy">{group.description}</p> : null}
+                  <PretextText as="h2" measure="heading" reveal="heading" id={`project-group-${group.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{group.title}</PretextText>
+                  {group.description ? <PretextText measure="intro" reveal="copy">{group.description}</PretextText> : null}
                 </header>
                 <div className={sty.projectGrid}>
                   {group.projects.map((project) => (

@@ -1,4 +1,5 @@
 import { InternalHero } from '../components/InternalHero'
+import { PretextText } from '../components/PretextText'
 import { Section } from '../components/Section'
 import { siteContent } from '../content/siteContent'
 import sty from './InternalPages.module.scss'
@@ -14,7 +15,7 @@ export function AboutPage() {
       <Section title={siteContent.about.bodySectionTitle}>
         <div className={sty.proseLead} data-text-reveal="copy">
           {siteContent.about.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <PretextText measure="prose" key={paragraph}>{paragraph}</PretextText>
           ))}
         </div>
       </Section>
@@ -24,8 +25,8 @@ export function AboutPage() {
           {siteContent.about.process.map((step, index) => (
             <article className={sty.numberedCard} key={step.title}>
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
+              <PretextText as="h3" measure="heading">{step.title}</PretextText>
+              <PretextText measure="prose">{step.description}</PretextText>
             </article>
           ))}
         </div>
@@ -35,7 +36,7 @@ export function AboutPage() {
         <div className={sty.cardGrid} data-text-reveal="copy">
           {siteContent.about.principles.map((principle) => (
             <article className={sty.card} key={principle}>
-              <h3>{principle}</h3>
+              <PretextText as="h3" measure="heading">{principle}</PretextText>
             </article>
           ))}
         </div>

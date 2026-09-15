@@ -2,7 +2,7 @@
 
 ## Frontend Web Developer and Graphic Designer
 
-Frontend developer and graphic designer with production experience in WordPress maintenance, Elementor systems, React implementation, responsive UI, and visual asset work.
+Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.
 
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
@@ -54,7 +54,7 @@ Frontend developer and graphic designer with production experience in WordPress 
 ### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Jul 2024)
 - Designed weekly social media graphics and branded marketing assets for 3 branches.
 - Produced promotional assets for seasonal and recurring drink campaigns.
-- Worked with stakeholders to keep campaign visuals consistent with branch needs.
+- Worked with stakeholders to keep campaign visuals aligned with branch needs.
 
 ## Education and training
 ### Full-stack web developer training, CIIT College of Arts and Technology (2025)
