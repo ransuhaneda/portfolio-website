@@ -29,8 +29,8 @@ I turn designs into responsive pages with React, TypeScript, and WordPress. My v
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
 ## Featured case studies
-- [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 - [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
+- [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 - [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md): A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
@@ -429,108 +429,57 @@ Frontend developer and graphic designer with production experience maintaining W
 - Training covered PHP, Laravel, MySQL, HTML, CSS, JavaScript, frontend fundamentals, backend fundamentals, and database work.
 
 ## Projects
-# Yay Nay feature voting platform
+# Debase browser-local Base64 tools
 
 - Year: 2026
 - Client: Personal project
-- Role: Full-stack developer
-- Stack: Laravel, PHP, Inertia, React, TypeScript, Server-side rendering
-
-
-## Summary
-A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
-
-## Overview
-Yay Nay is an in-progress feature-voting platform. It combines Laravel with Inertia and React so people can submit feature requests, comment on them, and vote on priorities.
-
-## Problem
-The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.
-
-## My responsibility
-Full-stack developer
-
-- Laravel Application Development
-- Inertia and React
-- Feature Voting Flows
-- Authentication and Permissions
-- Server-side Rendering
-
-## What I did
-I built the main feature and account flows across the Laravel backend and React interface, while keeping the repository's unfinished areas clearly scoped.
-
-- Built the application with Laravel, Inertia, React, and TypeScript.
-- Added feature creation, editing, detail pages, comments, and upvote flows.
-- Included authentication, profile settings, permissions, and server-side rendering support.
-- Kept the repository's in-progress status visible rather than presenting unfinished product work as complete.
-
-## Result
-The public repository shows a full-stack product foundation with feature requests, comments, upvotes, authentication, and server-side rendering support.
-
-- The repository documents a working foundation for feature requests, discussion, and voting.
-- The project gives the portfolio a full-stack example that combines Laravel routing and data handling with a React interface.
-- The public case study makes the current scope and ongoing status clear.
-
-## Project scope
-- Laravel Application Development
-- Inertia and React
-- Feature Voting Flows
-- Authentication and Permissions
-- Server-side Rendering
-
-## Reflection
-An in-progress product is still useful as a case study when the working flows, technical choices, and remaining scope are stated plainly.
-
-# WordPress maintenance and Elementor system work
-
-- Year: 2026
-- Client: Tech Support Plus I.T Services
-- Role: Frontend web developer / graphic designer
-- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
-- Homepage image: https://384721.xyz/images/home/featured-project-1.png
+- Role: Frontend developer
+- Stack: React, TypeScript, Vite, SCSS, Vitest, Playwright
+- Homepage image: https://384721.xyz/images/projects/debase-live-homepage.png
 
 ## Summary
-Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.
+A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 
 ## Overview
-This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in.
+Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
 
 ## Problem
-Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.
+The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
 
 ## My responsibility
-Frontend web developer / graphic designer
+Frontend developer
 
-- WordPress Maintenance
-- Elementor System Cleanup
-- Frontend Styling
-- Admin Workflow Support
-- Hosting Handoff Support
+- Browser-local File Processing
+- Base64 and Base64URL
+- Data URL Handling
+- Safe Output Previews
+- Automated Testing
 
 ## What I did
-I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.
+I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.
 
-- Maintained 8 active websites across company and client work.
-- Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.
-- Built 3 custom WordPress themes or templates and reusable branded sections.
-- Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
-- Handled spam prevention, security cleanup, styling consistency, and deployment support.
+- Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.
+- Kept payload text, output, decoded bytes, filenames, MIME details, and file sizes inside the browser.
+- Added strict validation, a 25 MiB raw-file limit, drag-and-drop, copy, swap, file picking, and downloads.
+- Limited inline previews to allowlisted raster images and bounded plain text while keeping active content download-only.
+- Covered the transformation logic and interface with Vitest, Testing Library, and Playwright.
 
 ## Result
-Repeated sections now follow clearer patterns, and content editors have fewer opportunities to break the layout.
+Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.
 
-- Company and client sites became easier to update because repeated sections now follow the same patterns.
-- Recurring maintenance work had clearer styling rules and less one-off editing.
-- SEO and content updates became safer through simpler admin workflows.
+- The live tool handles common text and file transformations in the browser, so payload data stays on the device.
+- Clear validation and constrained previews make malformed or potentially active decoded content safer to handle.
+- The public repository documents the privacy boundary, size limit, deployment path, and verification commands.
 
 ## Project scope
-- WordPress Maintenance
-- Elementor System Cleanup
-- Frontend Styling
-- Admin Workflow Support
-- Hosting Handoff Support
+- Browser-local File Processing
+- Base64 and Base64URL
+- Data URL Handling
+- Safe Output Previews
+- Automated Testing
 
 ## Reflection
-Maintenance is easier to hand over when the editing patterns are visible and repeatable.
+I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.
 
 # ABCDE Creative Studio website
 
@@ -584,57 +533,57 @@ The pages stayed close to the design across screen sizes, while shared patterns 
 ## Reflection
 I check the real page at the widths people will use instead of stopping after the desktop mockup matches.
 
-# Debase browser-local Base64 tools
+# WordPress maintenance and Elementor system work
 
 - Year: 2026
-- Client: Personal project
-- Role: Frontend developer
-- Stack: React, TypeScript, Vite, SCSS, Vitest, Playwright
-- Homepage image: https://384721.xyz/images/projects/debase-live-homepage.png
+- Client: Tech Support Plus I.T Services
+- Role: Frontend web developer / graphic designer
+- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
+- Homepage image: https://384721.xyz/images/home/featured-project-1.png
 
 ## Summary
-A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
+Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.
 
 ## Overview
-Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
+This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in.
 
 ## Problem
-The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
+Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.
 
 ## My responsibility
-Frontend developer
+Frontend web developer / graphic designer
 
-- Browser-local File Processing
-- Base64 and Base64URL
-- Data URL Handling
-- Safe Output Previews
-- Automated Testing
+- WordPress Maintenance
+- Elementor System Cleanup
+- Frontend Styling
+- Admin Workflow Support
+- Hosting Handoff Support
 
 ## What I did
-I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.
+I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.
 
-- Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.
-- Kept payload text, output, decoded bytes, filenames, MIME details, and file sizes inside the browser.
-- Added strict validation, a 25 MiB raw-file limit, drag-and-drop, copy, swap, file picking, and downloads.
-- Limited inline previews to allowlisted raster images and bounded plain text while keeping active content download-only.
-- Covered the transformation logic and interface with Vitest, Testing Library, and Playwright.
+- Maintained 8 active websites across company and client work.
+- Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.
+- Built 3 custom WordPress themes or templates and reusable branded sections.
+- Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
+- Handled spam prevention, security cleanup, styling consistency, and deployment support.
 
 ## Result
-Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.
+Repeated sections now follow clearer patterns, and content editors have fewer opportunities to break the layout.
 
-- The live tool handles common text and file transformations in the browser, so payload data stays on the device.
-- Clear validation and constrained previews make malformed or potentially active decoded content safer to handle.
-- The public repository documents the privacy boundary, size limit, deployment path, and verification commands.
+- Company and client sites became easier to update because repeated sections now follow the same patterns.
+- Recurring maintenance work had clearer styling rules and less one-off editing.
+- SEO and content updates became safer through simpler admin workflows.
 
 ## Project scope
-- Browser-local File Processing
-- Base64 and Base64URL
-- Data URL Handling
-- Safe Output Previews
-- Automated Testing
+- WordPress Maintenance
+- Elementor System Cleanup
+- Frontend Styling
+- Admin Workflow Support
+- Hosting Handoff Support
 
 ## Reflection
-I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.
+Maintenance is easier to hand over when the editing patterns are visible and repeatable.
 
 # Nsight Index blog management system
 
@@ -736,6 +685,57 @@ I can update the portfolio from one main source, regenerate the public files, an
 
 ## Reflection
 The system is worth keeping because one edit can update the page visitors see and the Markdown files machines can read.
+
+# Yay Nay feature voting platform
+
+- Year: 2026
+- Client: Personal project
+- Role: Full-stack developer
+- Stack: Laravel, PHP, Inertia, React, TypeScript, Server-side rendering
+
+
+## Summary
+A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
+
+## Overview
+Yay Nay is an in-progress feature-voting platform. It combines Laravel with Inertia and React so people can submit feature requests, comment on them, and vote on priorities.
+
+## Problem
+The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.
+
+## My responsibility
+Full-stack developer
+
+- Laravel Application Development
+- Inertia and React
+- Feature Voting Flows
+- Authentication and Permissions
+- Server-side Rendering
+
+## What I did
+I built the main feature and account flows across the Laravel backend and React interface, while keeping the repository's unfinished areas clearly scoped.
+
+- Built the application with Laravel, Inertia, React, and TypeScript.
+- Added feature creation, editing, detail pages, comments, and upvote flows.
+- Included authentication, profile settings, permissions, and server-side rendering support.
+- Kept the repository's in-progress status visible rather than presenting unfinished product work as complete.
+
+## Result
+The public repository shows a full-stack product foundation with feature requests, comments, upvotes, authentication, and server-side rendering support.
+
+- The repository documents a working foundation for feature requests, discussion, and voting.
+- The project gives the portfolio a full-stack example that combines Laravel routing and data handling with a React interface.
+- The public case study makes the current scope and ongoing status clear.
+
+## Project scope
+- Laravel Application Development
+- Inertia and React
+- Feature Voting Flows
+- Authentication and Permissions
+- Server-side Rendering
+
+## Reflection
+An in-progress product is still useful as a case study when the working flows, technical choices, and remaining scope are stated plainly.
 
 # React GSAP animation study
 

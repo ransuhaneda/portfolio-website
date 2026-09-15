@@ -2,23 +2,14 @@
 
 Case-study style project archive.
 
-## [Yay Nay feature voting platform](https://384721.xyz/projects/yay-nay-feature-vote.md)
+## [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md)
 
 - Year: 2026
 - Client: Personal project
-- Role: Full-stack developer
-- Stack: Laravel, PHP, Inertia, React, TypeScript, Server-side rendering
+- Role: Frontend developer
+- Stack: React, TypeScript, Vite, SCSS, Vitest, Playwright
 
-A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
-
-## [WordPress maintenance and Elementor system work](https://384721.xyz/projects/wordpress-maintenance-system.md)
-
-- Year: 2026
-- Client: Tech Support Plus I.T Services
-- Role: Frontend web developer / graphic designer
-- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
-
-Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.
+A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 
 ## [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md)
 
@@ -29,14 +20,14 @@ Ongoing WordPress work across company and client sites: page maintenance, Elemen
 
 Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 
-## [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md)
+## [WordPress maintenance and Elementor system work](https://384721.xyz/projects/wordpress-maintenance-system.md)
 
 - Year: 2026
-- Client: Personal project
-- Role: Frontend developer
-- Stack: React, TypeScript, Vite, SCSS, Vitest, Playwright
+- Client: Tech Support Plus I.T Services
+- Role: Frontend web developer / graphic designer
+- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
 
-A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
+Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.
 
 ## [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md)
 
@@ -55,6 +46,15 @@ A Laravel blog system with author and reader flows for posts, comments, categori
 - Stack: React, TypeScript, JSON content, Markdown, Cloudflare Pages, Vite
 
 The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
+
+## [Yay Nay feature voting platform](https://384721.xyz/projects/yay-nay-feature-vote.md)
+
+- Year: 2026
+- Client: Personal project
+- Role: Full-stack developer
+- Stack: Laravel, PHP, Inertia, React, TypeScript, Server-side rendering
+
+A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
 
 ## [React GSAP animation study](https://384721.xyz/projects/gsap-animation.md)
 
