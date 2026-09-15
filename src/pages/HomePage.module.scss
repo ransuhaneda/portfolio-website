@@ -216,7 +216,7 @@
 
 .stats strong {
   font-family: var(--font-display);
-  font-size: var(--type-h2-size);
+  @include mix.type-style(h5);
   line-height: 1;
 }
 
