@@ -25,13 +25,13 @@ I turn designs into responsive pages with React, TypeScript, and WordPress. My v
 - [Blog](https://384721.xyz/blog.md): Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
 - [Contact](https://384721.xyz/contact.md): I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.
-- [Resume](https://384721.xyz/resume.md): Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.
+- [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
 ## Featured case studies
 - [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 - [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
-- [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md): A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.
+- [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md): A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## Homepage stats
@@ -368,9 +368,9 @@ Use the smallest accurate claim, put the proof near it, and describe what change
 ## Resume
 # Resume
 
-## Frontend Web Developer and Graphic Designer
+## Frontend & WordPress Developer
 
-Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.
+Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.
 
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
@@ -402,13 +402,14 @@ Frontend developer and graphic designer with production experience maintaining W
 
 ## Experience
 ### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Services (Jan 2026 to present)
-- Maintain 8 active websites across company and client work, with recurring updates for 8 additional company websites.
-- Built 3 custom WordPress themes or templates and reusable branded sections.
-- Supported 4 migrations to cleaner Elementor builds using global variables and reusable class structures.
-- Improved admin content workflows with ACF and Code Snippets for SEO and content updates.
-- Supported spam prevention, security cleanup, styling consistency, cPanel, and Hostinger handoffs.
+- Maintain 9 active company and client websites, plus support periodic updates for 8 additional company websites.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
+- Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
+- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+- Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
+- Established biweekly backups with four-week retention and verified recovery through restoration testing.
 
-### Web Developer, ABCDE Creative Studio (Apr 2025 to Dec 2025)
+### Frontend Developer — Project Collaboration (Part-time), ABCDE Creative Studio (Apr 2025 to Dec 2025)
 - Worked on 3 web projects, including the studio website.
 - Built at least 5 responsive pages from Figma mockups with React, HTML, CSS, JavaScript, and TypeScript.
 - Applied WCAG-based accessibility checks during frontend implementation.
@@ -485,7 +486,7 @@ I trust small utilities more when the interface and codebase state their privacy
 
 - Year: 2025
 - Client: ABCDE Creative Studio
-- Role: Web developer
+- Role: Frontend Developer — Project Collaboration (Part-time)
 - Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
 - Homepage image: https://384721.xyz/images/home/featured-project-2.png
 
@@ -499,7 +500,7 @@ At ABCDE Creative Studio, I built responsive pages from Figma designs for the st
 The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.
 
 ## My responsibility
-Web developer
+Frontend Developer — Project Collaboration (Part-time)
 
 - Frontend Implementation
 - Responsive UI
@@ -562,9 +563,9 @@ Frontend web developer / graphic designer
 ## What I did
 I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.
 
-- Maintained 8 active websites across company and client work.
-- Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.
-- Built 3 custom WordPress themes or templates and reusable branded sections.
+- Maintained 9 active company and client websites and supported periodic updates for 8 additional company websites.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
+- Built 3 custom WordPress themes from blank starters for internal corporate websites.
 - Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
 - Handled spam prevention, security cleanup, styling consistency, and deployment support.
 
@@ -589,21 +590,21 @@ Maintenance is easier to hand over when the editing patterns are visible and rep
 
 - Year: 2026
 - Client: Personal project
-- Role: Full-stack training project
+- Role: Individual course project
 - Stack: Laravel 12, PHP, Blade, Bootstrap, Tailwind CSS, Alpine.js, Spatie Media Library
 - Homepage image: https://384721.xyz/images/home/featured-project-3.png
 
 ## Summary
-A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.
+A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 
 ## Overview
-Nsight Index is a Laravel training project built around a working publishing flow. Authors can manage posts and readers can comment, like, save, and browse content by category.
+Nsight Index is an individual Laravel 12 course project built around a working publishing flow. It includes authentication, profiles, posts, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 
 ## Problem
 The project needed one working path for authors to manage posts and readers to interact with published content.
 
 ## My responsibility
-Full-stack training project
+Individual course project
 
 - Laravel Development
 - Content Workflow
@@ -612,15 +613,15 @@ Full-stack training project
 - Interface Implementation
 
 ## What I did
-I describe the author and reader flows that work today. Unfinished admin ideas stay out of the public claims.
+I built the working publishing, interaction, profile, media, and scheduling flows with Laravel and MySQL.
 
-- Built post, category, comment, like, and saved-post flows.
+- Built authentication, post, category, comment, like, follow, profile, media-upload, and timezone-aware publishing flows.
 - Used Blade views with Bootstrap, Tailwind CSS, and Alpine.js for interface work.
 - Integrated Spatie Media Library for media handling.
-- Kept unfinished admin ideas out of the public claims because those flows are still marked as future work.
+- Used Laravel validation, authentication middleware, and Eloquent relationships across the working flows.
 
 ## Result
-The repository shows a working Laravel content system and gives the portfolio a backend example while keeping unfinished features clearly marked.
+The repository provides a public backend example with working content, interaction, profile, media, and scheduling flows.
 
 - The public repository shows a working Laravel content-management project with author and reader features.
 - The project gives the portfolio a backend example while keeping unfinished admin work out of the claim.

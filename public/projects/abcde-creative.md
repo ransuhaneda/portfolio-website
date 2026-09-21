@@ -2,7 +2,7 @@
 
 - Year: 2025
 - Client: ABCDE Creative Studio
-- Role: Web developer
+- Role: Frontend Developer — Project Collaboration (Part-time)
 - Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
 - Homepage image: https://384721.xyz/images/home/featured-project-2.png
 
@@ -16,7 +16,7 @@ At ABCDE Creative Studio, I built responsive pages from Figma designs for the st
 The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.
 
 ## My responsibility
-Web developer
+Frontend Developer — Project Collaboration (Part-time)
 
 - Frontend Implementation
 - Responsive UI

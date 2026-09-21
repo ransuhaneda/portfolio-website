@@ -1,8 +1,8 @@
 # Resume
 
-## Frontend Web Developer and Graphic Designer
+## Frontend & WordPress Developer
 
-Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.
+Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.
 
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
@@ -34,13 +34,14 @@ Frontend developer and graphic designer with production experience maintaining W
 
 ## Experience
 ### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Services (Jan 2026 to present)
-- Maintain 8 active websites across company and client work, with recurring updates for 8 additional company websites.
-- Built 3 custom WordPress themes or templates and reusable branded sections.
-- Supported 4 migrations to cleaner Elementor builds using global variables and reusable class structures.
-- Improved admin content workflows with ACF and Code Snippets for SEO and content updates.
-- Supported spam prevention, security cleanup, styling consistency, cPanel, and Hostinger handoffs.
+- Maintain 9 active company and client websites, plus support periodic updates for 8 additional company websites.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
+- Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
+- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+- Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
+- Established biweekly backups with four-week retention and verified recovery through restoration testing.
 
-### Web Developer, ABCDE Creative Studio (Apr 2025 to Dec 2025)
+### Frontend Developer — Project Collaboration (Part-time), ABCDE Creative Studio (Apr 2025 to Dec 2025)
 - Worked on 3 web projects, including the studio website.
 - Built at least 5 responsive pages from Figma mockups with React, HTML, CSS, JavaScript, and TypeScript.
 - Applied WCAG-based accessibility checks during frontend implementation.

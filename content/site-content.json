@@ -148,8 +148,8 @@
   "resume": {
     "download": { "href": "/files/carteciano_lance-resume.pdf", "label": "Download resume (PDF)" },
     "eyebrow": "Resume",
-    "headline": "Frontend Web Developer and Graphic Designer",
-    "summary": "Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.",
+    "headline": "Frontend & WordPress Developer",
+    "summary": "Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.",
     "highlightsSectionTitle": "At a glance",
     "skillsSectionTitle": "Core skills",
     "experienceSectionTitle": "Experience",
@@ -186,15 +186,16 @@
         "company": "Tech Support Plus I.T Services",
         "period": "Jan 2026 to present",
         "highlights": [
-          "Maintain 8 active websites across company and client work, with recurring updates for 8 additional company websites.",
-          "Built 3 custom WordPress themes or templates and reusable branded sections.",
-          "Supported 4 migrations to cleaner Elementor builds using global variables and reusable class structures.",
-          "Improved admin content workflows with ACF and Code Snippets for SEO and content updates.",
-          "Supported spam prevention, security cleanup, styling consistency, cPanel, and Hostinger handoffs."
+          "Maintain 9 active company and client websites, plus support periodic updates for 8 additional company websites.",
+          "Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.",
+          "Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.",
+          "Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.",
+          "Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.",
+          "Established biweekly backups with four-week retention and verified recovery through restoration testing."
         ]
       },
       {
-        "role": "Web Developer",
+        "role": "Frontend Developer — Project Collaboration (Part-time)",
         "company": "ABCDE Creative Studio",
         "period": "Apr 2025 to Dec 2025",
         "highlights": [
@@ -386,7 +387,7 @@
       "kind": "case-study",
       "status": "",
       "summary": "Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.",
-      "role": "Web developer",
+      "role": "Frontend Developer — Project Collaboration (Part-time)",
       "stack": [
         "React",
         "TypeScript",
@@ -474,9 +475,9 @@
       "links": [],
       "challenge": "Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.",
       "approach": [
-        "Maintained 8 active websites across company and client work.",
-        "Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.",
-        "Built 3 custom WordPress themes or templates and reusable branded sections.",
+        "Maintained 9 active company and client websites and supported periodic updates for 8 additional company websites.",
+        "Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.",
+        "Built 3 custom WordPress themes from blank starters for internal corporate websites.",
         "Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.",
         "Handled spam prevention, security cleanup, styling consistency, and deployment support."
       ],
@@ -527,8 +528,8 @@
       "client": "Personal project",
       "kind": "case-study",
       "status": "public repository",
-      "summary": "A Laravel blog system with author and reader flows for posts, comments, categories, likes, saved posts, and media handling.",
-      "role": "Full-stack training project",
+      "summary": "A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.",
+      "role": "Individual course project",
       "stack": [
         "Laravel 12",
         "PHP",
@@ -546,10 +547,10 @@
       ],
       "challenge": "The project needed one working path for authors to manage posts and readers to interact with published content.",
       "approach": [
-        "Built post, category, comment, like, and saved-post flows.",
+        "Built authentication, post, category, comment, like, follow, profile, media-upload, and timezone-aware publishing flows.",
         "Used Blade views with Bootstrap, Tailwind CSS, and Alpine.js for interface work.",
         "Integrated Spatie Media Library for media handling.",
-        "Kept unfinished admin ideas out of the public claims because those flows are still marked as future work."
+        "Used Laravel validation, authentication middleware, and Eloquent relationships across the working flows."
       ],
       "outcome": [
         "The public repository shows a working Laravel content-management project with author and reader features.",
@@ -578,9 +579,9 @@
           "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
-      "overview": "Nsight Index is a Laravel training project built around a working publishing flow. Authors can manage posts and readers can comment, like, save, and browse content by category.",
-      "approachSummary": "I describe the author and reader flows that work today. Unfinished admin ideas stay out of the public claims.",
-      "resultSummary": "The repository shows a working Laravel content system and gives the portfolio a backend example while keeping unfinished features clearly marked.",
+      "overview": "Nsight Index is an individual Laravel 12 course project built around a working publishing flow. It includes authentication, profiles, posts, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.",
+      "approachSummary": "I built the working publishing, interaction, profile, media, and scheduling flows with Laravel and MySQL.",
+      "resultSummary": "The repository provides a public backend example with working content, interaction, profile, media, and scheduling flows.",
       "scope": [
         "Laravel Development",
         "Content Workflow",

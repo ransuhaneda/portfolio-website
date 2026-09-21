@@ -27,9 +27,9 @@ Frontend web developer / graphic designer
 ## What I did
 I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.
 
-- Maintained 8 active websites across company and client work.
-- Supported 4 migrations into cleaner Elementor builds with global variables and reusable class structures.
-- Built 3 custom WordPress themes or templates and reusable branded sections.
+- Maintained 9 active company and client websites and supported periodic updates for 8 additional company websites.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
+- Built 3 custom WordPress themes from blank starters for internal corporate websites.
 - Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
 - Handled spam prevention, security cleanup, styling consistency, and deployment support.
 
