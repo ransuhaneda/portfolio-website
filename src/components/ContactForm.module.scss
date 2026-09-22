@@ -7,9 +7,9 @@
   min-width: 0;
   gap: var(--space-stack);
   padding: var(--space-md);
-  background: var(--color-background-inverse);
-  color: var(--color-text-inverse);
-  border: 1px solid var(--color-form-border);
+  background: var(--color-background-page);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--form-field-radius);
 }
 
@@ -45,7 +45,7 @@
 
 .intro p,
 .count {
-  color: var(--color-form-helper);
+  color: var(--color-text-muted);
 }
 
 .field label {
@@ -59,8 +59,8 @@
   width: 100%;
   padding: var(--form-field-padding);
   color: var(--color-text-primary);
-  background: var(--color-background-page);
-  border: 1px solid var(--color-form-border);
+  background: var(--color-background-surface-subtle);
+  border: 1px solid var(--color-border-medium);
   border-radius: var(--form-field-radius);
 }
 
@@ -75,7 +75,15 @@
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: var(--color-text-muted);
+  color: var(--color-text-primary);
+  opacity: 0.72;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--color-action-primary);
+  outline-offset: 2px;
+  border-color: var(--color-action-primary);
 }
 
 .count,
@@ -88,11 +96,11 @@
 }
 
 .submitButton {
-  --button-border-color: var(--color-transparent);
+  --button-border-color: var(--color-action-primary);
 
   @include mix.button-base(body-xs);
   width: 100%;
   min-width: 0;
-  color: var(--color-text-primary);
-  background: var(--color-text-inverse);
+  color: var(--color-text-inverse);
+  background: var(--color-action-primary);
 }

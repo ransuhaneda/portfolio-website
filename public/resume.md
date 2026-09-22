@@ -2,7 +2,7 @@
 
 ## Frontend & WordPress Developer
 
-Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.
+Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
 
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
@@ -17,6 +17,9 @@ Frontend and WordPress developer with production experience building custom them
 - Bootstrap
 - WordPress
 - Elementor
+- Custom themes
+- Plugin development
+- Custom widgets
 - PHP
 - Laravel
 - MySQL
@@ -26,9 +29,12 @@ Frontend and WordPress developer with production experience building custom them
 - Git
 - GitHub Actions
 - Vitest
+- ACF
+- Code Snippets
 - Cloudflare
 - cPanel
 - Hostinger
+- VPS
 - Linux
 - VS Code
 
@@ -40,8 +46,9 @@ Frontend and WordPress developer with production experience building custom them
 - Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
 - Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
 - Established biweekly backups with four-week retention and verified recovery through restoration testing.
+- Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
 
-### Frontend Developer — Project Collaboration (Part-time), ABCDE Creative Studio (Apr 2025 to Dec 2025)
+### Web Developer, ABCDE Creative Studio (Apr 2025 to Dec 2025)
 - Worked on 3 web projects, including the studio website.
 - Built at least 5 responsive pages from Figma mockups with React, HTML, CSS, JavaScript, and TypeScript.
 - Applied WCAG-based accessibility checks during frontend implementation.
@@ -49,10 +56,10 @@ Frontend and WordPress developer with production experience building custom them
 
 ### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 to Oct 2024)
 - Supported print production for food trucks, businesses, and signage work across a 7-person team.
-- Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across machines and workstations.
-- Created reusable templates and troubleshot hardware and software issues to keep production moving.
+- Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across 2 large-format machines, 2 cutting machines, and 5 workstations.
+- Created reusable templates, adjusted file-preparation processes, and troubleshot hardware and software issues to reduce repeat revisions and keep production moving.
 
-### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Jul 2024)
+### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Sep 2024)
 - Designed weekly social media graphics and branded marketing assets for 3 branches.
 - Produced promotional assets for seasonal and recurring drink campaigns.
 - Worked with stakeholders to keep campaign visuals aligned with branch needs.
