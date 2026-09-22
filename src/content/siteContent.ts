@@ -202,6 +202,7 @@ export type SiteContent = {
     eyebrow?: string
     headline: string
     summary: string
+    summaryParagraphs?: string[]
     highlightsSectionTitle: string
     skillsSectionTitle: string
     experienceSectionTitle: string
