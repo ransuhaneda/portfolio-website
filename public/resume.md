@@ -1,8 +1,8 @@
 # Resume
 
-## Frontend Web Developer and Graphic Designer
+## Frontend & WordPress Developer
 
-Frontend developer and graphic designer with production experience maintaining WordPress sites, building Elementor systems, implementing React interfaces, and preparing visual assets.
+Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
 
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
@@ -17,6 +17,9 @@ Frontend developer and graphic designer with production experience maintaining W
 - Bootstrap
 - WordPress
 - Elementor
+- Custom themes
+- Plugin development
+- Custom widgets
 - PHP
 - Laravel
 - MySQL
@@ -26,19 +29,24 @@ Frontend developer and graphic designer with production experience maintaining W
 - Git
 - GitHub Actions
 - Vitest
+- ACF
+- Code Snippets
 - Cloudflare
 - cPanel
 - Hostinger
+- VPS
 - Linux
 - VS Code
 
 ## Experience
 ### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Services (Jan 2026 to present)
-- Maintain 8 active websites across company and client work, with recurring updates for 8 additional company websites.
-- Built 3 custom WordPress themes or templates and reusable branded sections.
-- Supported 4 migrations to cleaner Elementor builds using global variables and reusable class structures.
-- Improved admin content workflows with ACF and Code Snippets for SEO and content updates.
-- Supported spam prevention, security cleanup, styling consistency, cPanel, and Hostinger handoffs.
+- Maintain 9 active company and client websites, plus support periodic updates for 8 additional company websites.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
+- Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
+- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+- Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
+- Established biweekly backups with four-week retention and verified recovery through restoration testing.
+- Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
 
 ### Web Developer, ABCDE Creative Studio (Apr 2025 to Dec 2025)
 - Worked on 3 web projects, including the studio website.
@@ -48,10 +56,10 @@ Frontend developer and graphic designer with production experience maintaining W
 
 ### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 to Oct 2024)
 - Supported print production for food trucks, businesses, and signage work across a 7-person team.
-- Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across machines and workstations.
-- Created reusable templates and troubleshot hardware and software issues to keep production moving.
+- Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across 2 large-format machines, 2 cutting machines, and 5 workstations.
+- Created reusable templates, adjusted file-preparation processes, and troubleshot hardware and software issues to reduce repeat revisions and keep production moving.
 
-### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Jul 2024)
+### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Sep 2024)
 - Designed weekly social media graphics and branded marketing assets for 3 branches.
 - Produced promotional assets for seasonal and recurring drink campaigns.
 - Worked with stakeholders to keep campaign visuals aligned with branch needs.
