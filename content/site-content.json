@@ -85,36 +85,40 @@
   },
   "about": {
     "eyebrow": "About",
-    "title": "I build responsive pages and keep them useful after launch.",
-    "intro": "I work across frontend development, WordPress systems, website operations, and visual design.",
-    "bodySectionTitle": "Background",
+    "title": "I’m Lance, a frontend and WordPress developer.",
+    "intro": "I build responsive websites, maintain WordPress sites, and also work on visual design.",
+    "bodySectionTitle": "What I do",
     "processSectionTitle": "How I work",
-    "processSectionIntro": "I use a short loop when I build a page or clean up an existing one.",
-    "principlesSectionTitle": "Working principles",
-    "toolsSectionTitle": "Tools I use often",
+    "processSectionIntro": "I keep my process simple: understand the page, plan the work, build it, and check the result.",
+    "principlesSectionTitle": "What matters to me",
+    "toolsSectionTitle": "Tools I use",
     "body": [
-      "I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. I maintain 9 active company and client websites and support periodic updates for 8 additional company websites. My work includes custom themes, Elementor migrations, reusable modules, content workflows, security recovery, backups, QA, deployment, and recovery support.",
-      "At ABCDE Creative Studio, I turned Figma designs into responsive React pages, reusable sections, and an accessible frontend delivery path. My earlier print and social media design work taught me to pay attention to production details across the whole piece.",
-      "I work best when a project needs design judgment and implementation. I can take a visual direction, build the page, and leave the next person a clear way to edit it."
+      "I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. I maintain 9 active company and client websites and help update 8 more when needed. My work includes custom themes, Elementor migrations, reusable modules, content updates, security recovery, backups, QA, and deployment.",
+      "At ABCDE Creative Studio, I turned Figma designs into responsive React pages and reusable sections. My earlier work in print and social media design taught me to pay attention to the small details and the final output.",
+      "I enjoy work where I can use both design and development. I can take a visual direction, build the page, and make it easy for someone else to update later."
     ],
     "principles": [
-      "Understand what the page needs to do before styling it.",
-      "Turn repeated sections into reusable parts.",
-      "Check the page at real viewport sizes.",
-      "Leave the editor and the next developer enough context to continue."
+      "Understand the page before styling it.",
+      "Keep repeated parts reusable.",
+      "Test the page on real screen sizes.",
+      "Make the work easy for someone else to continue."
     ],
     "process": [
       {
-        "title": "Understand the page",
-        "description": "I read the content and current code first, then note the constraints that will shape the change."
+        "title": "Understand",
+        "description": "I read the content and existing code before I start making changes."
       },
       {
-        "title": "Build the reusable parts",
-        "description": "I turn repeated sections into components, classes, or fields so one fix can serve every matching section."
+        "title": "Plan",
+        "description": "I decide what needs to change and find the simplest way to do it."
       },
       {
-        "title": "Check the handoff",
-        "description": "I test the result and leave notes for the parts another person will need to edit."
+        "title": "Build",
+        "description": "I build the page and make repeated sections reusable where it makes sense."
+      },
+      {
+        "title": "Check",
+        "description": "I test the result and make sure the important parts are clear and easy to update."
       }
     ],
     "tools": [
@@ -1000,8 +1004,8 @@
   },
   "projectsPage": {
     "eyebrow": "Projects",
-    "title": "Selected projects with enough context to be useful.",
-    "intro": "Each project explains the problem, my responsibility, what I changed, and what followed.",
+    "title": "A selection of my work.",
+    "intro": "Frontend, WordPress, and design projects I have worked on.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-projects-grid/1600/1100.jpg",
       "alt": "Decorative stock photograph; not a project screenshot.",
@@ -1018,8 +1022,8 @@
     "allLabel": "All",
     "resetLabel": "Reset filters",
     "emptyMessage": "No notes match these filters.",
-    "title": "Notes from the work behind the pages.",
-    "intro": "Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.",
+    "title": "Notes on my work.",
+    "intro": "Things I learn while building and maintaining websites.",
     "heroImage": {
       "src": "https://picsum.photos/seed/portfolio-blog-index/1600/1100.jpg",
       "alt": "Decorative stock photograph for the notes archive.",

@@ -1,3 +1,4 @@
+import { LuDownload } from 'react-icons/lu'
 import { PretextText } from '../components/PretextText'
 import { Section } from '../components/Section'
 import { publicUrl } from '../content/publicUrl'
@@ -10,25 +11,19 @@ export function ResumePage() {
       <section className={sty.resumeHero} data-text-reveal-group="entry">
         <div className="lg-wrapper">
           <div className={sty.resumeHeroGrid}>
-            <div className={sty.resumeHeroTitle}>
-              <PretextText as="h1" measure="heading" reveal="heading">{siteContent.resume.headline}</PretextText>
-            </div>
-            <div className={sty.resumeHeroAside}>
-              <div className={sty.resumeIntro} data-text-reveal="copy">
+            <PretextText as="h1" measure="heading" reveal="heading">{siteContent.resume.headline}</PretextText>
+            <div className={sty.resumeHeroSummary} data-text-reveal="copy">
+              <div className={sty.resumeHeroMeta}>
+                <span className={sty.resumeSummaryLabel}>{siteContent.resume.eyebrow}</span>
+                <a className={sty.resumeDownload} href={publicUrl(siteContent.resume.download.href)} download>
+                  <LuDownload aria-hidden="true" focusable="false" />
+                  <span>{siteContent.resume.download.label}</span>
+                </a>
+              </div>
+              <div className={sty.resumeIntro}>
                 {(siteContent.resume.summaryParagraphs ?? [siteContent.resume.summary]).map((paragraph) => <PretextText key={paragraph} measure="intro">{paragraph}</PretextText>)}
               </div>
-              <a className="button button--primary" href={publicUrl(siteContent.resume.download.href)} download>{siteContent.resume.download.label}</a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className={sty.resumeStats} data-text-reveal-group="scrub" aria-label={siteContent.resume.highlightsSectionTitle}>
-        <div className="lg-wrapper">
-          <div className={sty.resumeStatsGrid}>
-            {siteContent.resume.highlights.map((item, index) => (
-              <article key={item.label} data-text-reveal="copy"><span className={sty.resumeStatIndex}>0{index + 1}</span><strong className={index === 1 ? sty.textFlare : index === 2 ? sty.textIris : undefined}>{item.value}</strong><span>{item.label}</span></article>
-            ))}
           </div>
         </div>
       </section>
@@ -38,8 +33,17 @@ export function ResumePage() {
           {siteContent.resume.skills.map((skill, index) => <li className={index % 3 === 1 ? sty.skillFlare : index % 3 === 2 ? sty.skillIris : undefined} key={skill}>{skill}</li>)}
         </ul>
       </Section>
-
-
+      <Section title={siteContent.resume.experienceSectionTitle}>
+        <ol className={sty.experienceList} data-text-reveal="copy">
+          {siteContent.resume.experience.map((item) => (
+            <li key={`${item.company}-${item.role}`}>
+              <div><PretextText as="h3" measure="heading">{item.role}</PretextText><PretextText measure="prose">{item.company}</PretextText></div>
+              <span>{item.period}</span>
+              <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+            </li>
+          ))}
+        </ol>
+      </Section>
 
       {siteContent.resume.education?.length ? (
         <Section title={siteContent.resume.educationSectionTitle ?? 'Education and training'}>
@@ -54,18 +58,6 @@ export function ResumePage() {
           </ol>
         </Section>
       ) : null}
-
-      <Section title={siteContent.resume.experienceSectionTitle}>
-        <ol className={sty.experienceList} data-text-reveal="copy">
-          {siteContent.resume.experience.map((item) => (
-            <li key={`${item.company}-${item.role}`}>
-              <div><PretextText as="h3" measure="heading">{item.role}</PretextText><PretextText measure="prose">{item.company}</PretextText></div>
-              <span>{item.period}</span>
-              <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
-            </li>
-          ))}
-        </ol>
-      </Section>
     </div>
   )
 }

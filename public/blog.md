@@ -1,6 +1,6 @@
 # Blog
 
-Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
+Things I learn while building and maintaining websites.
 
 ## [A passing build is not a finished interface](https://384721.xyz/blog/build-correctness-is-not-visual-correctness.md)
 
