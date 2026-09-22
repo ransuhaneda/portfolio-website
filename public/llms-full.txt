@@ -21,8 +21,8 @@ I build responsive React interfaces and WordPress systems, then support the main
 
 ## Main pages
 - [Home](https://384721.xyz/index.md): I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.
-- [About](https://384721.xyz/about.md): I work across frontend development, WordPress systems, website operations, and visual design.
-- [Blog](https://384721.xyz/blog.md): Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
+- [About](https://384721.xyz/about.md): I build responsive websites, maintain WordPress sites, and also work on visual design.
+- [Blog](https://384721.xyz/blog.md): Things I learn while building and maintaining websites.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
 - [Contact](https://384721.xyz/contact.md): I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.
 - [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
@@ -68,24 +68,24 @@ I build responsive React interfaces and WordPress systems, then support the main
 ## About
 # About
 
-I work across frontend development, WordPress systems, website operations, and visual design.
+I build responsive websites, maintain WordPress sites, and also work on visual design.
 
-I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. I maintain 9 active company and client websites and support periodic updates for 8 additional company websites. My work includes custom themes, Elementor migrations, reusable modules, content workflows, security recovery, backups, QA, deployment, and recovery support.
+I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. I maintain 9 active company and client websites and help update 8 more when needed. My work includes custom themes, Elementor migrations, reusable modules, content updates, security recovery, backups, QA, and deployment.
 
-At ABCDE Creative Studio, I turned Figma designs into responsive React pages, reusable sections, and an accessible frontend delivery path. My earlier print and social media design work taught me to pay attention to production details across the whole piece.
+At ABCDE Creative Studio, I turned Figma designs into responsive React pages and reusable sections. My earlier work in print and social media design taught me to pay attention to the small details and the final output.
 
-I work best when a project needs design judgment and implementation. I can take a visual direction, build the page, and leave the next person a clear way to edit it.
+I enjoy work where I can use both design and development. I can take a visual direction, build the page, and make it easy for someone else to update later.
 
 ## Working principles
-- Understand what the page needs to do before styling it.
-- Turn repeated sections into reusable parts.
-- Check the page at real viewport sizes.
-- Leave the editor and the next developer enough context to continue.
+- Understand the page before styling it.
+- Keep repeated parts reusable.
+- Test the page on real screen sizes.
+- Make the work easy for someone else to continue.
 
 ## Blog
 # Blog
 
-Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
+Things I learn while building and maintaining websites.
 
 ## [A passing build is not a finished interface](https://384721.xyz/blog/build-correctness-is-not-visual-correctness.md)
 

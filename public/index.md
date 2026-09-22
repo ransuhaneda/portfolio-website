@@ -11,8 +11,8 @@ I build responsive React interfaces and WordPress systems, then support the main
 
 ## Main pages
 - [Home](https://384721.xyz/index.md): I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.
-- [About](https://384721.xyz/about.md): I work across frontend development, WordPress systems, website operations, and visual design.
-- [Blog](https://384721.xyz/blog.md): Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
+- [About](https://384721.xyz/about.md): I build responsive websites, maintain WordPress sites, and also work on visual design.
+- [Blog](https://384721.xyz/blog.md): Things I learn while building and maintaining websites.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
 - [Contact](https://384721.xyz/contact.md): I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.
 - [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
