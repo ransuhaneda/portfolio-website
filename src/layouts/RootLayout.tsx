@@ -11,6 +11,14 @@ export function RootLayout() {
   const isHomePage = location.pathname === '/'
   const mainRef = useScrollTextAnimations(location.pathname)
 
+  useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration
+    }
+  }, [])
 
   useEffect(() => {
     document.head.querySelectorAll('title, meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[property^="article:"], link[rel="canonical"]').forEach((node) => node.remove())
@@ -18,14 +26,18 @@ export function RootLayout() {
   }, [location.pathname])
 
   useLayoutEffect(() => {
-    if (location.hash) {
-      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)))
-      target?.scrollIntoView({ behavior: 'smooth' })
-      return
-    }
+    const frame = window.requestAnimationFrame(() => {
+      if (location.hash) {
+        const target = document.getElementById(decodeURIComponent(location.hash.slice(1)))
+        target?.scrollIntoView({ behavior: 'smooth' })
+        return
+      }
 
-    window.scrollTo(0, 0)
-  }, [location.hash, location.pathname])
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [location.hash, location.pathname, location.search])
 
   return (
     <div className="site-shell">
