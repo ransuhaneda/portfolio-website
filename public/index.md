@@ -1,21 +1,21 @@
 # Lance Carteciano
 
-Frontend developer building responsive websites from the Philippines.
+Frontend and WordPress developer building responsive websites from the Philippines.
 
 Portfolio of Lance Carteciano
 
 ## Homepage hero
 Frontend developer building responsive websites.
 
-I turn designs into responsive pages with React, TypeScript, and WordPress. My visual design background helps me catch inconsistencies in typography, spacing, and layout.
+I build responsive React interfaces and WordPress systems, then support the maintenance, QA, and deployment work that keeps them useful. My visual design background helps me catch inconsistencies in typography, spacing, and layout.
 
 ## Main pages
-- [Home](https://384721.xyz/index.md): I build responsive pages, maintain WordPress sites, and keep the code and content easy to work with. My background also includes visual design.
-- [About](https://384721.xyz/about.md): I work across frontend development, WordPress maintenance, and visual design.
+- [Home](https://384721.xyz/index.md): I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.
+- [About](https://384721.xyz/about.md): I work across frontend development, WordPress systems, website operations, and visual design.
 - [Blog](https://384721.xyz/blog.md): Short notes on case-study writing, content systems, and the decisions I make while maintaining a portfolio.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
 - [Contact](https://384721.xyz/contact.md): I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.
-- [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.
+- [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
 ## Featured case studies
@@ -43,10 +43,14 @@ I turn designs into responsive pages with React, TypeScript, and WordPress. My v
 - PHP
 - Laravel
 - MySQL
+- ACF
+- Code Snippets
 - Figma
 - Adobe Creative Suite
 - Git
 - GitHub Actions
+- GSAP
 - Cloudflare
+- VPS
 - cPanel
 - Hostinger

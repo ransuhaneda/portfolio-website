@@ -1,8 +1,8 @@
 {
   "site": {
     "name": "Lance Carteciano",
-    "tagline": "Frontend developer building responsive websites from the Philippines.",
-    "description": "I build responsive pages, maintain WordPress sites, and keep the code and content easy to work with. My background also includes visual design.",
+    "tagline": "Frontend and WordPress developer building responsive websites from the Philippines.",
+    "description": "I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.",
     "email": "cartecianolance@gmail.com",
     "location": "Philippines",
     "siteUrl": "https://384721.xyz",
@@ -86,15 +86,15 @@
   "about": {
     "eyebrow": "About",
     "title": "I build responsive pages and keep them useful after launch.",
-    "intro": "I work across frontend development, WordPress maintenance, and visual design.",
+    "intro": "I work across frontend development, WordPress systems, website operations, and visual design.",
     "bodySectionTitle": "Background",
     "processSectionTitle": "How I work",
     "processSectionIntro": "I use a short loop when I build a page or clean up an existing one.",
     "principlesSectionTitle": "Working principles",
     "toolsSectionTitle": "Tools I use often",
     "body": [
-      "I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. Most of my day-to-day work is on WordPress: maintaining sites, cleaning up Elementor builds, making reusable templates, and improving how content is updated.",
-      "At ABCDE Creative Studio, I turned Figma designs into responsive React pages and checked accessibility while building them. My earlier print and social media design work taught me to pay attention to production details across the whole piece.",
+      "I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. I maintain 9 active company and client websites and support periodic updates for 8 additional company websites. My work includes custom themes, Elementor migrations, reusable modules, content workflows, security recovery, backups, QA, deployment, and recovery support.",
+      "At ABCDE Creative Studio, I turned Figma designs into responsive React pages, reusable sections, and an accessible frontend delivery path. My earlier print and social media design work taught me to pay attention to production details across the whole piece.",
       "I work best when a project needs design judgment and implementation. I can take a visual direction, build the page, and leave the next person a clear way to edit it."
     ],
     "principles": [
@@ -131,8 +131,12 @@
       "PHP",
       "Laravel",
       "MySQL",
+      "ACF",
+      "Code Snippets",
+      "Accessibility",
       "Figma",
       "Adobe Creative Suite",
+      "GSAP",
       "Git",
       "GitHub Actions",
       "Cloudflare Pages",
@@ -149,7 +153,11 @@
     "download": { "href": "/files/carteciano_lance-resume.pdf", "label": "Download resume (PDF)" },
     "eyebrow": "Resume",
     "headline": "Frontend & WordPress Developer",
-    "summary": "Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. My visual-design background supports accurate implementation and practical content workflows.",
+    "summary": "Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.",
+    "summaryParagraphs": [
+      "Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces.",
+      "Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows."
+    ],
     "highlightsSectionTitle": "At a glance",
     "skillsSectionTitle": "Core skills",
     "experienceSectionTitle": "Experience",
@@ -165,6 +173,9 @@
       "Bootstrap",
       "WordPress",
       "Elementor",
+      "Custom themes",
+      "Plugin development",
+      "Custom widgets",
       "PHP",
       "Laravel",
       "MySQL",
@@ -174,9 +185,12 @@
       "Git",
       "GitHub Actions",
       "Vitest",
+      "ACF",
+      "Code Snippets",
       "Cloudflare",
       "cPanel",
       "Hostinger",
+      "VPS",
       "Linux",
       "VS Code"
     ],
@@ -191,11 +205,12 @@
           "Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.",
           "Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.",
           "Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.",
-          "Established biweekly backups with four-week retention and verified recovery through restoration testing."
+          "Established biweekly backups with four-week retention and verified recovery through restoration testing.",
+          "Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing."
         ]
       },
       {
-        "role": "Frontend Developer — Project Collaboration (Part-time)",
+        "role": "Web Developer",
         "company": "ABCDE Creative Studio",
         "period": "Apr 2025 to Dec 2025",
         "highlights": [
@@ -211,14 +226,14 @@
         "period": "Jan 2024 to Oct 2024",
         "highlights": [
           "Supported print production for food trucks, businesses, and signage work across a 7-person team.",
-          "Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across machines and workstations.",
-          "Created reusable templates and troubleshot hardware and software issues to keep production moving."
+          "Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across 2 large-format machines, 2 cutting machines, and 5 workstations.",
+          "Created reusable templates, adjusted file-preparation processes, and troubleshot hardware and software issues to reduce repeat revisions and keep production moving."
         ]
       },
       {
         "role": "Social Media Designer",
         "company": "But First, Coffee (Multiple Branches)",
-        "period": "Jan 2023 to Jul 2024",
+        "period": "Jan 2023 to Sep 2024",
         "highlights": [
           "Designed weekly social media graphics and branded marketing assets for 3 branches.",
           "Produced promotional assets for seasonal and recurring drink campaigns.",
@@ -238,7 +253,7 @@
     ],
     "highlights": [
       {
-        "value": "8",
+        "value": "9",
         "label": "active websites maintained"
       },
       {
@@ -247,7 +262,7 @@
       },
       {
         "value": "3",
-        "label": "WordPress themes or templates built"
+        "label": "custom WordPress themes built from blank starters"
       }
     ],
     "heroImage": {
@@ -387,7 +402,7 @@
       "kind": "case-study",
       "status": "",
       "summary": "Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.",
-      "role": "Frontend Developer — Project Collaboration (Part-time)",
+      "role": "Web Developer",
       "stack": [
         "React",
         "TypeScript",
@@ -459,7 +474,7 @@
       "client": "Tech Support Plus I.T Services",
       "kind": "case-study",
       "status": "current work",
-      "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.",
+      "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.",
       "role": "Frontend web developer / graphic designer",
       "stack": [
         "WordPress",
@@ -473,18 +488,21 @@
         "Hostinger"
       ],
       "links": [],
-      "challenge": "Several sites needed regular updates, cleaner Elementor structure, and admin workflows that SEO and content teams could use while keeping layouts consistent.",
+      "challenge": "Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.",
       "approach": [
         "Maintained 9 active company and client websites and supported periodic updates for 8 additional company websites.",
         "Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.",
         "Built 3 custom WordPress themes from blank starters for internal corporate websites.",
+        "Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.",
         "Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.",
-        "Handled spam prevention, security cleanup, styling consistency, and deployment support."
+        "Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.",
+        "Established biweekly backups with four-week retention and verified recovery through restoration testing.",
+        "Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing."
       ],
       "outcome": [
-        "Company and client sites became easier to update because repeated sections now follow the same patterns.",
-        "Recurring maintenance work had clearer styling rules and less one-off editing.",
-        "SEO and content updates became safer through simpler admin workflows."
+        "Company and client sites became easier to update because repeated sections and content fields now follow clearer patterns.",
+        "The recovery and backup process gives the team a tested path for responding to incidents and restoring a site.",
+        "Post-deployment checks cover layout, navigation, links, content, and production smoke behavior instead of stopping at the code change."
       ],
       "image": {
         "src": "/images/home/featured-project-1.png",
@@ -509,15 +527,18 @@
           "alt": "Decorative stock photograph; not a project screenshot."
         }
       ],
-      "overview": "This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in.",
-      "approachSummary": "I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, and handoff notes.",
-      "resultSummary": "Repeated sections now follow clearer patterns, and content editors have fewer opportunities to break the layout.",
+      "overview": "This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in, including system cleanup, security recovery, backups, QA, and deployment support.",
+      "approachSummary": "I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.",
+      "resultSummary": "Repeated sections follow clearer patterns, content editors have fewer opportunities to break the layout, and site recovery has been tested rather than assumed.",
       "scope": [
         "WordPress Maintenance",
         "Elementor System Cleanup",
         "Frontend Styling",
         "Admin Workflow Support",
-        "Hosting Handoff Support"
+        "Hosting Handoff Support",
+        "Security Recovery",
+        "Backup and Restore",
+        "Release QA"
       ],
       "reflection": "Maintenance is easier to hand over when the editing patterns are visible and repeatable."
     },
@@ -819,8 +840,8 @@
     "hero": {
       "eyebrow": "Portfolio of Lance Carteciano",
       "title": "Frontend developer building responsive websites.",
-      "description": "I turn designs into responsive pages with React, TypeScript, and WordPress. My visual design background helps me catch inconsistencies in typography, spacing, and layout.",
-      "accentPhrase": "Frontend web developer",
+      "description": "I build responsive React interfaces and WordPress systems, then support the maintenance, QA, and deployment work that keeps them useful. My visual design background helps me catch inconsistencies in typography, spacing, and layout.",
+      "accentPhrase": "Frontend & WordPress developer",
       "dateline": {
         "left": "Portfolio 2026",
         "right": "React, WordPress, and visual design"
@@ -828,7 +849,7 @@
       "index": [
         {
           "label": "Main focus",
-          "value": "Frontend development"
+          "value": "Frontend and WordPress development"
         },
         {
           "label": "Main stack",
@@ -836,7 +857,7 @@
         },
         {
           "label": "Work type",
-          "value": "Responsive UI, content systems, maintenance"
+          "value": "Responsive UI, content systems, maintenance, QA"
         },
         {
           "label": "Availability",
@@ -864,7 +885,7 @@
     "bio": {
       "eyebrow": "What I do",
       "title": "Frontend development informed by design work.",
-      "description": "I build responsive interfaces with React, TypeScript, and WordPress. I bring typography, layout, and page details into the implementation because they affect how the finished page works."
+      "description": "I build responsive interfaces with React, TypeScript, and WordPress. I bring typography, layout, and page details into the implementation because they affect how the finished page works, then carry that attention into maintenance and QA."
     },
     "stats": [
       {
@@ -900,11 +921,15 @@
         "PHP",
         "Laravel",
         "MySQL",
+        "ACF",
+        "Code Snippets",
         "Figma",
         "Adobe Creative Suite",
         "Git",
         "GitHub Actions",
+        "GSAP",
         "Cloudflare",
+        "VPS",
         "cPanel",
         "Hostinger"
       ],

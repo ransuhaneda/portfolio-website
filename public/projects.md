@@ -15,7 +15,7 @@ A browser tool for encoding and decoding text and files as Base64, Base64URL, or
 
 - Year: 2025
 - Client: ABCDE Creative Studio
-- Role: Frontend Developer — Project Collaboration (Part-time)
+- Role: Web Developer
 - Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
 
 Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
@@ -27,7 +27,7 @@ Frontend work for the ABCDE Creative Studio website and related client projects.
 - Role: Frontend web developer / graphic designer
 - Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
 
-Ongoing WordPress work across company and client sites: page maintenance, Elementor cleanup, reusable sections, content updates, and hosting handoffs.
+Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.
 
 ## [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md)
 
