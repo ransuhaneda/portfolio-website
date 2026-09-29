@@ -2,6 +2,15 @@
 
 Case-study style project archive.
 
+## [Another Markdown Viewer](https://384721.xyz/projects/another-markdown-viewer.md)
+
+- Year: 2026
+- Client: Personal project
+- Role: Frontend developer
+- Stack: TypeScript, Vite, CodeMirror 6, Marked, DOMPurify, Vitest, Playwright
+
+A client-side Markdown workspace for editing source, checking a rendered preview, recovering a local draft, and exporting a print-ready PDF.
+
 ## [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md)
 
 - Year: 2026
