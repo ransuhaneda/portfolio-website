@@ -2,6 +2,12 @@
 
 Things I learn while building and maintaining websites.
 
+## [Keeping Markdown source in charge](https://384721.xyz/blog/keeping-markdown-source-in-charge.md)
+
+- Date: 2026-09-27
+
+How I keep the Markdown document canonical while the editor, rendered preview, local recovery, and PDF export each do a separate job.
+
 ## [A passing build is not a finished interface](https://384721.xyz/blog/build-correctness-is-not-visual-correctness.md)
 
 - Date: 2026-08-26
