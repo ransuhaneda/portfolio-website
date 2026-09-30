@@ -363,6 +363,17 @@ ${routes
 </urlset>
 `
 
+const robots = `User-agent: *
+Allow: /
+
+# Content Signals preference
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+Disallow: /admin
+Disallow: /admin/
+Sitemap: ${siteUrl}/sitemap.xml
+`
+
 await fs.mkdir(path.join(publicDir, 'projects'), { recursive: true })
 await fs.mkdir(path.join(publicDir, 'blog'), { recursive: true })
 await fs.mkdir(skillDir, { recursive: true })
@@ -391,6 +402,7 @@ for (const [relativePath, content] of Object.entries(pageMarkdown)) {
 await fs.writeFile(path.join(publicDir, 'llms.txt'), llms, 'utf8')
 await fs.writeFile(path.join(publicDir, 'llms-full.txt'), llmsFull, 'utf8')
 await fs.writeFile(path.join(publicDir, 'sitemap.xml'), sitemap, 'utf8')
+await fs.writeFile(path.join(publicDir, 'robots.txt'), robots, 'utf8')
 await fs.writeFile(path.join(publicDir, '.well-known', 'security.txt'), `Contact: mailto:${email}\nExpires: 2027-06-25T00:00:00.000Z\nPreferred-Languages: en\nCanonical: ${siteUrl}/.well-known/security.txt\n`, 'utf8')
 await fs.writeFile(manifestPath, JSON.stringify(currentMirrors, null, 2) + '\n', 'utf8')
 await fs.writeFile(path.join(root, 'src/content/publishedBlogPosts.json'), JSON.stringify(blogPosts, null, 2) + '\n', 'utf8')

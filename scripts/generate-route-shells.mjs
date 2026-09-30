@@ -11,4 +11,5 @@ for (const route of routeMetadata) {
 }
 await writeFile('dist/404.html', shell('/404'))
 if (preview) await writeFile('dist/robots.txt', 'User-agent: *\nDisallow: /\n')
+else await writeFile('dist/robots.txt', await readFile('public/robots.txt', 'utf8'))
 console.log(`Generated ${routeMetadata.length} route shells and truthful 404 metadata.`)
