@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
+import { GoogleAnalytics } from '../components/GoogleAnalytics'
 import { siteContent } from '../content/siteContent'
 
 import { useScrollTextAnimations } from '../animations/useScrollTextAnimations'
@@ -40,6 +41,7 @@ export function RootLayout({ children }: { children?: ReactNode }) {
   return (
     <>
       <div className="site-shell">
+      <GoogleAnalytics />
       <a className="skip-link" href="#main-content">{siteContent.siteChrome?.skipToContentLabel ?? 'Skip to main content'}</a>
       <SiteHeader />
       <main ref={mainRef} id="main-content" className={isHomePage ? 'site-main site-main--home' : 'site-main site-main--inner'}>
