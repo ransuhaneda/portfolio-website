@@ -1,18 +1,10 @@
-import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { reactRouter } from '@react-router/dev/vite'
 
 export default defineConfig({
   base: process.env.GITHUB_PAGES === 'true' ? '/portfolio-website/' : '/',
-  plugins: [react()],
+  plugins: [reactRouter()],
   server: {
     port: 4173,
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-      },
-    },
   },
 })
