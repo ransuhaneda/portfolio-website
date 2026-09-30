@@ -4,4 +4,6 @@ Allow: /
 # Content Signals preference
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
+Disallow: /admin
+Disallow: /admin/
 Sitemap: https://384721.xyz/sitemap.xml

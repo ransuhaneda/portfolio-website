@@ -1,14 +1,17 @@
 import { useEffect, useLayoutEffect } from 'react'
+import type { ReactNode } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
+import { GoogleAnalytics } from '../components/GoogleAnalytics'
 import { siteContent } from '../content/siteContent'
-import { metadataTags } from '../content/routeMetadata'
+
 import { useScrollTextAnimations } from '../animations/useScrollTextAnimations'
 
-export function RootLayout() {
+export function RootLayout({ children }: { children?: ReactNode }) {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+
   const mainRef = useScrollTextAnimations(location.pathname)
 
   useEffect(() => {
@@ -20,10 +23,6 @@ export function RootLayout() {
     }
   }, [])
 
-  useEffect(() => {
-    document.head.querySelectorAll('title, meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[property^="article:"], link[rel="canonical"]').forEach((node) => node.remove())
-    document.head.insertAdjacentHTML('beforeend', metadataTags(location.pathname, import.meta.env.BASE_URL !== '/'))
-  }, [location.pathname])
 
   useLayoutEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -40,13 +39,16 @@ export function RootLayout() {
   }, [location.hash, location.pathname, location.search])
 
   return (
-    <div className="site-shell">
+    <>
+      <div className="site-shell">
+      <GoogleAnalytics />
       <a className="skip-link" href="#main-content">{siteContent.siteChrome?.skipToContentLabel ?? 'Skip to main content'}</a>
       <SiteHeader />
       <main ref={mainRef} id="main-content" className={isHomePage ? 'site-main site-main--home' : 'site-main site-main--inner'}>
-        <Outlet />
+        {children ?? <Outlet />}
       </main>
       <SiteFooter />
-    </div>
+      </div>
+    </>
   )
 }

@@ -10,6 +10,8 @@ describe('public launch boundaries', () => {
     expect(getRouteMetadata('/blog/missing').canonical).toBeUndefined()
     expect(metadataTags('/resume', true)).toContain('noindex, nofollow')
     expect(metadataTags('/resume', false)).toContain('index, follow')
+    expect(metadataTags('/', false)).toContain('application/ld+json')
+    expect(metadataTags('/resume', false)).toContain('twitter:card')
     expect(publicUrl('/files/resume.pdf', '/portfolio-website/')).toBe('/portfolio-website/files/resume.pdf')
     expect(publicUrl('https://example.org/image.png', '/preview/')).toBe('https://example.org/image.png')
     expect(readingMinutes('word '.repeat(401))).toBe(3)
