@@ -15,7 +15,7 @@ I built this React and GSAP project while following a public tutorial. It record
 I used the project to practice scroll and interface animation in React and see how tutorial patterns fit into a real codebase.
 
 ## My responsibility
-Frontend practice
+I completed this animation study independently while following the public tutorial. I handled the React implementation, GSAP setup, timing, responsive behavior, and attribution.
 
 - React Animation Study
 - GSAP Timing

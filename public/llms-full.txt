@@ -2,25 +2,25 @@
 
 ## Site summary
 - Name: Lance Carteciano
-- Tagline: Frontend and WordPress developer building responsive websites from the Philippines.
-- Description: I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.
+- Tagline: Full-stack web developer based in the Philippines.
+- Description: I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 - Contact email: cartecianolance@gmail.com
 - Location: Philippines
 
 ## Home
 # Lance Carteciano
 
-Frontend and WordPress developer building responsive websites from the Philippines.
+Full-stack web developer based in the Philippines.
 
-Portfolio of Lance Carteciano
+Lance Carteciano / Portfolio
 
 ## Homepage hero
-Frontend developer building responsive websites.
+HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.
 
-I build responsive React interfaces and WordPress systems, then support the maintenance, QA, and deployment work that keeps them useful. My visual design background helps me catch inconsistencies in typography, spacing, and layout.
+I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 
 ## Main pages
-- [Home](https://384721.xyz/index.md): I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.
+- [Home](https://384721.xyz/index.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 - [About](https://384721.xyz/about.md): I build responsive websites, maintain WordPress sites, and also work on visual design.
 - [Blog](https://384721.xyz/blog.md): Things I learn while building and maintaining websites.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
@@ -29,22 +29,22 @@ I build responsive React interfaces and WordPress systems, then support the main
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
 ## Featured case studies
-- [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 - [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
-- [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md): A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
+- [Another Markdown Viewer](https://384721.xyz/projects/another-markdown-viewer.md): A client-side Markdown workspace for editing source, checking a rendered preview, recovering a local draft, and exporting a print-ready PDF.
+- [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## Homepage stats
-- Responsive interfaces: Figma designs translated into pages that adapt across screen sizes, with attention to layout and accessibility.
-- Reusable components: Shared UI patterns and styles that keep pages consistent across related screens.
-- Editable websites: WordPress templates and content fields that make everyday updates straightforward.
+- Responsive pages: I check layouts at the sizes people actually use.
+- Reusable patterns: I look for repeated sections before rebuilding them page by page.
+- Clear handoff: I keep content and code understandable for the next person.
 
 ## Highlighted skills
 - React
 - TypeScript
 - JavaScript
-- HTML
-- CSS
+- HTML5
+- CSS3
 - SCSS
 - Tailwind CSS
 - Bootstrap
@@ -56,7 +56,8 @@ I build responsive React interfaces and WordPress systems, then support the main
 - ACF
 - Code Snippets
 - Figma
-- Adobe Creative Suite
+- Adobe Photoshop
+- Adobe Illustrator
 - Git
 - GitHub Actions
 - GSAP
@@ -64,13 +65,15 @@ I build responsive React interfaces and WordPress systems, then support the main
 - VPS
 - cPanel
 - Hostinger
+- Server administration
+- SSL
 
 ## About
 # About
 
 I build responsive websites, maintain WordPress sites, and also work on visual design.
 
-I work as a frontend web developer and graphic designer at Tech Support Plus I.T Services. I maintain 9 active company and client websites and help update 8 more when needed. My work includes custom themes, Elementor migrations, reusable modules, content updates, security recovery, backups, QA, and deployment.
+I work as a frontend web developer and graphic designer at Tech Support Plus I.T Service in Taguig City, Manila. My work includes custom WordPress themes, Elementor migrations, reusable modules, responsive MVP landing-page demos, content updates, security recovery, and deployment support.
 
 At ABCDE Creative Studio, I turned Figma designs into responsive React pages and reusable sections. My earlier work in print and social media design taught me to pay attention to the small details and the final output.
 
@@ -434,66 +437,67 @@ Frontend and WordPress developer with production experience building custom them
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
 ## Skills
+### Frontend
 - React
 - TypeScript
 - JavaScript
-- HTML
-- CSS
+- HTML5
+- CSS3
 - SCSS
 - Tailwind CSS
 - Bootstrap
-- WordPress
+- GSAP
+
+### WordPress
 - Elementor
-- Custom themes
 - Plugin development
-- Custom widgets
+- Custom themes
 - PHP
-- Laravel
-- MySQL
-- Figma
-- Accessibility
-- Adobe Creative Suite
+- ACF
+- Reusable templates
+
+### Systems and delivery
 - Git
 - GitHub Actions
-- Vitest
-- ACF
-- Code Snippets
+- Security cleanup
 - Cloudflare
 - cPanel
-- Hostinger
 - VPS
 - Linux
-- VS Code
+- Server administration
+- SSL
+
+### Design
+- Figma
+- Adobe Photoshop
+- Adobe Illustrator
+- Responsive UI implementation
+- Accessibility
 
 ## Experience
-### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Services (Jan 2026 to present)
-- Maintain 9 active company and client websites, plus support periodic updates for 8 additional company websites.
-- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
-- Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
-- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Service (Jan 2026 – Present)
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes applied across website migrations.
+- Maintain active company and client websites, support periodic updates for additional company websites, and build responsive MVP landing-page demos for client and internal leadership review.
+- Built custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
+- Built a centralized WordPress plugin manager and contributed to production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
 - Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
-- Established biweekly backups with four-week retention and verified recovery through restoration testing.
-- Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
 
-### Web Developer, ABCDE Creative Studio (Apr 2025 to Dec 2025)
-- Worked on 3 web projects, including the studio website.
-- Built at least 5 responsive pages from Figma mockups with React, HTML, CSS, JavaScript, and TypeScript.
-- Applied WCAG-based accessibility checks during frontend implementation.
-- Contributed reusable UI patterns and delivery support through GitHub Actions and Cloudflare.
+### Web Developer, ABCDE Creative Studio (Apr 2025 – Dec 2025)
+- Implemented the studio website from approved Figma designs as a responsive React site with reusable components and shared sections.
+- Built responsive pages using React, HTML, CSS, JavaScript, and TypeScript.
+- Configured GitHub Actions and Cloudflare Pages to build and deploy the site, and continued implementing post-launch updates.
 
-### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 to Oct 2024)
-- Supported print production for food trucks, businesses, and signage work across a 7-person team.
-- Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across 2 large-format machines, 2 cutting machines, and 5 workstations.
-- Created reusable templates, adjusted file-preparation processes, and troubleshot hardware and software issues to reduce repeat revisions and keep production moving.
+### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 – Oct 2024)
+- Improved workflows through RIP setup, color calibration, cutting-process cleanup, and troubleshooting across large-format and cutting machines and multiple workstations.
+- Supported print production for a team handling signage, food truck visuals, and business materials.
 
-### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Sep 2024)
-- Designed weekly social media graphics and branded marketing assets for 3 branches.
-- Produced promotional assets for seasonal and recurring drink campaigns.
-- Worked with stakeholders to keep campaign visuals aligned with branch needs.
+### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 – Sep 2024)
+- Produced promotional assets for recurring and seasonal campaigns and refined materials with stakeholders.
+- Designed weekly social media graphics and branded marketing assets for multiple branches.
 
-## Education and training
-### Full-stack web developer training, CIIT College of Arts and Technology (2025)
-- Training covered PHP, Laravel, MySQL, HTML, CSS, JavaScript, frontend fundamentals, backend fundamentals, and database work.
+## Education & certifications
+### Full-Stack Web Developer Certificate, CIIT College of Arts and Technology (Oct 2025)
+- Training included PHP, Laravel, MySQL, HTML, CSS, and JavaScript.
 
 ## Projects
 # Another Markdown Viewer
@@ -514,7 +518,7 @@ Another Markdown Viewer is a browser-based workspace for editing Markdown, check
 I wanted a focused way to make small Markdown edits and inspect the rendered document without losing the original source or requiring an app backend.
 
 ## My responsibility
-Frontend developer
+I built this project independently from the initial product idea through implementation, testing, and deployment. I owned the editor, Markdown rendering, browser storage, file operations, PDF export, and release verification.
 
 - Browser-based Markdown editing
 - GFM rendering and HTML sanitization
@@ -568,7 +572,7 @@ Debase is a browser tool for encoding and decoding text or files. It supports Ba
 The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
 
 ## My responsibility
-Frontend developer
+I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.
 
 - Browser-local File Processing
 - Base64 and Base64URL
@@ -607,7 +611,7 @@ I trust small utilities more when the interface and codebase state their privacy
 - Year: 2025
 - Client: ABCDE Creative Studio
 - Role: Web Developer
-- Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
+- Stack: React, TypeScript, JavaScript, HTML5, CSS3, Figma, GitHub Actions, Cloudflare
 - Homepage image: https://384721.xyz/images/home/featured-project-2.png
 
 ## Summary
@@ -620,7 +624,7 @@ At ABCDE Creative Studio, I built responsive pages from Figma designs for the st
 The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.
 
 ## My responsibility
-Web Developer
+I independently handled the frontend implementation for the studio website and related project pages. I translated the approved Figma designs into responsive React pages, reusable sections, accessibility checks, and delivery support.
 
 - Frontend Implementation
 - Responsive UI
@@ -634,7 +638,7 @@ I compared the mockups for repeated layout and spacing patterns, then built thos
 - Worked on 3 web projects, including the studio website.
 - Built at least 5 responsive pages from Figma mockups.
 - Applied WCAG-based accessibility checks during implementation.
-- Contributed reusable UI patterns for future builds.
+- Built reusable UI patterns that I could carry into later pages.
 - Supported delivery workflows through GitHub Actions and Cloudflare.
 
 ## Result
@@ -657,9 +661,9 @@ I check the real page at the widths people will use instead of stopping after th
 # WordPress maintenance and Elementor system work
 
 - Year: 2026
-- Client: Tech Support Plus I.T Services
+- Client: Tech Support Plus I.T Service
 - Role: Frontend web developer / graphic designer
-- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
+- Stack: WordPress, Elementor, PHP, HTML5, CSS3, ACF, Code Snippets, cPanel, Hostinger
 - Homepage image: https://384721.xyz/images/home/featured-project-1.png
 
 ## Summary
@@ -672,7 +676,7 @@ This entry covers ongoing WordPress maintenance rather than one finished launch.
 Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.
 
 ## My responsibility
-Frontend web developer / graphic designer
+I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.
 
 - WordPress Maintenance
 - Elementor System Cleanup
@@ -686,10 +690,10 @@ Frontend web developer / graphic designer
 ## What I did
 I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.
 
-- Maintained 9 active company and client websites and supported periodic updates for 8 additional company websites.
-- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
-- Built 3 custom WordPress themes from blank starters for internal corporate websites.
-- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+- Maintained company and client websites, supported periodic updates for additional company websites, and built responsive MVP landing-page demos for client and internal leadership review.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes.
+- Built custom WordPress themes from blank starters for internal corporate websites.
+- Built a centralized WordPress plugin manager and contributed to production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
 - Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
 - Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
 - Established biweekly backups with four-week retention and verified recovery through restoration testing.
@@ -733,7 +737,7 @@ Nsight Index is an individual Laravel 12 course project built around a working p
 The project needed one working path for authors to manage posts and readers to interact with published content.
 
 ## My responsibility
-Individual course project
+I built Nsight Index independently as an individual course project, from the application structure through the publishing, interaction, profile, media, and scheduling flows.
 
 - Laravel Development
 - Content Workflow
@@ -783,7 +787,7 @@ This portfolio uses one JSON file for the main site copy and project data. A pre
 The site needed to serve people and machines while keeping project copy in one editable place.
 
 ## My responsibility
-Frontend developer
+I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.
 
 - Git-backed CMS
 - Content Architecture
@@ -834,7 +838,7 @@ Yay Nay is an in-progress feature-voting platform. It combines Laravel with Iner
 The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.
 
 ## My responsibility
-Full-stack developer
+I built this project independently across the Laravel backend and React interface. I owned the feature, account, permissions, discussion, voting, and server-side rendering flows while keeping the unfinished areas clearly scoped.
 
 - Laravel Application Development
 - Inertia and React
@@ -885,7 +889,7 @@ I built this React and GSAP project while following a public tutorial. It record
 I used the project to practice scroll and interface animation in React and see how tutorial patterns fit into a real codebase.
 
 ## My responsibility
-Frontend practice
+I completed this animation study independently while following the public tutorial. I handled the React implementation, GSAP setup, timing, responsive behavior, and attribution.
 
 - React Animation Study
 - GSAP Timing
@@ -934,7 +938,7 @@ Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. T
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
 
 ## My responsibility
-Frontend developer
+I built this unfinished project independently with React, TypeScript, and SCSS. I owned the product UI structure, profile presentation, reusable cards, and responsive styling while continuing to work on the main flow.
 
 - Product UI Practice
 - React Components

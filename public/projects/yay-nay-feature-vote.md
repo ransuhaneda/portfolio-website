@@ -15,7 +15,7 @@ Yay Nay is an in-progress feature-voting platform. It combines Laravel with Iner
 The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.
 
 ## My responsibility
-Full-stack developer
+I built this project independently across the Laravel backend and React interface. I owned the feature, account, permissions, discussion, voting, and server-side rendering flows while keeping the unfinished areas clearly scoped.
 
 - Laravel Application Development
 - Inertia and React

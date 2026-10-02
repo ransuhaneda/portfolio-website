@@ -16,7 +16,7 @@ Nsight Index is an individual Laravel 12 course project built around a working p
 The project needed one working path for authors to manage posts and readers to interact with published content.
 
 ## My responsibility
-Individual course project
+I built Nsight Index independently as an individual course project, from the application structure through the publishing, interaction, profile, media, and scheduling flows.
 
 - Laravel Development
 - Content Workflow

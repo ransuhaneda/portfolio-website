@@ -15,7 +15,7 @@ Another Markdown Viewer is a browser-based workspace for editing Markdown, check
 I wanted a focused way to make small Markdown edits and inspect the rendered document without losing the original source or requiring an app backend.
 
 ## My responsibility
-Frontend developer
+I built this project independently from the initial product idea through implementation, testing, and deployment. I owned the editor, Markdown rendering, browser storage, file operations, PDF export, and release verification.
 
 - Browser-based Markdown editing
 - GFM rendering and HTML sanitization
