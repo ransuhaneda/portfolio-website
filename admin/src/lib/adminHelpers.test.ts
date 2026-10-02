@@ -22,6 +22,7 @@ const project = (overrides: Partial<Project> = {}): Project => ({
   client: 'Personal project',
   summary: 'Admin editor',
   role: 'Frontend developer',
+  responsibility: 'I built the project independently.',
   stack: ['React'],
   challenge: 'Make content editing focused.',
   approach: ['Keep admin scoped.'],

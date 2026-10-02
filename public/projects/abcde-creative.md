@@ -3,7 +3,7 @@
 - Year: 2025
 - Client: ABCDE Creative Studio
 - Role: Web Developer
-- Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
+- Stack: React, TypeScript, JavaScript, HTML5, CSS3, Figma, GitHub Actions, Cloudflare
 - Homepage image: https://384721.xyz/images/home/featured-project-2.png
 
 ## Summary
@@ -16,7 +16,7 @@ At ABCDE Creative Studio, I built responsive pages from Figma designs for the st
 The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.
 
 ## My responsibility
-Web Developer
+I independently handled the frontend implementation for the studio website and related project pages. I translated the approved Figma designs into responsive React pages, reusable sections, accessibility checks, and delivery support.
 
 - Frontend Implementation
 - Responsive UI
@@ -30,7 +30,7 @@ I compared the mockups for repeated layout and spacing patterns, then built thos
 - Worked on 3 web projects, including the studio website.
 - Built at least 5 responsive pages from Figma mockups.
 - Applied WCAG-based accessibility checks during implementation.
-- Contributed reusable UI patterns for future builds.
+- Built reusable UI patterns that I could carry into later pages.
 - Supported delivery workflows through GitHub Actions and Cloudflare.
 
 ## Result

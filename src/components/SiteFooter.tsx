@@ -69,10 +69,10 @@ export function SiteFooter() {
           <div className={sty.links}>
             <nav className={sty.featuredNavigation} aria-label="Featured pages">
               <FeaturedLink label="HOME" to="/" />
-              <FeaturedLink label="PROJECTS" to="/projects" />
               <FeaturedLink label="ABOUT" to="/about" />
+              <FeaturedLink label="PROJECTS" to="/projects" />
               <FeaturedLink label="NOTES" to="/blog" />
-              <FeaturedLink label="CONTACT" to="/#contact" />
+              <FeaturedLink label="CONTACT" to="/contact" />
             </nav>
 
             <nav className={sty.navigation} aria-label="Footer">

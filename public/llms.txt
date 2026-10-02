@@ -1,8 +1,8 @@
 # Lance Carteciano
 
-> Frontend and WordPress developer building responsive websites from the Philippines.
+> Full-stack web developer based in the Philippines.
 
-I build responsive React interfaces and WordPress systems, then support the maintenance, QA, security, deployment, and recovery work that keeps them useful. My background also includes visual design.
+I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 
 ## Preferred machine-readable entry points
 - [Site index](https://384721.xyz/index.md)

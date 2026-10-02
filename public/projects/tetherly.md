@@ -15,7 +15,7 @@ Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. T
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
 
 ## My responsibility
-Frontend developer
+I built this unfinished project independently with React, TypeScript, and SCSS. I owned the product UI structure, profile presentation, reusable cards, and responsive styling while continuing to work on the main flow.
 
 - Product UI Practice
 - React Components

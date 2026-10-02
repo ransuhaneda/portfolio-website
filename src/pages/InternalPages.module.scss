@@ -4,7 +4,7 @@
 
 .resumeHero {
   border-bottom: var(--section-divider);
-  background: linear-gradient(110deg, var(--color-background-page) 0%, var(--color-background-surface-subtle) 100%);
+  background: var(--color-background-page);
 }
 
 .resumeHeroGrid { display: grid; gap: var(--space-lg); padding-block: var(--space-xl); }
@@ -134,6 +134,10 @@
 .capabilityList li::before { width: 0.4rem; aspect-ratio: 1; content: ''; background: var(--color-action-primary); border-radius: 50%; }
 .capabilityList .skillFlare::before { background: var(--color-action-secondary); }
 .capabilityList .skillIris::before { background: var(--color-accent-violet); }
+
+.skillGroups { display: grid; gap: var(--space-lg); }
+.skillGroup { display: grid; gap: var(--space-xs); }
+.skillGroup h3 { margin-block: 0; color: var(--color-text-muted); text-transform: uppercase; @include mix.type-style(body-sm, 700); }
 
 .archiveMeta,
 .yearHeading { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); color: var(--color-text-muted); letter-spacing: 0.1em; text-transform: uppercase; @include mix.type-style(body-xs); }
@@ -282,4 +286,5 @@
   .contactGrid > :last-child { grid-column: 5 / span 8; padding-inline-start: var(--space-lg); border-inline-start: 1px solid var(--color-border-default); }
   .experienceList > li { grid-template-columns: minmax(0, 1fr) auto; }
   .experienceList > li > ul { grid-column: 1 / -1; }
+  .skillGroups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

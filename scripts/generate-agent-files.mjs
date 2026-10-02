@@ -11,8 +11,9 @@ const blogDir = path.join(root, 'content', 'blog')
 const siteUrl = (process.env.SITE_URL || siteContent.site.siteUrl || 'https://384721.xyz').replace(/\/$/, '')
 const email = process.env.CONTACT_EMAIL || siteContent.site.email
 const location = process.env.CONTACT_LOCATION || siteContent.site.location
-const featuredProjectSlugs = new Set(siteContent.home.featuredProjects.slugs)
-const featuredProjects = siteContent.projects.filter((project) => featuredProjectSlugs.has(project.slug))
+const featuredProjects = siteContent.home.featuredProjects.slugs
+  .map((slug) => siteContent.projects.find((project) => project.slug === slug))
+  .filter((project) => project !== undefined)
 
 const loadPublishedBlogPosts = async () => {
   const entries = await fs.readdir(blogDir, { withFileTypes: true })
@@ -126,6 +127,12 @@ ${siteContent.projects
   .join('\n\n')}
 `
 
+const resumeSkillsMd = siteContent.resume.skillGroups?.length
+  ? siteContent.resume.skillGroups
+    .map((group) => `### ${group.title}\n${bullets(group.items)}`)
+    .join('\n\n')
+  : bullets(siteContent.resume.skills)
+
 const resumeMd = `# Resume
 
 ## ${siteContent.resume.headline}
@@ -135,7 +142,7 @@ ${siteContent.resume.summary}
 [${siteContent.resume.download.label}](${siteUrl}${siteContent.resume.download.href})
 
 ## Skills
-${bullets(siteContent.resume.skills)}
+${resumeSkillsMd}
 
 ## Experience
 ${siteContent.resume.experience
@@ -144,7 +151,7 @@ ${siteContent.resume.experience
   )
   .join('\n\n')}
 
-${siteContent.resume.education?.length ? `## ${siteContent.resume.educationSectionTitle ?? 'Education and training'}\n${siteContent.resume.education
+${siteContent.resume.education?.length ? `## ${siteContent.resume.educationSectionTitle ?? 'Education & certifications'}\n${siteContent.resume.education
   .map(
     (item) => `### ${item.program}, ${item.school} (${item.period})\n${bullets(item.highlights)}`,
   )
@@ -192,7 +199,7 @@ ${project.overview}
 ${project.challenge}
 
 ## My responsibility
-${project.role}
+${project.responsibility}
 
 ${bullets(project.scope)}
 

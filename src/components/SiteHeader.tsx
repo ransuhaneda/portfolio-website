@@ -18,9 +18,9 @@ export function SiteHeader() {
   const location = useLocation()
   const brand = getBrandParts(siteContent.site.name)
   const navItems = siteContent.siteChrome?.headerNav ?? [
+    { to: '/about', label: 'About' },
     { to: '/projects', label: 'Projects' },
     { to: '/blog', label: 'Blog' },
-    { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
     { to: '/resume', label: 'CV' },
   ]

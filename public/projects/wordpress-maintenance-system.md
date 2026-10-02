@@ -1,9 +1,9 @@
 # WordPress maintenance and Elementor system work
 
 - Year: 2026
-- Client: Tech Support Plus I.T Services
+- Client: Tech Support Plus I.T Service
 - Role: Frontend web developer / graphic designer
-- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
+- Stack: WordPress, Elementor, PHP, HTML5, CSS3, ACF, Code Snippets, cPanel, Hostinger
 - Homepage image: https://384721.xyz/images/home/featured-project-1.png
 
 ## Summary
@@ -16,7 +16,7 @@ This entry covers ongoing WordPress maintenance rather than one finished launch.
 Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.
 
 ## My responsibility
-Frontend web developer / graphic designer
+I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.
 
 - WordPress Maintenance
 - Elementor System Cleanup
@@ -30,10 +30,10 @@ Frontend web developer / graphic designer
 ## What I did
 I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.
 
-- Maintained 9 active company and client websites and supported periodic updates for 8 additional company websites.
-- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
-- Built 3 custom WordPress themes from blank starters for internal corporate websites.
-- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+- Maintained company and client websites, supported periodic updates for additional company websites, and built responsive MVP landing-page demos for client and internal leadership review.
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes.
+- Built custom WordPress themes from blank starters for internal corporate websites.
+- Built a centralized WordPress plugin manager and contributed to production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
 - Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
 - Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
 - Established biweekly backups with four-week retention and verified recovery through restoration testing.

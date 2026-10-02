@@ -19,6 +19,11 @@ export type EducationItem = {
   highlights: string[]
 }
 
+export type ResumeSkillGroup = {
+  title: string
+  items: string[]
+}
+
 export type ImageAsset = {
   src: string
   alt: string
@@ -81,6 +86,7 @@ export type Project = {
   status?: string
   summary: string
   role: string
+  responsibility: string
   stack: string[]
   links?: ProjectLink[]
   challenge: string
@@ -180,6 +186,9 @@ export type SiteContent = {
       }>
       cloudAriaLabel?: string
     }
+    notes: {
+      title: string
+    }
     contact: ContactFormContent
   }
   about: {
@@ -207,6 +216,7 @@ export type SiteContent = {
     skillsSectionTitle: string
     experienceSectionTitle: string
     skills: string[]
+    skillGroups?: ResumeSkillGroup[]
     highlights: HighlightStat[]
     educationSectionTitle?: string
     education?: EducationItem[]

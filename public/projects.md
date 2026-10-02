@@ -25,16 +25,16 @@ A browser tool for encoding and decoding text and files as Base64, Base64URL, or
 - Year: 2025
 - Client: ABCDE Creative Studio
 - Role: Web Developer
-- Stack: React, TypeScript, JavaScript, HTML, CSS, Figma, GitHub Actions, Cloudflare
+- Stack: React, TypeScript, JavaScript, HTML5, CSS3, Figma, GitHub Actions, Cloudflare
 
 Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 
 ## [WordPress maintenance and Elementor system work](https://384721.xyz/projects/wordpress-maintenance-system.md)
 
 - Year: 2026
-- Client: Tech Support Plus I.T Services
+- Client: Tech Support Plus I.T Service
 - Role: Frontend web developer / graphic designer
-- Stack: WordPress, Elementor, PHP, HTML, CSS, ACF, Code Snippets, cPanel, Hostinger
+- Stack: WordPress, Elementor, PHP, HTML5, CSS3, ACF, Code Snippets, cPanel, Hostinger
 
 Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.
 

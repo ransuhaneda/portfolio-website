@@ -80,6 +80,7 @@ export type Project = {
   status?: string
   summary: string
   role: string
+  responsibility: string
   stack: string[]
   links?: ProjectLink[]
   challenge: string

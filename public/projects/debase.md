@@ -16,7 +16,7 @@ Debase is a browser tool for encoding and decoding text or files. It supports Ba
 The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
 
 ## My responsibility
-Frontend developer
+I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.
 
 - Browser-local File Processing
 - Base64 and Base64URL

@@ -100,6 +100,7 @@ export const ProjectEditorSection = ({
               <Field label="Client"><input id="project-client" value={selected.client} onChange={(event) => onFieldChange('client', event.target.value)} /></Field>
               <Field label="Role"><input id="project-role" value={selected.role} onChange={(event) => onFieldChange('role', event.target.value)} /></Field>
             </div>
+            <Field label="Responsibility"><textarea id="project-responsibility" rows={4} value={selected.responsibility} onChange={(event) => onFieldChange('responsibility', event.target.value)} /></Field>
             <div className="admin-form-row admin-form-row--split">
               <Field label="Kind">
                 <select id="project-kind" value={selected.kind ?? 'case-study'} onChange={(event) => onFieldChange('kind', event.target.value)}>

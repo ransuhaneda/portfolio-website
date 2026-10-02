@@ -99,6 +99,7 @@ export const createEmptyProject = (existingProjects: Project[], year = `${new Da
   client: 'Personal project',
   summary: 'Short project summary.',
   role: 'Frontend developer',
+  responsibility: 'Describe the responsibility and ownership for this project.',
   stack: ['React', 'TypeScript'],
   challenge: 'Describe the problem this project solved.',
   approach: ['Describe the approach.'],
@@ -131,6 +132,7 @@ export const getProjectValidationError = (projects: Project[], selectedSlug: str
     if (!project.client.trim()) return `${label} needs a client.`
     if (!project.summary.trim()) return `${label} needs a summary.`
     if (!project.role.trim()) return `${label} needs a role.`
+    if (!project.responsibility.trim()) return `${label} needs a responsibility description.`
     if (!project.challenge.trim()) return `${label} needs a challenge.`
     if (!project.overview.trim()) return `${label} needs an overview.`
     if (!project.approachSummary.trim()) return `${label} needs an approach summary.`
