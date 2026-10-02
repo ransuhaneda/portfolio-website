@@ -7,63 +7,64 @@ Frontend and WordPress developer with production experience building custom them
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
 ## Skills
+### Frontend
 - React
 - TypeScript
 - JavaScript
-- HTML
-- CSS
+- HTML5
+- CSS3
 - SCSS
 - Tailwind CSS
 - Bootstrap
-- WordPress
+- GSAP
+
+### WordPress
 - Elementor
-- Custom themes
 - Plugin development
-- Custom widgets
+- Custom themes
 - PHP
-- Laravel
-- MySQL
-- Figma
-- Accessibility
-- Adobe Creative Suite
+- ACF
+- Reusable templates
+
+### Systems and delivery
 - Git
 - GitHub Actions
-- Vitest
-- ACF
-- Code Snippets
+- Security cleanup
 - Cloudflare
 - cPanel
-- Hostinger
 - VPS
 - Linux
-- VS Code
+- Server administration
+- SSL
+
+### Design
+- Figma
+- Adobe Photoshop
+- Adobe Illustrator
+- Responsive UI implementation
+- Accessibility
 
 ## Experience
-### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Services (Jan 2026 to present)
-- Maintain 9 active company and client websites, plus support periodic updates for 8 additional company websites.
-- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes; applied it across 4 migrations.
-- Built 3 custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
-- Built a centralized WordPress plugin manager and contributed to 15 production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
+### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Service (Jan 2026 – Present)
+- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes applied across website migrations.
+- Maintain active company and client websites, support periodic updates for additional company websites, and build responsive MVP landing-page demos for client and internal leadership review.
+- Built custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
+- Built a centralized WordPress plugin manager and contributed to production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
 - Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
-- Established biweekly backups with four-week retention and verified recovery through restoration testing.
-- Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
 
-### Web Developer, ABCDE Creative Studio (Apr 2025 to Dec 2025)
-- Worked on 3 web projects, including the studio website.
-- Built at least 5 responsive pages from Figma mockups with React, HTML, CSS, JavaScript, and TypeScript.
-- Applied WCAG-based accessibility checks during frontend implementation.
-- Contributed reusable UI patterns and delivery support through GitHub Actions and Cloudflare.
+### Web Developer, ABCDE Creative Studio (Apr 2025 – Dec 2025)
+- Implemented the studio website from approved Figma designs as a responsive React site with reusable components and shared sections.
+- Built responsive pages using React, HTML, CSS, JavaScript, and TypeScript.
+- Configured GitHub Actions and Cloudflare Pages to build and deploy the site, and continued implementing post-launch updates.
 
-### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 to Oct 2024)
-- Supported print production for food trucks, businesses, and signage work across a 7-person team.
-- Improved production workflows through RIP setup, color calibration, and cutting-process cleanup across 2 large-format machines, 2 cutting machines, and 5 workstations.
-- Created reusable templates, adjusted file-preparation processes, and troubleshot hardware and software issues to reduce repeat revisions and keep production moving.
+### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 – Oct 2024)
+- Improved workflows through RIP setup, color calibration, cutting-process cleanup, and troubleshooting across large-format and cutting machines and multiple workstations.
+- Supported print production for a team handling signage, food truck visuals, and business materials.
 
-### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 to Sep 2024)
-- Designed weekly social media graphics and branded marketing assets for 3 branches.
-- Produced promotional assets for seasonal and recurring drink campaigns.
-- Worked with stakeholders to keep campaign visuals aligned with branch needs.
+### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 – Sep 2024)
+- Produced promotional assets for recurring and seasonal campaigns and refined materials with stakeholders.
+- Designed weekly social media graphics and branded marketing assets for multiple branches.
 
-## Education and training
-### Full-stack web developer training, CIIT College of Arts and Technology (2025)
-- Training covered PHP, Laravel, MySQL, HTML, CSS, JavaScript, frontend fundamentals, backend fundamentals, and database work.
+## Education & certifications
+### Full-Stack Web Developer Certificate, CIIT College of Arts and Technology (Oct 2025)
+- Training included PHP, Laravel, MySQL, HTML, CSS, and JavaScript.

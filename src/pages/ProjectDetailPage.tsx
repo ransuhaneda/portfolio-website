@@ -104,7 +104,7 @@ export function ProjectDetailPage() {
             <p className={sty.kicker} data-text-reveal="copy">{sectionLabel('03', 'RESPONSIBILITY')}</p>
             <div className={sty.prose}>
               <PretextText as="h2" id="approach-title" measure="heading" reveal="heading">My responsibility</PretextText>
-              <PretextText measure="prose" reveal="copy">I worked as {project.role.toLowerCase()}, responsible for {project.scope.join(', ').toLowerCase()}.</PretextText>
+              <PretextText measure="prose" reveal="copy">{project.responsibility}</PretextText>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ This portfolio uses one JSON file for the main site copy and project data. A pre
 The site needed to serve people and machines while keeping project copy in one editable place.
 
 ## My responsibility
-Frontend developer
+I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.
 
 - Git-backed CMS
 - Content Architecture

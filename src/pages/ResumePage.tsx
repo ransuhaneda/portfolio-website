@@ -29,9 +29,22 @@ export function ResumePage() {
       </section>
 
       <Section title={siteContent.resume.skillsSectionTitle}>
-        <ul className={sty.capabilityList} data-text-reveal="copy">
-          {siteContent.resume.skills.map((skill, index) => <li className={index % 3 === 1 ? sty.skillFlare : index % 3 === 2 ? sty.skillIris : undefined} key={skill}>{skill}</li>)}
-        </ul>
+        {siteContent.resume.skillGroups?.length ? (
+          <div className={sty.skillGroups} data-text-reveal="copy">
+            {siteContent.resume.skillGroups.map((group) => (
+              <div className={sty.skillGroup} key={group.title}>
+                <PretextText as="h3" measure="heading">{group.title}</PretextText>
+                <ul className={sty.capabilityList}>
+                  {group.items.map((skill) => <li key={skill}>{skill}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ul className={sty.capabilityList} data-text-reveal="copy">
+            {siteContent.resume.skills.map((skill, index) => <li className={index % 3 === 1 ? sty.skillFlare : index % 3 === 2 ? sty.skillIris : undefined} key={skill}>{skill}</li>)}
+          </ul>
+        )}
       </Section>
       <Section title={siteContent.resume.experienceSectionTitle}>
         <ol className={sty.experienceList} data-text-reveal="copy">
@@ -46,7 +59,7 @@ export function ResumePage() {
       </Section>
 
       {siteContent.resume.education?.length ? (
-        <Section title={siteContent.resume.educationSectionTitle ?? 'Education and training'}>
+        <Section title={siteContent.resume.educationSectionTitle ?? 'Education & certifications'}>
           <ol className={sty.experienceList} data-text-reveal="copy">
             {siteContent.resume.education.map((item) => (
               <li key={`${item.school}-${item.program}`}>
