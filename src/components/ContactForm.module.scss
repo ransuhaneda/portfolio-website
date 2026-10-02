@@ -86,6 +86,11 @@
   border-color: var(--color-action-primary);
 }
 
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: var(--color-feedback-error);
+}
+
 .count,
 .error {
   @include mix.type-style(body-xs);
@@ -93,6 +98,34 @@
 
 .error {
   color: var(--color-feedback-error);
+}
+
+.toast {
+  position: fixed;
+  right: var(--space-md);
+  bottom: var(--space-md);
+  z-index: 100;
+  width: min(calc(100vw - (var(--space-md) * 2)), 28rem);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-text-primary);
+  background: var(--color-feedback-error);
+  border: 1px solid var(--color-feedback-error);
+  border-radius: var(--form-field-radius);
+  box-shadow: var(--shadow);
+  @include mix.type-style(body-sm);
+  transition: opacity var(--motion-emphasized) var(--motion-ease-emphasized), transform var(--motion-emphasized) var(--motion-ease-emphasized);
+}
+
+.toastFading {
+  opacity: 0;
+  transform: translateY(var(--space-xs));
+  pointer-events: none;
+}
+
+@include mix.reduced-motion {
+  .toast {
+    transition: none;
+  }
 }
 
 .submitButton {

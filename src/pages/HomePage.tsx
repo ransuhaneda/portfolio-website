@@ -133,7 +133,7 @@ export function HomePage() {
           <div className="lg-wrapper">
             <div className={sty.notesInner} data-text-reveal-group="scrub">
               <div className={sty.notesHeader}>
-                <PretextText as="h2" measure="heading" reveal="heading">Fresh from the blog</PretextText>
+                <PretextText as="h2" measure="heading" reveal="heading">{siteContent.home.notes.title}</PretextText>
               </div>
               <div className={sty.notesGrid} data-text-reveal="copy">
                 {blogPosts.slice(0, 3).map((post) => (
@@ -161,7 +161,7 @@ export function HomePage() {
                 </span>
               </PretextText>
             </div>
-            <ContactForm contact={siteContent.home.contact} recipientEmail={siteContent.site.email} showIntro={false} />
+            <ContactForm contact={siteContent.home.contact} recipientEmail={siteContent.site.email} showIntro={false} showTitle={false} />
           </div>
         </div>
       </section>

@@ -190,6 +190,7 @@
 .projectLinks {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--space-xs);
 }
 
 .projectLinks a {
