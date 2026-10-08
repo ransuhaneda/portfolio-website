@@ -26,21 +26,21 @@ Intended production: https://384721.xyz on Cloudflare Pages. GitHub Pages is a n
 
 - React 19 and React Router 7
 - TypeScript 5.8
-- Vite 7
+- Vite+ (Vite, Rolldown, Vitest, Oxlint, and Oxfmt)
 - SCSS (Sass)
 - GSAP for motion
-- pnpm
+- pnpm package management through Vite+ locally
 
 ## Requirements
 
 - Node.js 24 (generation imports erasable TypeScript directly)
-- pnpm
+- Vite+ (`vp`); the repository declares pnpm as its package manager
 
 ## Install and run locally
 
 ```bash
-pnpm install --frozen-lockfile
-pnpm dev
+vp install --frozen-lockfile
+vp run dev
 ```
 
 Vite serves the site at [http://localhost:4173](http://localhost:4173). The `dev` script regenerates the machine-readable files before starting the server.
@@ -48,44 +48,22 @@ Vite serves the site at [http://localhost:4173](http://localhost:4173). The `dev
 To preview a production build locally:
 
 ```bash
-pnpm build
-pnpm preview
+vp run build
+vp run preview
 ```
 
-## Common commands
+## Project guides
 
-| Command | Purpose |
-| --- | --- |
-| `pnpm dev` | Generate content mirrors and start the Vite development server |
-| `pnpm build` | Generate content mirrors, type-check, and create the production build in `dist/` |
-| `pnpm preview` | Serve the existing production build locally |
-| `pnpm run prebuild` | Regenerate markdown mirrors, sitemap, and agent metadata |
-| `pnpm lint` | Run ESLint |
-| `pnpm lint:oxlint` | Run Oxlint |
-| `pnpm lint:colors` | Check color-token usage |
-| `pnpm test` | Run the Vitest test suite once |
+Start with the [documentation index](docs/README.md). Maintained rules have one owner:
 
-## Editing content
+- [Development](docs/development.md): local commands, checks, and working artifacts
+- [Architecture](docs/architecture.md): React Router prerendering, routes, metadata, and runtime boundaries
+- [Content](docs/content.md) and [positioning](CONTEXT.md): editable sources, blog contracts, evidence, and resume privacy
+- [Styling](docs/styling.md): tokens, wrappers, typography, and responsive layout
+- [Git workflow](docs/git-workflow.md): branches, merges, tags, releases, and cleanup
+- [Deployment](docs/deployment.md) and [launch checklist](docs/launch-checklist.md): host requirements, approval, and CMS containment
 
-1. Edit [`content/site-content.json`](content/site-content.json).
-2. For blog posts, add or update Markdown files in [`content/blog/`](content/blog/). Published posts require frontmatter with `status: published`; draft posts are excluded from generated output.
-3. Regenerate the derived files:
-
-   ```bash
-   pnpm run prebuild
-   ```
-
-`pnpm dev` and `pnpm build` run this step automatically. Generated files are written to `public/` and should not be edited directly.
-
-## Maintenance
-
-No secrets or environment file are required for the public build. Keep production URLs and contact copy in JSON. Blog posts require a category as well as title, slug, date, status and excerpt. After edits during a running dev session, rerun prebuild to refresh the published snapshot.
-
-See [maintenance/deployment](agent-generated-docs/maintenance-deployment.md) for publishing rules, preview builds, generated files, PDF integrity and deferred CMS security risks. See [launch checklist](agent-generated-docs/launch-checklist.md) for required independent gates.
-
-## Cloudflare Pages
-
-Build command: `pnpm build`; output: `dist/`. Deploy from repository source so Pages includes `functions/[[path]].ts`, which handles Markdown negotiation and admin containment. Do not enable admin for launch. Deployment is not authorized by running local checks.
+The application build produces deployable files in `dist/client/`. No secrets or environment file are required for the public build. Deployment remains a separately authorized operator action; see the deployment guide for current preview workflow drift and host checks.
 
 ## Repository layout
 
@@ -96,6 +74,8 @@ src/           Public React application and SCSS
 admin/         Deferred CMS source (not in public build)
 functions/     Cloudflare Pages Function
 scripts/       Content and agent-file generation scripts
+docs/          Maintained project rules and guides
+agent-generated-docs/  Working notes and historical evidence
 ```
 
 ## License
