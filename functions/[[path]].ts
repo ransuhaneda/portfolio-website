@@ -283,14 +283,14 @@ const toBase64Url = (bytes: Uint8Array): string => {
   return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '')
 }
 
-const fromBase64Url = (value: string): Uint8Array => {
+const fromBase64Url = (value: string) => {
   const normalized = value.replace(/-/g, '+').replace(/_/g, '/')
   const padded = normalized + '='.repeat((4 - (normalized.length % 4)) % 4)
   const binary = atob(padded)
   return Uint8Array.from(binary, (char) => char.charCodeAt(0))
 }
 
-const fromBase64 = (value: string): Uint8Array => {
+const fromBase64 = (value: string) => {
   const padded = value + '='.repeat((4 - (value.length % 4)) % 4)
   const binary = atob(padded)
   return Uint8Array.from(binary, (char) => char.charCodeAt(0))
