@@ -4,16 +4,16 @@
 
 ## Rule owners
 
-| Subject | Owner |
-| --- | --- |
-| Local tooling, development boundaries, checks, and artifact locations | [Development](development.md) |
-| Application structure, route configuration, metadata, and runtime boundaries | [Architecture](architecture.md) |
-| Editable sources, generation, blog contracts, evidence, and resume privacy | [Content](content.md) |
-| Audience, outcomes, and portfolio terminology | [Positioning](../CONTEXT.md) |
-| Tokens, wrappers, responsive sizing, and component styles | [Styling](styling.md) |
-| Branch history, release preflight, tags, publication, and branch cleanup | [Git workflow](git-workflow.md) |
-| Host behavior, deployment approval, and deferred CMS containment | [Deployment](deployment.md) |
-| Independent launch acceptance gates | [Launch checklist](launch-checklist.md) |
+| Subject                                                                      | Owner                                   |
+| ---------------------------------------------------------------------------- | --------------------------------------- |
+| Local tooling, development boundaries, checks, and artifact locations        | [Development](development.md)           |
+| Application structure, route configuration, metadata, and runtime boundaries | [Architecture](architecture.md)         |
+| Editable sources, generation, blog contracts, evidence, and resume privacy   | [Content](content.md)                   |
+| Audience, outcomes, and portfolio terminology                                | [Positioning](../CONTEXT.md)            |
+| Tokens, wrappers, responsive sizing, and component styles                    | [Styling](styling.md)                   |
+| Branch history, release preflight, tags, publication, and branch cleanup     | [Git workflow](git-workflow.md)         |
+| Host behavior, deployment approval, and deferred CMS containment             | [Deployment](deployment.md)             |
+| Independent launch acceptance gates                                          | [Launch checklist](launch-checklist.md) |
 
 ## Authority and maintenance
 

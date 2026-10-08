@@ -12,18 +12,18 @@ Read approved scope, audit, acceptance, integration handoff, route metadata, blo
 
 Each command ran independently with its own captured stdout/stderr and exit reported by terminal, not inferred from the last command of a semicolon chain:
 
-| Command | Exit | Raw log |
-| --- | --- | --- |
-| pnpm lint | 0 | .playwright/final/lint.log |
-| pnpm lint:oxlint | 0 | .playwright/final/oxlint.log |
-| pnpm lint:colors | 0 | .playwright/final/colors.log |
-| pnpm test | 0 | .playwright/final/test.log |
-| pnpm run prebuild | 0 | .playwright/final/prebuild.log |
-| pnpm build | 0 | .playwright/final/build.log |
-| GITHUB_PAGES=true pnpm build | 0 | .playwright/final/preview-build.log |
-| pnpm build (final production restore) | 0 | .playwright/final/production-restore.log |
-| pnpm test (final) | 0 | .playwright/final/test-final.log |
-| git diff --check | 0 | terminal result |
+| Command                               | Exit | Raw log                                  |
+| ------------------------------------- | ---- | ---------------------------------------- |
+| pnpm lint                             | 0    | .playwright/final/lint.log               |
+| pnpm lint:oxlint                      | 0    | .playwright/final/oxlint.log             |
+| pnpm lint:colors                      | 0    | .playwright/final/colors.log             |
+| pnpm test                             | 0    | .playwright/final/test.log               |
+| pnpm run prebuild                     | 0    | .playwright/final/prebuild.log           |
+| pnpm build                            | 0    | .playwright/final/build.log              |
+| GITHUB_PAGES=true pnpm build          | 0    | .playwright/final/preview-build.log      |
+| pnpm build (final production restore) | 0    | .playwright/final/production-restore.log |
+| pnpm test (final)                     | 0    | .playwright/final/test-final.log         |
+| git diff --check                      | 0    | terminal result                          |
 
 Vitest: 4 files, 14 tests passed. Build includes tsc -b, Vite and route shells. Existing >500 kB main chunk warning remains; no suppression. Complexity gate: not configured (not claimed passed).
 
@@ -89,12 +89,12 @@ Initial harness failures were corrected without source edits: browser injected h
 
 Ran `python3 -B .playwright/final/repair-integrity.py before` and `pnpm exec node .playwright/final/contact-repair.mjs` (exit 0). Reused the existing Chrome CDP page on port 9222 against unchanged production dist at localhost:4175; no browser launch/close, source edits, mail sends or mailto navigation. The script clicks the visible submit button with CDP mouse events, verifies first-error focus, then scrolls the form into the viewport without changing focus before capture. Inputs are synthetic: empty required fields, then name “QA Verification”, email “invalid”, empty message.
 
-| Full viewport capture under .playwright/final/ | State and verified focus |
-| --- | --- |
-| contact-required-mobile.png (390x844) | Three required-field errors; name focused |
+| Full viewport capture under .playwright/final/                    | State and verified focus                                 |
+| ----------------------------------------------------------------- | -------------------------------------------------------- |
+| contact-required-mobile.png (390x844)                             | Three required-field errors; name focused                |
 | contact-invalid-mobile.png (390x844, replaced incorrect original) | Invalid-email and required-message errors; email focused |
-| contact-required-desktop.png (1366x900) | Three required-field errors; name focused |
-| contact-invalid-desktop.png (1366x900) | Invalid-email and required-message errors; email focused |
+| contact-required-desktop.png (1366x900)                           | Three required-field errors; name focused                |
+| contact-invalid-desktop.png (1366x900)                            | Invalid-email and required-message errors; email focused |
 
 All four full images were visually inspected, not just contact sheets/crops of the form. All fields, field-specific errors, validation summary and Draft email control are readable in frame without form overlap/clipping. Name focus is visually apparent in both required-state images and email focus in mobile invalid state. Desktop invalid-state focus styling is subtle: visual inspection could not establish a strong distinct ring; DOM activeElement proves email focus, rather than claiming an unmistakable visual ring. Partial surrounding/footer content is ordinary scroll continuation. Per-field/error/control viewport bounds, aria-invalid, activeElement, focus-visible matching and zero horizontal overflow are recorded in contact-repair.json; four capture results and zero mailto requests in contact-repair.log. No implementation defect was established requiring source changes.
 

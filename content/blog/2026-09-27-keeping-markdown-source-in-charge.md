@@ -6,6 +6,7 @@ status: "published"
 category: "frontend-quality"
 excerpt: "How I keep the Markdown document canonical while the editor, rendered preview, local recovery, and PDF export each do a separate job."
 ---
+
 A Markdown editor has two views of one document: the text people edit and the formatted result they read. The tricky part is making those views useful without letting them drift into separate versions of the document.
 
 In Another Markdown Viewer, the raw Markdown string stays canonical. The editor changes that string. The preview is derived from it. Recovery stores it. Saving downloads it. Printing formats its rendered form, but does not replace the source.

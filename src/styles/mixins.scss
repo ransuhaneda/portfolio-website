@@ -1,6 +1,6 @@
-@use 'sass:list';
-@use 'sass:map';
-@use './tokens' as tokens;
+@use "sass:list";
+@use "sass:map";
+@use "./tokens" as tokens;
 
 @mixin mq($key) {
   @media (min-width: map.get(tokens.$breakpoints, $key)) {
@@ -28,7 +28,6 @@
     flex-wrap: $wrap;
   }
 }
-
 
 @mixin type-style($role, $weight: null) {
   $family: tokens.type-prop($role, family);
@@ -69,11 +68,17 @@
   box-shadow: 0 0 0 3px var(--color-focus-ring);
 }
 
-@mixin interactive-transition($properties: (transform, border-color, background-color, color, opacity)) {
+@mixin interactive-transition(
+  $properties: (transform, border-color, background-color, color, opacity)
+) {
   $transitions: ();
 
   @each $property in $properties {
-    $transitions: list.append($transitions, #{$property} var(--motion-fast) var(--motion-ease-standard), comma);
+    $transitions: list.append(
+      $transitions,
+      #{$property} var(--motion-fast) var(--motion-ease-standard),
+      comma
+    );
   }
 
   transition: $transitions;

@@ -12,18 +12,18 @@ Use Vite+ (`vp`) for local dependency, script, and executable commands. The repo
 
 `vite.config.ts` is the toolchain entry point. Lint rules, environment overrides, plugin registration, and shared lint/format exclusions live in [`tools/lint.config.ts`](../tools/lint.config.ts), imported into the root config. Keep one active lint configuration; do not add a competing standalone Oxlint config.
 
-| Operation | Command |
-| --- | --- |
-| Install after pulling remote changes | `vp install --frozen-lockfile` |
-| Generate content and start the app | `vp run dev` |
-| Regenerate content outputs | `vp run prebuild` |
-| Generate, type-check, and build the app | `vp run build` |
-| Preview the existing build | `vp run preview` |
-| Format, lint, and type-check | `vp check` |
-| Run tests once | `vp run test` |
-| Run configured lint script | `vp run lint` |
-| Run explicit Oxlint script | `vp run lint:oxlint` |
-| Check color-token usage | `vp run lint:colors` |
+| Operation                               | Command                        |
+| --------------------------------------- | ------------------------------ |
+| Install after pulling remote changes    | `vp install --frozen-lockfile` |
+| Generate content and start the app      | `vp run dev`                   |
+| Regenerate content outputs              | `vp run prebuild`              |
+| Generate, type-check, and build the app | `vp run build`                 |
+| Preview the existing build              | `vp run preview`               |
+| Format, lint, and type-check            | `vp check`                     |
+| Run tests once                          | `vp run test`                  |
+| Run configured lint script              | `vp run lint`                  |
+| Run explicit Oxlint script              | `vp run lint:oxlint`           |
+| Check color-token usage                 | `vp run lint:colors`           |
 
 Raw `vp build` is not a substitute for the application script: it does not express the required generator, TypeScript build, and React Router build sequence. `vp dev` and `vp run dev` can also differ. The app dev server is configured on port 4173.
 

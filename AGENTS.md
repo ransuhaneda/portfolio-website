@@ -11,13 +11,13 @@ Keep the portfolio content-first, case-study oriented, and easy for people and a
 
 ## Read the guide for your task
 
-| Task | Required guide |
-| --- | --- |
-| Project structure, routing, metadata, or runtime behavior | [Architecture](docs/architecture.md) |
-| Site copy, projects, blog posts, images, or resume | [Content](docs/content.md) and [positioning](CONTEXT.md) |
-| SCSS, layout, typography, colors, or motion | [Styling](docs/styling.md) |
-| Branches, commits, merges, tags, releases, or cleanup | [Git workflow](docs/git-workflow.md) |
-| Publishing, preview hosts, Cloudflare, PDF integrity, or admin security | [Deployment](docs/deployment.md) |
-| Launch approval or release verification | [Launch checklist](docs/launch-checklist.md) |
+| Task                                                                    | Required guide                                           |
+| ----------------------------------------------------------------------- | -------------------------------------------------------- |
+| Project structure, routing, metadata, or runtime behavior               | [Architecture](docs/architecture.md)                     |
+| Site copy, projects, blog posts, images, or resume                      | [Content](docs/content.md) and [positioning](CONTEXT.md) |
+| SCSS, layout, typography, colors, or motion                             | [Styling](docs/styling.md)                               |
+| Branches, commits, merges, tags, releases, or cleanup                   | [Git workflow](docs/git-workflow.md)                     |
+| Publishing, preview hosts, Cloudflare, PDF integrity, or admin security | [Deployment](docs/deployment.md)                         |
+| Launch approval or release verification                                 | [Launch checklist](docs/launch-checklist.md)             |
 
 [Documentation index](docs/README.md) defines rule ownership and the status of older notes. Keep detailed rules in their owner guide and link them here; do not grow this file into a second manual.

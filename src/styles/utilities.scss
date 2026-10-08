@@ -1,4 +1,4 @@
-@use './mixins' as mix;
+@use "./mixins" as mix;
 
 .sr-only,
 .visually-hidden {
@@ -31,7 +31,9 @@
   text-transform: uppercase;
   text-decoration: none;
   @include mix.type-style(body-xs, 700);
-  transition: color var(--motion-emphasized) var(--motion-ease-emphasized), transform var(--motion-emphasized) var(--motion-ease-emphasized);
+  transition:
+    color var(--motion-emphasized) var(--motion-ease-emphasized),
+    transform var(--motion-emphasized) var(--motion-ease-emphasized);
 }
 
 .backLink:hover {
@@ -57,16 +59,36 @@
   }
 }
 
-.text-h1 { @include mix.type-style(h1); }
-.text-h2 { @include mix.type-style(h2); }
-.text-h3 { @include mix.type-style(h3); }
-.text-h4 { @include mix.type-style(h4); }
-.text-h5 { @include mix.type-style(h5); }
-.text-h6 { @include mix.type-style(h6); }
-.text-body-lg { @include mix.type-style(body-lg); }
-.text-body-md { @include mix.type-style(body-md); }
-.text-body-sm { @include mix.type-style(body-sm); }
-.text-body-xs { @include mix.type-style(body-xs); }
+.text-h1 {
+  @include mix.type-style(h1);
+}
+.text-h2 {
+  @include mix.type-style(h2);
+}
+.text-h3 {
+  @include mix.type-style(h3);
+}
+.text-h4 {
+  @include mix.type-style(h4);
+}
+.text-h5 {
+  @include mix.type-style(h5);
+}
+.text-h6 {
+  @include mix.type-style(h6);
+}
+.text-body-lg {
+  @include mix.type-style(body-lg);
+}
+.text-body-md {
+  @include mix.type-style(body-md);
+}
+.text-body-sm {
+  @include mix.type-style(body-sm);
+}
+.text-body-xs {
+  @include mix.type-style(body-xs);
+}
 
 .button-row,
 .inline-links,

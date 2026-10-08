@@ -8,6 +8,7 @@ excerpt: "Why frontend work needs a rendered check after the code passes: layout
 coverImage: "https://picsum.photos/seed/visual-interface-verification/1600/900.jpg"
 coverAlt: "Decorative stock photograph; not evidence of interface verification."
 ---
+
 A successful build answers one question: can the project compile? It cannot tell me whether the interface has the right hierarchy, holds together at the requested widths, or matches the approved design.
 
 Small changes make this easy to miss. A component can type-check while its heading wraps one line too early. A grid can render every item while the visual order is wrong. A section can have the right classes while a long label escapes its container on mobile.

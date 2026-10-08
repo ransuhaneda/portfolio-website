@@ -17,6 +17,7 @@ Workspace: /home/ransu/personal-projects/portfolio-website-launch-readiness. Bra
 ## Exact source/audit coverage
 
 Fully inspected tracked files in the requested directories:
+
 - content/blog/2026-07-22-draft-notes-on-case-study-writing.md — published despite filename; category content-systems added, prose unchanged.
 - content/blog/2026-07-22-lightweight-git-backed-portfolio-cms.md — content-systems added; inline code used in body; prose unchanged.
 - content/blog/2026-08-21-git-workflow-for-small-teams.md — git-workflow added; fenced shell code must retain whitespace; prose unchanged.
@@ -40,6 +41,7 @@ No binary files inspected or modified in this phase. Remote placeholder covers n
 ## Real verification
 
 Final individual command results:
+
 - pnpm run lint: exit 0.
 - pnpm run lint:oxlint: exit 0.
 - pnpm run lint:colors: exit 0.

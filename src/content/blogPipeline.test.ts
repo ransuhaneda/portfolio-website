@@ -98,11 +98,10 @@ describe("blog content contract", () => {
       ])
         await cp(file, path.join(root, file));
       const run = () =>
-        execFileSync(
-          "vp",
-          ["exec", "node", path.join(root, "scripts/generate-agent-files.mjs")],
-          { cwd: process.cwd(), encoding: "utf8" },
-        );
+        execFileSync("vp", ["exec", "node", path.join(root, "scripts/generate-agent-files.mjs")], {
+          cwd: process.cwd(),
+          encoding: "utf8",
+        });
       const source = path.join(root, "content/blog/fixture.md");
       await writeFile(source, article());
       await writeFile(

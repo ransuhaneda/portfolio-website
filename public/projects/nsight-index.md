@@ -7,15 +7,19 @@
 - Homepage image: https://384721.xyz/images/home/featured-project-3.png
 
 ## Summary
+
 A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 
 ## Overview
+
 Nsight Index is an individual Laravel 12 course project built around a working publishing flow. It includes authentication, profiles, posts, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 
 ## Problem
+
 The project needed one working path for authors to manage posts and readers to interact with published content.
 
 ## My responsibility
+
 I built Nsight Index independently as an individual course project, from the application structure through the publishing, interaction, profile, media, and scheduling flows.
 
 - Laravel Development
@@ -25,6 +29,7 @@ I built Nsight Index independently as an individual course project, from the app
 - Interface Implementation
 
 ## What I did
+
 I built the working publishing, interaction, profile, media, and scheduling flows with Laravel and MySQL.
 
 - Built authentication, post, category, comment, like, follow, profile, media-upload, and timezone-aware publishing flows.
@@ -33,12 +38,14 @@ I built the working publishing, interaction, profile, media, and scheduling flow
 - Used Laravel validation, authentication middleware, and Eloquent relationships across the working flows.
 
 ## Result
+
 The repository provides a public backend example with working content, interaction, profile, media, and scheduling flows.
 
 - The public repository shows a working Laravel content-management project with author and reader features.
 - The project gives the portfolio a backend example while keeping unfinished admin work out of the claim.
 
 ## Project scope
+
 - Laravel Development
 - Content Workflow
 - Reader Interaction Flows
@@ -46,4 +53,5 @@ The repository provides a public backend example with working content, interacti
 - Interface Implementation
 
 ## Reflection
+
 The useful part of this project is the working publishing flow, so that is what the case study describes.

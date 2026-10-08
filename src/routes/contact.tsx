@@ -1,8 +1,8 @@
-import { routeMetaDescriptors } from '../content/routeMetaDescriptors'
-import { ContactPage } from '../pages/ContactPage'
+import { routeMetaDescriptors } from "../content/routeMetaDescriptors";
+import { ContactPage } from "../pages/ContactPage";
 
 export function meta() {
-  return routeMetaDescriptors('/contact')
+  return routeMetaDescriptors("/contact");
 }
 
-export default ContactPage
+export default ContactPage;

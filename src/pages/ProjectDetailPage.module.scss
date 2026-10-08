@@ -1,5 +1,5 @@
-@use '../styles/mixins' as mix;
-@use '../styles/tokens' as tokens;
+@use "../styles/mixins" as mix;
+@use "../styles/tokens" as tokens;
 
 .page {
   overflow: hidden;
@@ -54,7 +54,9 @@
   align-items: center;
   gap: var(--space-2xs);
   width: fit-content;
-  transition: color var(--motion-emphasized) var(--motion-ease-emphasized), transform var(--motion-emphasized) var(--motion-ease-emphasized);
+  transition:
+    color var(--motion-emphasized) var(--motion-ease-emphasized),
+    transform var(--motion-emphasized) var(--motion-ease-emphasized);
 }
 
 .backLink:hover,
@@ -126,7 +128,7 @@
 }
 
 .metaTable dd {
- // margin-block: 0;
+  // margin-block: 0;
   color: var(--color-text-primary);
   @include mix.type-style(body-sm, 400);
 }
@@ -157,7 +159,7 @@
   inset: 0;
   border: 1px solid var(--color-action-primary);
   border-radius: 50%;
-  content: '';
+  content: "";
   opacity: 0;
   transform: scale(0.45);
   transform-origin: center;
@@ -203,7 +205,10 @@
   text-decoration: none;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-sm);
-  transition: color var(--motion-emphasized) var(--motion-ease-emphasized), border-color var(--motion-emphasized) var(--motion-ease-emphasized), background-color var(--motion-emphasized) var(--motion-ease-emphasized);
+  transition:
+    color var(--motion-emphasized) var(--motion-ease-emphasized),
+    border-color var(--motion-emphasized) var(--motion-ease-emphasized),
+    background-color var(--motion-emphasized) var(--motion-ease-emphasized);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -223,7 +228,6 @@
 .metaTable dl {
   width: 100%;
 }
-
 
 .paperSection {
   padding-block: tokens.fluid(4rem, 7rem);
@@ -255,7 +259,6 @@
 .statement :global(.scroll-opacity-word) {
   white-space: normal;
 }
-
 
 .narrativeSection,
 .scopeSection {
@@ -387,7 +390,9 @@
   gap: var(--space-xs);
   padding-block: var(--space-md);
   border-top: 1px solid var(--color-border-subtle);
-  transition: color var(--motion-emphasized) var(--motion-ease-emphasized), transform var(--motion-emphasized) var(--motion-ease-emphasized);
+  transition:
+    color var(--motion-emphasized) var(--motion-ease-emphasized),
+    transform var(--motion-emphasized) var(--motion-ease-emphasized);
 }
 
 .projectNav span {
@@ -440,7 +445,6 @@
   gap: var(--space-sm);
 }
 
-
 .relatedCard h3 {
   transition: color var(--motion-emphasized) var(--motion-ease-emphasized);
 }
@@ -448,7 +452,6 @@
 .relatedCard a:hover h3 {
   color: var(--color-action-primary);
 }
-
 
 .notFound {
   min-height: 65vh;

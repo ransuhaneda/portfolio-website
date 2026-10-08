@@ -1,45 +1,45 @@
-import { useEffect, useRef, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-import { LuMenu, LuX } from 'react-icons/lu'
-import { siteContent } from '../content/siteContent'
-import sty from './SiteHeader.module.scss'
+import { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { LuMenu, LuX } from "react-icons/lu";
+import { siteContent } from "../content/siteContent";
+import sty from "./SiteHeader.module.scss";
 
 function getBrandParts(name: string) {
-  const [primary, ...rest] = name.trim().split(/\s+/)
+  const [primary, ...rest] = name.trim().split(/\s+/);
   return {
-    primary: primary?.toUpperCase() ?? '',
-    secondary: rest.join(' ').toUpperCase(),
-  }
+    primary: primary?.toUpperCase() ?? "",
+    secondary: rest.join(" ").toUpperCase(),
+  };
 }
 
 export function SiteHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const menuButtonRef = useRef<HTMLButtonElement>(null)
-  const location = useLocation()
-  const brand = getBrandParts(siteContent.site.name)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
+  const brand = getBrandParts(siteContent.site.name);
   const navItems = siteContent.siteChrome?.headerNav ?? [
-    { to: '/about', label: 'About' },
-    { to: '/projects', label: 'Projects' },
-    { to: '/blog', label: 'Blog' },
-    { to: '/contact', label: 'Contact' },
-    { to: '/resume', label: 'CV' },
-  ]
-  const navAriaLabel = siteContent.siteChrome?.headerNavAriaLabel ?? 'Primary'
+    { to: "/about", label: "About" },
+    { to: "/projects", label: "Projects" },
+    { to: "/blog", label: "Blog" },
+    { to: "/contact", label: "Contact" },
+    { to: "/resume", label: "CV" },
+  ];
+  const navAriaLabel = siteContent.siteChrome?.headerNavAriaLabel ?? "Primary";
 
   useEffect(() => {
-    setIsMenuOpen(false)
-  }, [location.pathname])
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
-    if (!isMenuOpen) return
+    if (!isMenuOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key !== 'Escape') return
-      setIsMenuOpen(false)
-      menuButtonRef.current?.focus()
-    }
-    document.addEventListener('keydown', closeOnEscape)
-    return () => document.removeEventListener('keydown', closeOnEscape)
-  }, [isMenuOpen])
+      if (event.key !== "Escape") return;
+      setIsMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
 
   return (
     <header className={sty.root}>
@@ -54,7 +54,10 @@ export function SiteHeader() {
             <ul className={sty.nav}>
               {navItems.map((item) => (
                 <li key={item.to}>
-                  <NavLink to={item.to} className={({ isActive }) => (isActive ? sty.active : undefined)}>
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) => (isActive ? sty.active : undefined)}
+                  >
                     {item.label}
                   </NavLink>
                 </li>
@@ -66,12 +69,16 @@ export function SiteHeader() {
             ref={menuButtonRef}
             type="button"
             className={sty.menuButton}
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((current) => !current)}
           >
-            {isMenuOpen ? <LuX aria-hidden="true" className={sty.menuIcon} focusable="false" /> : <LuMenu aria-hidden="true" className={sty.menuIcon} focusable="false" />}
+            {isMenuOpen ? (
+              <LuX aria-hidden="true" className={sty.menuIcon} focusable="false" />
+            ) : (
+              <LuMenu aria-hidden="true" className={sty.menuIcon} focusable="false" />
+            )}
           </button>
         </div>
       </div>
@@ -82,7 +89,10 @@ export function SiteHeader() {
             <ul>
               {navItems.map((item) => (
                 <li key={item.to}>
-                  <NavLink to={item.to} className={({ isActive }) => (isActive ? sty.active : undefined)}>
+                  <NavLink
+                    to={item.to}
+                    className={({ isActive }) => (isActive ? sty.active : undefined)}
+                  >
                     {item.label}
                   </NavLink>
                 </li>
@@ -92,5 +102,5 @@ export function SiteHeader() {
         </nav>
       ) : null}
     </header>
-  )
+  );
 }

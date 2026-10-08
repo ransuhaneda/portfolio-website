@@ -8,6 +8,7 @@ excerpt: "A branch, merge, tag, and cleanup workflow for teams that want reviewa
 coverImage: "https://picsum.photos/seed/git-release-workflow-small-teams/1600/900.jpg"
 coverAlt: "Decorative stock photograph; not a screenshot of the Git workflow."
 ---
+
 A small team can use a simple Git process. It needs to know which work is still being reviewed, which work is integrated, and what is in production.
 
 The workflow I use keeps `development` as the integration branch and `main` as the production branch. Short-lived feature or fix branches merge into `development`. A release is one explicit merge into `main`, followed by an annotated tag. After that, `development` fast-forwards to the released `main`.

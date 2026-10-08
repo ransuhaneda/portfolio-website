@@ -1,8 +1,8 @@
-import { routeMetaDescriptors } from '../content/routeMetaDescriptors'
-import { BlogPage } from '../pages/BlogPage'
+import { routeMetaDescriptors } from "../content/routeMetaDescriptors";
+import { BlogPage } from "../pages/BlogPage";
 
 export function meta() {
-  return routeMetaDescriptors('/blog')
+  return routeMetaDescriptors("/blog");
 }
 
-export default BlogPage
+export default BlogPage;

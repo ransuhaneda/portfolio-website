@@ -1,8 +1,8 @@
-import { routeMetaDescriptors } from '../content/routeMetaDescriptors'
-import { HomePage } from '../pages/HomePage'
+import { routeMetaDescriptors } from "../content/routeMetaDescriptors";
+import { HomePage } from "../pages/HomePage";
 
 export function meta() {
-  return routeMetaDescriptors('/')
+  return routeMetaDescriptors("/");
 }
 
-export default HomePage
+export default HomePage;

@@ -100,7 +100,8 @@ Example component-token direction:
 --button-padding: var(--space-xs) var(--space-sm);
 --button-min-block-size: 44px;
 --button-radius: var(--radius-pill);
---button-transition: transform var(--motion-fast), border-color var(--motion-fast), background-color var(--motion-fast);
+--button-transition:
+  transform var(--motion-fast), border-color var(--motion-fast), background-color var(--motion-fast);
 --card-padding: var(--space-sm);
 --card-border: 1px solid var(--color-border-default);
 --form-field-radius: var(--radius-sm);

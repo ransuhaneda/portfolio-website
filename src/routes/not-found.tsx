@@ -1,8 +1,8 @@
-import { routeMetaDescriptors } from '../content/routeMetaDescriptors'
-import { NotFoundPage } from '../pages/NotFoundPage'
+import { routeMetaDescriptors } from "../content/routeMetaDescriptors";
+import { NotFoundPage } from "../pages/NotFoundPage";
 
 export function meta() {
-  return routeMetaDescriptors('/404')
+  return routeMetaDescriptors("/404");
 }
 
-export default NotFoundPage
+export default NotFoundPage;

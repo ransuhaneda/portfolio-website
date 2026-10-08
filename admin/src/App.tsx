@@ -1,57 +1,65 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { HashRouter, Route, Routes } from 'react-router-dom'
-import { adminApi, type AdminSession } from './api/adminApi'
-import { DashboardScreen } from './screens/DashboardScreen'
-import type { DashboardScreenProps } from './screens/dashboard/dashboardTypes'
-import { DEFAULT_SESSION, getApiErrorMessage, isAdminApiError } from './lib/adminHelpers'
-import { useActivity } from './hooks/useActivity'
-import { useBlogEditor } from './hooks/useBlogEditor'
-import { useMediaUploader } from './hooks/useMediaUploader'
-import { useProjectEditor } from './hooks/useProjectEditor'
+import { useCallback, useEffect, useRef, useState } from "react";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import { adminApi, type AdminSession } from "./api/adminApi";
+import { DashboardScreen } from "./screens/DashboardScreen";
+import type { DashboardScreenProps } from "./screens/dashboard/dashboardTypes";
+import { DEFAULT_SESSION, getApiErrorMessage, isAdminApiError } from "./lib/adminHelpers";
+import { useActivity } from "./hooks/useActivity";
+import { useBlogEditor } from "./hooks/useBlogEditor";
+import { useMediaUploader } from "./hooks/useMediaUploader";
+import { useProjectEditor } from "./hooks/useProjectEditor";
 
 export const App = () => {
-  const [session, setSession] = useState<AdminSession>(DEFAULT_SESSION)
-  const [authStatus, setAuthStatus] = useState<string | null>(null)
-  const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [session, setSession] = useState<AdminSession>(DEFAULT_SESSION);
+  const [authStatus, setAuthStatus] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const resetAuthenticatedStateRef = useRef<() => void>(() => undefined)
-  const selectBlogMediaResourceRef = useRef<(slug: string) => void>(() => undefined)
-  const selectProjectMediaResourceRef = useRef<(slug: string) => void>(() => undefined)
-  const syncBlogMediaSlugRef = useRef<(slug: string) => void>(() => undefined)
-  const syncProjectMediaSlugRef = useRef<(slug: string) => void>(() => undefined)
+  const resetAuthenticatedStateRef = useRef<() => void>(() => undefined);
+  const selectBlogMediaResourceRef = useRef<(slug: string) => void>(() => undefined);
+  const selectProjectMediaResourceRef = useRef<(slug: string) => void>(() => undefined);
+  const syncBlogMediaSlugRef = useRef<(slug: string) => void>(() => undefined);
+  const syncProjectMediaSlugRef = useRef<(slug: string) => void>(() => undefined);
 
   const confirmDiscardChanges = useCallback((message: string): boolean => {
-    if (!globalThis.window) return true
-    return window.confirm(message)
-  }, [])
+    if (!globalThis.window) return true;
+    return window.confirm(message);
+  }, []);
 
   const handleUnauthorizedError = useCallback((caught: Error): boolean => {
     if (isAdminApiError(caught) && caught.status === 401) {
-      setSession(DEFAULT_SESSION)
-      resetAuthenticatedStateRef.current()
-      setError('Your admin session expired. Sign in again.')
-      return true
+      setSession(DEFAULT_SESSION);
+      resetAuthenticatedStateRef.current();
+      setError("Your admin session expired. Sign in again.");
+      return true;
     }
-    return false
-  }, [])
+    return false;
+  }, []);
 
-  const activity = useActivity(handleUnauthorizedError)
-  const loadActivity = activity.loadActivity
-  const resetActivity = activity.resetActivity
-  const reloadActivity = useCallback(() => { void loadActivity() }, [loadActivity])
+  const activity = useActivity(handleUnauthorizedError);
+  const loadActivity = activity.loadActivity;
+  const resetActivity = activity.resetActivity;
+  const reloadActivity = useCallback(() => {
+    void loadActivity();
+  }, [loadActivity]);
 
   const projects = useProjectEditor({
     confirmDiscardChanges,
     handleUnauthorizedError,
     onAfterSave: reloadActivity,
     setGlobalError: setError,
-  })
+  });
 
-  const loadProjects = projects.loadProjects
-  const resetProjects = projects.resetProjects
-  const handleBlogResourceSelected = useCallback((slug: string) => selectBlogMediaResourceRef.current(slug), [])
-  const handleBlogSlugEdited = useCallback((slug: string) => syncBlogMediaSlugRef.current(slug), [])
+  const loadProjects = projects.loadProjects;
+  const resetProjects = projects.resetProjects;
+  const handleBlogResourceSelected = useCallback(
+    (slug: string) => selectBlogMediaResourceRef.current(slug),
+    [],
+  );
+  const handleBlogSlugEdited = useCallback(
+    (slug: string) => syncBlogMediaSlugRef.current(slug),
+    [],
+  );
 
   const blog = useBlogEditor({
     confirmDiscardChanges,
@@ -61,10 +69,10 @@ export const App = () => {
     onBlogResourceSelected: handleBlogResourceSelected,
     onBlogSlugEdited: handleBlogSlugEdited,
     setGlobalError: setError,
-  })
+  });
 
-  const loadBlogList = blog.loadBlogList
-  const resetBlog = blog.resetBlog
+  const loadBlogList = blog.loadBlogList;
+  const resetBlog = blog.resetBlog;
 
   const media = useMediaUploader({
     handleUnauthorizedError,
@@ -73,124 +81,138 @@ export const App = () => {
     selectedProject: projects.selectedProject,
     setSelectedBlogPost: blog.setSelectedBlogPost,
     updateSelectedProject: projects.updateSelectedProject,
-  })
+  });
 
-  const resetMedia = media.resetMedia
-  const selectBlogMediaResource = media.selectBlogMediaResource
-  const selectProjectMediaResource = media.selectProjectMediaResource
-  const syncBlogMediaSlug = media.syncBlogMediaSlug
-  const syncProjectMediaSlug = media.syncProjectMediaSlug
+  const resetMedia = media.resetMedia;
+  const selectBlogMediaResource = media.selectBlogMediaResource;
+  const selectProjectMediaResource = media.selectProjectMediaResource;
+  const syncBlogMediaSlug = media.syncBlogMediaSlug;
+  const syncProjectMediaSlug = media.syncProjectMediaSlug;
 
   const resetAuthenticatedState = useCallback(() => {
-    resetProjects()
-    resetBlog()
-    resetActivity()
-    resetMedia()
-  }, [resetActivity, resetBlog, resetMedia, resetProjects])
+    resetProjects();
+    resetBlog();
+    resetActivity();
+    resetMedia();
+  }, [resetActivity, resetBlog, resetMedia, resetProjects]);
 
   useEffect(() => {
-    resetAuthenticatedStateRef.current = resetAuthenticatedState
-  }, [resetAuthenticatedState])
+    resetAuthenticatedStateRef.current = resetAuthenticatedState;
+  }, [resetAuthenticatedState]);
 
   useEffect(() => {
-    selectBlogMediaResourceRef.current = selectBlogMediaResource
-    selectProjectMediaResourceRef.current = selectProjectMediaResource
-    syncBlogMediaSlugRef.current = syncBlogMediaSlug
-    syncProjectMediaSlugRef.current = syncProjectMediaSlug
-  }, [selectBlogMediaResource, selectProjectMediaResource, syncBlogMediaSlug, syncProjectMediaSlug])
+    selectBlogMediaResourceRef.current = selectBlogMediaResource;
+    selectProjectMediaResourceRef.current = selectProjectMediaResource;
+    syncBlogMediaSlugRef.current = syncBlogMediaSlug;
+    syncProjectMediaSlugRef.current = syncProjectMediaSlug;
+  }, [
+    selectBlogMediaResource,
+    selectProjectMediaResource,
+    syncBlogMediaSlug,
+    syncProjectMediaSlug,
+  ]);
 
   useEffect(() => {
-    let mounted = true
+    let mounted = true;
     const initialize = async () => {
-      setLoading(true)
+      setLoading(true);
       try {
-        const response = await adminApi.getSession()
-        if (!mounted) return
-        setSession(response)
+        const response = await adminApi.getSession();
+        if (!mounted) return;
+        setSession(response);
         if (response.authenticated) {
-          await Promise.all([loadProjects(), loadBlogList(), loadActivity()])
+          await Promise.all([loadProjects(), loadBlogList(), loadActivity()]);
         } else {
-          resetAuthenticatedState()
+          resetAuthenticatedState();
         }
       } catch (caught) {
-        if (!mounted) return
-        setError(getApiErrorMessage(caught instanceof Error ? caught : new Error(String(caught))))
-        setSession(DEFAULT_SESSION)
+        if (!mounted) return;
+        setError(getApiErrorMessage(caught instanceof Error ? caught : new Error(String(caught))));
+        setSession(DEFAULT_SESSION);
       } finally {
-        if (mounted) setLoading(false)
+        if (mounted) setLoading(false);
       }
-    }
+    };
 
-    void initialize()
+    void initialize();
     return () => {
-      mounted = false
-    }
-  }, [loadActivity, loadBlogList, loadProjects, resetAuthenticatedState])
+      mounted = false;
+    };
+  }, [loadActivity, loadBlogList, loadProjects, resetAuthenticatedState]);
 
   useEffect(() => {
-    if (!globalThis.window) return
-    const hash = window.location.hash
-    const queryIndex = hash.indexOf('?')
-    if (queryIndex === -1) return
+    if (!globalThis.window) return;
+    const hash = window.location.hash;
+    const queryIndex = hash.indexOf("?");
+    if (queryIndex === -1) return;
 
-    const searchParams = new URLSearchParams(hash.slice(queryIndex + 1))
-    const auth = searchParams.get('auth')
-    if (!auth) return
+    const searchParams = new URLSearchParams(hash.slice(queryIndex + 1));
+    const auth = searchParams.get("auth");
+    if (!auth) return;
 
-    if (auth === 'success') {
-      setAuthStatus('Signed in with GitHub.')
-      setError(null)
-    } else if (auth === 'error') {
-      setError('GitHub sign-in failed. Check the admin environment variables and allowed login, then try again.')
+    if (auth === "success") {
+      setAuthStatus("Signed in with GitHub.");
+      setError(null);
+    } else if (auth === "error") {
+      setError(
+        "GitHub sign-in failed. Check the admin environment variables and allowed login, then try again.",
+      );
     }
 
-    const cleanHash = hash.slice(0, queryIndex) || '#/'
-    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${cleanHash}`)
-  }, [])
+    const cleanHash = hash.slice(0, queryIndex) || "#/";
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${window.location.search}${cleanHash}`,
+    );
+  }, []);
 
   const handleLogin = () => {
-    window.location.href = '/api/admin/auth/start'
-  }
+    window.location.href = "/api/admin/auth/start";
+  };
 
   const handleLogout = async () => {
     try {
-      await adminApi.logout()
-      setSession(DEFAULT_SESSION)
-      resetAuthenticatedState()
-      setError(null)
-      setAuthStatus('Signed out.')
+      await adminApi.logout();
+      setSession(DEFAULT_SESSION);
+      resetAuthenticatedState();
+      setError(null);
+      setAuthStatus("Signed out.");
     } catch (caught) {
-      setError(getApiErrorMessage(caught instanceof Error ? caught : new Error(String(caught))))
+      setError(getApiErrorMessage(caught instanceof Error ? caught : new Error(String(caught))));
     }
-  }
+  };
 
   const handleProjectCreate = () => {
-    media.selectProjectMediaResource(projects.createProject())
-  }
+    media.selectProjectMediaResource(projects.createProject());
+  };
 
   const handleProjectDuplicate = () => {
-    const slug = projects.duplicateProject()
-    if (slug) media.selectProjectMediaResource(slug)
-  }
+    const slug = projects.duplicateProject();
+    if (slug) media.selectProjectMediaResource(slug);
+  };
 
   const handleProjectDelete = () => {
-    const slug = projects.deleteProject()
-    if (slug !== null) media.syncProjectMediaSlug(slug)
-  }
+    const slug = projects.deleteProject();
+    if (slug !== null) media.syncProjectMediaSlug(slug);
+  };
 
   const handleProjectDiscard = () => {
-    const slug = projects.discardProjects()
-    if (slug !== null) media.syncProjectMediaSlug(slug)
-  }
+    const slug = projects.discardProjects();
+    if (slug !== null) media.syncProjectMediaSlug(slug);
+  };
 
-  const handleProjectFieldChange = (field: Parameters<typeof projects.changeProjectField>[0], value: string) => {
-    const slug = projects.changeProjectField(field, value)
-    if (slug !== null) media.syncProjectMediaSlug(slug)
-  }
+  const handleProjectFieldChange = (
+    field: Parameters<typeof projects.changeProjectField>[0],
+    value: string,
+  ) => {
+    const slug = projects.changeProjectField(field, value);
+    if (slug !== null) media.syncProjectMediaSlug(slug);
+  };
 
   const handleProjectSelect = (slug: string) => {
-    media.selectProjectMediaResource(projects.selectProject(slug))
-  }
+    media.selectProjectMediaResource(projects.selectProject(slug));
+  };
 
   const dashboardProps = {
     session: {
@@ -198,9 +220,11 @@ export const App = () => {
       error,
       loading,
       onLogin: handleLogin,
-      onLogout: () => { void handleLogout() },
+      onLogout: () => {
+        void handleLogout();
+      },
       session,
-      siteUrl: !globalThis.window ? '' : window.location.origin,
+      siteUrl: !globalThis.window ? "" : window.location.origin,
     },
     projects: {
       conflict: projects.projectConflict,
@@ -280,7 +304,7 @@ export const App = () => {
       projectRepo: projects.projectRepo,
       blogRepo: blog.blogRepo ?? projects.projectRepo,
     },
-  } satisfies DashboardScreenProps
+  } satisfies DashboardScreenProps;
 
   return (
     <HashRouter>
@@ -288,5 +312,5 @@ export const App = () => {
         <Route path="*" element={<DashboardScreen {...dashboardProps} />} />
       </Routes>
     </HashRouter>
-  )
-}
+  );
+};

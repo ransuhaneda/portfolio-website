@@ -123,7 +123,7 @@ In `vite.config.ts`, SCSS gets shared imports injected automatically:
 That means most module files only declare:
 
 ```scss
-@use 'sass:map';
+@use "sass:map";
 ```
 
 and still access `abst.$colors`, `abst.$text-base`, `mix.font(...)`, and `mix.flex(...)`.
@@ -179,11 +179,16 @@ Use one naming rule only:
 Recommended portfolio direction:
 
 ```scss
-.card {}
-.card__media {}
-.card__title {}
-.card--featured {}
-.is-loading {}
+.card {
+}
+.card__media {
+}
+.card__title {
+}
+.card--featured {
+}
+.is-loading {
+}
 ```
 
 Do not carry forward the mixed forms like `topSection_wrapper`, `brandClr_wrapper`, and `buttonGroup` in the same codebase.
@@ -196,12 +201,12 @@ Do not carry forward the mixed forms like `topSection_wrapper`, `brandClr_wrappe
 
 ```scss
 $colors: (
-  'text': $clr-black,
-  'text-accent': $clr-teal,
-  'background': $clr-off-white,
-  'accent': $clr-lavender,
-  'accent-secondary': $clr-pastel-green,
-  'border': $clr-black,
+  "text": $clr-black,
+  "text-accent": $clr-teal,
+  "background": $clr-off-white,
+  "accent": $clr-lavender,
+  "accent-secondary": $clr-pastel-green,
+  "border": $clr-black,
 );
 ```
 
@@ -216,7 +221,7 @@ For the portfolio, shrink the map to the tokens you actually use.
 #### 2. `mix.font(...)`
 
 ```scss
-@mixin font($family: 'primary', $weight: 400, $style: normal, $leading: 1) {
+@mixin font($family: "primary", $weight: 400, $style: normal, $leading: 1) {
   font-family: map.get($font-families, $family), $ff-fallback;
   font-weight: $weight;
   font-style: $style;
@@ -242,10 +247,18 @@ What to improve:
 @mixin flex($dir: row, $justify: null, $align: null, $gap: null, $wrap: null) {
   display: flex;
   flex-direction: $dir;
-  @if $justify { justify-content: $justify; }
-  @if $align { align-items: $align; }
-  @if $gap { gap: $gap; }
-  @if $wrap { flex-wrap: $wrap; }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
 }
 ```
 
@@ -345,10 +358,10 @@ Recommended portfolio breakpoint model:
 
 ```scss
 $breakpoints: (
-  'sm': 480px,
-  'md': 768px,
-  'lg': 1024px,
-  'xl': 1280px,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
 );
 ```
 
@@ -382,9 +395,15 @@ Pattern in the repo:
 Example:
 
 ```scss
-.size-sm { padding: clamp(8px, 2.336px + 0.943vw, 12px) 20px; }
-.variant-primary { background: transparent; }
-.variant-secondary { background: map.get(abst.$colors, 'accent-secondary'); }
+.size-sm {
+  padding: clamp(8px, 2.336px + 0.943vw, 12px) 20px;
+}
+.variant-primary {
+  background: transparent;
+}
+.variant-secondary {
+  background: map.get(abst.$colors, "accent-secondary");
+}
 ```
 
 Keep for the portfolio:
@@ -409,12 +428,12 @@ Strong reusable pattern:
 ```scss
 .input {
   padding: 12px;
-  border: 1px solid map.get(abst.$colors, 'border');
+  border: 1px solid map.get(abst.$colors, "border");
 
   &:focus {
     outline: none;
-    border-color: map.get(abst.$colors, 'text-accent');
-    box-shadow: 0 0 0 2px rgba(map.get(abst.$colors, 'text-accent'), 0.2);
+    border-color: map.get(abst.$colors, "text-accent");
+    box-shadow: 0 0 0 2px rgba(map.get(abst.$colors, "text-accent"), 0.2);
   }
 
   &.error {
@@ -468,12 +487,12 @@ Typical structure:
 
 ```scss
 .hero__text {
-  @include mix.font('secondary', 400, normal, 1.2);
+  @include mix.font("secondary", 400, normal, 1.2);
   font-size: abst.$text-4xl;
 }
 
 .hero__paragraph {
-  @include mix.font('primary', 300, normal, 1.25);
+  @include mix.font("primary", 300, normal, 1.25);
   font-size: abst.$text-base;
 }
 ```

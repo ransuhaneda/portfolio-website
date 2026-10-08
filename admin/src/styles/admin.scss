@@ -1,9 +1,9 @@
-@use '../../../src/styles/base';
-@use '../../../src/styles/grid';
-@use '../../../src/styles/layout';
-@use '../../../src/styles/utilities';
-@use '../../../src/styles/patterns';
-@use '../../../src/styles/mixins' as mix;
+@use "../../../src/styles/base";
+@use "../../../src/styles/grid";
+@use "../../../src/styles/layout";
+@use "../../../src/styles/utilities";
+@use "../../../src/styles/patterns";
+@use "../../../src/styles/mixins" as mix;
 
 #root {
   min-height: 100vh;
@@ -137,7 +137,7 @@ body {
 }
 
 .admin-tabs a:hover,
-.admin-tabs a[aria-current='page'] {
+.admin-tabs a[aria-current="page"] {
   color: var(--color-text-inverse);
   background: var(--color-action-primary);
   border-color: var(--color-transparent);
@@ -306,9 +306,9 @@ body {
 }
 
 .admin-code,
-.admin-field textarea[id*='image'],
-.admin-field textarea[id*='gallery'] {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+.admin-field textarea[id*="image"],
+.admin-field textarea[id*="gallery"] {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   @include mix.type-style(body-xs);
 }
 

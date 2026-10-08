@@ -1,8 +1,8 @@
-import sty from './StatList.module.scss'
+import sty from "./StatList.module.scss";
 
 type StatListProps = {
-  items: Array<{ label: string; value: string }>
-}
+  items: Array<{ label: string; value: string }>;
+};
 
 export function StatList({ items }: StatListProps) {
   return (
@@ -14,5 +14,5 @@ export function StatList({ items }: StatListProps) {
         </div>
       ))}
     </dl>
-  )
+  );
 }

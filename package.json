@@ -1,7 +1,7 @@
 {
   "name": "portfolio-website",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "pnpm run prebuild && react-router dev",
