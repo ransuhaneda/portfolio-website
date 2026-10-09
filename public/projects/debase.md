@@ -7,15 +7,19 @@
 - Homepage image: https://384721.xyz/images/projects/debase-live-homepage.png
 
 ## Summary
+
 A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 
 ## Overview
+
 Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
 
 ## Problem
+
 The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
 
 ## My responsibility
+
 I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.
 
 - Browser-local File Processing
@@ -25,6 +29,7 @@ I built Debase independently from the interface and transformation logic through
 - Automated Testing
 
 ## What I did
+
 I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.
 
 - Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.
@@ -34,6 +39,7 @@ I treated privacy and safe output handling as product requirements. The app vali
 - Covered the transformation logic and interface with Vitest, Testing Library, and Playwright.
 
 ## Result
+
 Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.
 
 - The live tool handles common text and file transformations in the browser, so payload data stays on the device.
@@ -41,6 +47,7 @@ Debase is live with a public TypeScript repository and automated unit, component
 - The public repository documents the privacy boundary, size limit, deployment path, and verification commands.
 
 ## Project scope
+
 - Browser-local File Processing
 - Base64 and Base64URL
 - Data URL Handling
@@ -48,4 +55,5 @@ Debase is live with a public TypeScript repository and automated unit, component
 - Automated Testing
 
 ## Reflection
+
 I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.

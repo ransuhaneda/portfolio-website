@@ -1,127 +1,138 @@
-import { useEffect, useId, useState, type ChangeEvent, type FormEvent } from 'react'
-import { LuSend } from 'react-icons/lu'
-import type { ContactFormContent } from '../content/siteContent'
-import sty from './ContactForm.module.scss'
-import { PretextText } from './PretextText'
+import { useEffect, useId, useState, type ChangeEvent, type FormEvent } from "react";
+import { LuSend } from "react-icons/lu";
+import type { ContactFormContent } from "../content/siteContent";
+import sty from "./ContactForm.module.scss";
+import { PretextText } from "./PretextText";
 
 type ContactFormProps = {
-  contact: ContactFormContent
-  recipientEmail: string
-  showIntro?: boolean
-  showTitle?: boolean
-}
+  contact: ContactFormContent;
+  recipientEmail: string;
+  showIntro?: boolean;
+  showTitle?: boolean;
+};
 
 type ContactFormState = {
-  name: string
-  email: string
-  message: string
-}
+  name: string;
+  email: string;
+  message: string;
+};
 
-type ContactFormErrors = Partial<Record<keyof ContactFormState, string>>
+type ContactFormErrors = Partial<Record<keyof ContactFormState, string>>;
 
 type ContactFormToast = {
-  id: number
-  message: string
-}
+  id: number;
+  message: string;
+};
 
 const initialFormState: ContactFormState = {
-  name: '',
-  email: '',
-  message: '',
-}
+  name: "",
+  email: "",
+  message: "",
+};
 
-function buildMailtoHref(values: ContactFormState, recipientEmail: string, contact: ContactFormContent) {
-  const subject = contact.mailtoSubjectTemplate.replace('{name}', values.name)
+function buildMailtoHref(
+  values: ContactFormState,
+  recipientEmail: string,
+  contact: ContactFormContent,
+) {
+  const subject = contact.mailtoSubjectTemplate.replace("{name}", values.name);
   const body = [
     `${contact.mailtoNameLabel}: ${values.name}`,
     `${contact.mailtoEmailLabel}: ${values.email}`,
-    '',
+    "",
     `${contact.mailtoMessageLabel}:`,
     values.message,
-  ].join('\n')
+  ].join("\n");
 
-  return `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  return `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function validateForm(values: ContactFormState, contact: ContactFormContent) {
-  const errors: ContactFormErrors = {}
+  const errors: ContactFormErrors = {};
 
   if (!values.name.trim()) {
-    errors.name = contact.nameRequiredError
+    errors.name = contact.nameRequiredError;
   }
 
   if (!values.email.trim()) {
-    errors.email = contact.emailRequiredError
+    errors.email = contact.emailRequiredError;
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
-    errors.email = contact.emailInvalidError
+    errors.email = contact.emailInvalidError;
   }
 
   if (!values.message.trim()) {
-    errors.message = contact.messageRequiredError
+    errors.message = contact.messageRequiredError;
   } else if (values.message.length > contact.messageLimit) {
-    errors.message = contact.messageTooLongError.replace('{limit}', String(contact.messageLimit))
+    errors.message = contact.messageTooLongError.replace("{limit}", String(contact.messageLimit));
   }
 
-  return errors
+  return errors;
 }
 
-export function ContactForm({ contact, recipientEmail, showIntro = true, showTitle = true }: ContactFormProps) {
-  const [formValues, setFormValues] = useState(initialFormState)
-  const [formErrors, setFormErrors] = useState<ContactFormErrors>({})
-  const [toast, setToast] = useState<ContactFormToast | null>(null)
-  const [isToastFading, setIsToastFading] = useState(false)
-  const formId = useId()
-  const messageLimit = contact.messageLimit
+export function ContactForm({
+  contact,
+  recipientEmail,
+  showIntro = true,
+  showTitle = true,
+}: ContactFormProps) {
+  const [formValues, setFormValues] = useState(initialFormState);
+  const [formErrors, setFormErrors] = useState<ContactFormErrors>({});
+  const [toast, setToast] = useState<ContactFormToast | null>(null);
+  const [isToastFading, setIsToastFading] = useState(false);
+  const formId = useId();
+  const messageLimit = contact.messageLimit;
 
   useEffect(() => {
-    if (!toast) return
+    if (!toast) return;
 
-    setIsToastFading(false)
-    const fadeTimer = window.setTimeout(() => setIsToastFading(true), 3000)
-    const removeTimer = window.setTimeout(() => setToast(null), 3240)
+    // The toast lifecycle is an external timer synchronization.
+    // oxlint-disable-next-line react/set-state-in-effect
+    setIsToastFading(false);
+    const fadeTimer = window.setTimeout(() => setIsToastFading(true), 3000);
+    const removeTimer = window.setTimeout(() => setToast(null), 3240);
 
     return () => {
-      window.clearTimeout(fadeTimer)
-      window.clearTimeout(removeTimer)
-    }
-  }, [toast])
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(removeTimer);
+    };
+  }, [toast]);
 
-  const nameInputId = `${formId}-name`
-  const nameErrorId = `${formId}-name-error`
-  const emailInputId = `${formId}-email`
-  const emailErrorId = `${formId}-email-error`
-  const messageInputId = `${formId}-message`
-  const messageErrorId = `${formId}-message-error`
-  const messageCountId = `${formId}-message-count`
+  const nameInputId = `${formId}-name`;
+  const nameErrorId = `${formId}-name-error`;
+  const emailInputId = `${formId}-email`;
+  const emailErrorId = `${formId}-email-error`;
+  const messageInputId = `${formId}-message`;
+  const messageErrorId = `${formId}-message-error`;
+  const messageCountId = `${formId}-message-count`;
 
   const handleFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target
-    const nextValue = name === 'message' ? value.slice(0, messageLimit) : value
+    const { name, value } = event.target;
+    const nextValue = name === "message" ? value.slice(0, messageLimit) : value;
 
     setFormValues((currentValues) => ({
       ...currentValues,
       [name]: nextValue,
-    }))
+    }));
 
     setFormErrors((currentErrors) => ({
       ...currentErrors,
       [name]: undefined,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const errors = validateForm(formValues, contact)
+    event.preventDefault();
+    const errors = validateForm(formValues, contact);
 
     if (Object.keys(errors).length > 0) {
-      setFormErrors(errors)
+      setFormErrors(errors);
       setToast({
         id: Date.now(),
-        message: 'Please check the highlighted fields and try again.',
-      })
-      const firstField = errors.name ? 'name' : errors.email ? 'email' : 'message'
-      event.currentTarget.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus()
-      return
+        message: "Please check the highlighted fields and try again.",
+      });
+      const firstField = errors.name ? "name" : errors.email ? "email" : "message";
+      event.currentTarget.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
+      return;
     }
 
     window.location.href = buildMailtoHref(
@@ -132,20 +143,26 @@ export function ContactForm({ contact, recipientEmail, showIntro = true, showTit
       },
       recipientEmail,
       contact,
-    )
-  }
+    );
+  };
 
   return (
     <div className={sty.root}>
       {showIntro ? (
         <div className={sty.intro}>
-          <PretextText as="h2" measure="heading">{contact.title}</PretextText>
+          <PretextText as="h2" measure="heading">
+            {contact.title}
+          </PretextText>
           {contact.intro ? <PretextText measure="intro">{contact.intro}</PretextText> : null}
         </div>
       ) : null}
 
       <form className={sty.form} onSubmit={handleSubmit} noValidate>
-        {!showIntro && showTitle ? <PretextText as="h4" measure="intro">{contact.title}</PretextText> : null}
+        {!showIntro && showTitle ? (
+          <PretextText as="h4" measure="intro">
+            {contact.title}
+          </PretextText>
+        ) : null}
 
         <div className={sty.field}>
           <label htmlFor={nameInputId}>{contact.nameLabel} *</label>
@@ -203,8 +220,8 @@ export function ContactForm({ contact, recipientEmail, showIntro = true, showTit
           <div className={sty.metaRow}>
             <p className={sty.count} id={messageCountId}>
               {contact.messageCountTemplate
-                .replace('{count}', String(formValues.message.length))
-                .replace('{limit}', String(messageLimit))}
+                .replace("{count}", String(formValues.message.length))
+                .replace("{limit}", String(messageLimit))}
             </p>
             {formErrors.message ? (
               <p className={sty.error} id={messageErrorId}>
@@ -215,15 +232,21 @@ export function ContactForm({ contact, recipientEmail, showIntro = true, showTit
         </div>
 
         {toast ? (
-          <div className={`${sty.toast} ${isToastFading ? sty.toastFading : ''}`} role="alert" aria-live="assertive" aria-atomic="true">
+          <div
+            className={`${sty.toast} ${isToastFading ? sty.toastFading : ""}`}
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
             {toast.message}
           </div>
         ) : null}
 
         <button type="submit" className={sty.submitButton}>
-          {contact.submitLabel}<LuSend aria-hidden="true" focusable="false" />
+          {contact.submitLabel}
+          <LuSend aria-hidden="true" focusable="false" />
         </button>
       </form>
     </div>
-  )
+  );
 }

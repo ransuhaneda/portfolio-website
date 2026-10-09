@@ -1,10 +1,11 @@
-import { routeMetaDescriptors } from '../content/routeMetaDescriptors'
-import { getBlogPostBySlug } from '../content/blogContent'
-import { BlogPostPage } from '../pages/BlogPostPage'
+import { routeMetaDescriptors } from "../content/routeMetaDescriptors";
+import { getBlogPostBySlug } from "../content/blogContent";
+import { BlogPostPage } from "../pages/BlogPostPage";
 
+// oxlint-disable-next-line react/only-export-components
 export function meta({ params }: { params: { slug?: string } }) {
-  const post = params.slug ? getBlogPostBySlug(params.slug) : undefined
-  return routeMetaDescriptors(post ? `/blog/${post.slug}` : '/404')
+  const post = params.slug ? getBlogPostBySlug(params.slug) : undefined;
+  return routeMetaDescriptors(post ? `/blog/${post.slug}` : "/404");
 }
 
-export default BlogPostPage
+export default BlogPostPage;

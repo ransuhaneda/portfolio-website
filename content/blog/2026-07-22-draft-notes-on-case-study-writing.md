@@ -8,6 +8,7 @@ excerpt: "A direct way to turn real project work into a case study while keeping
 coverImage: "https://picsum.photos/seed/portfolio-case-study-writing/1600/900.jpg"
 coverAlt: "Decorative stock photograph; not a case-study artifact."
 ---
+
 A portfolio case study should let a reader understand the work without decoding a list of adjectives. Name the problem, explain the part you handled, and show what changed.
 
 The scope can be ordinary. A maintenance project, migration, small React build, or training project is worth documenting when the description is accurate.

@@ -9,6 +9,7 @@ At ABCDE Creative Studio, I turned Figma designs into responsive React pages and
 I enjoy work where I can use both design and development. I can take a visual direction, build the page, and make it easy for someone else to update later.
 
 ## Working principles
+
 - Understand the page before styling it.
 - Keep repeated parts reusable.
 - Test the page on real screen sizes.

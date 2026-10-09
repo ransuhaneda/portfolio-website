@@ -1,26 +1,44 @@
-import { LuActivity, LuFolderKanban, LuImages, LuNewspaper } from 'react-icons/lu'
-import { AdminHeader } from './dashboard/AdminHeader'
-import { ActivitySection } from './dashboard/ActivitySection'
-import { BlogEditorSection } from './dashboard/BlogEditorSection'
-import { ConflictNotice, StatusMessage } from './dashboard/AdminUi'
-import { LoginScreen } from './dashboard/LoginScreen'
-import { AdminIcon } from './dashboard/AdminIcon'
-import { MediaUploaderSection } from './dashboard/MediaUploaderSection'
-import { ProjectEditorSection } from './dashboard/ProjectEditorSection'
-import type { DashboardScreenProps } from './dashboard/dashboardTypes'
+import { LuActivity, LuFolderKanban, LuImages, LuNewspaper } from "react-icons/lu";
+import { AdminHeader } from "./dashboard/AdminHeader";
+import { ActivitySection } from "./dashboard/ActivitySection";
+import { BlogEditorSection } from "./dashboard/BlogEditorSection";
+import { ConflictNotice, StatusMessage } from "./dashboard/AdminUi";
+import { LoginScreen } from "./dashboard/LoginScreen";
+import { AdminIcon } from "./dashboard/AdminIcon";
+import { MediaUploaderSection } from "./dashboard/MediaUploaderSection";
+import { ProjectEditorSection } from "./dashboard/ProjectEditorSection";
+import type { DashboardScreenProps } from "./dashboard/dashboardTypes";
 
-export const DashboardScreen = ({ activity, blog, media, projects, session }: DashboardScreenProps) => {
-  if (!session.session.authenticated) return <LoginScreen {...session} />
+export const DashboardScreen = ({
+  activity,
+  blog,
+  media,
+  projects,
+  session,
+}: DashboardScreenProps) => {
+  if (!session.session.authenticated) return <LoginScreen {...session} />;
 
   return (
     <main className="admin-shell">
       <AdminHeader {...session} />
 
       <nav className="admin-tabs" aria-label="Admin sections">
-        <a href="#admin-project-editor" aria-current="page"><AdminIcon icon={LuFolderKanban} />Projects</a>
-        <a href="#admin-blog-editor"><AdminIcon icon={LuNewspaper} />Blog posts</a>
-        <a href="#admin-media-uploader"><AdminIcon icon={LuImages} />Media</a>
-        <a href="#admin-recent-activity"><AdminIcon icon={LuActivity} />Activity</a>
+        <a href="#admin-project-editor" aria-current="page">
+          <AdminIcon icon={LuFolderKanban} />
+          Projects
+        </a>
+        <a href="#admin-blog-editor">
+          <AdminIcon icon={LuNewspaper} />
+          Blog posts
+        </a>
+        <a href="#admin-media-uploader">
+          <AdminIcon icon={LuImages} />
+          Media
+        </a>
+        <a href="#admin-recent-activity">
+          <AdminIcon icon={LuActivity} />
+          Activity
+        </a>
       </nav>
 
       <div className="admin-message-stack" aria-live="polite">
@@ -32,8 +50,12 @@ export const DashboardScreen = ({ activity, blog, media, projects, session }: Da
 
       <ProjectEditorSection {...projects} />
       <BlogEditorSection {...blog} />
-      <MediaUploaderSection blogPost={blog.post} media={media} selectedProject={projects.selected} />
+      <MediaUploaderSection
+        blogPost={blog.post}
+        media={media}
+        selectedProject={projects.selected}
+      />
       <ActivitySection {...activity} />
     </main>
-  )
-}
+  );
+};

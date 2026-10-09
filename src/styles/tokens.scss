@@ -1,11 +1,23 @@
-@use 'sass:map';
-@use 'sass:math';
+@use "sass:map";
+@use "sass:math";
 
 $font-families: (
-  sans: ('Quattrocento Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif),
-  display: ('Oswald', Impact, 'Arial Narrow Bold', sans-serif),
+  sans: (
+    "Quattrocento Sans",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif,
+  ),
+  display: (
+    "Oswald",
+    Impact,
+    "Arial Narrow Bold",
+    sans-serif,
+  ),
 ) !default;
-
 
 $fluid-min-width: 767px !default;
 $fluid-max-width: 1366px !default;
@@ -102,8 +114,20 @@ $type-styles: (
     line-height: 1.25rem,
     paragraph-spacing: 1rem,
   ),
-  label: (family: sans, weight: 700, size: 0.75rem, line-height: 1rem, letter-spacing: 0.08em, text-transform: uppercase),
-  control: (family: sans, weight: 700, size: 0.875rem, line-height: 1.25rem),
+  label: (
+    family: sans,
+    weight: 700,
+    size: 0.75rem,
+    line-height: 1rem,
+    letter-spacing: 0.08em,
+    text-transform: uppercase,
+  ),
+  control: (
+    family: sans,
+    weight: 700,
+    size: 0.875rem,
+    line-height: 1.25rem,
+  ),
 ) !default;
 
 $color-primitives: (
@@ -226,7 +250,7 @@ $max-width: 1312px !default;
     @return $alpha;
   }
 
-  @error 'Unknown color token: #{$key}';
+  @error "Unknown color token: #{$key}";
 }
 
 @function type-style($role) {
@@ -236,7 +260,6 @@ $max-width: 1312px !default;
 @function type-prop($role, $property) {
   @return map.get(type-style($role), $property);
 }
-
 
 @function radius($key) {
   @return map.get($radii, $key);
@@ -307,5 +330,5 @@ $max-width: 1312px !default;
     @return radius(sm);
   }
 
-  @error 'Unknown component token: #{$key}';
+  @error "Unknown component token: #{$key}";
 }

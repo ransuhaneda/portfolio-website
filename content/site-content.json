@@ -203,19 +203,52 @@
     "skillGroups": [
       {
         "title": "Frontend",
-        "items": ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "SCSS", "Tailwind CSS", "Bootstrap", "GSAP"]
+        "items": [
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "SCSS",
+          "Tailwind CSS",
+          "Bootstrap",
+          "GSAP"
+        ]
       },
       {
         "title": "WordPress",
-        "items": ["Elementor", "Plugin development", "Custom themes", "PHP", "ACF", "Reusable templates"]
+        "items": [
+          "Elementor",
+          "Plugin development",
+          "Custom themes",
+          "PHP",
+          "ACF",
+          "Reusable templates"
+        ]
       },
       {
         "title": "Systems and delivery",
-        "items": ["Git", "GitHub Actions", "Security cleanup", "Cloudflare", "cPanel", "VPS", "Linux", "Server administration", "SSL"]
+        "items": [
+          "Git",
+          "GitHub Actions",
+          "Security cleanup",
+          "Cloudflare",
+          "cPanel",
+          "VPS",
+          "Linux",
+          "Server administration",
+          "SSL"
+        ]
       },
       {
         "title": "Design",
-        "items": ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Responsive UI implementation", "Accessibility"]
+        "items": [
+          "Figma",
+          "Adobe Photoshop",
+          "Adobe Illustrator",
+          "Responsive UI implementation",
+          "Accessibility"
+        ]
       }
     ],
     "experience": [
@@ -265,9 +298,7 @@
         "program": "Full-Stack Web Developer Certificate",
         "school": "CIIT College of Arts and Technology",
         "period": "Oct 2025",
-        "highlights": [
-          "Training included PHP, Laravel, MySQL, HTML, CSS, and JavaScript."
-        ]
+        "highlights": ["Training included PHP, Laravel, MySQL, HTML, CSS, and JavaScript."]
       }
     ],
     "highlights": [
@@ -412,14 +443,7 @@
       "summary": "A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.",
       "role": "Frontend developer",
       "responsibility": "I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.",
-      "stack": [
-        "React",
-        "TypeScript",
-        "Vite",
-        "SCSS",
-        "Vitest",
-        "Playwright"
-      ],
+      "stack": ["React", "TypeScript", "Vite", "SCSS", "Vitest", "Playwright"],
       "links": [
         {
           "label": "Live site",
@@ -701,14 +725,7 @@
       "summary": "The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.",
       "role": "Frontend developer",
       "responsibility": "I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.",
-      "stack": [
-        "React",
-        "TypeScript",
-        "JSON content",
-        "Markdown",
-        "Cloudflare Pages",
-        "Vite"
-      ],
+      "stack": ["React", "TypeScript", "JSON content", "Markdown", "Cloudflare Pages", "Vite"],
       "links": [
         {
           "label": "Live site",
@@ -773,7 +790,12 @@
       "role": "Full-stack developer",
       "responsibility": "I built this project independently across the Laravel backend and React interface. I owned the feature, account, permissions, discussion, voting, and server-side rendering flows while keeping the unfinished areas clearly scoped.",
       "stack": ["Laravel", "PHP", "Inertia", "React", "TypeScript", "Server-side rendering"],
-      "links": [{"label": "GitHub repository", "href": "https://github.com/ransuhaneda/yay-nay_feature-vote"}],
+      "links": [
+        {
+          "label": "GitHub repository",
+          "href": "https://github.com/ransuhaneda/yay-nay_feature-vote"
+        }
+      ],
       "challenge": "The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.",
       "approach": [
         "Built the application with Laravel, Inertia, React, and TypeScript.",
@@ -789,13 +811,21 @@
       "overview": "Yay Nay is an in-progress feature-voting platform. It combines Laravel with Inertia and React so people can submit feature requests, comment on them, and vote on priorities.",
       "approachSummary": "I built the main feature and account flows across the Laravel backend and React interface, while keeping the repository's unfinished areas clearly scoped.",
       "resultSummary": "The public repository shows a full-stack product foundation with feature requests, comments, upvotes, authentication, and server-side rendering support.",
-      "scope": ["Laravel Application Development", "Inertia and React", "Feature Voting Flows", "Authentication and Permissions", "Server-side Rendering"],
+      "scope": [
+        "Laravel Application Development",
+        "Inertia and React",
+        "Feature Voting Flows",
+        "Authentication and Permissions",
+        "Server-side Rendering"
+      ],
       "reflection": "An in-progress product is still useful as a case study when the working flows, technical choices, and remaining scope are stated plainly.",
-      "gallery": [{
-        "src": "https://picsum.photos/seed/portfolio-yay-nay-feature-vote/1600/1100.jpg",
-        "alt": "Decorative stock photograph for the Yay Nay feature voting platform case study.",
-        "caption": "Placeholder visual. The public repository is the source for the current implementation details."
-      }]
+      "gallery": [
+        {
+          "src": "https://picsum.photos/seed/portfolio-yay-nay-feature-vote/1600/1100.jpg",
+          "alt": "Decorative stock photograph for the Yay Nay feature voting platform case study.",
+          "caption": "Placeholder visual. The public repository is the source for the current implementation details."
+        }
+      ]
     },
     {
       "slug": "gsap-animation",
@@ -807,12 +837,7 @@
       "summary": "A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.",
       "role": "Frontend practice",
       "responsibility": "I completed this animation study independently while following the public tutorial. I handled the React implementation, GSAP setup, timing, responsive behavior, and attribution.",
-      "stack": [
-        "React",
-        "Vite",
-        "GSAP",
-        "Tailwind CSS"
-      ],
+      "stack": ["React", "Vite", "GSAP", "Tailwind CSS"],
       "links": [
         {
           "label": "GitHub repository",
@@ -868,11 +893,7 @@
       "summary": "An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.",
       "role": "Frontend developer",
       "responsibility": "I built this unfinished project independently with React, TypeScript, and SCSS. I owned the product UI structure, profile presentation, reusable cards, and responsive styling while continuing to work on the main flow.",
-      "stack": [
-        "React",
-        "TypeScript",
-        "SCSS"
-      ],
+      "stack": ["React", "TypeScript", "SCSS"],
       "links": [
         {
           "label": "GitHub repository",
@@ -955,12 +976,7 @@
     "featuredProjects": {
       "title": "Selected work",
       "intro": "A selection of client work, personal projects, and the systems behind this site.",
-      "slugs": [
-        "abcde-creative",
-        "another-markdown-viewer",
-        "debase",
-        "portfolio-cms"
-      ],
+      "slugs": ["abcde-creative", "another-markdown-viewer", "debase", "portfolio-cms"],
       "fallbackLabel": "No featured project selected",
       "fallbackDescription": "Add project slugs in the site content file to feature work here.",
       "stackAriaTemplate": "{title} tools"
@@ -1035,15 +1051,7 @@
         },
         {
           "title": "WordPress and backend",
-          "items": [
-            "WordPress",
-            "Elementor",
-            "PHP",
-            "Laravel",
-            "MySQL",
-            "ACF",
-            "Code Snippets"
-          ]
+          "items": ["WordPress", "Elementor", "PHP", "Laravel", "MySQL", "ACF", "Code Snippets"]
         },
         {
           "title": "Design and delivery",

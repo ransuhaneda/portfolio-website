@@ -15,11 +15,13 @@ Full-stack web developer based in the Philippines.
 Lance Carteciano / Portfolio
 
 ## Homepage hero
+
 HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.
 
 I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 
 ## Main pages
+
 - [Home](https://384721.xyz/index.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 - [About](https://384721.xyz/about.md): I build responsive websites, maintain WordPress sites, and also work on visual design.
 - [Blog](https://384721.xyz/blog.md): Things I learn while building and maintaining websites.
@@ -29,17 +31,20 @@ I build websites, turn designs into responsive pages, and help keep them working
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
 ## Featured case studies
+
 - [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md): Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 - [Another Markdown Viewer](https://384721.xyz/projects/another-markdown-viewer.md): A client-side Markdown workspace for editing source, checking a rendered preview, recovering a local draft, and exporting a print-ready PDF.
 - [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## Homepage stats
+
 - Responsive pages: I check layouts at the sizes people actually use.
 - Reusable patterns: I look for repeated sections before rebuilding them page by page.
 - Clear handoff: I keep content and code understandable for the next person.
 
 ## Highlighted skills
+
 - React
 - TypeScript
 - JavaScript
@@ -80,6 +85,7 @@ At ABCDE Creative Studio, I turned Figma designs into responsive React pages and
 I enjoy work where I can use both design and development. I can take a visual direction, build the page, and make it easy for someone else to update later.
 
 ## Working principles
+
 - Understand the page before styling it.
 - Keep repeated parts reusable.
 - Test the page on real screen sizes.
@@ -437,7 +443,9 @@ Frontend and WordPress developer with production experience building custom them
 [Download resume (PDF)](https://384721.xyz/files/carteciano_lance-resume.pdf)
 
 ## Skills
+
 ### Frontend
+
 - React
 - TypeScript
 - JavaScript
@@ -449,6 +457,7 @@ Frontend and WordPress developer with production experience building custom them
 - GSAP
 
 ### WordPress
+
 - Elementor
 - Plugin development
 - Custom themes
@@ -457,6 +466,7 @@ Frontend and WordPress developer with production experience building custom them
 - Reusable templates
 
 ### Systems and delivery
+
 - Git
 - GitHub Actions
 - Security cleanup
@@ -468,6 +478,7 @@ Frontend and WordPress developer with production experience building custom them
 - SSL
 
 ### Design
+
 - Figma
 - Adobe Photoshop
 - Adobe Illustrator
@@ -475,7 +486,9 @@ Frontend and WordPress developer with production experience building custom them
 - Accessibility
 
 ## Experience
+
 ### Frontend Web Developer / Graphic Designer, Tech Support Plus I.T Service (Jan 2026 – Present)
+
 - Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes applied across website migrations.
 - Maintain active company and client websites, support periodic updates for additional company websites, and build responsive MVP landing-page demos for client and internal leadership review.
 - Built custom WordPress themes from blank starters for internal corporate websites, including Elementor integration, custom-field content, responsive styling, and deployment support.
@@ -483,20 +496,25 @@ Frontend and WordPress developer with production experience building custom them
 - Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
 
 ### Web Developer, ABCDE Creative Studio (Apr 2025 – Dec 2025)
+
 - Implemented the studio website from approved Figma designs as a responsive React site with reusable components and shared sections.
 - Built responsive pages using React, HTML, CSS, JavaScript, and TypeScript.
 - Configured GitHub Actions and Cloudflare Pages to build and deploy the site, and continued implementing post-launch updates.
 
 ### Print Machine Operator / Graphic Designer, Young Alpha Advertising Corp. (Jan 2024 – Oct 2024)
+
 - Improved workflows through RIP setup, color calibration, cutting-process cleanup, and troubleshooting across large-format and cutting machines and multiple workstations.
 - Supported print production for a team handling signage, food truck visuals, and business materials.
 
 ### Social Media Designer, But First, Coffee (Multiple Branches) (Jan 2023 – Sep 2024)
+
 - Produced promotional assets for recurring and seasonal campaigns and refined materials with stakeholders.
 - Designed weekly social media graphics and branded marketing assets for multiple branches.
 
 ## Education & certifications
+
 ### Full-Stack Web Developer Certificate, CIIT College of Arts and Technology (Oct 2025)
+
 - Training included PHP, Laravel, MySQL, HTML, CSS, and JavaScript.
 
 ## Projects
@@ -509,15 +527,19 @@ Frontend and WordPress developer with production experience building custom them
 
 
 ## Summary
+
 A client-side Markdown workspace for editing source, checking a rendered preview, recovering a local draft, and exporting a print-ready PDF.
 
 ## Overview
+
 Another Markdown Viewer is a browser-based workspace for editing Markdown, checking its rendered form, and exporting a PDF. The raw Markdown remains the document state throughout the workflow.
 
 ## Problem
+
 I wanted a focused way to make small Markdown edits and inspect the rendered document without losing the original source or requiring an app backend.
 
 ## My responsibility
+
 I built this project independently from the initial product idea through implementation, testing, and deployment. I owned the editor, Markdown rendering, browser storage, file operations, PDF export, and release verification.
 
 - Browser-based Markdown editing
@@ -528,6 +550,7 @@ I built this project independently from the initial product idea through impleme
 - Automated tests
 
 ## What I did
+
 I kept the editor, renderer, recovery, and file actions separate so each part has a clear job and the source stays readable.
 
 - Built a browser app with Vite and TypeScript, using CodeMirror 6 for source editing and Marked for GitHub-Flavored Markdown rendering.
@@ -537,6 +560,7 @@ I kept the editor, renderer, recovery, and file actions separate so each part ha
 - Added Vitest and Playwright coverage for Markdown behavior and browser workflows.
 
 ## Result
+
 The v0.1.0 app supports source editing, a sanitized GFM preview, local draft recovery, Markdown file operations, and browser print-to-PDF.
 
 - Deployed the v0.1.0 project as a live site at https://md-viewer.384721.xyz/ and kept the source available in a public GitHub repository.
@@ -544,6 +568,7 @@ The v0.1.0 app supports source editing, a sanitized GFM preview, local draft rec
 - The project keeps Markdown as editable text instead of treating the rendered document as the source.
 
 ## Project scope
+
 - Browser-based Markdown editing
 - GFM rendering and HTML sanitization
 - Local draft recovery
@@ -552,6 +577,7 @@ The v0.1.0 app supports source editing, a sanitized GFM preview, local draft rec
 - Automated tests
 
 ## Reflection
+
 Keeping the raw Markdown as the source of truth made it easier to connect editing, preview, recovery, and export without making those flows compete for ownership of the document.
 
 # Debase browser-local Base64 tools
@@ -563,15 +589,19 @@ Keeping the raw Markdown as the source of truth made it easier to connect editin
 - Homepage image: https://384721.xyz/images/projects/debase-live-homepage.png
 
 ## Summary
+
 A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 
 ## Overview
+
 Debase is a browser tool for encoding and decoding text or files. It supports Base64, Base64URL, and Data URLs, and keeps the payload on the device.
 
 ## Problem
+
 The utility needed to handle text and binary files locally, reject malformed encoded input clearly, and preview safe output while keeping decoded active content from becoming a browser security risk.
 
 ## My responsibility
+
 I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.
 
 - Browser-local File Processing
@@ -581,6 +611,7 @@ I built Debase independently from the interface and transformation logic through
 - Automated Testing
 
 ## What I did
+
 I treated privacy and safe output handling as product requirements. The app validates input, limits raw files to 25 MiB, and only previews allowlisted images or bounded plain text.
 
 - Built encode and decode flows for standard Base64, unpadded Base64URL, and Base64 Data URLs.
@@ -590,6 +621,7 @@ I treated privacy and safe output handling as product requirements. The app vali
 - Covered the transformation logic and interface with Vitest, Testing Library, and Playwright.
 
 ## Result
+
 Debase is live with a public TypeScript repository and automated unit, component, and end-to-end tests.
 
 - The live tool handles common text and file transformations in the browser, so payload data stays on the device.
@@ -597,6 +629,7 @@ Debase is live with a public TypeScript repository and automated unit, component
 - The public repository documents the privacy boundary, size limit, deployment path, and verification commands.
 
 ## Project scope
+
 - Browser-local File Processing
 - Base64 and Base64URL
 - Data URL Handling
@@ -604,6 +637,7 @@ Debase is live with a public TypeScript repository and automated unit, component
 - Automated Testing
 
 ## Reflection
+
 I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.
 
 # ABCDE Creative Studio website
@@ -615,15 +649,19 @@ I trust small utilities more when the interface and codebase state their privacy
 - Homepage image: https://384721.xyz/images/home/featured-project-2.png
 
 ## Summary
+
 Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.
 
 ## Overview
+
 At ABCDE Creative Studio, I built responsive pages from Figma designs for the studio site and related client work. I handled layout, accessibility checks, and shared sections.
 
 ## Problem
+
 The pages needed to follow the Figma direction at different widths while staying accessible and manageable in code.
 
 ## My responsibility
+
 I independently handled the frontend implementation for the studio website and related project pages. I translated the approved Figma designs into responsive React pages, reusable sections, accessibility checks, and delivery support.
 
 - Frontend Implementation
@@ -633,6 +671,7 @@ I independently handled the frontend implementation for the studio website and r
 - Deployment Support
 
 ## What I did
+
 I compared the mockups for repeated layout and spacing patterns, then built those patterns into the frontend instead of treating every page as a separate piece.
 
 - Worked on 3 web projects, including the studio website.
@@ -642,6 +681,7 @@ I compared the mockups for repeated layout and spacing patterns, then built thos
 - Supported delivery workflows through GitHub Actions and Cloudflare.
 
 ## Result
+
 The pages stayed close to the design across screen sizes, while shared patterns gave later work a steadier starting point.
 
 - Responsive pages matched the design direction more closely across screen sizes.
@@ -649,6 +689,7 @@ The pages stayed close to the design across screen sizes, while shared patterns 
 - The delivery process had a clearer build and deployment path.
 
 ## Project scope
+
 - Frontend Implementation
 - Responsive UI
 - Figma Translation
@@ -656,6 +697,7 @@ The pages stayed close to the design across screen sizes, while shared patterns 
 - Deployment Support
 
 ## Reflection
+
 I check the real page at the widths people will use instead of stopping after the desktop mockup matches.
 
 # WordPress maintenance and Elementor system work
@@ -667,15 +709,19 @@ I check the real page at the widths people will use instead of stopping after th
 - Homepage image: https://384721.xyz/images/home/featured-project-1.png
 
 ## Summary
+
 Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.
 
 ## Overview
+
 This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in, including system cleanup, security recovery, backups, QA, and deployment support.
 
 ## Problem
+
 Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.
 
 ## My responsibility
+
 I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.
 
 - WordPress Maintenance
@@ -688,6 +734,7 @@ I worked as part of the team maintaining company and client sites. My responsibi
 - Release QA
 
 ## What I did
+
 I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.
 
 - Maintained company and client websites, supported periodic updates for additional company websites, and built responsive MVP landing-page demos for client and internal leadership review.
@@ -700,6 +747,7 @@ I clean up the parts people edit repeatedly: Elementor classes, global styles, c
 - Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
 
 ## Result
+
 Repeated sections follow clearer patterns, content editors have fewer opportunities to break the layout, and site recovery has been tested rather than assumed.
 
 - Company and client sites became easier to update because repeated sections and content fields now follow clearer patterns.
@@ -707,6 +755,7 @@ Repeated sections follow clearer patterns, content editors have fewer opportunit
 - Post-deployment checks cover layout, navigation, links, content, and production smoke behavior instead of stopping at the code change.
 
 ## Project scope
+
 - WordPress Maintenance
 - Elementor System Cleanup
 - Frontend Styling
@@ -717,6 +766,7 @@ Repeated sections follow clearer patterns, content editors have fewer opportunit
 - Release QA
 
 ## Reflection
+
 Maintenance is easier to hand over when the editing patterns are visible and repeatable.
 
 # Nsight Index blog management system
@@ -728,15 +778,19 @@ Maintenance is easier to hand over when the editing patterns are visible and rep
 - Homepage image: https://384721.xyz/images/home/featured-project-3.png
 
 ## Summary
+
 A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 
 ## Overview
+
 Nsight Index is an individual Laravel 12 course project built around a working publishing flow. It includes authentication, profiles, posts, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.
 
 ## Problem
+
 The project needed one working path for authors to manage posts and readers to interact with published content.
 
 ## My responsibility
+
 I built Nsight Index independently as an individual course project, from the application structure through the publishing, interaction, profile, media, and scheduling flows.
 
 - Laravel Development
@@ -746,6 +800,7 @@ I built Nsight Index independently as an individual course project, from the app
 - Interface Implementation
 
 ## What I did
+
 I built the working publishing, interaction, profile, media, and scheduling flows with Laravel and MySQL.
 
 - Built authentication, post, category, comment, like, follow, profile, media-upload, and timezone-aware publishing flows.
@@ -754,12 +809,14 @@ I built the working publishing, interaction, profile, media, and scheduling flow
 - Used Laravel validation, authentication middleware, and Eloquent relationships across the working flows.
 
 ## Result
+
 The repository provides a public backend example with working content, interaction, profile, media, and scheduling flows.
 
 - The public repository shows a working Laravel content-management project with author and reader features.
 - The project gives the portfolio a backend example while keeping unfinished admin work out of the claim.
 
 ## Project scope
+
 - Laravel Development
 - Content Workflow
 - Reader Interaction Flows
@@ -767,6 +824,7 @@ The repository provides a public backend example with working content, interacti
 - Interface Implementation
 
 ## Reflection
+
 The useful part of this project is the working publishing flow, so that is what the case study describes.
 
 # Git-backed portfolio content system
@@ -778,15 +836,19 @@ The useful part of this project is the working publishing flow, so that is what 
 - Homepage image: https://384721.xyz/images/home/featured-project-4.png
 
 ## Summary
+
 The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## Overview
+
 This portfolio uses one JSON file for the main site copy and project data. A prebuild script turns that source into React content, public Markdown, a sitemap, and machine-readable indexes.
 
 ## Problem
+
 The site needed to serve people and machines while keeping project copy in one editable place.
 
 ## My responsibility
+
 I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.
 
 - Git-backed CMS
@@ -796,6 +858,7 @@ I built and maintain this portfolio content system independently. I defined the 
 - React Content Rendering
 
 ## What I did
+
 The React pages and generation script read from the same source. Blog posts stay in Markdown. This keeps me from updating the same copy in several places.
 
 - Kept main site copy in content/site-content.json.
@@ -804,6 +867,7 @@ The React pages and generation script read from the same source. Blog posts stay
 - Used Cloudflare Pages functions to serve markdown when requested.
 
 ## Result
+
 I can update the portfolio from one main source, regenerate the public files, and check the human and machine-readable versions together.
 
 - The portfolio can be edited from one source and still publish readable Markdown mirrors.
@@ -811,6 +875,7 @@ I can update the portfolio from one main source, regenerate the public files, an
 - New case studies and posts have a known place to start.
 
 ## Project scope
+
 - Git-backed CMS
 - Content Architecture
 - Markdown Generation
@@ -818,6 +883,7 @@ I can update the portfolio from one main source, regenerate the public files, an
 - React Content Rendering
 
 ## Reflection
+
 The system is worth keeping because one edit can update the page visitors see and the Markdown files machines can read.
 
 # Yay Nay feature voting platform
@@ -829,15 +895,19 @@ The system is worth keeping because one edit can update the page visitors see an
 
 
 ## Summary
+
 A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.
 
 ## Overview
+
 Yay Nay is an in-progress feature-voting platform. It combines Laravel with Inertia and React so people can submit feature requests, comment on them, and vote on priorities.
 
 ## Problem
+
 The project needed a clear way for people to submit product ideas, discover existing requests, and show which features have the strongest community support.
 
 ## My responsibility
+
 I built this project independently across the Laravel backend and React interface. I owned the feature, account, permissions, discussion, voting, and server-side rendering flows while keeping the unfinished areas clearly scoped.
 
 - Laravel Application Development
@@ -847,6 +917,7 @@ I built this project independently across the Laravel backend and React interfac
 - Server-side Rendering
 
 ## What I did
+
 I built the main feature and account flows across the Laravel backend and React interface, while keeping the repository's unfinished areas clearly scoped.
 
 - Built the application with Laravel, Inertia, React, and TypeScript.
@@ -855,6 +926,7 @@ I built the main feature and account flows across the Laravel backend and React 
 - Kept the repository's in-progress status visible rather than presenting unfinished product work as complete.
 
 ## Result
+
 The public repository shows a full-stack product foundation with feature requests, comments, upvotes, authentication, and server-side rendering support.
 
 - The repository documents a working foundation for feature requests, discussion, and voting.
@@ -862,6 +934,7 @@ The public repository shows a full-stack product foundation with feature request
 - The public case study makes the current scope and ongoing status clear.
 
 ## Project scope
+
 - Laravel Application Development
 - Inertia and React
 - Feature Voting Flows
@@ -869,6 +942,7 @@ The public repository shows a full-stack product foundation with feature request
 - Server-side Rendering
 
 ## Reflection
+
 An in-progress product is still useful as a case study when the working flows, technical choices, and remaining scope are stated plainly.
 
 # React GSAP animation study
@@ -880,15 +954,19 @@ An in-progress product is still useful as a case study when the working flows, t
 
 
 ## Summary
+
 A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.
 
 ## Overview
+
 I built this React and GSAP project while following a public tutorial. It records animation practice and is labeled as tutorial-based work.
 
 ## Problem
+
 I used the project to practice scroll and interface animation in React and see how tutorial patterns fit into a real codebase.
 
 ## My responsibility
+
 I completed this animation study independently while following the public tutorial. I handled the React implementation, GSAP setup, timing, responsive behavior, and attribution.
 
 - React Animation Study
@@ -898,6 +976,7 @@ I completed this animation study independently while following the public tutori
 - Code Attribution
 
 ## What I did
+
 I used the build to practice GSAP setup, timing, scroll interaction, and responsive behavior in React.
 
 - Followed a public tutorial inspired by Zentry and JavaScript Mastery.
@@ -905,12 +984,14 @@ I used the build to practice GSAP setup, timing, scroll interaction, and respons
 - Kept the tutorial source and attribution visible so the study is not mistaken for original client work.
 
 ## Result
+
 The repository records my GSAP practice and credits the tutorial that shaped it.
 
 - The project documents animation practice and code familiarity with GSAP in React.
 - The case study keeps the tutorial attribution visible alongside the animation work.
 
 ## Project scope
+
 - React Animation Study
 - GSAP Timing
 - Scroll Interaction Practice
@@ -918,6 +999,7 @@ The repository records my GSAP practice and credits the tutorial that shaped it.
 - Code Attribution
 
 ## Reflection
+
 This tutorial build works as a record of practice because its source and limits are stated clearly.
 
 # Tetherly bio link app
@@ -929,15 +1011,19 @@ This tutorial build works as a record of practice because its source and limits 
 
 
 ## Summary
+
 An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.
 
 ## Overview
+
 Tetherly is an unfinished bio link app built with React, TypeScript, and SCSS. The main flow is still being worked on.
 
 ## Problem
+
 The project explores a small profile-link product with editable-looking cards, cleaner visual hierarchy, and reusable frontend structure.
 
 ## My responsibility
+
 I built this unfinished project independently with React, TypeScript, and SCSS. I owned the product UI structure, profile presentation, reusable cards, and responsive styling while continuing to work on the main flow.
 
 - Product UI Practice
@@ -947,6 +1033,7 @@ I built this unfinished project independently with React, TypeScript, and SCSS. 
 - Responsive SCSS
 
 ## What I did
+
 I worked on profile layout, reusable cards, and responsive SCSS while keeping the unfinished status visible.
 
 - Built the app with React, TypeScript, and SCSS.
@@ -954,12 +1041,14 @@ I worked on profile layout, reusable cards, and responsive SCSS while keeping th
 - Kept the project marked as in progress until the product flow is more complete.
 
 ## Result
+
 The repository shows the current frontend work and labels the app as unfinished.
 
 - The repository shows active product UI practice.
 - The case study states the project status and presents it as unfinished personal work.
 
 ## Project scope
+
 - Product UI Practice
 - React Components
 - TypeScript Structure
@@ -967,6 +1056,7 @@ The repository shows the current frontend work and labels the app as unfinished.
 - Responsive SCSS
 
 ## Reflection
+
 The unfinished interface still shows how I structure a product UI, and the published description states its status.
 
 ## Contact
