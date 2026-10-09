@@ -27,12 +27,6 @@ I build websites, turn designs into responsive pages, and help keep them working
 - [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md): A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md): The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
-## Homepage stats
-
-- Responsive pages: I check layouts at the sizes people actually use.
-- Reusable patterns: I look for repeated sections before rebuilding them page by page.
-- Clear handoff: I keep content and code understandable for the next person.
-
 ## Highlighted skills
 
 - React

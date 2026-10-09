@@ -981,28 +981,6 @@
       "fallbackDescription": "Add project slugs in the site content file to feature work here.",
       "stackAriaTemplate": "{title} tools"
     },
-    "bio": {
-      "eyebrow": "How I work",
-      "title": "I pay attention to the parts people use after launch.",
-      "description": "A website has to do more than match a design file. I build the page, check it at different screen sizes, and make sure the content and code are practical to update later."
-    },
-    "stats": [
-      {
-        "value": "Responsive pages",
-        "label": "I check layouts at the sizes people actually use.",
-        "tone": "accent"
-      },
-      {
-        "value": "Reusable patterns",
-        "label": "I look for repeated sections before rebuilding them page by page.",
-        "tone": "accent-2"
-      },
-      {
-        "value": "Clear handoff",
-        "label": "I keep content and code understandable for the next person.",
-        "tone": "accent-3"
-      }
-    ],
     "skills": {
       "title": "Tools I use",
       "description": "A working list of the tools I use to build, edit, test, and deliver websites.",

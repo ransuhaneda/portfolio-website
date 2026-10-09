@@ -101,14 +101,6 @@ export type Project = {
   gallery: ImageAsset[];
 };
 
-export type HomeStatTone = "accent" | "accent-2" | "accent-3";
-
-export type HomeStat = {
-  value: string;
-  label: string;
-  tone: HomeStatTone;
-};
-
 export type SiteContent = {
   site: {
     name: string;
@@ -170,12 +162,6 @@ export type SiteContent = {
       fallbackDescription: string;
       stackAriaTemplate?: string;
     };
-    bio: {
-      eyebrow: string;
-      title: string;
-      description: string;
-    };
-    stats: HomeStat[];
     skills: {
       title: string;
       description: string;

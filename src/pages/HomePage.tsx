@@ -5,14 +5,8 @@ import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
 import { PretextText } from "../components/PretextText";
 import { blogPosts } from "../content/blogContent";
 import { readingMinutes } from "../content/publicUrl";
-import { siteContent, type HomeStatTone } from "../content/siteContent";
+import { siteContent } from "../content/siteContent";
 import sty from "./HomePage.module.scss";
-
-const statToneClassNames = {
-  accent: sty.statAccent,
-  "accent-2": sty.statAccent2,
-  "accent-3": sty.statAccent3,
-} satisfies Record<HomeStatTone, string>;
 
 function renderAccentedTitle(title: string, accentPhrase?: string) {
   if (!accentPhrase || !title.includes(accentPhrase)) return title;
@@ -96,31 +90,6 @@ export function HomePage() {
           </div>
         </section>
       ) : null}
-
-      <section className={sty.practice}>
-        <div className="lg-wrapper">
-          <div className={sty.sectionInner} data-text-reveal-group="scrub">
-            <div className={sty.practiceCopy}>
-              <div>
-                <PretextText as="h2" measure="heading" reveal="heading">
-                  {siteContent.home.bio.title}
-                </PretextText>
-              </div>
-              <PretextText measure="prose" reveal="copy">
-                {siteContent.home.bio.description}
-              </PretextText>
-            </div>
-            <div className={sty.stats} data-text-reveal="copy">
-              {siteContent.home.stats.map((stat) => (
-                <div key={stat.label}>
-                  <strong className={statToneClassNames[stat.tone]}>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className={sty.skills}>
         <div className="lg-wrapper">

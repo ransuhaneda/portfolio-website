@@ -119,10 +119,6 @@ ${routes
 
 ${featuredProjects.map((project) => `- [${project.title}](${siteUrl}/projects/${project.slug}.md): ${project.summary}`).join("\n")}
 
-## Homepage stats
-
-${siteContent.home.stats.map((stat) => `- ${stat.value}: ${stat.label}`).join("\n")}
-
 ## Highlighted skills
 
 ${bullets(siteContent.home.skills.items)}
