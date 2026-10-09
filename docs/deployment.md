@@ -22,8 +22,8 @@ Before any future enablement, require separate security and workflow review: str
 
 Check the generated security.txt expiry before release and renew it before it expires. Historical Figma/migration/reference docs are background, not a release task list; use the [documentation owners](README.md).
 
-## Configuration drift to resolve before publication
+## Build environment and historical tooling
 
-`wrangler.toml` and the verified local build use `dist/client`. The existing `.github/workflows/deploy-pages.yml` still uploads `dist` and sets up pnpm 10, while the package manifest declares pnpm 11.25.0. Align and verify the workflow before the next authorized preview publication; this documentation update does not change CI or authorize a push. Configure Cloudflare's build environment to run the checked-in build script with the required runtime/toolchain.
+`wrangler.toml` and `.github/workflows/deploy-pages.yml` use `dist/client`. The preview workflow lets `pnpm/action-setup` read the pnpm version from `package.json` (currently 11.25.0), rather than maintaining a separate version pin. Verify the next authorized preview publication on GitHub; local checks do not establish hosted CI or deployment behavior. Configure Cloudflare's build environment to run the checked-in build script with the required runtime/toolchain.
 
 The old `scripts/generate-route-shells.mjs` is not part of the current package build script. Do not infer current HTML, 404, or deployed host behavior from old launch evidence. Renew affected runtime and host checks against the final source.
