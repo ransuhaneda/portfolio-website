@@ -7,15 +7,19 @@
 - Homepage image: https://384721.xyz/images/home/featured-project-1.png
 
 ## Summary
+
 Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.
 
 ## Overview
+
 This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in, including system cleanup, security recovery, backups, QA, and deployment support.
 
 ## Problem
+
 Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.
 
 ## My responsibility
+
 I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.
 
 - WordPress Maintenance
@@ -28,6 +32,7 @@ I worked as part of the team maintaining company and client sites. My responsibi
 - Release QA
 
 ## What I did
+
 I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.
 
 - Maintained company and client websites, supported periodic updates for additional company websites, and built responsive MVP landing-page demos for client and internal leadership review.
@@ -40,6 +45,7 @@ I clean up the parts people edit repeatedly: Elementor classes, global styles, c
 - Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
 
 ## Result
+
 Repeated sections follow clearer patterns, content editors have fewer opportunities to break the layout, and site recovery has been tested rather than assumed.
 
 - Company and client sites became easier to update because repeated sections and content fields now follow clearer patterns.
@@ -47,6 +53,7 @@ Repeated sections follow clearer patterns, content editors have fewer opportunit
 - Post-deployment checks cover layout, navigation, links, content, and production smoke behavior instead of stopping at the code change.
 
 ## Project scope
+
 - WordPress Maintenance
 - Elementor System Cleanup
 - Frontend Styling
@@ -57,4 +64,5 @@ Repeated sections follow clearer patterns, content editors have fewer opportunit
 - Release QA
 
 ## Reflection
+
 Maintenance is easier to hand over when the editing patterns are visible and repeatable.

@@ -8,6 +8,7 @@ excerpt: "How JSON and Markdown keep the portfolio's visible pages, mirrors, and
 coverImage: "https://picsum.photos/seed/git-backed-portfolio-cms/1600/900.jpg"
 coverAlt: "Decorative stock photograph; not a screenshot of the portfolio content system."
 ---
+
 This portfolio keeps its editable content in the repository. Site copy lives in JSON. Blog and project notes live in Markdown. A prebuild script generates the public mirrors, sitemap entries, and agent-readable navigation files.
 
 That is more setup than a tiny hosted CMS, but it solves a problem I keep running into: portfolio copy appears in several places unless one file owns it.

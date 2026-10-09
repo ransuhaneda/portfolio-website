@@ -1,23 +1,24 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { LuArrowLeft, LuArrowRight, LuExternalLink } from 'react-icons/lu'
-import { useDirectionalContentSwap, type SwapDirection } from '../animations/useDirectionalContentSwap'
-import type { Project } from '../content/siteContent'
-import sty from './FeaturedProjectCarousel.module.scss'
-import { ProjectStack } from './ProjectStack'
-import { PretextText } from './PretextText'
-
+import { useCallback, useMemo, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { LuArrowLeft, LuArrowRight, LuExternalLink } from "react-icons/lu";
+import {
+  useDirectionalContentSwap,
+  type SwapDirection,
+} from "../animations/useDirectionalContentSwap";
+import type { Project } from "../content/siteContent";
+import sty from "./FeaturedProjectCarousel.module.scss";
+import { ProjectStack } from "./ProjectStack";
+import { PretextText } from "./PretextText";
 
 type FeaturedProjectCarouselProps = {
-  projects: Project[]
-  slugs: string[]
-  title: string
-  stackAriaTemplate?: string
-}
-
+  projects: Project[];
+  slugs: string[];
+  title: string;
+  stackAriaTemplate?: string;
+};
 
 function getWrappedIndex(index: number, length: number) {
-  return (index + length) % length
+  return (index + length) % length;
 }
 
 export function FeaturedProjectCarousel({
@@ -26,77 +27,80 @@ export function FeaturedProjectCarousel({
   title,
   stackAriaTemplate,
 }: FeaturedProjectCarouselProps) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const featuredProjects = useMemo(
-    () => slugs.map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is Project => Boolean(project)),
+    () =>
+      slugs
+        .map((slug) => projects.find((project) => project.slug === slug))
+        .filter((project): project is Project => Boolean(project)),
     [projects, slugs],
-  )
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isPreparing, setIsPreparing] = useState(false)
-  const interactionLock = useRef(false)
-  const scopeRef = useRef<HTMLDivElement>(null)
-  const copyRef = useRef<HTMLDivElement>(null)
+  );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPreparing, setIsPreparing] = useState(false);
+  const interactionLock = useRef(false);
+  const scopeRef = useRef<HTMLDivElement>(null);
+  const copyRef = useRef<HTMLDivElement>(null);
   const { swap, isAnimating } = useDirectionalContentSwap({
     scope: scopeRef,
     copy: copyRef,
-  })
+  });
 
-  const activeProject = featuredProjects[activeIndex]
-  const totalProjects = featuredProjects.length
-  const isBusy = isPreparing || isAnimating
+  const activeProject = featuredProjects[activeIndex];
+  const totalProjects = featuredProjects.length;
+  const isBusy = isPreparing || isAnimating;
 
+  const handleNavigate = useCallback(
+    async (direction: SwapDirection) => {
+      if (!activeProject || totalProjects < 2 || interactionLock.current || isBusy) return;
 
-  const handleNavigate = useCallback(async (direction: SwapDirection) => {
-    if (!activeProject || totalProjects < 2 || interactionLock.current || isBusy) return
+      const nextIndex = getWrappedIndex(activeIndex + direction, totalProjects);
+      const nextProject = featuredProjects[nextIndex];
+      if (!nextProject) return;
 
-    const nextIndex = getWrappedIndex(activeIndex + direction, totalProjects)
-    const nextProject = featuredProjects[nextIndex]
-    if (!nextProject) return
+      interactionLock.current = true;
+      setIsPreparing(true);
+      setIsPreparing(false);
 
-    interactionLock.current = true
-    setIsPreparing(true)
-    setIsPreparing(false)
+      try {
+        await swap(direction, () => setActiveIndex(nextIndex));
+      } finally {
+        interactionLock.current = false;
+      }
+    },
+    [activeIndex, activeProject, featuredProjects, isBusy, swap, totalProjects],
+  );
 
-    try {
-      await swap(direction, () => setActiveIndex(nextIndex))
-    } finally {
-      interactionLock.current = false
-    }
-  }, [activeIndex, activeProject, featuredProjects, isBusy, swap, totalProjects])
+  if (!activeProject || !totalProjects) return null;
 
-  if (!activeProject || !totalProjects) return null
+  const previousProject = featuredProjects[getWrappedIndex(activeIndex - 1, totalProjects)];
+  const nextProject = featuredProjects[getWrappedIndex(activeIndex + 1, totalProjects)];
+  const position = String(activeIndex + 1).padStart(2, "0");
+  const total = String(totalProjects).padStart(2, "0");
+  const stackLabel = (stackAriaTemplate ?? "{title} tools").replace("{title}", activeProject.title);
+  const projectPath = `/projects/${activeProject.slug}`;
 
-  const previousProject = featuredProjects[getWrappedIndex(activeIndex - 1, totalProjects)]
-  const nextProject = featuredProjects[getWrappedIndex(activeIndex + 1, totalProjects)]
-  const position = String(activeIndex + 1).padStart(2, '0')
-  const total = String(totalProjects).padStart(2, '0')
-  const stackLabel = (stackAriaTemplate ?? '{title} tools').replace('{title}', activeProject.title)
-  const projectPath = `/projects/${activeProject.slug}`
-
-  const openProject = () => navigate(projectPath, { state: { from: '/' } })
+  const openProject = () => navigate(projectPath, { state: { from: "/" } });
   const handleGridClick = (event: React.MouseEvent<HTMLDivElement>) => {
     // SAFETY: React dispatches this handler from an Element, which supports closest().
-    const target = event.target as HTMLElement
-    if (target.closest('a, button')) return
-    openProject()
-  }
+    const target = event.target as HTMLElement;
+    if (target.closest("a, button")) return;
+    void openProject();
+  };
   const handleGridKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.target !== event.currentTarget) return
-    if (event.key !== 'Enter' && event.key !== ' ') return
-    event.preventDefault()
-    openProject()
-  }
+    if (event.target !== event.currentTarget) return;
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    void openProject();
+  };
 
   return (
-    <div
-      className={sty.featuredCarousel}
-      data-text-reveal="copy"
-      aria-busy={isBusy}
-    >
+    <div className={sty.featuredCarousel} data-text-reveal="copy" aria-busy={isBusy}>
       <div className={sty.featuredHeading}>
         <p className="eyebrow">{title}</p>
         <div className={sty.featuredHeaderActions}>
-          <p className={sty.meta}>{position} / {total}</p>
+          <p className={sty.meta}>
+            {position} / {total}
+          </p>
           <nav className={sty.carouselControls} aria-label="Featured project navigation">
             <button
               type="button"
@@ -133,7 +137,9 @@ export function FeaturedProjectCarousel({
         <div ref={copyRef} className={sty.featuredCopy}>
           <div className={sty.featuredOverview}>
             <div>
-              <PretextText as="h2" measure="heading">{activeProject.title}</PretextText>
+              <PretextText as="h2" measure="heading">
+                {activeProject.title}
+              </PretextText>
               <PretextText measure="prose">{activeProject.summary}</PretextText>
             </div>
             <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
@@ -141,14 +147,26 @@ export function FeaturedProjectCarousel({
 
           <div className={sty.featuredData}>
             <dl className={sty.projectMeta}>
-              <div><dt>Client</dt><dd>{activeProject.client}</dd></div>
-              <div><dt>Role</dt><dd>{activeProject.role}</dd></div>
-              <div><dt>Year</dt><dd>{activeProject.year}</dd></div>
-              <div><dt>Discipline</dt><dd>{activeProject.stack[0]}</dd></div>
+              <div>
+                <dt>Client</dt>
+                <dd>{activeProject.client}</dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd>{activeProject.role}</dd>
+              </div>
+              <div>
+                <dt>Year</dt>
+                <dd>{activeProject.year}</dd>
+              </div>
+              <div>
+                <dt>Discipline</dt>
+                <dd>{activeProject.stack[0]}</dd>
+              </div>
             </dl>
 
             <div className={sty.featuredLinks}>
-              <Link to={`/projects/${activeProject.slug}`} state={{ from: '/' }}>
+              <Link to={`/projects/${activeProject.slug}`} state={{ from: "/" }}>
                 Read the case study
                 <LuExternalLink aria-hidden="true" focusable="false" />
               </Link>
@@ -165,5 +183,5 @@ export function FeaturedProjectCarousel({
         Project {activeIndex + 1} of {totalProjects}: {activeProject.title}
       </p>
     </div>
-  )
+  );
 }

@@ -7,15 +7,19 @@
 - Homepage image: https://384721.xyz/images/home/featured-project-4.png
 
 ## Summary
+
 The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.
 
 ## Overview
+
 This portfolio uses one JSON file for the main site copy and project data. A prebuild script turns that source into React content, public Markdown, a sitemap, and machine-readable indexes.
 
 ## Problem
+
 The site needed to serve people and machines while keeping project copy in one editable place.
 
 ## My responsibility
+
 I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.
 
 - Git-backed CMS
@@ -25,6 +29,7 @@ I built and maintain this portfolio content system independently. I defined the 
 - React Content Rendering
 
 ## What I did
+
 The React pages and generation script read from the same source. Blog posts stay in Markdown. This keeps me from updating the same copy in several places.
 
 - Kept main site copy in content/site-content.json.
@@ -33,6 +38,7 @@ The React pages and generation script read from the same source. Blog posts stay
 - Used Cloudflare Pages functions to serve markdown when requested.
 
 ## Result
+
 I can update the portfolio from one main source, regenerate the public files, and check the human and machine-readable versions together.
 
 - The portfolio can be edited from one source and still publish readable Markdown mirrors.
@@ -40,6 +46,7 @@ I can update the portfolio from one main source, regenerate the public files, an
 - New case studies and posts have a known place to start.
 
 ## Project scope
+
 - Git-backed CMS
 - Content Architecture
 - Markdown Generation
@@ -47,4 +54,5 @@ I can update the portfolio from one main source, regenerate the public files, an
 - React Content Rendering
 
 ## Reflection
+
 The system is worth keeping because one edit can update the page visitors see and the Markdown files machines can read.

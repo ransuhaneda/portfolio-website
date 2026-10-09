@@ -1,10 +1,12 @@
 # Homepage Figma Fix Tasks
 
 Source comparison:
+
 - Figma design: `https://www.figma.com/design/3yI6d08rPxh0P1qpjZQ7Ef/Codex-Access?node-id=132-1145&t=iX4ExyDbaI2nHDrE-4`
 - Local implementation audited via Playwright at `/`
 
 Goal:
+
 - Make the homepage implementation match the linked Figma homepage more closely in structure, spacing, typography, content, and visual hierarchy.
 
 ## Working rules
@@ -19,6 +21,7 @@ Goal:
 ## Priority 1 — content parity with the Figma design
 
 ### 1. Replace homepage content with Figma-matching content
+
 - Update `/home/ransu/personal-projects/portfolio-website/content/site-content.json`
 - Fix:
   - site name / brand text
@@ -35,6 +38,7 @@ Goal:
   - Homepage copy matches the design intent instead of the current placeholder portfolio copy.
 
 ### 2. Restore the missing Linktree nav item
+
 - Review `/home/ransu/personal-projects/portfolio-website/content/site-content.json`
 - Review `/home/ransu/personal-projects/portfolio-website/src/components/SiteHeader.tsx`
 - Fix:
@@ -46,6 +50,7 @@ Goal:
 ## Priority 2 — layout and structure fixes
 
 ### 3. Match the hero section structure
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.tsx`
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
@@ -58,6 +63,7 @@ Goal:
   - Hero has one CTA, tighter spacing, and a similar visual footprint to Figma.
 
 ### 4. Replace the fallback CTA card with a fourth featured project
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.tsx`
 - Review `/home/ransu/personal-projects/portfolio-website/content/site-content.json`
 - Fix:
@@ -67,6 +73,7 @@ Goal:
   - Featured projects render as a 2x2 project grid, not 3 cards plus one CTA block.
 
 ### 5. Remove or reduce the extra featured-projects intro copy
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.tsx`
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
@@ -75,6 +82,7 @@ Goal:
   - Section heading treatment matches the Figma section more closely.
 
 ### 6. Tighten the bio/about section composition
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
   - reduce oversized vertical gaps
@@ -85,6 +93,7 @@ Goal:
   - The bio section feels compact and balanced like the design.
 
 ### 7. Rebuild the stats row to match bordered cards
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.tsx`
 - Fix:
@@ -95,6 +104,7 @@ Goal:
   - Stats look like distinct bordered boxes, not open columns with separators.
 
 ### 8. Tighten the skills section layout
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
   - make the pill cluster more compact and centered
@@ -104,6 +114,7 @@ Goal:
   - Skills section has the same overall structure and density as the design.
 
 ### 9. Adjust the contact section proportions
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.tsx`
 - Fix:
@@ -115,6 +126,7 @@ Goal:
   - Contact form card proportions and spacing resemble the Figma layout.
 
 ### 10. Match the footer structure more closely
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/components/SiteFooter.tsx`
 - Review `/home/ransu/personal-projects/portfolio-website/src/components/SiteFooter.module.scss`
 - Fix:
@@ -128,6 +140,7 @@ Goal:
 ## Priority 3 — visual styling alignment
 
 ### 11. Tune header spacing and typography
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/components/SiteHeader.module.scss`
 - Fix:
   - adjust header top/bottom padding
@@ -137,6 +150,7 @@ Goal:
   - Header sits and scales more like the design.
 
 ### 12. Tune section spacing across the whole homepage
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
   - reduce cumulative vertical spacing that is making the page too tall
@@ -145,6 +159,7 @@ Goal:
   - Overall page height is significantly closer to the Figma homepage.
 
 ### 13. Tune project card image and text rhythm
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
   - verify image aspect ratio and crop behavior
@@ -154,6 +169,7 @@ Goal:
   - Project cards visually align with the Figma cards.
 
 ### 14. Tune form styling details
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
   - match placeholder contrast, border color, label spacing, corner radius, and button height
@@ -164,6 +180,7 @@ Goal:
 ## Priority 4 — cleanup and verification
 
 ### 15. Remove homepage-only design mismatches that should not exist
+
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.tsx`
 - Fix:
   - remove any homepage-only elements that are not present in the Figma design
@@ -175,6 +192,7 @@ Goal:
   - Homepage only contains sections and sub-elements supported by the design.
 
 ### 16. Run content/build verification
+
 - Run:
   - `pnpm run prebuild`
   - `pnpm build`
@@ -182,6 +200,7 @@ Goal:
   - Build passes with no regressions.
 
 ### 17. Re-audit with Playwright after fixes
+
 - Re-run a Playwright screenshot of the homepage at desktop width `1440`
 - Compare again against the same Figma node
 - Acceptance:

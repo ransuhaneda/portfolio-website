@@ -1,4 +1,4 @@
-@use '../styles/mixins' as mix;
+@use "../styles/mixins" as mix;
 
 .root,
 .content {
@@ -22,7 +22,6 @@
   min-width: 0;
   gap: var(--space-xs);
 }
-
 
 .titleRow,
 .meta {

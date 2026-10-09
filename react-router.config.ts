@@ -1,9 +1,9 @@
-import type { Config } from '@react-router/dev/config'
-import { routeMetadata } from './src/content/routeMetadata'
+import type { Config } from "@react-router/dev/config";
+import { routeMetadata } from "./src/content/routeMetadata";
 
 export default {
-  appDirectory: 'src',
-  buildDirectory: 'dist',
+  appDirectory: "src",
+  buildDirectory: "dist",
   ssr: false,
   future: {
     v8_middleware: true,
@@ -13,4 +13,4 @@ export default {
     v8_trailingSlashAwareDataRequests: true,
   },
   prerender: routeMetadata.map((route) => route.path),
-} satisfies Config
+} satisfies Config;

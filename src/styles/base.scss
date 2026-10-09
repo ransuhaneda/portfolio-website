@@ -1,5 +1,5 @@
-@use './tokens' as tokens;
-@use './mixins' as mix;
+@use "./tokens" as tokens;
+@use "./mixins" as mix;
 
 :root {
   color-scheme: dark;
@@ -121,7 +121,8 @@
   --button-radius: #{tokens.component-token(button-radius)};
   --button-min-block-size: var(--target-min-size);
   --button-border-hover: var(--color-border-hover);
-  --button-transition: transform var(--motion-fast) var(--motion-ease-standard),
+  --button-transition:
+    transform var(--motion-fast) var(--motion-ease-standard),
     opacity var(--motion-fast) var(--motion-ease-standard),
     border-color var(--motion-fast) var(--motion-ease-standard),
     background-color var(--motion-fast) var(--motion-ease-standard),
@@ -272,7 +273,7 @@ blockquote {
   margin-block: 0;
 }
 
-:where(svg[focusable='false']) {
+:where(svg[focusable="false"]) {
   flex: 0 0 var(--icon-size);
   width: var(--icon-size);
   height: var(--icon-size);

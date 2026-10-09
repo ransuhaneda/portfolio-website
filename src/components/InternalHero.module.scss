@@ -1,4 +1,4 @@
-@use '../styles/mixins' as mix;
+@use "../styles/mixins" as mix;
 
 .root {
   border-bottom: var(--section-divider);
@@ -37,12 +37,13 @@
   @include mix.flex(row, null, center, var(--gap-inline), wrap);
 }
 
-
 @include mix.mq(md) {
   .inner {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     align-items: end;
   }
 
-  .copy { grid-column: 1 / -1; }
+  .copy {
+    grid-column: 1 / -1;
+  }
 }

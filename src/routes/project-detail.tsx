@@ -1,10 +1,11 @@
-import { routeMetaDescriptors } from '../content/routeMetaDescriptors'
-import { siteContent } from '../content/siteContent'
-import { ProjectDetailPage } from '../pages/ProjectDetailPage'
+import { routeMetaDescriptors } from "../content/routeMetaDescriptors";
+import { siteContent } from "../content/siteContent";
+import { ProjectDetailPage } from "../pages/ProjectDetailPage";
 
+// oxlint-disable-next-line react/only-export-components
 export function meta({ params }: { params: { slug?: string } }) {
-  const project = siteContent.projects.find((entry) => entry.slug === params.slug)
-  return routeMetaDescriptors(project ? `/projects/${project.slug}` : '/404')
+  const project = siteContent.projects.find((entry) => entry.slug === params.slug);
+  return routeMetaDescriptors(project ? `/projects/${project.slug}` : "/404");
 }
 
-export default ProjectDetailPage
+export default ProjectDetailPage;
