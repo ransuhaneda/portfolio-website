@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { LuCircleCheck, LuEraser, LuImage, LuUpload } from "react-icons/lu";
 import type { MediaTargetSelection } from "../../adminTypes";
 import type { BlogPostResponse, Project } from "../../types";
@@ -11,13 +11,9 @@ type SelectedMediaPreviewProps = {
 };
 
 const SelectedMediaPreview = ({ file }: SelectedMediaPreviewProps) => {
-  const [previewUrl, setPreviewUrl] = useState("");
+  const previewUrl = useMemo(() => URL.createObjectURL(file), [file]);
 
-  useEffect(() => {
-    const objectUrl = URL.createObjectURL(file);
-    setPreviewUrl(objectUrl);
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [file]);
+  useEffect(() => () => URL.revokeObjectURL(previewUrl), [previewUrl]);
 
   return (
     <div className="admin-media-preview admin-media-preview--field">

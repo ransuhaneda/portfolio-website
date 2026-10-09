@@ -21,14 +21,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
     // SAFETY: React dispatches this handler from an Element, which supports closest().
     const target = event.target as HTMLElement;
     if (target.closest("a, button")) return;
-    navigate(projectPath, { state: { from: location.pathname } });
+    void navigate(projectPath, { state: { from: location.pathname } });
   };
 
   const handleCardKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (event.target !== event.currentTarget) return;
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
-    navigate(projectPath, { state: { from: location.pathname } });
+    void navigate(projectPath, { state: { from: location.pathname } });
   };
 
   return (

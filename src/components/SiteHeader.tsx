@@ -27,6 +27,8 @@ export function SiteHeader() {
   const navAriaLabel = siteContent.siteChrome?.headerNavAriaLabel ?? "Primary";
 
   useEffect(() => {
+    // Route changes close the externally controlled mobile menu.
+    // oxlint-disable-next-line react/set-state-in-effect
     setIsMenuOpen(false);
   }, [location.pathname]);
 

@@ -159,6 +159,7 @@ export const lintConfig = {
         "react/only-export-components": ["warn", { allowConstantExport: true }],
       },
     },
+
     {
       files: ["scripts/**/*.{js,mjs,cjs}", "*.config.ts", "src/entry.server.tsx", "**/*.test.ts"],
       env: { browser: false, node: true, es2023: true },

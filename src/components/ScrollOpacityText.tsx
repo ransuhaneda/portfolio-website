@@ -51,7 +51,7 @@ export function ScrollOpacityText({
       });
 
       requestAnimationFrame(() => ScrollTrigger.refresh());
-      document.fonts?.ready.then(() => ScrollTrigger.refresh());
+      void document.fonts?.ready.then(() => ScrollTrigger.refresh());
     },
     { scope: triggerRef, dependencies: [children], revertOnUpdate: true },
   );

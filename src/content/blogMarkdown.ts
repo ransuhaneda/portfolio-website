@@ -15,7 +15,9 @@ export function escapeHtml(value: string): string {
 
 export function safeBlogUrl(value: string, baseUrl: string): string | undefined {
   if (
-    [...value].some((character) => character.charCodeAt(0) <= 32 || character.charCodeAt(0) === 127)
+    value
+      .split("")
+      .some((character) => character.charCodeAt(0) <= 32 || character.charCodeAt(0) === 127)
   )
     return undefined;
   try {

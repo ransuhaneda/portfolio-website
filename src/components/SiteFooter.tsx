@@ -37,7 +37,7 @@ function FeaturedLink({ label, to }: { label: string; to: string }) {
 export function SiteFooter() {
   const brand = getBrandParts(siteContent.site.name);
   const linktreeUrl = getLinktreeUrl();
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear(); // oxlint-disable-line react/purity -- copyright year is intentionally current.
   const visibleSocials = siteContent.site.socials.filter((social) => social.label !== "Linktree");
   const footerCopy = siteContent.siteChrome?.footer;
   const moreLinks = footerCopy?.moreLinks ?? [

@@ -85,6 +85,8 @@ export function ContactForm({
   useEffect(() => {
     if (!toast) return;
 
+    // The toast lifecycle is an external timer synchronization.
+    // oxlint-disable-next-line react/set-state-in-effect
     setIsToastFading(false);
     const fadeTimer = window.setTimeout(() => setIsToastFading(true), 3000);
     const removeTimer = window.setTimeout(() => setToast(null), 3240);

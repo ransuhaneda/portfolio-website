@@ -520,7 +520,8 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
         isRecord(entry) &&
         typeof entry.value === "string" &&
         typeof entry.label === "string" &&
-        ["accent", "accent-2", "accent-3"].includes(`${entry.tone}`),
+        typeof entry.tone === "string" &&
+        ["accent", "accent-2", "accent-3"].includes(entry.tone),
     )
   )
     return false;
@@ -772,7 +773,10 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
       ].every((key) => typeof entry[key] === "string")
     )
       return false;
-    if (entry.kind !== undefined && !["case-study", "experiment"].includes(`${entry.kind}`))
+    if (
+      entry.kind !== undefined &&
+      (typeof entry.kind !== "string" || !["case-study", "experiment"].includes(entry.kind))
+    )
       return false;
     if (entry.status !== undefined && typeof entry.status !== "string") return false;
     if (
@@ -815,7 +819,10 @@ const validateProject = (value: JsonValue): value is Project => {
     ].every((key) => typeof value[key] === "string")
   )
     return false;
-  if (value.kind !== undefined && !["case-study", "experiment"].includes(`${value.kind}`))
+  if (
+    value.kind !== undefined &&
+    (typeof value.kind !== "string" || !["case-study", "experiment"].includes(value.kind))
+  )
     return false;
   if (value.status !== undefined && typeof value.status !== "string") return false;
   if (
@@ -1065,12 +1072,18 @@ const isBlogPostDeleteRequest = (value: JsonValue): value is BlogPostDeleteReque
   (value.commitMessage === undefined || typeof value.commitMessage === "string") &&
   typeof value.sha === "string";
 
-const getGitHubHeaders = (token: string): HeadersInit => ({
-  Accept: "application/vnd.github+json",
-  Authorization: `Bearer ${token}`,
-  "User-Agent": "portfolio-admin",
-  "X-GitHub-Api-Version": "2022-11-28",
-});
+const getGitHubHeaders = (token: string) =>
+  ({
+    Accept: "application/vnd.github+json",
+    Authorization: `Bearer ${token}`,
+    "User-Agent": "portfolio-admin",
+    "X-GitHub-Api-Version": "2022-11-28",
+  }) satisfies HeadersInit;
+
+const getFormString = (formData: FormData, name: string): string => {
+  const value = formData.get(name);
+  return typeof value === "string" ? value : "";
+};
 
 const getRepoBase = (env: Env): string =>
   `${GITHUB_API_BASE}/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}`;
@@ -1705,8 +1718,8 @@ const handleAdminMediaUpload = async ({ request, env }: PagesContext): Promise<R
   if (session instanceof Response) return session;
 
   const formData = await request.formData();
-  const area = `${formData.get("area") ?? ""}`;
-  const slug = sanitizePathSegment(`${formData.get("slug") ?? ""}`);
+  const area = getFormString(formData, "area");
+  const slug = sanitizePathSegment(getFormString(formData, "slug"));
   const file = formData.get("file");
 
   if (!area || !isAllowedMediaArea(area)) {

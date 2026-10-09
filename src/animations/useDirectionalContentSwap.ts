@@ -85,6 +85,8 @@ export function useDirectionalContentSwap({
     { scope },
   );
 
+  // GSAP invokes this callback after render from user interaction.
+  // oxlint-disable-next-line react/refs
   const swap = contextSafe((direction: Direction, commit: () => void) => {
     if (animatingRef.current) return Promise.resolve();
 

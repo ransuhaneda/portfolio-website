@@ -84,13 +84,13 @@ export function FeaturedProjectCarousel({
     // SAFETY: React dispatches this handler from an Element, which supports closest().
     const target = event.target as HTMLElement;
     if (target.closest("a, button")) return;
-    openProject();
+    void openProject();
   };
   const handleGridKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.target !== event.currentTarget) return;
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
-    openProject();
+    void openProject();
   };
 
   return (

@@ -41,7 +41,10 @@ export const useMediaUploader = ({
   const selectedProjectMediaSlug = getProjectMediaSlug(selectedProject);
 
   useEffect(() => {
+    // Selected resources are external state synchronized with the active upload area.
+    // oxlint-disable-next-line react/set-state-in-effect
     if (mediaArea === "blog") setMediaSlug(selectedBlogMediaSlug);
+    // oxlint-disable-next-line react/set-state-in-effect
     if (mediaArea === "projects") setMediaSlug(selectedProjectMediaSlug);
     setMediaTarget(null);
   }, [mediaArea, selectedBlogMediaSlug, selectedProjectMediaSlug]);

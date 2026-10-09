@@ -151,6 +151,8 @@ export const App = () => {
     if (!auth) return;
 
     if (auth === "success") {
+      // OAuth callback state is read from the external URL hash.
+      // oxlint-disable-next-line react/set-state-in-effect
       setAuthStatus("Signed in with GitHub.");
       setError(null);
     } else if (auth === "error") {

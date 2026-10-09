@@ -111,6 +111,8 @@ export const useBlogEditor = ({
 
   useEffect(() => {
     if (!selectedBlogPost && selectedBlogMeta?.slug) {
+      // Loading the selected resource synchronizes with the authenticated API.
+      // oxlint-disable-next-line react/set-state-in-effect
       void loadBlogPost(selectedBlogMeta.slug);
     }
   }, [loadBlogPost, selectedBlogMeta, selectedBlogPost]);
