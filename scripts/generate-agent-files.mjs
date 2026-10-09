@@ -99,11 +99,13 @@ ${siteContent.site.tagline}
 ${siteContent.home.hero.eyebrow}
 
 ## Homepage hero
+
 ${siteContent.home.hero.title}
 
 ${siteContent.home.hero.description}
 
 ## Main pages
+
 ${routes
   .filter((route) =>
     ["/", "/about", "/blog", "/projects", "/contact", "/resume", "/design-system"].includes(
@@ -114,12 +116,15 @@ ${routes
   .join("\n")}
 
 ## Featured case studies
+
 ${featuredProjects.map((project) => `- [${project.title}](${siteUrl}/projects/${project.slug}.md): ${project.summary}`).join("\n")}
 
 ## Homepage stats
+
 ${siteContent.home.stats.map((stat) => `- ${stat.value}: ${stat.label}`).join("\n")}
 
 ## Highlighted skills
+
 ${bullets(siteContent.home.skills.items)}
 `;
 
@@ -130,6 +135,7 @@ ${siteContent.about.intro}
 ${siteContent.about.body.join("\n\n")}
 
 ## Working principles
+
 ${bullets(siteContent.about.principles)}
 `;
 
@@ -159,7 +165,7 @@ ${siteContent.projects
 
 const resumeSkillsMd = siteContent.resume.skillGroups?.length
   ? siteContent.resume.skillGroups
-      .map((group) => `### ${group.title}\n${bullets(group.items)}`)
+      .map((group) => `### ${group.title}\n\n${bullets(group.items)}`)
       .join("\n\n")
   : bullets(siteContent.resume.skills);
 
@@ -172,19 +178,21 @@ ${siteContent.resume.summary}
 [${siteContent.resume.download.label}](${siteUrl}${siteContent.resume.download.href})
 
 ## Skills
+
 ${resumeSkillsMd}
 
 ## Experience
+
 ${siteContent.resume.experience
-  .map((job) => `### ${job.role}, ${job.company} (${job.period})\n${bullets(job.highlights)}`)
+  .map((job) => `### ${job.role}, ${job.company} (${job.period})\n\n${bullets(job.highlights)}`)
   .join("\n\n")}
 
 ${
   siteContent.resume.education?.length
-    ? `## ${siteContent.resume.educationSectionTitle ?? "Education & certifications"}\n${siteContent.resume.education
+    ? `## ${siteContent.resume.educationSectionTitle ?? "Education & certifications"}\n\n${siteContent.resume.education
         .map(
           (item) =>
-            `### ${item.program}, ${item.school} (${item.period})\n${bullets(item.highlights)}`,
+            `### ${item.program}, ${item.school} (${item.period})\n\n${bullets(item.highlights)}`,
         )
         .join("\n\n")}`
     : ""
@@ -223,33 +231,41 @@ const projectMarkdown = Object.fromEntries(
 ${project.image ? `- Homepage image: ${siteUrl}${project.image.src}` : ""}
 
 ## Summary
+
 ${project.summary}
 
 ## Overview
+
 ${project.overview}
 
 ## Problem
+
 ${project.challenge}
 
 ## My responsibility
+
 ${project.responsibility}
 
 ${bullets(project.scope)}
 
 ## What I did
+
 ${project.approachSummary}
 
 ${bullets(project.approach)}
 
 ## Result
+
 ${project.resultSummary}
 
 ${bullets(project.outcome)}
 
 ## Project scope
+
 ${bullets(project.scope)}
 
 ## Reflection
+
 ${project.reflection}
 `,
   ]),
@@ -460,6 +476,6 @@ await fs.writeFile(
 await fs.writeFile(path.join(skillDir, "SKILL.md"), skillMd, "utf8");
 await fs.writeFile(
   path.join(publicDir, ".well-known", "agent-skills", "index.json"),
-  JSON.stringify(agentIndex, null, 2),
+  JSON.stringify(agentIndex, null, 2) + "\n",
   "utf8",
 );

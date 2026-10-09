@@ -110,6 +110,34 @@ describe("blog content contract", () => {
       );
       await writeFile(path.join(root, "public/blog/manual.md"), "Unowned asset");
       run();
+      const mirrors = JSON.parse(
+        await readFile(path.join(root, "public/.generated-mirrors.json"), "utf8"),
+      );
+      const formattedFiles = [
+        "public/index.md",
+        "public/about.md",
+        "public/blog.md",
+        "public/projects.md",
+        "public/resume.md",
+        "public/contact.md",
+        "public/design-system.md",
+        "public/.generated-mirrors.json",
+        "public/.well-known/agent-skills/index.json",
+        "public/.well-known/agent-skills/site-navigation/SKILL.md",
+        "src/content/publishedBlogPosts.json",
+        ...mirrors.map((mirror: string) => `public${mirror}`),
+      ].map((file) => path.join(root, file));
+      execFileSync("vp", ["fmt", "--check", ...formattedFiles], {
+        cwd: process.cwd(),
+        encoding: "utf8",
+      });
+      const firstGeneration = await Promise.all(
+        formattedFiles.map((file) => readFile(file, "utf8")),
+      );
+      run();
+      expect(await Promise.all(formattedFiles.map((file) => readFile(file, "utf8")))).toEqual(
+        firstGeneration,
+      );
       for (const file of [
         "src/content/publishedBlogPosts.json",
         "public/blog.md",
