@@ -77,7 +77,6 @@ export type Project = {
   year: string;
   client: string;
   kind?: ProjectKind;
-  status?: string;
   summary: string;
   role: string;
   responsibility: string;
@@ -98,10 +97,8 @@ export type Project = {
 export type SiteContent = {
   site: {
     name: string;
-    tagline: string;
     description: string;
     email: string;
-    location: string;
     siteUrl: string;
     socials: SocialLink[];
   };
@@ -167,7 +164,7 @@ export type SiteContent = {
     intro: string;
     bodySectionTitle: string;
     processSectionTitle: string;
-    processSectionIntro: string;
+
     principlesSectionTitle: string;
     toolsSectionTitle: string;
     body: string[];
@@ -191,12 +188,7 @@ export type SiteContent = {
   contact: {
     eyebrow?: string;
     title: string;
-    body: string;
-    emailCtaPrefix?: string;
-    availability: string;
-    availabilityTitle: string;
-    availabilityStatusLabel: string;
-    availabilityLocationLabel: string;
+
     form: ContactFormContent;
     methods: ContactMethod[];
     heroImage?: ImageAsset;

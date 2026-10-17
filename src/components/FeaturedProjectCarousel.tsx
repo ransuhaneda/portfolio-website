@@ -5,7 +5,7 @@ import {
   useDirectionalContentSwap,
   type SwapDirection,
 } from "../animations/useDirectionalContentSwap";
-import type { Project } from "../content/siteContent";
+import { getPreferredProjectLink, type Project } from "../content/siteContent";
 import sty from "./FeaturedProjectCarousel.module.scss";
 import { ProjectStack } from "./ProjectStack";
 import { PretextText } from "./PretextText";
@@ -78,6 +78,7 @@ export function FeaturedProjectCarousel({
   const total = String(totalProjects).padStart(2, "0");
   const stackLabel = (stackAriaTemplate ?? "{title} tools").replace("{title}", activeProject.title);
   const projectPath = `/projects/${activeProject.slug}`;
+  const projectLink = getPreferredProjectLink(activeProject);
 
   const openProject = () => navigate(projectPath, { state: { from: "/" } });
   const handleGridClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -151,10 +152,29 @@ export function FeaturedProjectCarousel({
                 <dt>Client</dt>
                 <dd>{activeProject.client}</dd>
               </div>
-              <div>
-                <dt>Role</dt>
-                <dd>{activeProject.role}</dd>
-              </div>
+              {projectLink ? (
+                <div>
+                  <dt>
+                    {new URL(projectLink.href).hostname === "github.com" ? "GitHub" : "Website"}
+                  </dt>
+                  <dd>
+                    <a
+                      className={sty.projectLink}
+                      href={projectLink.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {projectLink.label}
+                      <LuExternalLink aria-hidden="true" focusable="false" />
+                    </a>
+                  </dd>
+                </div>
+              ) : (
+                <div>
+                  <dt>Role</dt>
+                  <dd>{activeProject.role}</dd>
+                </div>
+              )}
               <div>
                 <dt>Year</dt>
                 <dd>{activeProject.year}</dd>

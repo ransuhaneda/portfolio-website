@@ -12,7 +12,6 @@
 .quoteLabel,
 .backLink,
 .metaTable dt,
-.projectNav span,
 .relatedCard span,
 .viewAll {
   margin-block: 0;
@@ -23,7 +22,6 @@
 
 .kicker,
 .backLink,
-.projectNav span,
 .relatedCard span,
 .viewAll {
   color: var(--color-text-muted);
@@ -42,7 +40,6 @@
 
 .backLink,
 .viewAll,
-.projectNav a,
 .relatedCard a {
   color: inherit;
   text-decoration: none;
@@ -128,65 +125,8 @@
 }
 
 .metaTable dd {
-  // margin-block: 0;
   color: var(--color-text-primary);
   @include mix.type-style(body-sm, 400);
-}
-
-.statusRow {
-  background: var(--color-surface-overlay);
-}
-
-.statusContent {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-xs);
-}
-
-.statusIndicator {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 0.75rem;
-  width: 0.75rem;
-  height: 0.75rem;
-}
-
-.statusIndicator::before {
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--color-action-primary);
-  border-radius: 50%;
-  content: "";
-  opacity: 0;
-  transform: scale(0.45);
-  transform-origin: center;
-  animation: statusPulse 1.8s var(--motion-ease-standard) infinite;
-}
-
-.statusIndicator > span {
-  position: relative;
-  z-index: 1;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--color-action-primary);
-  box-shadow: 0 0 0 0.15rem var(--color-focus-ring);
-}
-
-@keyframes statusPulse {
-  0% {
-    opacity: 0.45;
-    transform: scale(0.45);
-  }
-
-  70%,
-  100% {
-    opacity: 0;
-    transform: scale(1.9);
-  }
 }
 
 .projectLinks {
@@ -209,14 +149,6 @@
     color var(--motion-emphasized) var(--motion-ease-emphasized),
     border-color var(--motion-emphasized) var(--motion-ease-emphasized),
     background-color var(--motion-emphasized) var(--motion-ease-emphasized);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .statusIndicator::before {
-    animation: none;
-    opacity: 0.35;
-    transform: scale(1.35);
-  }
 }
 
 .projectLinks a:hover {
@@ -375,46 +307,6 @@
   text-wrap: balance;
 }
 
-.projectNav {
-  border-bottom: 1px solid var(--color-border-subtle);
-}
-
-.projectNav > :global(.lg-wrapper) > div {
-  display: grid;
-  gap: 1px;
-  padding-block: var(--space-lg);
-}
-
-.projectNav a {
-  display: grid;
-  gap: var(--space-xs);
-  padding-block: var(--space-md);
-  border-top: 1px solid var(--color-border-subtle);
-  transition:
-    color var(--motion-emphasized) var(--motion-ease-emphasized),
-    transform var(--motion-emphasized) var(--motion-ease-emphasized);
-}
-
-.projectNav span {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2xs);
-}
-
-.projectNav strong {
-  text-transform: uppercase;
-  @include mix.type-style(h4);
-}
-
-.projectNav a:hover {
-  color: var(--color-action-primary);
-  transform: translateX(0.15rem);
-}
-
-.projectNav a:last-child:hover {
-  transform: translateX(-0.15rem);
-}
-
 .relatedSection {
   padding-block: tokens.fluid(4.5rem, 7rem);
   background: var(--color-background-page);
@@ -495,11 +387,6 @@
     min-width: 0;
   }
 
-  .heroAside {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
   .editorialBlock {
     grid-template-columns: minmax(8rem, 0.28fr) minmax(0, 1fr);
   }
@@ -513,7 +400,6 @@
     align-items: end;
   }
 
-  .projectNav > :global(.lg-wrapper) > div,
   .relatedGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -530,14 +416,17 @@
     grid-column: 4 / span 8;
   }
 
-  .projectNav a:last-child {
-    text-align: right;
-    justify-items: end;
-  }
-
   .relatedHeader {
     flex-direction: row;
     align-items: end;
+  }
+
+  .relatedCard:last-child {
+    text-align: right;
+  }
+
+  .relatedCard:last-child a {
+    justify-items: end;
   }
 }
 
@@ -555,8 +444,6 @@
 @include mix.reduced-motion {
   .backLink:hover,
   .viewAll:hover,
-  .projectNav a:hover,
-  .projectNav a:last-child:hover,
   .relatedCard a:hover .visual img,
   .relatedCard a:hover .visualPlaceholder {
     transform: none;

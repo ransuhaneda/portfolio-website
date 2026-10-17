@@ -7,7 +7,7 @@ import sty from "./InternalPages.module.scss";
 export function AboutPage() {
   return (
     <div className={sty.page}>
-      <InternalHero title={siteContent.about.title} intro={siteContent.about.intro} />
+      <InternalHero title={siteContent.about.title} />
 
       <Section title={siteContent.about.bodySectionTitle}>
         <div className={sty.proseLead} data-text-reveal="copy">
@@ -19,10 +19,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section
-        title={siteContent.about.processSectionTitle}
-        intro={siteContent.about.processSectionIntro}
-      >
+      <Section title={siteContent.about.processSectionTitle}>
         <div className={sty.cardGrid} data-text-reveal="copy">
           {siteContent.about.process.map((step, index) => (
             <article className={sty.numberedCard} key={step.title}>

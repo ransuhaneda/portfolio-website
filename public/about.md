@@ -1,7 +1,5 @@
 # About
 
-I build responsive websites, maintain WordPress sites, and also work on visual design.
-
 I work as a frontend web developer and graphic designer at Tech Support Plus I.T Service in Taguig City, Manila. My work includes custom WordPress themes, Elementor migrations, reusable modules, responsive MVP landing-page demos, content updates, security recovery, and deployment support.
 
 At ABCDE Creative Studio, I turned Figma designs into responsive React pages and reusable sections. My earlier work in print and social media design taught me to pay attention to the small details and the final output.

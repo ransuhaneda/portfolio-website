@@ -70,30 +70,27 @@ export function ProjectDetailPage() {
                 ariaLabel={`${project.title} technologies`}
               />
               <dl className={sty.metaTable} data-text-reveal="copy" aria-label="Project metadata">
-                <div className={sty.statusRow}>
-                  <dt>Status</dt>
-                  <dd className={sty.statusContent}>
-                    {project.links?.length ? (
+                {project.links?.length ? (
+                  <div>
+                    <dt>{detailCopy?.linksTitle ?? "Links"}</dt>
+                    <dd>
                       <span className={sty.projectLinks}>
-                        {project.links.map((link, index) => (
+                        {project.links.map((link) => (
                           <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                            {index === 0 ? (
-                              <span className={sty.statusIndicator} aria-label="Online">
-                                <span aria-hidden="true" />
-                              </span>
-                            ) : null}
                             {link.label}
                             <LuExternalLink aria-hidden="true" focusable="false" />
                           </a>
                         ))}
                       </span>
-                    ) : null}
-                  </dd>
-                </div>
-                <div>
-                  <dt>{detailCopy?.roleLabel ?? "Role"}</dt>
-                  <dd>{project.role}</dd>
-                </div>
+                    </dd>
+                  </div>
+                ) : null}
+                {!project.links?.length ? (
+                  <div>
+                    <dt>{detailCopy?.roleLabel ?? "Role"}</dt>
+                    <dd>{project.role}</dd>
+                  </div>
+                ) : null}
                 <div>
                   <dt>{detailCopy?.clientLabel ?? "Context"}</dt>
                   <dd>{project.client}</dd>
@@ -270,26 +267,10 @@ export function ProjectDetailPage() {
         </div>
       </section>
 
-      {/* <nav className={sty.projectNav} aria-label="Adjacent projects">
-        <div className="lg-wrapper">
-          <div>
-              <Link to={`/projects/${previousProject.slug}`}>
-              <span><LuArrowLeft aria-hidden="true" focusable="false" />Previous Project</span>
-              <strong>{previousProject.title}</strong>
-            </Link>
-            <Link to={`/projects/${nextProject.slug}`}>
-              <span>Next Project<LuArrowRight aria-hidden="true" focusable="false" /></span>
-              <strong>{nextProject.title}</strong>
-            </Link>
-          
-          </div>
-        </div>
-      </nav> */}
-
       <section
         className={sty.relatedSection}
         data-text-reveal-group="scrub"
-        aria-labelledby="related-title"
+        aria-label="More projects"
       >
         <div className="lg-wrapper">
           <div className={sty.relatedHeader}>
@@ -297,9 +278,6 @@ export function ProjectDetailPage() {
               <p className={sty.kicker} data-text-reveal="copy">
                 [ MORE PROJECTS ]
               </p>
-              <PretextText as="h2" id="related-title" measure="heading" reveal="heading">
-                More Selected Work
-              </PretextText>
             </div>
             <Link className={sty.viewAll} to="/projects">
               View All Work
