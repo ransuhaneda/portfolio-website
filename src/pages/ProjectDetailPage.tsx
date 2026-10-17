@@ -1,6 +1,6 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import { LuArrowLeft, LuArrowRight, LuExternalLink } from "react-icons/lu";
-import { siteContent } from "../content/siteContent";
+import { getPreferredProjectLink, siteContent } from "../content/siteContent";
 
 import sty from "./ProjectDetailPage.module.scss";
 import { PretextText } from "../components/PretextText";
@@ -47,6 +47,7 @@ export function ProjectDetailPage() {
 
   const projects = siteContent.projects;
   const relatedProjects = getRelatedEntries(projects, project.slug);
+  const preferredProjectLink = getPreferredProjectLink(project);
 
   return (
     <div className={sty.page} key={project.slug}>
@@ -75,9 +76,9 @@ export function ProjectDetailPage() {
                   <dd className={sty.statusContent}>
                     {project.links?.length ? (
                       <span className={sty.projectLinks}>
-                        {project.links.map((link, index) => (
+                        {project.links.map((link) => (
                           <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                            {index === 0 ? (
+                            {link === preferredProjectLink ? (
                               <span className={sty.statusIndicator} aria-label="Online">
                                 <span aria-hidden="true" />
                               </span>
@@ -87,13 +88,17 @@ export function ProjectDetailPage() {
                           </a>
                         ))}
                       </span>
-                    ) : null}
+                    ) : (
+                      <span>{project.status || "Not publicly linked"}</span>
+                    )}
                   </dd>
                 </div>
-                <div>
-                  <dt>{detailCopy?.roleLabel ?? "Role"}</dt>
-                  <dd>{project.role}</dd>
-                </div>
+                {!project.links?.length ? (
+                  <div>
+                    <dt>{detailCopy?.roleLabel ?? "Role"}</dt>
+                    <dd>{project.role}</dd>
+                  </div>
+                ) : null}
                 <div>
                   <dt>{detailCopy?.clientLabel ?? "Context"}</dt>
                   <dd>{project.client}</dd>

@@ -306,3 +306,15 @@ export function getLinktreeUrl() {
     (social) => /linktree/i.test(social.label) || /linktr\.ee/i.test(social.href),
   )?.href;
 }
+
+export function getPreferredProjectLink(project: Project) {
+  return (
+    project.links?.find((link) => {
+      try {
+        return new URL(link.href, siteContent.site.siteUrl).hostname !== "github.com";
+      } catch {
+        return false;
+      }
+    }) ?? project.links?.[0]
+  );
+}

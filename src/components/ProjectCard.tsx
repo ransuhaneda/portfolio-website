@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { LuExternalLink } from "react-icons/lu";
 import { siteContent, type Project } from "../content/siteContent";
 import sty from "./ProjectCard.module.scss";
 import { ProjectStack } from "./ProjectStack";
@@ -53,9 +54,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className={sty.meta}>
           <span>{project.client}</span>
           {project.status ? <span>{project.status}</span> : null}
-          <span>
-            {roleLabelPrefix}: {project.role}
-          </span>
+          {project.links?.length ? (
+            <span className={sty.projectLinks}>
+              {project.links.map((link) => (
+                <a
+                  className={sty.projectLink}
+                  href={link.href}
+                  key={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {link.label}
+                  <LuExternalLink aria-hidden="true" focusable="false" />
+                </a>
+              ))}
+            </span>
+          ) : (
+            <span>
+              {roleLabelPrefix}: {project.role}
+            </span>
+          )}
         </div>
         <div className={sty.stackRow}>
           <ProjectStack items={project.stack} ariaLabel={stackAriaLabel} />
