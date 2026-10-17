@@ -43,7 +43,7 @@ export function HomePage() {
                 {renderAccentedTitle(title, hero.accentPhrase)}
               </PretextText>
               <div className={sty.heroAside}>
-                <div className={sty.heroSupport}>
+                {/* <div className={sty.heroSupport}>
                   <PretextText measure="intro" reveal="copy">
                     {hero.description || siteContent.site.tagline}
                   </PretextText>
@@ -57,14 +57,14 @@ export function HomePage() {
                       </div>
                     ))}
                   </dl>
-                ) : null}
+                ) : null} */}
                 <div className={`${sty.heroActions} button-row`}>
                   <a className="button button--primary" href="#selected-work">
                     {siteContent.home.cta.primaryLabel}
                     <LuArrowDown aria-hidden="true" focusable="false" />
                   </a>
                   {siteContent.home.cta.secondaryLabel ? (
-                    <Link className="button button--ghost" to="/resume">
+                    <Link className="button button--ghost" to="/contact">
                       {siteContent.home.cta.secondaryLabel}
                       <LuArrowRight aria-hidden="true" focusable="false" />
                     </Link>
