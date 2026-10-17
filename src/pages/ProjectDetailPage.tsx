@@ -1,6 +1,6 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import { LuArrowLeft, LuArrowRight, LuExternalLink } from "react-icons/lu";
-import { getPreferredProjectLink, siteContent } from "../content/siteContent";
+import { siteContent } from "../content/siteContent";
 
 import sty from "./ProjectDetailPage.module.scss";
 import { PretextText } from "../components/PretextText";
@@ -47,7 +47,6 @@ export function ProjectDetailPage() {
 
   const projects = siteContent.projects;
   const relatedProjects = getRelatedEntries(projects, project.slug);
-  const preferredProjectLink = getPreferredProjectLink(project);
 
   return (
     <div className={sty.page} key={project.slug}>
@@ -71,28 +70,21 @@ export function ProjectDetailPage() {
                 ariaLabel={`${project.title} technologies`}
               />
               <dl className={sty.metaTable} data-text-reveal="copy" aria-label="Project metadata">
-                <div className={sty.statusRow}>
-                  <dt>Status</dt>
-                  <dd className={sty.statusContent}>
-                    {project.links?.length ? (
+                {project.links?.length ? (
+                  <div>
+                    <dt>{detailCopy?.linksTitle ?? "Links"}</dt>
+                    <dd>
                       <span className={sty.projectLinks}>
                         {project.links.map((link) => (
                           <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                            {link === preferredProjectLink ? (
-                              <span className={sty.statusIndicator} aria-label="Online">
-                                <span aria-hidden="true" />
-                              </span>
-                            ) : null}
                             {link.label}
                             <LuExternalLink aria-hidden="true" focusable="false" />
                           </a>
                         ))}
                       </span>
-                    ) : (
-                      <span>{project.status || "Not publicly linked"}</span>
-                    )}
-                  </dd>
-                </div>
+                    </dd>
+                  </div>
+                ) : null}
                 {!project.links?.length ? (
                   <div>
                     <dt>{detailCopy?.roleLabel ?? "Role"}</dt>
@@ -275,26 +267,10 @@ export function ProjectDetailPage() {
         </div>
       </section>
 
-      {/* <nav className={sty.projectNav} aria-label="Adjacent projects">
-        <div className="lg-wrapper">
-          <div>
-              <Link to={`/projects/${previousProject.slug}`}>
-              <span><LuArrowLeft aria-hidden="true" focusable="false" />Previous Project</span>
-              <strong>{previousProject.title}</strong>
-            </Link>
-            <Link to={`/projects/${nextProject.slug}`}>
-              <span>Next Project<LuArrowRight aria-hidden="true" focusable="false" /></span>
-              <strong>{nextProject.title}</strong>
-            </Link>
-          
-          </div>
-        </div>
-      </nav> */}
-
       <section
         className={sty.relatedSection}
         data-text-reveal-group="scrub"
-        aria-labelledby="related-title"
+        aria-label="More projects"
       >
         <div className="lg-wrapper">
           <div className={sty.relatedHeader}>
@@ -302,9 +278,6 @@ export function ProjectDetailPage() {
               <p className={sty.kicker} data-text-reveal="copy">
                 [ MORE PROJECTS ]
               </p>
-              <PretextText as="h2" id="related-title" measure="heading" reveal="heading">
-                More Selected Work
-              </PretextText>
             </div>
             <Link className={sty.viewAll} to="/projects">
               View All Work
