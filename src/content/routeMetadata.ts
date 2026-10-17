@@ -11,20 +11,20 @@ const personSchema = {
   name: content.site.name,
   url: content.site.siteUrl,
   email: `mailto:${content.site.email}`,
-  address: { "@type": "PostalAddress", addressCountry: content.site.location },
+
   sameAs: content.site.socials.map((social) => social.href),
 };
 
 export const routeMetadata = [
   {
     path: "/",
-    title: content.site.tagline,
+    title: content.home.hero.title,
     description: content.site.description,
     image: homeImage,
   },
-  { path: "/about", title: content.about.title, description: content.about.intro },
+  { path: "/about", title: content.about.title, description: content.site.description },
   { path: "/resume", title: content.resume.headline, description: content.resume.summary },
-  { path: "/contact", title: content.contact.title, description: content.contact.body },
+  { path: "/contact", title: content.contact.form.title, description: content.site.description },
   { path: "/projects", title: content.projectsPage.title, description: content.projectsPage.intro },
   { path: "/blog", title: content.blogPage.title, description: content.blogPage.intro },
   {

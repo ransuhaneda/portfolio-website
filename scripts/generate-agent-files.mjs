@@ -18,7 +18,7 @@ const siteUrl = (process.env.SITE_URL || siteContent.site.siteUrl || "https://38
   "",
 );
 const email = process.env.CONTACT_EMAIL || siteContent.site.email;
-const location = process.env.CONTACT_LOCATION || siteContent.site.location;
+
 const featuredProjects = siteContent.home.featuredProjects.slugs
   .map((slug) => siteContent.projects.find((project) => project.slug === slug))
   .filter((project) => project !== undefined);
@@ -54,7 +54,7 @@ const categoryLabel = (post) =>
 
 const routes = [
   { path: "/", md: "/index.md", title: "Home", description: siteContent.site.description },
-  { path: "/about", md: "/about.md", title: "About", description: siteContent.about.intro },
+  { path: "/about", md: "/about.md", title: "About", description: siteContent.site.description },
   {
     path: "/blog",
     md: "/blog.md",
@@ -67,7 +67,12 @@ const routes = [
     title: "Projects",
     description: "Project index and case-study summaries.",
   },
-  { path: "/contact", md: "/contact.md", title: "Contact", description: siteContent.contact.body },
+  {
+    path: "/contact",
+    md: "/contact.md",
+    title: "Contact",
+    description: siteContent.site.description,
+  },
   { path: "/resume", md: "/resume.md", title: "Resume", description: siteContent.resume.summary },
   {
     path: "/design-system",
@@ -94,15 +99,9 @@ const bullets = (items) => items.map((item) => `- ${item}`).join("\n");
 
 const homeMd = `# ${siteContent.site.name}
 
-${siteContent.site.tagline}
-
-${siteContent.home.hero.eyebrow}
-
 ## Homepage hero
 
 ${siteContent.home.hero.title}
-
-${siteContent.home.hero.description}
 
 ## Main pages
 
@@ -112,16 +111,15 @@ ${routes
       route.path,
     ),
   )
-  .map((route) => `- [${route.title}](${siteUrl}${route.md}): ${route.description}`)
+  .map(
+    (route) =>
+      `- [${route.title}](${siteUrl}${route.md})${route.description ? `: ${route.description}` : ""}`,
+  )
   .join("\n")}
 
 ## Featured case studies
 
 ${featuredProjects.map((project) => `- [${project.title}](${siteUrl}/projects/${project.slug}.md): ${project.summary}`).join("\n")}
-
-## Homepage stats
-
-${siteContent.home.stats.map((stat) => `- ${stat.value}: ${stat.label}`).join("\n")}
 
 ## Highlighted skills
 
@@ -129,8 +127,6 @@ ${bullets(siteContent.home.skills.items)}
 `;
 
 const aboutMd = `# About
-
-${siteContent.about.intro}
 
 ${siteContent.about.body.join("\n\n")}
 
@@ -199,15 +195,12 @@ ${
 }
 `;
 
+const contactDetails = [`- Email: ${email}`].filter(Boolean).join("\n");
 const contactMd = `# Contact
 
-${siteContent.contact.title}
+${siteContent.contact.form.title}
 
-${siteContent.contact.body}
-
-- Email: ${email}
-- Location: ${location}
-- Availability: ${siteContent.contact.availability}
+${contactDetails}
 `;
 
 const designSystemMd = `# ${siteContent.designSystemPage?.title ?? "Design system reference"}
@@ -300,8 +293,6 @@ const pageMarkdown = {
 
 const llms = `# ${siteContent.site.name}
 
-> ${siteContent.site.tagline}
-
 ${siteContent.site.description}
 
 ## Preferred machine-readable entry points
@@ -321,10 +312,8 @@ const llmsFull = `# ${siteContent.site.name}: full machine-readable content
 
 ## Site summary
 - Name: ${siteContent.site.name}
-- Tagline: ${siteContent.site.tagline}
 - Description: ${siteContent.site.description}
 - Contact email: ${email}
-- Location: ${location}
 
 ## Home
 ${lines(homeMd).join("\n")}

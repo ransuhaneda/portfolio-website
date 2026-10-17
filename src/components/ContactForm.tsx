@@ -7,7 +7,6 @@ import { PretextText } from "./PretextText";
 type ContactFormProps = {
   contact: ContactFormContent;
   recipientEmail: string;
-  showIntro?: boolean;
   showTitle?: boolean;
 };
 
@@ -69,12 +68,7 @@ function validateForm(values: ContactFormState, contact: ContactFormContent) {
   return errors;
 }
 
-export function ContactForm({
-  contact,
-  recipientEmail,
-  showIntro = true,
-  showTitle = true,
-}: ContactFormProps) {
+export function ContactForm({ contact, recipientEmail, showTitle = true }: ContactFormProps) {
   const [formValues, setFormValues] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState<ContactFormErrors>({});
   const [toast, setToast] = useState<ContactFormToast | null>(null);
@@ -148,17 +142,8 @@ export function ContactForm({
 
   return (
     <div className={sty.root}>
-      {showIntro ? (
-        <div className={sty.intro}>
-          <PretextText as="h2" measure="heading">
-            {contact.title}
-          </PretextText>
-          {contact.intro ? <PretextText measure="intro">{contact.intro}</PretextText> : null}
-        </div>
-      ) : null}
-
       <form className={sty.form} onSubmit={handleSubmit} noValidate>
-        {!showIntro && showTitle ? (
+        {showTitle ? (
           <PretextText as="h4" measure="intro">
             {contact.title}
           </PretextText>

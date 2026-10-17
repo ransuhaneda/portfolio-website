@@ -44,7 +44,6 @@ export type ContactMethod = {
 
 export type ContactFormContent = {
   title: string;
-  intro: string;
   submitLabel: string;
   messageLimit: number;
   nameLabel: string;
@@ -83,7 +82,6 @@ export type Project = {
   year: string;
   client: string;
   kind?: ProjectKind;
-  status?: string;
   summary: string;
   role: string;
   responsibility: string;
@@ -101,21 +99,11 @@ export type Project = {
   gallery: ImageAsset[];
 };
 
-export type HomeStatTone = "accent" | "accent-2" | "accent-3";
-
-export type HomeStat = {
-  value: string;
-  label: string;
-  tone: HomeStatTone;
-};
-
 export type SiteContent = {
   site: {
     name: string;
-    tagline: string;
     description: string;
     email: string;
-    location: string;
     siteUrl: string;
     socials: SocialLink[];
   };
@@ -145,18 +133,8 @@ export type SiteContent = {
   };
   home: {
     hero: {
-      eyebrow: string;
       title: string;
-      description: string;
       accentPhrase?: string;
-      dateline?: {
-        left: string;
-        right: string;
-      };
-      index?: Array<{
-        label: string;
-        value: string;
-      }>;
     };
     cta: {
       primaryLabel: string;
@@ -170,15 +148,8 @@ export type SiteContent = {
       fallbackDescription: string;
       stackAriaTemplate?: string;
     };
-    bio: {
-      eyebrow: string;
-      title: string;
-      description: string;
-    };
-    stats: HomeStat[];
     skills: {
       title: string;
-      description: string;
       items: string[];
       groups?: Array<{
         title: string;
@@ -194,10 +165,8 @@ export type SiteContent = {
   about: {
     eyebrow?: string;
     title: string;
-    intro: string;
     bodySectionTitle: string;
     processSectionTitle: string;
-    processSectionIntro: string;
     principlesSectionTitle: string;
     toolsSectionTitle: string;
     body: string[];
@@ -224,17 +193,8 @@ export type SiteContent = {
     experience: Job[];
   };
   contact: {
-    eyebrow?: string;
-    title: string;
-    body: string;
-    emailCtaPrefix?: string;
-    availability: string;
-    availabilityTitle: string;
-    availabilityStatusLabel: string;
-    availabilityLocationLabel: string;
     form: ContactFormContent;
     methods: ContactMethod[];
-    heroImage?: ImageAsset;
   };
   projectsPage?: {
     eyebrow?: string;
@@ -287,7 +247,6 @@ export type SiteContent = {
     roleLabel: string;
     clientLabel: string;
     yearLabel: string;
-    statusLabel?: string;
     stackLabel: string;
     linksTitle?: string;
     stackAriaTemplate: string;
@@ -319,4 +278,16 @@ export function getLinktreeUrl() {
   return siteContent.site.socials.find(
     (social) => /linktree/i.test(social.label) || /linktr\.ee/i.test(social.href),
   )?.href;
+}
+
+export function getPreferredProjectLink(project: Project) {
+  return (
+    project.links?.find((link) => {
+      try {
+        return new URL(link.href, siteContent.site.siteUrl).hostname !== "github.com";
+      } catch {
+        return false;
+      }
+    }) ?? project.links?.[0]
+  );
 }

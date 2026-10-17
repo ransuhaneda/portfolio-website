@@ -175,6 +175,17 @@
   @include mix.type-style(body-sm);
 }
 
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.projectLink:hover,
+.projectLink:focus-visible {
+  color: var(--color-action-primary);
+}
+
 .featuredLinks {
   display: flex;
   flex-wrap: wrap;

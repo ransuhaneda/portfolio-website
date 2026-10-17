@@ -1,9 +1,5 @@
 # Contact
 
-Tell me what needs building.
-
-I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.
+LET'S CONNECT!
 
 - Email: cartecianolance@gmail.com
-- Location: Philippines
-- Availability: Open to frontend roles and selected freelance work

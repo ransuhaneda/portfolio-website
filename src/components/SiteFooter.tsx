@@ -1,6 +1,6 @@
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "react-router-dom";
-import { LuExternalLink, LuGlobe, LuMail, LuMapPin } from "react-icons/lu";
+import { LuExternalLink, LuGlobe, LuMail } from "react-icons/lu";
 import { getLinktreeUrl, siteContent } from "../content/siteContent";
 import { BrandIcon } from "./BrandIcon";
 import { PretextFooterCanvas } from "./PretextFooterCanvas";
@@ -122,10 +122,6 @@ export function SiteFooter() {
                   <LuGlobe aria-hidden="true" className={sty.inlineIcon} focusable="false" />
                   {siteContent.site.siteUrl.replace(/^https?:\/\//, "")}
                 </a>
-                <p>
-                  <LuMapPin aria-hidden="true" className={sty.inlineIcon} focusable="false" />
-                  {siteContent.site.location}
-                </p>
               </div>
             </div>
           </div>

@@ -1,9 +1,109 @@
 import { describe, expect, it } from "vite-plus/test";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { onRequest } from "../../functions/[[path]]";
+import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
+import { ProjectCard } from "../components/ProjectCard";
+import { ProjectDetailPage } from "../pages/ProjectDetailPage";
+import { getPreferredProjectLink, siteContent, type ProjectLink } from "./siteContent";
 import { getRouteMetadata, metadataTags } from "./routeMetadata";
 import { publicUrl, readingMinutes } from "./publicUrl";
 
 describe("public launch boundaries", () => {
+  const project = siteContent.projects[0];
+  const liveLink = getPreferredProjectLink(project)!;
+  const githubLink = project.links!.find((link) => new URL(link.href).hostname === "github.com")!;
+
+  const renderFeaturedMetadata = (links?: ProjectLink[]) =>
+    renderToStaticMarkup(
+      createElement(
+        MemoryRouter,
+        null,
+        createElement(FeaturedProjectCarousel, {
+          projects: [{ ...project, links }],
+          slugs: [project.slug],
+          title: "Selected work",
+        }),
+      ),
+    ).match(/<dl\b[\s\S]*?<\/dl>/)?.[0];
+
+  it("replaces the featured role with the live website even when GitHub comes first", () => {
+    const metadata = renderFeaturedMetadata([githubLink, liveLink]);
+    expect(metadata).toContain("<dt>Website</dt>");
+    expect(metadata).toContain(`href="${liveLink.href}"`);
+    expect(metadata).toContain('target="_blank" rel="noreferrer"');
+    expect(metadata).not.toContain(githubLink.href);
+    expect(metadata).not.toContain("<dt>Role</dt>");
+  });
+
+  it("falls back to GitHub when the featured project has no live website", () => {
+    const metadata = renderFeaturedMetadata([githubLink]);
+    expect(metadata).toContain("<dt>GitHub</dt>");
+    expect(metadata).toContain(`href="${githubLink.href}"`);
+    expect(metadata).not.toContain("<dt>Role</dt>");
+  });
+
+  it("keeps the featured role when there are no project links", () => {
+    for (const links of [[], undefined]) {
+      const metadata = renderFeaturedMetadata(links);
+      expect(metadata).toContain("<dt>Client</dt>");
+      expect(metadata).not.toContain("<a ");
+      expect(metadata).toContain("<dt>Role</dt>");
+      expect(metadata).toContain(`>${project.role}</dd>`);
+    }
+  });
+
+  it("uses every existing project link in project cards and keeps role only as the fallback", () => {
+    for (const entry of siteContent.projects) {
+      const markup = renderToStaticMarkup(
+        createElement(
+          MemoryRouter,
+          { initialEntries: ["/projects"] },
+          createElement(ProjectCard, { project: entry }),
+        ),
+      );
+
+      for (const link of entry.links ?? []) {
+        expect(markup).toContain(`href="${link.href}"`);
+        expect(markup).toContain(link.label);
+      }
+      if (entry.links?.length) expect(markup).not.toContain(`>${entry.role}</span>`);
+      else expect(markup).toContain(`Role: ${entry.role}`);
+    }
+  });
+
+  it("uses all existing project links in every project detail metadata table", () => {
+    for (const entry of siteContent.projects) {
+      const markup = renderToStaticMarkup(
+        createElement(
+          MemoryRouter,
+          { initialEntries: [`/projects/${entry.slug}`] },
+          createElement(
+            Routes,
+            null,
+            createElement(Route, {
+              path: "/projects/:slug",
+              element: createElement(ProjectDetailPage),
+            }),
+          ),
+        ),
+      );
+      const metadata = markup.match(/<dl\b[\s\S]*?<\/dl>/)?.[0];
+      if (entry.links?.length) {
+        expect(metadata).toContain("<dt>Links</dt>");
+        expect(metadata).not.toContain("<dt>Role</dt>");
+        for (const link of entry.links) {
+          expect(metadata).toContain(`href="${link.href}"`);
+        }
+      } else {
+        expect(metadata).not.toContain("<dt>Links</dt>");
+        expect(metadata).toContain("<dt>Role</dt>");
+        expect(metadata).toContain(`>${entry.role}</dd>`);
+      }
+    }
+  });
+
   it("keeps route metadata truthful and preview unindexed", () => {
     expect(getRouteMetadata("/resume/").canonical).toBe("https://384721.xyz/resume");
     expect(getRouteMetadata("/blog/missing").found).toBe(false);

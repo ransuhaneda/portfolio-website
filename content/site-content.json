@@ -1,10 +1,8 @@
 {
   "site": {
     "name": "Lance Carteciano",
-    "tagline": "Full-stack web developer based in the Philippines.",
     "description": "I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.",
     "email": "cartecianolance@gmail.com",
-    "location": "Philippines",
     "siteUrl": "https://384721.xyz",
     "socials": [
       {
@@ -86,10 +84,8 @@
   "about": {
     "eyebrow": "About",
     "title": "I’m Lance, a frontend and WordPress developer.",
-    "intro": "I build responsive websites, maintain WordPress sites, and also work on visual design.",
     "bodySectionTitle": "What I do",
     "processSectionTitle": "How I work",
-    "processSectionIntro": "I keep my process simple: understand the page, plan the work, build it, and check the result.",
     "principlesSectionTitle": "What matters to me",
     "toolsSectionTitle": "Tools I use",
     "body": [
@@ -321,17 +317,8 @@
     }
   },
   "contact": {
-    "eyebrow": "Contact",
-    "title": "Tell me what needs building.",
-    "body": "I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.",
-    "emailCtaPrefix": "Email",
-    "availability": "Open to frontend roles and selected freelance work",
-    "availabilityTitle": "Availability",
-    "availabilityStatusLabel": "Status",
-    "availabilityLocationLabel": "Location",
     "form": {
       "title": "LET'S CONNECT!",
-      "intro": "Share the role or project you want to discuss.",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",
@@ -370,11 +357,7 @@
         "href": "https://github.com/ransuhaneda",
         "description": "Browse public code projects and current experiments."
       }
-    ],
-    "heroImage": {
-      "src": "https://picsum.photos/seed/portfolio-contact-desk/1600/1100.jpg",
-      "alt": "Decorative stock photograph; not a personal workspace photograph."
-    }
+    ]
   },
   "projects": [
     {
@@ -383,7 +366,6 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "live site · v0.1.0",
       "summary": "A client-side Markdown workspace for editing source, checking a rendered preview, recovering a local draft, and exporting a print-ready PDF.",
       "role": "Frontend developer",
       "responsibility": "I built this project independently from the initial product idea through implementation, testing, and deployment. I owned the editor, Markdown rendering, browser storage, file operations, PDF export, and release verification.",
@@ -398,7 +380,7 @@
       ],
       "links": [
         {
-          "label": "Live site",
+          "label": "Visit website",
           "href": "https://md-viewer.384721.xyz/"
         },
         {
@@ -439,14 +421,13 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "live site",
       "summary": "A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.",
       "role": "Frontend developer",
       "responsibility": "I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.",
       "stack": ["React", "TypeScript", "Vite", "SCSS", "Vitest", "Playwright"],
       "links": [
         {
-          "label": "Live site",
+          "label": "Visit website",
           "href": "https://debase.384721.xyz"
         }
       ],
@@ -500,7 +481,6 @@
       "year": "2025",
       "client": "ABCDE Creative Studio",
       "kind": "case-study",
-      "status": "",
       "summary": "Frontend work for the ABCDE Creative Studio website and related client projects. I translated Figma designs into responsive React pages and shared sections.",
       "role": "Web Developer",
       "responsibility": "I independently handled the frontend implementation for the studio website and related project pages. I translated the approved Figma designs into responsive React pages, reusable sections, accessibility checks, and delivery support.",
@@ -574,7 +554,6 @@
       "year": "2026",
       "client": "Tech Support Plus I.T Service",
       "kind": "case-study",
-      "status": "current work",
       "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.",
       "role": "Frontend web developer / graphic designer",
       "responsibility": "I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.",
@@ -650,7 +629,6 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "public repository",
       "summary": "A Laravel 12 blog platform with authentication, content publishing, profiles, categories, comments, likes, follows, media uploads, and timezone-aware scheduling.",
       "role": "Individual course project",
       "responsibility": "I built Nsight Index independently as an individual course project, from the application structure through the publishing, interaction, profile, media, and scheduling flows.",
@@ -721,14 +699,13 @@
       "year": "2026",
       "client": "Personal portfolio",
       "kind": "case-study",
-      "status": "live site",
       "summary": "The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.",
       "role": "Frontend developer",
       "responsibility": "I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.",
       "stack": ["React", "TypeScript", "JSON content", "Markdown", "Cloudflare Pages", "Vite"],
       "links": [
         {
-          "label": "Live site",
+          "label": "Visit website",
           "href": "https://384721.xyz"
         }
       ],
@@ -785,7 +762,6 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "in progress",
       "summary": "A feature-voting platform built with Laravel, Inertia, React, and server-side rendering. Users can propose features, discuss them, and vote on what should be prioritized.",
       "role": "Full-stack developer",
       "responsibility": "I built this project independently across the Laravel backend and React interface. I owned the feature, account, permissions, discussion, voting, and server-side rendering flows while keeping the unfinished areas clearly scoped.",
@@ -833,7 +809,6 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "tutorial-based study",
       "summary": "A React and GSAP practice build based on a public tutorial, documented as an animation study with clear attribution.",
       "role": "Frontend practice",
       "responsibility": "I completed this animation study independently while following the public tutorial. I handled the React implementation, GSAP setup, timing, responsive behavior, and attribution.",
@@ -889,7 +864,6 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "in progress",
       "summary": "An unfinished React and TypeScript bio link app. The case study notes that I am continuing to work on the main product flow.",
       "role": "Frontend developer",
       "responsibility": "I built this unfinished project independently with React, TypeScript, and SCSS. I owned the product UI structure, profile presentation, reusable cards, and responsive styling while continuing to work on the main flow.",
@@ -942,36 +916,12 @@
   ],
   "home": {
     "hero": {
-      "eyebrow": "Lance Carteciano / Portfolio",
       "title": "HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.",
-      "description": "I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.",
-      "accentPhrase": "WEB DEVELOPER",
-      "dateline": {
-        "left": "Portfolio 2026",
-        "right": "React, WordPress, and visual design"
-      },
-      "index": [
-        {
-          "label": "Focus",
-          "value": "Responsive websites and content systems"
-        },
-        {
-          "label": "Tools",
-          "value": "React, WordPress, and Laravel"
-        },
-        {
-          "label": "Work",
-          "value": "Frontend builds, maintenance, testing, and deployment"
-        },
-        {
-          "label": "Available for",
-          "value": "Frontend roles; selected freelance work"
-        }
-      ]
+      "accentPhrase": "WEB DEVELOPER"
     },
     "cta": {
       "primaryLabel": "View selected work",
-      "secondaryLabel": "View resume"
+      "secondaryLabel": "Let's Connect"
     },
     "featuredProjects": {
       "title": "Selected work",
@@ -981,31 +931,8 @@
       "fallbackDescription": "Add project slugs in the site content file to feature work here.",
       "stackAriaTemplate": "{title} tools"
     },
-    "bio": {
-      "eyebrow": "How I work",
-      "title": "I pay attention to the parts people use after launch.",
-      "description": "A website has to do more than match a design file. I build the page, check it at different screen sizes, and make sure the content and code are practical to update later."
-    },
-    "stats": [
-      {
-        "value": "Responsive pages",
-        "label": "I check layouts at the sizes people actually use.",
-        "tone": "accent"
-      },
-      {
-        "value": "Reusable patterns",
-        "label": "I look for repeated sections before rebuilding them page by page.",
-        "tone": "accent-2"
-      },
-      {
-        "value": "Clear handoff",
-        "label": "I keep content and code understandable for the next person.",
-        "tone": "accent-3"
-      }
-    ],
     "skills": {
       "title": "Tools I use",
-      "description": "A working list of the tools I use to build, edit, test, and deliver websites.",
       "items": [
         "React",
         "TypeScript",
@@ -1077,7 +1004,6 @@
     },
     "contact": {
       "title": "LET’S CONNECT!",
-      "intro": "",
       "submitLabel": "Draft email",
       "messageLimit": 800,
       "nameLabel": "Name",
@@ -1144,7 +1070,6 @@
     "roleLabel": "Role",
     "clientLabel": "Context",
     "yearLabel": "Year",
-    "statusLabel": "Status",
     "stackLabel": "Tools",
     "linksTitle": "Links",
     "stackAriaTemplate": "{title} tools"

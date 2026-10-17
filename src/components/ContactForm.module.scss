@@ -13,14 +13,12 @@
   border-radius: var(--form-field-radius);
 }
 
-.intro,
 .form,
 .field,
 .metaRow {
   display: grid;
 }
 
-.intro,
 .field,
 .metaRow {
   gap: var(--space-2xs);
@@ -31,19 +29,11 @@
   gap: var(--space-xs);
 }
 
-.intro h2,
-.intro p,
 .count,
 .error {
   margin-block: 0;
 }
 
-.intro h2 {
-  text-transform: uppercase;
-  @include mix.type-style(h3);
-}
-
-.intro p,
 .count {
   color: var(--color-text-muted);
 }

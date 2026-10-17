@@ -248,22 +248,6 @@
   @include mix.type-style(body-sm, 700);
 }
 
-.archiveMeta,
-.yearHeading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-md);
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs);
-}
-.archiveMeta {
-  padding-block-end: var(--space-sm);
-  border-bottom: 1px solid var(--color-border-default);
-}
-.latestPost,
 .postRow {
   display: grid;
   gap: var(--space-md);
@@ -274,32 +258,16 @@
   border-bottom: 1px solid var(--color-border-default);
   transition: background-color var(--motion-fast) var(--motion-ease-standard);
 }
-.latestPost:hover,
 .postRow:hover {
   background: var(--color-surface-overlay);
 }
-.latestPost h2,
-.latestPost p,
 .postRow h2,
 .postRow p {
   margin-block: 0;
 }
-.latestPost h2 {
-  text-transform: uppercase;
-  @include mix.type-style(h3);
-}
-.latestPost p,
 .postRow p {
   color: var(--color-text-muted);
 }
-.latestPost strong {
-  align-items: center;
-  gap: var(--space-2xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs, 700);
-}
-.latestPost:hover h2,
 .postRow:hover h2 {
   color: var(--color-action-primary);
 }
@@ -313,66 +281,123 @@
   text-transform: uppercase;
   @include mix.type-style(body-xs);
 }
-.yearGroup {
-  padding-block-start: var(--space-lg);
+
+.blogMasthead {
+  padding-block: var(--space-xl);
 }
-.blogToolbar {
-  display: grid;
-  gap: var(--space-md);
-}
-.blogFilters {
-  display: grid;
-  grid-template-columns: minmax(16rem, 2fr) minmax(12rem, 1fr) auto;
-  align-items: end;
-  gap: var(--space-md);
-}
-.blogFilters label {
-  display: grid;
-  min-width: 0;
-  gap: var(--space-xs);
-}
-.blogFilters input,
-.blogFilters select {
-  width: 100%;
-  min-width: 0;
-  min-height: var(--target-min-size);
-  padding: var(--space-sm);
+
+.blogTitle {
+  max-width: 8ch;
+  margin-block: 0;
   color: var(--color-text-primary);
-  background: var(--color-background-page);
-  border: 1px solid var(--color-border-default);
-  font: inherit;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
 }
-.blogFilters input::placeholder {
-  color: var(--color-text-muted);
-  opacity: 1;
+
+.blogArchive {
+  border-top: 1px solid var(--color-border-subtle);
 }
+
 .blogArchive > :global(.lg-wrapper) {
-  padding-block: var(--space-section-compact);
+  padding-block: var(--space-lg) var(--space-2xl);
 }
-.blogResultCount {
-  padding-block-start: var(--space-sm);
+
+.blogList {
+  min-width: 0;
 }
+
+.blogListHeader {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: end;
+  min-height: 2.5rem;
+  padding-inline: var(--space-lg) var(--space-sm);
+  padding-block-end: var(--space-xs);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border-default);
+  font-size: var(--type-body-xs-size);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.blogList .postRow {
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: center;
+  min-height: 5.5rem;
+  padding-block: var(--space-md);
+  padding-inline: var(--space-lg) var(--space-sm);
+  background: var(--color-transparent);
+  transition:
+    background-color var(--motion-fast) var(--motion-ease-standard),
+    color var(--motion-fast) var(--motion-ease-standard);
+}
+
+.blogList .postRow:hover,
+.blogList .postRow:focus-visible {
+  background: var(--color-surface-overlay);
+}
+
+.blogList .postRow h2 {
+  grid-column: 2;
+  margin-block: 0;
+  font-size: clamp(1.35rem, 2.1vw, 2.15rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.blogList .postRow .postMeta {
+  display: block;
+  grid-column: 1;
+  color: var(--color-text-muted);
+  font-size: var(--type-body-sm-size);
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.blogEmpty {
+  padding-block: var(--space-lg);
+  color: var(--color-text-muted);
+}
+
 @media (max-width: 48rem) {
-  .blogFilters {
-    grid-template-columns: 1fr;
+  .blogTitle {
+    font-size: clamp(3.5rem, 17vw, 5.5rem);
+  }
+
+  .blogListHeader,
+  .blogList .postRow {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: var(--space-sm);
+    padding-inline: 0;
+  }
+
+  .blogList .postRow h2 {
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
   }
 }
-.yearHeading {
-  padding-block-end: var(--space-xs);
-}
-.yearHeading span:first-child {
-  color: var(--color-action-primary);
-}
-.postRow h2 {
-  text-transform: uppercase;
-  @include mix.type-style(h5);
-  transition: color var(--motion-fast) var(--motion-ease-standard);
-}
-.postRow h2[data-pretext] {
-  width: 100%;
-}
-.postRow > span:last-child {
-  color: var(--color-action-primary);
+
+@media (max-width: 30rem) {
+  .blogListHeader,
+  .blogList .postRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .blogList .postRow {
+    align-items: start;
+  }
+
+  .blogList .postRow > .postMeta,
+  .blogList .postRow > h2 {
+    grid-column: 1;
+  }
 }
 
 .articleCover > :global(.lg-wrapper) > * {
@@ -544,26 +569,6 @@
   color: var(--color-action-primary);
 }
 
-.availabilityMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  color: var(--color-text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs);
-}
-.availabilityMeta span {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-.availabilityMeta span:first-child {
-  color: var(--color-text-primary);
-}
-.availabilityMeta svg {
-  color: var(--color-action-primary);
-}
 .contactGrid {
   display: grid;
   gap: var(--space-lg);
@@ -677,22 +682,6 @@
     grid-column: 4 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: var(--space-lg);
-  }
-  .latestPost {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-  .latestPost > :first-child {
-    grid-column: span 3;
-  }
-  .latestPost > div:nth-child(2) {
-    grid-column: span 7;
-  }
-  .latestPost > .postMeta {
-    grid-column: span 3;
-  }
-  .latestPost > strong {
-    grid-column: span 2;
-    text-align: right;
   }
   .postRow {
     grid-template-columns: repeat(12, minmax(0, 1fr));
