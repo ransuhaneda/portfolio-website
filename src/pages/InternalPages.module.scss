@@ -569,26 +569,6 @@
   color: var(--color-action-primary);
 }
 
-.availabilityMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  color: var(--color-text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs);
-}
-.availabilityMeta span {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-}
-.availabilityMeta span:first-child {
-  color: var(--color-text-primary);
-}
-.availabilityMeta svg {
-  color: var(--color-action-primary);
-}
 .contactGrid {
   display: grid;
   gap: var(--space-lg);
@@ -702,22 +682,6 @@
     grid-column: 4 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: var(--space-lg);
-  }
-  .latestPost {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-  .latestPost > :first-child {
-    grid-column: span 3;
-  }
-  .latestPost > div:nth-child(2) {
-    grid-column: span 7;
-  }
-  .latestPost > .postMeta {
-    grid-column: span 3;
-  }
-  .latestPost > strong {
-    grid-column: span 2;
-    text-align: right;
   }
   .postRow {
     grid-template-columns: repeat(12, minmax(0, 1fr));

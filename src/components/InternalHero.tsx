@@ -4,7 +4,7 @@ import { PretextText } from "./PretextText";
 
 type InternalHeroProps = {
   title: string;
-  intro: string;
+  intro?: string;
   beforeTitle?: ReactNode;
   actions?: ReactNode;
 };
@@ -19,9 +19,11 @@ export function InternalHero({ title, intro, beforeTitle, actions }: InternalHer
             <PretextText as="h1" measure="heading" reveal="heading">
               {title}
             </PretextText>
-            <PretextText className={sty.intro} measure="intro" reveal="copy">
-              {intro}
-            </PretextText>
+            {intro ? (
+              <PretextText className={sty.intro} measure="intro" reveal="copy">
+                {intro}
+              </PretextText>
+            ) : null}
             {actions ? <div className={sty.actions}>{actions}</div> : null}
           </div>
         </div>

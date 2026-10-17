@@ -53,7 +53,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <PretextText measure="prose">{project.summary}</PretextText>
         <div className={sty.meta}>
           <span>{project.client}</span>
-          {project.status ? <span>{project.status}</span> : null}
           {project.links?.length ? (
             <span className={sty.projectLinks}>
               {project.links.map((link) => (
