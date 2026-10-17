@@ -90,14 +90,14 @@ describe("public launch boundaries", () => {
         ),
       );
       const metadata = markup.match(/<dl\b[\s\S]*?<\/dl>/)?.[0];
-      expect(metadata).toContain("<dt>Status</dt>");
       if (entry.links?.length) {
+        expect(metadata).toContain("<dt>Links</dt>");
         expect(metadata).not.toContain("<dt>Role</dt>");
         for (const link of entry.links) {
           expect(metadata).toContain(`href="${link.href}"`);
         }
       } else {
-        expect(metadata).toContain(entry.status || "Not publicly linked");
+        expect(metadata).not.toContain("<dt>Links</dt>");
         expect(metadata).toContain("<dt>Role</dt>");
         expect(metadata).toContain(`>${entry.role}</dd>`);
       }

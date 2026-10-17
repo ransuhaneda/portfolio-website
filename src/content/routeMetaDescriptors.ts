@@ -41,7 +41,7 @@ export function routeMetaDescriptors(pathname: string): MetaDescriptor[] {
         name: content.site.name,
         url: content.site.siteUrl,
         email: `mailto:${content.site.email}`,
-        address: { "@type": "PostalAddress", addressCountry: content.site.location },
+
         sameAs: content.site.socials.map((social) => social.href),
       },
     } as MetaDescriptor);

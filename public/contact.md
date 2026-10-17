@@ -1,5 +1,5 @@
 # Contact
 
-Tell me what needs building.
+LET'S CONNECT!
 
 - Email: cartecianolance@gmail.com

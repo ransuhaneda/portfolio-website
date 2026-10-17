@@ -44,7 +44,6 @@ export type ContactMethod = {
 
 export type ContactFormContent = {
   title: string;
-  intro: string;
   submitLabel: string;
   messageLimit: number;
   nameLabel: string;
@@ -83,7 +82,6 @@ export type Project = {
   year: string;
   client: string;
   kind?: ProjectKind;
-  status?: string;
   summary: string;
   role: string;
   responsibility: string;
@@ -104,10 +102,8 @@ export type Project = {
 export type SiteContent = {
   site: {
     name: string;
-    tagline: string;
     description: string;
     email: string;
-    location: string;
     siteUrl: string;
     socials: SocialLink[];
   };
@@ -137,18 +133,8 @@ export type SiteContent = {
   };
   home: {
     hero: {
-      eyebrow: string;
       title: string;
-      description: string;
       accentPhrase?: string;
-      dateline?: {
-        left: string;
-        right: string;
-      };
-      index?: Array<{
-        label: string;
-        value: string;
-      }>;
     };
     cta: {
       primaryLabel: string;
@@ -164,7 +150,6 @@ export type SiteContent = {
     };
     skills: {
       title: string;
-      description: string;
       items: string[];
       groups?: Array<{
         title: string;
@@ -180,10 +165,8 @@ export type SiteContent = {
   about: {
     eyebrow?: string;
     title: string;
-    intro: string;
     bodySectionTitle: string;
     processSectionTitle: string;
-    processSectionIntro: string;
     principlesSectionTitle: string;
     toolsSectionTitle: string;
     body: string[];
@@ -210,17 +193,8 @@ export type SiteContent = {
     experience: Job[];
   };
   contact: {
-    eyebrow?: string;
-    title: string;
-    body: string;
-    emailCtaPrefix?: string;
-    availability: string;
-    availabilityTitle: string;
-    availabilityStatusLabel: string;
-    availabilityLocationLabel: string;
     form: ContactFormContent;
     methods: ContactMethod[];
-    heroImage?: ImageAsset;
   };
   projectsPage?: {
     eyebrow?: string;
@@ -273,7 +247,6 @@ export type SiteContent = {
     roleLabel: string;
     clientLabel: string;
     yearLabel: string;
-    statusLabel?: string;
     stackLabel: string;
     linksTitle?: string;
     stackAriaTemplate: string;

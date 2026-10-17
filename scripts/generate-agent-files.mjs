@@ -18,7 +18,7 @@ const siteUrl = (process.env.SITE_URL || siteContent.site.siteUrl || "https://38
   "",
 );
 const email = process.env.CONTACT_EMAIL || siteContent.site.email;
-const location = process.env.CONTACT_LOCATION || siteContent.site.location;
+
 const featuredProjects = siteContent.home.featuredProjects.slugs
   .map((slug) => siteContent.projects.find((project) => project.slug === slug))
   .filter((project) => project !== undefined);
@@ -54,7 +54,7 @@ const categoryLabel = (post) =>
 
 const routes = [
   { path: "/", md: "/index.md", title: "Home", description: siteContent.site.description },
-  { path: "/about", md: "/about.md", title: "About", description: siteContent.about.intro },
+  { path: "/about", md: "/about.md", title: "About", description: siteContent.site.description },
   {
     path: "/blog",
     md: "/blog.md",
@@ -67,7 +67,12 @@ const routes = [
     title: "Projects",
     description: "Project index and case-study summaries.",
   },
-  { path: "/contact", md: "/contact.md", title: "Contact", description: siteContent.contact.body },
+  {
+    path: "/contact",
+    md: "/contact.md",
+    title: "Contact",
+    description: siteContent.site.description,
+  },
   { path: "/resume", md: "/resume.md", title: "Resume", description: siteContent.resume.summary },
   {
     path: "/design-system",
@@ -91,17 +96,12 @@ const routes = [
 
 const lines = (value) => `${value}`.trim().split("\n");
 const bullets = (items) => items.map((item) => `- ${item}`).join("\n");
-const optionalBullet = (label, value) => (value ? `- ${label}: ${value}` : "");
 
 const homeMd = `# ${siteContent.site.name}
-${siteContent.site.tagline ? `\n\n${siteContent.site.tagline}` : ""}
-
-${siteContent.home.hero.eyebrow}
 
 ## Homepage hero
 
 ${siteContent.home.hero.title}
-${siteContent.home.hero.description ? `\n\n${siteContent.home.hero.description}` : ""}
 
 ## Main pages
 
@@ -127,7 +127,6 @@ ${bullets(siteContent.home.skills.items)}
 `;
 
 const aboutMd = `# About
-${siteContent.about.intro ? `\n\n${siteContent.about.intro}` : ""}
 
 ${siteContent.about.body.join("\n\n")}
 
@@ -196,17 +195,10 @@ ${
 }
 `;
 
-const contactDetails = [
-  `- Email: ${email}`,
-  optionalBullet("Location", location),
-  optionalBullet("Availability", siteContent.contact.availability),
-]
-  .filter(Boolean)
-  .join("\n");
+const contactDetails = [`- Email: ${email}`].filter(Boolean).join("\n");
 const contactMd = `# Contact
 
-${siteContent.contact.title}
-${siteContent.contact.body ? `\n\n${siteContent.contact.body}` : ""}
+${siteContent.contact.form.title}
 
 ${contactDetails}
 `;
@@ -301,8 +293,6 @@ const pageMarkdown = {
 
 const llms = `# ${siteContent.site.name}
 
-${siteContent.site.tagline ? `> ${siteContent.site.tagline}` : ""}
-
 ${siteContent.site.description}
 
 ## Preferred machine-readable entry points
@@ -322,10 +312,8 @@ const llmsFull = `# ${siteContent.site.name}: full machine-readable content
 
 ## Site summary
 - Name: ${siteContent.site.name}
-${optionalBullet("Tagline", siteContent.site.tagline)}
 - Description: ${siteContent.site.description}
 - Contact email: ${email}
-${optionalBullet("Location", location)}
 
 ## Home
 ${lines(homeMd).join("\n")}

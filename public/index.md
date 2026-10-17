@@ -1,7 +1,5 @@
 # Lance Carteciano
 
-Lance Carteciano / Portfolio
-
 ## Homepage hero
 
 HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.
@@ -9,10 +7,10 @@ HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.
 ## Main pages
 
 - [Home](https://384721.xyz/index.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
-- [About](https://384721.xyz/about.md)
+- [About](https://384721.xyz/about.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 - [Blog](https://384721.xyz/blog.md): Things I learn while building and maintaining websites.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
-- [Contact](https://384721.xyz/contact.md)
+- [Contact](https://384721.xyz/contact.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 - [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 

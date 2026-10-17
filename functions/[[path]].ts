@@ -446,11 +446,7 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
     return false;
   }
 
-  if (
-    !["name", "tagline", "description", "email", "location", "siteUrl"].every(
-      (key) => typeof site[key] === "string",
-    )
-  ) {
+  if (!["name", "description", "email", "siteUrl"].every((key) => typeof site[key] === "string")) {
     return false;
   }
 
@@ -476,10 +472,7 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
     return false;
 
   const homeHero = home.hero;
-  if (
-    !isRecord(homeHero) ||
-    !["eyebrow", "title", "description"].every((key) => typeof homeHero[key] === "string")
-  ) {
+  if (!isRecord(homeHero) || typeof homeHero.title !== "string") {
     return false;
   }
 
@@ -528,7 +521,6 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
   if (
     !isRecord(homeSkills) ||
     typeof homeSkills.title !== "string" ||
-    typeof homeSkills.description !== "string" ||
     (homeSkills.cloudAriaLabel !== undefined && typeof homeSkills.cloudAriaLabel !== "string") ||
     !isStringArray(homeSkills.items)
   )
@@ -537,7 +529,6 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
     !isRecord(homeContact) ||
     ![
       "title",
-      "intro",
       "submitLabel",
       "nameLabel",
       "emailLabel",
@@ -563,10 +554,8 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
   if (
     ![
       "title",
-      "intro",
       "bodySectionTitle",
       "processSectionTitle",
-      "processSectionIntro",
       "principlesSectionTitle",
       "toolsSectionTitle",
     ].every((key) => typeof about[key] === "string") ||
@@ -619,25 +608,12 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
   }
   if (resume.heroImage !== undefined && !isImageAsset(resume.heroImage)) return false;
 
-  if (
-    ![
-      "title",
-      "body",
-      "availability",
-      "availabilityTitle",
-      "availabilityStatusLabel",
-      "availabilityLocationLabel",
-    ].every((key) => typeof contact[key] === "string") ||
-    (contact.eyebrow !== undefined && typeof contact.eyebrow !== "string") ||
-    (contact.emailCtaPrefix !== undefined && typeof contact.emailCtaPrefix !== "string")
-  )
-    return false;
+  if (!isRecord(contact)) return false;
   const contactForm = contact.form;
   if (
     !isRecord(contactForm) ||
     ![
       "title",
-      "intro",
       "submitLabel",
       "nameLabel",
       "emailLabel",
@@ -668,7 +644,6 @@ const validateSiteContent = (value: JsonValue): value is { [key: string]: JsonVa
     )
   )
     return false;
-  if (contact.heroImage !== undefined && !isImageAsset(contact.heroImage)) return false;
 
   if (
     value.projectsPage !== undefined &&
