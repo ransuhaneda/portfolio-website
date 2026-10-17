@@ -1,10 +1,10 @@
 {
   "site": {
     "name": "Lance Carteciano",
-    "tagline": "Full-stack web developer based in the Philippines.",
+    "tagline": "",
     "description": "I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.",
     "email": "cartecianolance@gmail.com",
-    "location": "Philippines",
+    "location": "",
     "siteUrl": "https://384721.xyz",
     "socials": [
       {
@@ -86,10 +86,10 @@
   "about": {
     "eyebrow": "About",
     "title": "I’m Lance, a frontend and WordPress developer.",
-    "intro": "I build responsive websites, maintain WordPress sites, and also work on visual design.",
+    "intro": "",
     "bodySectionTitle": "What I do",
     "processSectionTitle": "How I work",
-    "processSectionIntro": "I keep my process simple: understand the page, plan the work, build it, and check the result.",
+    "processSectionIntro": "",
     "principlesSectionTitle": "What matters to me",
     "toolsSectionTitle": "Tools I use",
     "body": [
@@ -323,12 +323,12 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Tell me what needs building.",
-    "body": "I am looking for frontend developer roles. I also take on selected freelance work when the scope is a good fit.",
+    "body": "",
     "emailCtaPrefix": "Email",
-    "availability": "Open to frontend roles and selected freelance work",
+    "availability": "",
     "availabilityTitle": "Availability",
     "availabilityStatusLabel": "Status",
-    "availabilityLocationLabel": "Location",
+    "availabilityLocationLabel": "",
     "form": {
       "title": "LET'S CONNECT!",
       "intro": "Share the role or project you want to discuss.",
@@ -383,7 +383,7 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "live site · v0.1.0",
+      "status": "Live Website · v0.1.0",
       "summary": "A client-side Markdown workspace for editing source, checking a rendered preview, recovering a local draft, and exporting a print-ready PDF.",
       "role": "Frontend developer",
       "responsibility": "I built this project independently from the initial product idea through implementation, testing, and deployment. I owned the editor, Markdown rendering, browser storage, file operations, PDF export, and release verification.",
@@ -398,7 +398,7 @@
       ],
       "links": [
         {
-          "label": "Live site",
+          "label": "Visit website",
           "href": "https://md-viewer.384721.xyz/"
         },
         {
@@ -439,14 +439,14 @@
       "year": "2026",
       "client": "Personal project",
       "kind": "case-study",
-      "status": "live site",
+      "status": "Live View",
       "summary": "A browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs. The data stays on the device.",
       "role": "Frontend developer",
       "responsibility": "I built Debase independently from the interface and transformation logic through validation, safe-output handling, testing, and deployment. I owned the browser-local processing flow and the release documentation.",
       "stack": ["React", "TypeScript", "Vite", "SCSS", "Vitest", "Playwright"],
       "links": [
         {
-          "label": "Live site",
+          "label": "Visit website",
           "href": "https://debase.384721.xyz"
         }
       ],
@@ -721,14 +721,14 @@
       "year": "2026",
       "client": "Personal portfolio",
       "kind": "case-study",
-      "status": "live site",
+      "status": "Live View",
       "summary": "The content system behind this site: one JSON file feeds the React pages, generated Markdown, project pages, and machine-readable indexes.",
       "role": "Frontend developer",
       "responsibility": "I built and maintain this portfolio content system independently. I defined the content model, connected it to the React pages, and built the generation and Markdown delivery paths.",
       "stack": ["React", "TypeScript", "JSON content", "Markdown", "Cloudflare Pages", "Vite"],
       "links": [
         {
-          "label": "Live site",
+          "label": "Visit website",
           "href": "https://384721.xyz"
         }
       ],
@@ -944,7 +944,7 @@
     "hero": {
       "eyebrow": "Lance Carteciano / Portfolio",
       "title": "HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.",
-      "description": "I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.",
+      "description": "",
       "accentPhrase": "WEB DEVELOPER",
       "dateline": {
         "left": "Portfolio 2026",
@@ -971,7 +971,7 @@
     },
     "cta": {
       "primaryLabel": "View selected work",
-      "secondaryLabel": "View resume"
+      "secondaryLabel": "Let's Connect"
     },
     "featuredProjects": {
       "title": "Selected work",
@@ -983,7 +983,7 @@
     },
     "skills": {
       "title": "Tools I use",
-      "description": "A working list of the tools I use to build, edit, test, and deliver websites.",
+      "description": "",
       "items": [
         "React",
         "TypeScript",

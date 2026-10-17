@@ -91,18 +91,17 @@ const routes = [
 
 const lines = (value) => `${value}`.trim().split("\n");
 const bullets = (items) => items.map((item) => `- ${item}`).join("\n");
+const optionalBullet = (label, value) => (value ? `- ${label}: ${value}` : "");
 
 const homeMd = `# ${siteContent.site.name}
-
-${siteContent.site.tagline}
+${siteContent.site.tagline ? `\n\n${siteContent.site.tagline}` : ""}
 
 ${siteContent.home.hero.eyebrow}
 
 ## Homepage hero
 
 ${siteContent.home.hero.title}
-
-${siteContent.home.hero.description}
+${siteContent.home.hero.description ? `\n\n${siteContent.home.hero.description}` : ""}
 
 ## Main pages
 
@@ -112,7 +111,10 @@ ${routes
       route.path,
     ),
   )
-  .map((route) => `- [${route.title}](${siteUrl}${route.md}): ${route.description}`)
+  .map(
+    (route) =>
+      `- [${route.title}](${siteUrl}${route.md})${route.description ? `: ${route.description}` : ""}`,
+  )
   .join("\n")}
 
 ## Featured case studies
@@ -125,8 +127,7 @@ ${bullets(siteContent.home.skills.items)}
 `;
 
 const aboutMd = `# About
-
-${siteContent.about.intro}
+${siteContent.about.intro ? `\n\n${siteContent.about.intro}` : ""}
 
 ${siteContent.about.body.join("\n\n")}
 
@@ -195,15 +196,19 @@ ${
 }
 `;
 
+const contactDetails = [
+  `- Email: ${email}`,
+  optionalBullet("Location", location),
+  optionalBullet("Availability", siteContent.contact.availability),
+]
+  .filter(Boolean)
+  .join("\n");
 const contactMd = `# Contact
 
 ${siteContent.contact.title}
+${siteContent.contact.body ? `\n\n${siteContent.contact.body}` : ""}
 
-${siteContent.contact.body}
-
-- Email: ${email}
-- Location: ${location}
-- Availability: ${siteContent.contact.availability}
+${contactDetails}
 `;
 
 const designSystemMd = `# ${siteContent.designSystemPage?.title ?? "Design system reference"}
@@ -296,7 +301,7 @@ const pageMarkdown = {
 
 const llms = `# ${siteContent.site.name}
 
-> ${siteContent.site.tagline}
+${siteContent.site.tagline ? `> ${siteContent.site.tagline}` : ""}
 
 ${siteContent.site.description}
 
@@ -317,10 +322,10 @@ const llmsFull = `# ${siteContent.site.name}: full machine-readable content
 
 ## Site summary
 - Name: ${siteContent.site.name}
-- Tagline: ${siteContent.site.tagline}
+${optionalBullet("Tagline", siteContent.site.tagline)}
 - Description: ${siteContent.site.description}
 - Contact email: ${email}
-- Location: ${location}
+${optionalBullet("Location", location)}
 
 ## Home
 ${lines(homeMd).join("\n")}

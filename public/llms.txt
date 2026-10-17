@@ -1,6 +1,6 @@
 # Lance Carteciano
 
-> Full-stack web developer based in the Philippines.
+
 
 I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
 
