@@ -2067,6 +2067,15 @@ export const onRequest = async (context: PagesContext): Promise<Response> => {
   }
 
   const response = await env.ASSETS.fetch(request);
+  // Sitemap and robots.txt are static crawler inputs. Do not add the
+  // content-negotiation headers used by the Markdown Function path.
+  if (url.pathname === "/sitemap.xml" || url.pathname === "/robots.txt") {
+    return new Response(request.method === "HEAD" ? null : response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers,
+    });
+  }
   const headers = new Headers(response.headers);
   headers.append("Link", '</llms.txt>; rel="alternate"; type="text/markdown"');
   headers.append("Link", '</.well-known/agent-skills/index.json>; rel="agent-skills"');

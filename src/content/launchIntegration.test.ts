@@ -191,4 +191,28 @@ describe("public launch boundaries", () => {
       if (method === "HEAD") expect(await missing.text()).toBe("");
     }
   });
+
+  it("leaves crawler assets outside Markdown content negotiation", async () => {
+    for (const [path, contentType, body] of [
+      ["/sitemap.xml", "application/xml", "<urlset />"],
+      ["/robots.txt", "text/plain", "User-agent: *"],
+    ] as const) {
+      const response = await onRequest({
+        request: new Request(`https://example.org${path}`, {
+          headers: { Accept: "text/markdown" },
+        }),
+        env: {
+          ASSETS: {
+            fetch: async () => new Response(body, { headers: { "Content-Type": contentType } }),
+          },
+        },
+      });
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("content-type")).toBe(contentType);
+      expect(response.headers.get("link")).toBeNull();
+      expect(response.headers.get("vary")).toBeNull();
+      expect(await response.text()).toBe(body);
+    }
+  });
 });
