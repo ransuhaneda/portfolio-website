@@ -127,25 +127,15 @@
 }
 
 .heroInner {
+  display: grid;
+  min-height: 450px;
+  align-content: space-between;
+  gap: var(--space-lg);
   padding-block: var(--space-xl);
 }
 
-.dateline {
-  display: flex;
-  min-width: 0;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-md);
-  padding-block-end: var(--space-sm);
-  color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border-subtle);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs, 400);
-}
-
 .heroGrid {
-  display: grid;
+  display: block;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -166,86 +156,24 @@
   @include mix.type-style(h1);
   font-size: clamp(3rem, 3vw + 1.5rem, 4rem);
   line-height: 1.06;
+  max-width: 768px;
 }
 
 .heroGrid h1 span {
   color: var(--color-action-primary);
 }
 
-.heroSupport {
-  display: grid;
-  width: 100%;
-  max-width: 100%;
-  align-content: start;
-  align-self: start;
-  min-width: 0;
-  gap: var(--space-md);
-}
-
-.heroAside {
-  display: grid;
-  align-content: start;
-  gap: var(--space-sm);
-}
-
 .heroGrid > *,
-.heroSupport > *,
-.heroAside > *,
-.index > div > *,
 .sectionInner > *,
 .skillsGrid > *,
 .contactGrid > * {
   min-width: 0;
 }
 
-.heroGrid > .index {
-  grid-column: 1 / -1;
-}
-
 .heroActions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-inline);
-}
-
-.heroSupport > p {
-  margin-block: 0;
-  color: var(--color-text-muted);
-  @include mix.type-style(body-lg);
-}
-
-.index {
-  margin-block: 0;
-}
-
-.index {
-  border-top: 1px solid var(--color-border-subtle);
-}
-
-.index > div {
-  display: flex;
-  min-width: 0;
-  gap: var(--space-md);
-  align-items: baseline;
-  justify-content: space-between;
-  padding-block: var(--space-xs);
-  border-bottom: 1px solid var(--color-border-subtle);
-}
-
-.index dt {
-  color: var(--color-text-muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs);
-}
-
-.index dd {
-  min-width: 0;
-  max-width: 100%;
-  margin-block: 0;
-  overflow-wrap: anywhere;
-  text-align: right;
-  @include mix.type-style(body-sm);
 }
 
 .sectionInner,
@@ -341,18 +269,11 @@
   color: var(--color-text-inverse);
 }
 
-.contactCopy :global(.eyebrow) {
-  color: var(--color-form-helper);
-}
-
 .contactCopy p {
   color: var(--color-form-helper);
 }
 
-.contactEmailLine {
-  white-space: nowrap;
-}
-
+.contactEmailLine,
 .contactEmailLine a {
   white-space: nowrap;
 }
@@ -364,18 +285,11 @@
 }
 
 @include mix.mq(md) {
-  .heroGrid,
   .skillsGrid,
   .contactGrid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
-  .heroGrid > h1 {
-    grid-column: span 7;
-  }
-  .heroAside {
-    grid-column: 8 / span 5;
-  }
   .skillsGrid > div {
     grid-column: span 4;
   }
@@ -390,24 +304,5 @@
   }
   .contactGrid > :last-child {
     grid-column: 5 / span 8;
-  }
-}
-
-@include mix.mq(xl) {
-  .heroGrid > h1 {
-    grid-column: span 8;
-  }
-  .heroAside {
-    grid-column: 9 / span 4;
-  }
-}
-
-@media (min-width: 48rem) and (max-width: 75rem) {
-  .heroGrid > h1 {
-    grid-column: 1 / -1;
-  }
-  .heroAside {
-    grid-column: 1 / -1;
-    grid-row: 2;
   }
 }
