@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vite-plus/test";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router";
 import { onRequest } from "../../functions/[[path]]";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
 import { ProjectCard } from "../components/ProjectCard";
