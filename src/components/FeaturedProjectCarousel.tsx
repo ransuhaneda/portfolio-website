@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import { LuArrowLeft, LuArrowRight, LuExternalLink } from "react-icons/lu";
 import {
   useDirectionalContentSwap,

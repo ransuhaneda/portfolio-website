@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { LuArrowDown, LuArrowRight, LuArrowUpRight } from "react-icons/lu";
 import { ContactForm } from "../components/ContactForm";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";

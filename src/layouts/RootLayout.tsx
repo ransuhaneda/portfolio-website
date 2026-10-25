@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect } from "react";
 import type { ReactNode } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { GoogleAnalytics } from "../components/GoogleAnalytics";
