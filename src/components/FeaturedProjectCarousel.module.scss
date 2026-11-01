@@ -80,14 +80,14 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   cursor: pointer;
 }
 
 .featuredMedia {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: var(--color-accent-violet);
+  background: var(--color-background-surface-subtle);
 }
 
 .featuredGrid:focus-visible {
@@ -121,7 +121,11 @@
 .featuredOverview > div {
   display: flex;
   flex-flow: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
+}
+
+.featuredOverview > div:first-child > ul {
+  padding-top: 0;
 }
 
 .featuredData {

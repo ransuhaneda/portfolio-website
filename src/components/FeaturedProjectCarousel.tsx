@@ -7,6 +7,7 @@ import {
 } from "../animations/useDirectionalContentSwap";
 import { getPreferredProjectLink, type Project } from "../content/siteContent";
 import sty from "./FeaturedProjectCarousel.module.scss";
+import { AsciiRevealImage } from "./AsciiRevealImage";
 import { ProjectStack } from "./ProjectStack";
 import { PretextText } from "./PretextText";
 
@@ -142,10 +143,10 @@ export function FeaturedProjectCarousel({
                 {activeProject.title}
               </PretextText>
               <PretextText measure="prose">{activeProject.summary}</PretextText>
-              <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
             </div>
 
             <div className="">
+              <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
               <dl className={sty.projectMeta}>
                 <div>
                   <dt>Client</dt>
@@ -194,7 +195,13 @@ export function FeaturedProjectCarousel({
           </div>
 
           <div className={sty.featuredData}>
-            <div className={sty.featuredMedia} aria-hidden="true" />
+            {activeProject.image ? (
+              <AsciiRevealImage
+                className={sty.featuredMedia}
+                src={activeProject.image.src}
+                alt={activeProject.image.alt}
+              />
+            ) : null}
           </div>
         </div>
       </div>
