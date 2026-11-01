@@ -413,7 +413,17 @@
         "Automated tests"
       ],
       "reflection": "Keeping the raw Markdown as the source of truth made it easier to connect editing, preview, recovery, and export without making those flows compete for ownership of the document.",
-      "gallery": []
+      "image": {
+        "src": "/images/projects/another-markdown-viewer-featured.png",
+        "alt": "Another Markdown Viewer with a dark split editor and rendered preview workspace."
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/another-markdown-viewer-featured.png",
+          "alt": "Another Markdown Viewer with a dark split editor and rendered preview workspace.",
+          "caption": "The split source and rendered Markdown workspace."
+        }
+      ]
     },
     {
       "slug": "debase",
@@ -446,8 +456,8 @@
       ],
       "gallery": [
         {
-          "src": "/images/projects/debase-live-homepage.png",
-          "alt": "Debase homepage with encode and decode modes, format controls, source input, and result panel.",
+          "src": "/images/projects/debase-featured.png",
+          "alt": "Debase browser utility with a lime accent, format controls, and source and result panels.",
           "caption": "The live Debase workbench. Text and file processing stays in the browser."
         },
         {
@@ -471,8 +481,8 @@
       ],
       "reflection": "I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.",
       "image": {
-        "src": "/images/projects/debase-live-homepage.png",
-        "alt": "Debase homepage showing its browser-based Base64 encode and decode workbench."
+        "src": "/images/projects/debase-featured.png",
+        "alt": "Debase browser utility with a lime accent, format controls, and source and result panels."
       }
     },
     {
@@ -514,8 +524,8 @@
         "The delivery process had a clearer build and deployment path."
       ],
       "image": {
-        "src": "/images/home/featured-project-2.png",
-        "alt": "Editorial device mockup used as a placeholder for ABCDE Creative Studio frontend work."
+        "src": "/images/projects/abcde-creative-featured.png",
+        "alt": "ABCDE Creative Studio website hero with editorial typography and pastel service labels."
       },
       "gallery": [
         {
@@ -647,8 +657,8 @@
         "New case studies and posts have a known place to start."
       ],
       "image": {
-        "src": "/images/home/featured-project-4.png",
-        "alt": "Editorial tablet mockup used as a placeholder for the portfolio content system."
+        "src": "/images/projects/portfolio-featured.png",
+        "alt": "Portfolio website with a dark editorial layout and selected work section."
       },
       "gallery": [
         {
