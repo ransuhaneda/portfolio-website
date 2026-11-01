@@ -8,12 +8,51 @@
   flex-flow: row wrap;
   gap: var(--space-xs);
   padding: 0;
-  padding-top: 1rem;
   list-style: none;
 }
 
 .root > li {
   position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xs);
+  padding-top: 0;
+}
+
+.grid > li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 2.5rem;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border-default);
+}
+
+.grid .iconBox {
+  flex: 0 0 1.35rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 0;
+  background: var(--color-transparent);
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+}
+
+.grid > li:hover .iconBox {
+  color: var(--icon-color);
+}
+
+.label {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @include mix.type-style(body-sm);
 }
 
 .reverseFlow {
@@ -66,4 +105,16 @@
 .root > li:focus-within .tooltip {
   opacity: 1;
   transform: translate(-50%, 0);
+}
+
+@include mix.mq(md) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@include mix.mq(lg) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }

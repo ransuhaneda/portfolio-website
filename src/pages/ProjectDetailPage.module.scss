@@ -372,19 +372,23 @@
 
 @include mix.mq(md) {
   .heroInner {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: var(--space-md);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-xl);
     align-items: start;
   }
 
   .backLink {
-    flex: 0 0 100%;
+    grid-column: 1 / -1;
   }
 
   .heroCopy {
-    flex: 2 1 0;
+    grid-column: 1 / span 8;
     min-width: 0;
+  }
+
+  .heroAside {
+    grid-column: 9 / span 4;
+    align-self: start;
   }
 
   .editorialBlock {

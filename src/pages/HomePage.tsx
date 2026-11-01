@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { LuArrowDown, LuArrowRight, LuArrowUpRight } from "react-icons/lu";
 import { ContactForm } from "../components/ContactForm";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
 import { PretextText } from "../components/PretextText";
+import { ProjectStack } from "../components/ProjectStack";
 import { blogPosts } from "../content/blogContent";
 import { readingMinutes } from "../content/publicUrl";
 import { siteContent } from "../content/siteContent";
@@ -24,7 +25,7 @@ function renderAccentedTitle(title: string, accentPhrase?: string) {
 export function HomePage() {
   const hero = siteContent.home.hero;
   const title = hero.title;
-  const skillGroups = siteContent.home.skills.groups;
+  const tools = siteContent.home.skills.items;
 
   return (
     <div className={sty.root}>
@@ -75,49 +76,11 @@ export function HomePage() {
                 {siteContent.home.skills.title}
               </PretextText>
             </div>
-            {skillGroups?.length ? (
-              <div className={sty.skillGroups} data-text-reveal="copy">
-                {skillGroups.map((group) => (
-                  <article key={group.title}>
-                    <PretextText as="h3" measure="heading">
-                      {group.title}
-                    </PretextText>
-                    <ul aria-label={`${group.title} skills`}>
-                      {group.items.map((skill, index) => (
-                        <li
-                          className={
-                            index % 3 === 1
-                              ? sty.skillFlare
-                              : index % 3 === 2
-                                ? sty.skillIris
-                                : undefined
-                          }
-                          key={skill}
-                        >
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
-                  </article>
-                ))}
-              </div>
-            ) : (
-              <ul
-                data-text-reveal="copy"
-                aria-label={siteContent.home.skills.cloudAriaLabel ?? "Skills cloud"}
-              >
-                {siteContent.home.skills.items.map((skill, index) => (
-                  <li
-                    className={
-                      index % 3 === 1 ? sty.skillFlare : index % 3 === 2 ? sty.skillIris : undefined
-                    }
-                    key={skill}
-                  >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ProjectStack
+              items={tools}
+              ariaLabel={siteContent.home.skills.cloudAriaLabel ?? "Tools and technologies"}
+              variant="grid"
+            />
           </div>
         </div>
       </section>

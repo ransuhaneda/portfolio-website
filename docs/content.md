@@ -1,6 +1,6 @@
 # Content and generated assets
 
-Work in the intended checkout, not the absolute paths in historical notes. Main copy and project facts belong to `content/site-content.json`; blog articles belong to `content/blog/*.md`. Use the local toolchain and commands in [development](development.md).
+Work in the intended checkout, not the absolute paths in historical notes. Main copy and project facts belong to `content/site-content.json`; search-engine titles and descriptions belong to the separate `content/seo.json`; blog articles belong to `content/blog/*.md`. Use the local toolchain and commands in [development](development.md).
 
 Run `vp run prebuild` after content changes, including during a running dev session. `vp run dev` regenerates once at startup. `vp run build` regenerates, type-checks, builds and prerenders the public app through React Router. Do not substitute raw `vite build`: it skips required generation. Generated public mirrors, sitemap, security contact and agent indexes plus `src/content/publishedBlogPosts.json` must not be hand-edited. Keep `public/.generated-mirrors.json`: it bounds cleanup of renamed/unpublished/deleted project/blog mirrors.
 

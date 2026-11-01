@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import { InternalHero } from "../components/InternalHero";
 import { PretextText } from "../components/PretextText";

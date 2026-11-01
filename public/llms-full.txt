@@ -2,7 +2,7 @@
 
 ## Site summary
 - Name: Lance Carteciano
-- Description: I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
+- Description: Code, design, and the web.
 - Contact email: cartecianolance@gmail.com
 
 ## Home
@@ -14,11 +14,11 @@ HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.
 
 ## Main pages
 
-- [Home](https://384721.xyz/index.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
-- [About](https://384721.xyz/about.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
+- [Home](https://384721.xyz/index.md): Code, design, and the web.
+- [About](https://384721.xyz/about.md): Code, design, and the web.
 - [Blog](https://384721.xyz/blog.md): Things I learn while building and maintaining websites.
 - [Projects](https://384721.xyz/projects.md): Project index and case-study summaries.
-- [Contact](https://384721.xyz/contact.md): I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.
+- [Contact](https://384721.xyz/contact.md): Code, design, and the web.
 - [Resume](https://384721.xyz/resume.md): Frontend and WordPress developer with production experience building custom themes, Elementor systems, reusable page structures, and responsive React interfaces. Maintains company and client websites across development, security, QA, deployment, and recovery, with a visual-design background that supports accurate design implementation and practical content workflows.
 - [Design system](https://384721.xyz/design-system.md): A public reference for the colors, type, spacing, grid, components, and motion rules used on this site.
 
@@ -58,6 +58,7 @@ HI, I’M LANCE. A FULL-STACK WEB DEVELOPER BASED IN THE PHILIPPINES.
 - Hostinger
 - Server administration
 - SSL
+- Accessibility
 
 ## About
 # About
@@ -508,7 +509,7 @@ Frontend and WordPress developer with production experience building custom them
 - Client: Personal project
 - Role: Frontend developer
 - Stack: TypeScript, Vite, CodeMirror 6, Marked, DOMPurify, Vitest, Playwright
-
+- Homepage image: https://384721.xyz/images/projects/another-markdown-viewer-featured.png
 
 ## Summary
 
@@ -570,7 +571,7 @@ Keeping the raw Markdown as the source of truth made it easier to connect editin
 - Client: Personal project
 - Role: Frontend developer
 - Stack: React, TypeScript, Vite, SCSS, Vitest, Playwright
-- Homepage image: https://384721.xyz/images/projects/debase-live-homepage.png
+- Homepage image: https://384721.xyz/images/projects/debase-featured.png
 
 ## Summary
 
@@ -630,7 +631,7 @@ I trust small utilities more when the interface and codebase state their privacy
 - Client: ABCDE Creative Studio
 - Role: Web Developer
 - Stack: React, TypeScript, JavaScript, HTML5, CSS3, Figma, GitHub Actions, Cloudflare
-- Homepage image: https://384721.xyz/images/home/featured-project-2.png
+- Homepage image: https://384721.xyz/images/projects/abcde-creative-featured.png
 
 ## Summary
 
@@ -683,75 +684,6 @@ The pages stayed close to the design across screen sizes, while shared patterns 
 ## Reflection
 
 I check the real page at the widths people will use instead of stopping after the desktop mockup matches.
-
-# WordPress maintenance and Elementor system work
-
-- Year: 2026
-- Client: Tech Support Plus I.T Service
-- Role: Frontend web developer / graphic designer
-- Stack: WordPress, Elementor, PHP, HTML5, CSS3, ACF, Code Snippets, cPanel, Hostinger
-- Homepage image: https://384721.xyz/images/home/featured-project-1.png
-
-## Summary
-
-Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.
-
-## Overview
-
-This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in, including system cleanup, security recovery, backups, QA, and deployment support.
-
-## Problem
-
-Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.
-
-## My responsibility
-
-I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.
-
-- WordPress Maintenance
-- Elementor System Cleanup
-- Frontend Styling
-- Admin Workflow Support
-- Hosting Handoff Support
-- Security Recovery
-- Backup and Restore
-- Release QA
-
-## What I did
-
-I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.
-
-- Maintained company and client websites, supported periodic updates for additional company websites, and built responsive MVP landing-page demos for client and internal leadership review.
-- Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes.
-- Built custom WordPress themes from blank starters for internal corporate websites.
-- Built a centralized WordPress plugin manager and contributed to production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.
-- Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.
-- Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.
-- Established biweekly backups with four-week retention and verified recovery through restoration testing.
-- Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing.
-
-## Result
-
-Repeated sections follow clearer patterns, content editors have fewer opportunities to break the layout, and site recovery has been tested rather than assumed.
-
-- Company and client sites became easier to update because repeated sections and content fields now follow clearer patterns.
-- The recovery and backup process gives the team a tested path for responding to incidents and restoring a site.
-- Post-deployment checks cover layout, navigation, links, content, and production smoke behavior instead of stopping at the code change.
-
-## Project scope
-
-- WordPress Maintenance
-- Elementor System Cleanup
-- Frontend Styling
-- Admin Workflow Support
-- Hosting Handoff Support
-- Security Recovery
-- Backup and Restore
-- Release QA
-
-## Reflection
-
-Maintenance is easier to hand over when the editing patterns are visible and repeatable.
 
 # Nsight Index blog management system
 
@@ -817,7 +749,7 @@ The useful part of this project is the working publishing flow, so that is what 
 - Client: Personal portfolio
 - Role: Frontend developer
 - Stack: React, TypeScript, JSON content, Markdown, Cloudflare Pages, Vite
-- Homepage image: https://384721.xyz/images/home/featured-project-4.png
+- Homepage image: https://384721.xyz/images/projects/portfolio-featured.png
 
 ## Summary
 
@@ -1077,4 +1009,4 @@ Buttons, tags, fields, cards, dividers, and images reuse the same tokens as the 
 
 ## Motion
 
-Motion stays brief. Reduced-motion preferences remove decorative transforms.
+Motion is a quiet system of reveals, lifts, directional changes, and ambient loops. Each specimen uses the same timing tokens and respects reduced-motion preferences.

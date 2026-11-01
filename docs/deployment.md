@@ -24,6 +24,6 @@ Check the generated security.txt expiry before release and renew it before it ex
 
 ## Build environment and historical tooling
 
-`wrangler.toml` and `.github/workflows/deploy-pages.yml` use `dist/client`. The preview workflow lets `pnpm/action-setup` read the pnpm version from `package.json` (currently 11.25.0), rather than maintaining a separate version pin. Verify the next authorized preview publication on GitHub; local checks do not establish hosted CI or deployment behavior. Configure Cloudflare's build environment to run the checked-in build script with the required runtime/toolchain.
+`wrangler.toml` and `.github/workflows/deploy-pages.yml` use `dist/client`. The preview workflow lets `pnpm/action-setup` read the pnpm version from `package.json` (currently 12.15.0), rather than maintaining a separate version pin. Verify the next authorized preview publication on GitHub; local checks do not establish hosted CI or deployment behavior. Configure Cloudflare's build environment to run the checked-in build script with the required runtime/toolchain.
 
 The old `scripts/generate-route-shells.mjs` is not part of the current package build script. Do not infer current HTML, 404, or deployed host behavior from old launch evidence. Renew affected runtime and host checks against the final source.

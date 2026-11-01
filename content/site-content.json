@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Lance Carteciano",
-    "description": "I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.",
+    "description": "Code, design, and the web.",
     "email": "cartecianolance@gmail.com",
     "siteUrl": "https://384721.xyz",
     "socials": [
@@ -65,10 +65,6 @@
         }
       ],
       "moreLinks": [
-        {
-          "to": "/#contact",
-          "label": "Project note"
-        },
         {
           "to": "/resume",
           "label": "Resume"
@@ -413,7 +409,17 @@
         "Automated tests"
       ],
       "reflection": "Keeping the raw Markdown as the source of truth made it easier to connect editing, preview, recovery, and export without making those flows compete for ownership of the document.",
-      "gallery": []
+      "image": {
+        "src": "/images/projects/another-markdown-viewer-featured.png",
+        "alt": "Another Markdown Viewer with a dark split editor and rendered preview workspace."
+      },
+      "gallery": [
+        {
+          "src": "/images/projects/another-markdown-viewer-featured.png",
+          "alt": "Another Markdown Viewer with a dark split editor and rendered preview workspace.",
+          "caption": "The split source and rendered Markdown workspace."
+        }
+      ]
     },
     {
       "slug": "debase",
@@ -446,8 +452,8 @@
       ],
       "gallery": [
         {
-          "src": "/images/projects/debase-live-homepage.png",
-          "alt": "Debase homepage with encode and decode modes, format controls, source input, and result panel.",
+          "src": "/images/projects/debase-featured.png",
+          "alt": "Debase browser utility with a lime accent, format controls, and source and result panels.",
           "caption": "The live Debase workbench. Text and file processing stays in the browser."
         },
         {
@@ -471,8 +477,8 @@
       ],
       "reflection": "I trust small utilities more when the interface and codebase state their privacy boundary, validation behavior, content limits, and unsafe-output handling plainly.",
       "image": {
-        "src": "/images/projects/debase-live-homepage.png",
-        "alt": "Debase homepage showing its browser-based Base64 encode and decode workbench."
+        "src": "/images/projects/debase-featured.png",
+        "alt": "Debase browser utility with a lime accent, format controls, and source and result panels."
       }
     },
     {
@@ -514,8 +520,8 @@
         "The delivery process had a clearer build and deployment path."
       ],
       "image": {
-        "src": "/images/home/featured-project-2.png",
-        "alt": "Editorial device mockup used as a placeholder for ABCDE Creative Studio frontend work."
+        "src": "/images/projects/abcde-creative-featured.png",
+        "alt": "ABCDE Creative Studio website hero with editorial typography and pastel service labels."
       },
       "gallery": [
         {
@@ -547,81 +553,6 @@
         "Deployment Support"
       ],
       "reflection": "I check the real page at the widths people will use instead of stopping after the desktop mockup matches."
-    },
-    {
-      "slug": "wordpress-maintenance-system",
-      "title": "WordPress maintenance and Elementor system work",
-      "year": "2026",
-      "client": "Tech Support Plus I.T Service",
-      "kind": "case-study",
-      "summary": "Ongoing WordPress work across company and client sites: page maintenance, Elementor systems, reusable sections, content updates, security recovery, backups, QA, and hosting handoffs.",
-      "role": "Frontend web developer / graphic designer",
-      "responsibility": "I worked as part of the team maintaining company and client sites. My responsibilities covered Elementor migrations, custom themes, reusable modules, content workflows, security recovery, backups, release QA, and hosting handoffs.",
-      "stack": [
-        "WordPress",
-        "Elementor",
-        "PHP",
-        "HTML5",
-        "CSS3",
-        "ACF",
-        "Code Snippets",
-        "cPanel",
-        "Hostinger"
-      ],
-      "links": [],
-      "challenge": "Several sites needed regular updates, cleaner Elementor structure, safer admin workflows, and operational processes for security, recovery, and post-deployment checks.",
-      "approach": [
-        "Maintained company and client websites, supported periodic updates for additional company websites, and built responsive MVP landing-page demos for client and internal leadership review.",
-        "Created a repeatable migration approach for rebuilding legacy Elementor pages with Editor V4 elements, centralized design variables, and reusable classes.",
-        "Built custom WordPress themes from blank starters for internal corporate websites.",
-        "Built a centralized WordPress plugin manager and contributed to production Elementor modules for reusable content displays, navigation, carousels, galleries, and directory features.",
-        "Used ACF and Code Snippets to simplify admin-side editing for SEO and content updates.",
-        "Recovered a defaced WordPress site through malware scans, checksum verification, file replacement, credential rotation, account cleanup, 2FA, and expanded monitoring, with no reinfection observed during the following 14 days.",
-        "Established biweekly backups with four-week retention and verified recovery through restoration testing.",
-        "Owned responsive, functional, and post-deployment QA across WordPress releases, including layout, navigation, links, content, and production smoke testing."
-      ],
-      "outcome": [
-        "Company and client sites became easier to update because repeated sections and content fields now follow clearer patterns.",
-        "The recovery and backup process gives the team a tested path for responding to incidents and restoring a site.",
-        "Post-deployment checks cover layout, navigation, links, content, and production smoke behavior instead of stopping at the code change."
-      ],
-      "image": {
-        "src": "/images/home/featured-project-1.png",
-        "alt": "Editorial device mockup used as a placeholder for WordPress maintenance and Elementor system work."
-      },
-      "gallery": [
-        {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
-          "alt": "Decorative stock photograph; not a project screenshot.",
-          "caption": "Placeholder visual. Client screenshots are not shown."
-        },
-        {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-1/1600/1100.jpg",
-          "alt": "Decorative stock photograph; not a project screenshot."
-        },
-        {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
-          "alt": "Decorative stock photograph; not a project screenshot."
-        },
-        {
-          "src": "https://picsum.photos/seed/portfolio-abcde-creative-2/1600/1100.jpg",
-          "alt": "Decorative stock photograph; not a project screenshot."
-        }
-      ],
-      "overview": "This entry covers ongoing WordPress maintenance rather than one finished launch. I work across company and client sites as new requests come in, including system cleanup, security recovery, backups, QA, and deployment support.",
-      "approachSummary": "I clean up the parts people edit repeatedly: Elementor classes, global styles, content fields, reusable modules, and handoff notes. I also treat recovery and post-deployment QA as part of maintenance.",
-      "resultSummary": "Repeated sections follow clearer patterns, content editors have fewer opportunities to break the layout, and site recovery has been tested rather than assumed.",
-      "scope": [
-        "WordPress Maintenance",
-        "Elementor System Cleanup",
-        "Frontend Styling",
-        "Admin Workflow Support",
-        "Hosting Handoff Support",
-        "Security Recovery",
-        "Backup and Restore",
-        "Release QA"
-      ],
-      "reflection": "Maintenance is easier to hand over when the editing patterns are visible and repeatable."
     },
     {
       "slug": "nsight-index",
@@ -722,8 +653,8 @@
         "New case studies and posts have a known place to start."
       ],
       "image": {
-        "src": "/images/home/featured-project-4.png",
-        "alt": "Editorial tablet mockup used as a placeholder for the portfolio content system."
+        "src": "/images/projects/portfolio-featured.png",
+        "alt": "Portfolio website with a dark editorial layout and selected work section."
       },
       "gallery": [
         {
@@ -960,44 +891,10 @@
         "cPanel",
         "Hostinger",
         "Server administration",
-        "SSL"
+        "SSL",
+        "Accessibility"
       ],
-      "groups": [
-        {
-          "title": "Frontend",
-          "items": [
-            "React",
-            "TypeScript",
-            "JavaScript",
-            "HTML5",
-            "CSS3",
-            "SCSS",
-            "Tailwind CSS",
-            "Bootstrap"
-          ]
-        },
-        {
-          "title": "WordPress and backend",
-          "items": ["WordPress", "Elementor", "PHP", "Laravel", "MySQL", "ACF", "Code Snippets"]
-        },
-        {
-          "title": "Design and delivery",
-          "items": [
-            "Figma",
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Accessibility",
-            "Git",
-            "GitHub Actions",
-            "Cloudflare",
-            "cPanel",
-            "Hostinger",
-            "Server administration",
-            "SSL"
-          ]
-        }
-      ],
-      "cloudAriaLabel": "Frontend, WordPress, backend, design, and delivery skills"
+      "cloudAriaLabel": "Tools and technologies I use"
     },
     "notes": {
       "title": "Fresh from the blog"
@@ -1126,7 +1023,7 @@
       {
         "id": "motion",
         "title": "Motion",
-        "description": "Motion stays brief. Reduced-motion preferences remove decorative transforms."
+        "description": "Motion is a quiet system of reveals, lifts, directional changes, and ambient loops. Each specimen uses the same timing tokens and respects reduced-motion preferences."
       }
     ]
   }

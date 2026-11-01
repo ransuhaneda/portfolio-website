@@ -24,4 +24,4 @@ Buttons, tags, fields, cards, dividers, and images reuse the same tokens as the 
 
 ## Motion
 
-Motion stays brief. Reduced-motion preferences remove decorative transforms.
+Motion is a quiet system of reveals, lifts, directional changes, and ambient loops. Each specimen uses the same timing tokens and respects reduced-motion preferences.

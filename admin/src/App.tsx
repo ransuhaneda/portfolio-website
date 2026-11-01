@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router";
 import { adminApi, type AdminSession } from "./api/adminApi";
 import { DashboardScreen } from "./screens/DashboardScreen";
 import type { DashboardScreenProps } from "./screens/dashboard/dashboardTypes";

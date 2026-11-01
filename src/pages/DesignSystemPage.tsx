@@ -1,7 +1,14 @@
-import { LuArrowRight, LuCheck, LuLock } from "react-icons/lu";
+import { useRef, useState } from "react";
+import { LuArrowLeft, LuArrowRight, LuCheck, LuLock } from "react-icons/lu";
+import {
+  useDirectionalContentSwap,
+  type SwapDirection,
+} from "../animations/useDirectionalContentSwap";
+import { AsciiRevealImage } from "../components/AsciiRevealImage";
 import { InternalHero } from "../components/InternalHero";
+import { PretextFooterCanvas } from "../components/PretextFooterCanvas";
 import { PretextText } from "../components/PretextText";
-import { siteContent } from "../content/siteContent";
+import { siteContent, type Project } from "../content/siteContent";
 
 import sty from "./DesignSystemPage.module.scss";
 
@@ -18,8 +25,60 @@ const colors = [
 
 const spacing = ["2xs", "xs", "sm", "md", "lg", "xl", "2xl"] as const;
 
+function DirectionalSwapSpecimen({ projects }: { projects: Project[] }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scopeRef = useRef<HTMLDivElement>(null);
+  const copyRef = useRef<HTMLDivElement>(null);
+  const { swap, isAnimating } = useDirectionalContentSwap({
+    scope: scopeRef,
+    copy: copyRef,
+  });
+  const activeProject = projects[activeIndex];
+
+  if (!activeProject) return null;
+
+  const navigate = (direction: SwapDirection) => {
+    const nextIndex = (activeIndex + direction + projects.length) % projects.length;
+    void swap(direction, () => setActiveIndex(nextIndex));
+  };
+
+  return (
+    <div ref={scopeRef} className={sty.swapDemo} aria-live="polite">
+      <div ref={copyRef} className={sty.swapDemoCopy}>
+        <strong>{activeProject.title}</strong>
+        <span>
+          {activeProject.year} / {activeProject.client}
+        </span>
+      </div>
+      <div className={sty.swapDemoControls}>
+        <button
+          type="button"
+          className="button button--ghost"
+          aria-label="Previous project"
+          aria-disabled={isAnimating}
+          onClick={() => navigate(-1)}
+        >
+          <LuArrowLeft aria-hidden="true" focusable="false" />
+        </button>
+        <button
+          type="button"
+          className="button button--ghost"
+          aria-label="Next project"
+          aria-disabled={isAnimating}
+          onClick={() => navigate(1)}
+        >
+          <LuArrowRight aria-hidden="true" focusable="false" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function DesignSystemPage() {
   const content = siteContent.designSystemPage;
+  const imageProject = siteContent.projects.find((project) => project.image);
+  const motionProjects = siteContent.projects.filter((project) => project.image).slice(0, 3);
+  const footerMotionText = siteContent.projects.map((project) => project.title).join(" / ");
 
   const section = (id: string) => content?.sections.find((item) => item.id === id);
 
@@ -218,9 +277,71 @@ export function DesignSystemPage() {
                 {section("motion")?.description}
               </PretextText>
             </header>
-            <div className={sty.motionDemo} tabIndex={0}>
-              <span>Hover or focus</span>
-              <strong>Restrained lift</strong>
+            <div className={sty.motionShowcase}>
+              <article className={`${sty.motionSpecimen} ${sty.motionSpecimenFeatured}`}>
+                <div className={sty.specimenMeta}>
+                  <span>01 / Text reveal</span>
+                  <span>SplitText + ScrollTrigger</span>
+                </div>
+                <div className={sty.textRevealDemo}>
+                  <PretextText as="h3" measure="heading" reveal="copy">
+                    Text enters by line.
+                  </PretextText>
+                </div>
+                <div className={sty.specimenCopy}>
+                  <strong>Applied globally</strong>
+                  <p>
+                    Route headings and section copy use the same staggered line and copy reveals.
+                  </p>
+                </div>
+              </article>
+
+              <article className={sty.motionSpecimen}>
+                <div className={sty.specimenMeta}>
+                  <span>02 / Project swap</span>
+                  <span>Directional GSAP transition</span>
+                </div>
+                <DirectionalSwapSpecimen projects={motionProjects} />
+                <div className={sty.specimenCopy}>
+                  <strong>Featured carousel</strong>
+                  <p>Copy exits and enters from the direction of navigation.</p>
+                </div>
+              </article>
+
+              <article className={sty.motionSpecimen}>
+                <div className={sty.specimenMeta}>
+                  <span>03 / Image reveal</span>
+                  <span>ASCII canvas + pointer</span>
+                </div>
+                {imageProject?.image ? (
+                  <AsciiRevealImage
+                    className={sty.motionAscii}
+                    src={imageProject.image.src}
+                    alt={imageProject.image.alt}
+                  />
+                ) : null}
+                <div className={sty.specimenCopy}>
+                  <strong>Featured media</strong>
+                  <p>The cached ASCII raster resolves into the project image on pointer entry.</p>
+                </div>
+              </article>
+
+              <article className={`${sty.motionSpecimen} ${sty.motionSpecimenWide}`}>
+                <div className={sty.specimenMeta}>
+                  <span>04 / Footer field</span>
+                  <span>Canvas + pointer field</span>
+                </div>
+                <div className={sty.footerMotionStage}>
+                  <PretextFooterCanvas text={footerMotionText} />
+                </div>
+                <div className={sty.specimenCopy}>
+                  <strong>Ambient text field</strong>
+                  <p>
+                    The footer's live text field drifts continuously and responds to pointer
+                    position.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </div>

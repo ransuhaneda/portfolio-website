@@ -239,6 +239,7 @@
 }
 .skillGroup {
   display: grid;
+  align-content: start;
   gap: var(--space-xs);
 }
 .skillGroup h3 {
