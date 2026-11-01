@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Lance Carteciano",
-    "description": "I build websites, turn designs into responsive pages, and help keep them working after launch. My work includes React, WordPress, and Laravel, with a background in visual design.",
+    "description": "Code, design, and the web.",
     "email": "cartecianolance@gmail.com",
     "siteUrl": "https://384721.xyz",
     "socials": [
@@ -65,10 +65,6 @@
         }
       ],
       "moreLinks": [
-        {
-          "to": "/#contact",
-          "label": "Project note"
-        },
         {
           "to": "/resume",
           "label": "Resume"
@@ -895,44 +891,10 @@
         "cPanel",
         "Hostinger",
         "Server administration",
-        "SSL"
+        "SSL",
+        "Accessibility"
       ],
-      "groups": [
-        {
-          "title": "Frontend",
-          "items": [
-            "React",
-            "TypeScript",
-            "JavaScript",
-            "HTML5",
-            "CSS3",
-            "SCSS",
-            "Tailwind CSS",
-            "Bootstrap"
-          ]
-        },
-        {
-          "title": "WordPress and backend",
-          "items": ["WordPress", "Elementor", "PHP", "Laravel", "MySQL", "ACF", "Code Snippets"]
-        },
-        {
-          "title": "Design and delivery",
-          "items": [
-            "Figma",
-            "Adobe Photoshop",
-            "Adobe Illustrator",
-            "Accessibility",
-            "Git",
-            "GitHub Actions",
-            "Cloudflare",
-            "cPanel",
-            "Hostinger",
-            "Server administration",
-            "SSL"
-          ]
-        }
-      ],
-      "cloudAriaLabel": "Frontend, WordPress, backend, design, and delivery skills"
+      "cloudAriaLabel": "Tools and technologies I use"
     },
     "notes": {
       "title": "Fresh from the blog"
@@ -1061,7 +1023,7 @@
       {
         "id": "motion",
         "title": "Motion",
-        "description": "Motion stays brief. Reduced-motion preferences remove decorative transforms."
+        "description": "Motion is a quiet system of reveals, lifts, directional changes, and ambient loops. Each specimen uses the same timing tokens and respects reduced-motion preferences."
       }
     ]
   }
