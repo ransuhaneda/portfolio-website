@@ -37,30 +37,46 @@
 }
 
 .motionA {
-  -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0 13px, transparent 13px 42px);
-  mask-image: repeating-linear-gradient(to bottom, #000 0 13px, transparent 13px 42px);
+  -webkit-mask-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-text-inverse) 0 13px,
+    var(--color-transparent) 13px 42px
+  );
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-text-inverse) 0 13px,
+    var(--color-transparent) 13px 42px
+  );
   animation: ascii-flow-a 10.4s ease-in-out infinite alternate;
 }
 
 .motionB {
   -webkit-mask-image: repeating-linear-gradient(
     to bottom,
-    transparent 0 14px,
-    #000 14px 27px,
-    transparent 27px 42px
+    var(--color-transparent) 0 14px,
+    var(--color-text-inverse) 14px 27px,
+    var(--color-transparent) 27px 42px
   );
   mask-image: repeating-linear-gradient(
     to bottom,
-    transparent 0 14px,
-    #000 14px 27px,
-    transparent 27px 42px
+    var(--color-transparent) 0 14px,
+    var(--color-text-inverse) 14px 27px,
+    var(--color-transparent) 27px 42px
   );
   animation: ascii-flow-b 11.2s ease-in-out infinite alternate;
 }
 
 .motionC {
-  -webkit-mask-image: repeating-linear-gradient(to bottom, transparent 0 28px, #000 28px 42px);
-  mask-image: repeating-linear-gradient(to bottom, transparent 0 28px, #000 28px 42px);
+  -webkit-mask-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-transparent) 0 28px,
+    var(--color-text-inverse) 28px 42px
+  );
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    var(--color-transparent) 0 28px,
+    var(--color-text-inverse) 28px 42px
+  );
   animation: ascii-flow-c 12s ease-in-out infinite alternate;
 }
 
