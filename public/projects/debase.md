@@ -4,7 +4,7 @@
 - Client: Personal project
 - Role: Frontend developer
 - Stack: React, TypeScript, Vite, SCSS, Vitest, Playwright
-- Homepage image: https://384721.xyz/images/projects/debase-live-homepage.png
+- Homepage image: https://384721.xyz/images/projects/debase-featured.png
 
 ## Summary
 

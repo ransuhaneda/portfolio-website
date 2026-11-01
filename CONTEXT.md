@@ -46,7 +46,7 @@ _Avoid_: Backlog, redesign, general improvements
 
 **Featured project**:
 One of the four projects selected to lead the homepage evidence: Debase, ABCDE Creative Studio, Nsight Index, or the Portfolio CMS.
-_Avoid_: WordPress maintenance system, every case study
+_Avoid_: every case study
 
 **Evidence level**:
 The basis for a result claim: measured evidence, an externally observable artifact or behavior, or a clearly qualitative practitioner outcome.

@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router";
 import { LuExternalLink } from "react-icons/lu";
 import { siteContent, type Project } from "../content/siteContent";
 import sty from "./ProjectCard.module.scss";

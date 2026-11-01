@@ -1,5 +1,5 @@
 import type { PointerEvent as ReactPointerEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { LuExternalLink, LuGlobe, LuMail } from "react-icons/lu";
 import { getLinktreeUrl, siteContent } from "../content/siteContent";
 import { BrandIcon } from "./BrandIcon";

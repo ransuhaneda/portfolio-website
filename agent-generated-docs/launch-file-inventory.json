@@ -402,11 +402,6 @@
       "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
     },
     {
-      "path": "public/projects/wordpress-maintenance-system.md",
-      "classification": "generated",
-      "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."
-    },
-    {
       "path": "public/resume.md",
       "classification": "generated",
       "finding": "Generator-owned mirrors/index/security/sitemap or static robots; regenerated and route/artifact checks applied. See handoff."

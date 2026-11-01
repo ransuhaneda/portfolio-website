@@ -4,6 +4,7 @@
 - Client: Personal project
 - Role: Frontend developer
 - Stack: TypeScript, Vite, CodeMirror 6, Marked, DOMPurify, Vitest, Playwright
+- Homepage image: https://384721.xyz/images/projects/another-markdown-viewer-featured.png
 
 ## Summary
 

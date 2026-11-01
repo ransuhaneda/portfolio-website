@@ -4,7 +4,7 @@
 - Client: Personal portfolio
 - Role: Frontend developer
 - Stack: React, TypeScript, JSON content, Markdown, Cloudflare Pages, Vite
-- Homepage image: https://384721.xyz/images/home/featured-project-4.png
+- Homepage image: https://384721.xyz/images/projects/portfolio-featured.png
 
 ## Summary
 

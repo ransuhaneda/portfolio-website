@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router";
 import { LuMenu, LuX } from "react-icons/lu";
 import { siteContent } from "../content/siteContent";
 import sty from "./SiteHeader.module.scss";

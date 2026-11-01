@@ -4,7 +4,7 @@
 - Client: ABCDE Creative Studio
 - Role: Web Developer
 - Stack: React, TypeScript, JavaScript, HTML5, CSS3, Figma, GitHub Actions, Cloudflare
-- Homepage image: https://384721.xyz/images/home/featured-project-2.png
+- Homepage image: https://384721.xyz/images/projects/abcde-creative-featured.png
 
 ## Summary
 

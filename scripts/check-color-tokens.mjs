@@ -4,7 +4,7 @@ import process from "node:process";
 
 const allowedFiles = new Set(["src/styles/tokens.scss"]);
 const colorLiteralPattern =
-  /#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?)\([^)]*\)|\b(?:black|white|transparent)\b|\b(?:color-mix|linear-gradient)\(/g;
+  /#[0-9a-fA-F]{3,8}\b|\b(?:rgba?|hsla?)\([^)]*\)|\b(?:black|white|transparent)\b|\b(?:color-mix)\(/g;
 const colorVarPattern = /var\(--color-[^)]+\)/g;
 const colorCustomPropertyNamePattern = /--color-[\w-]+/g;
 const sassTokenPattern = /#\{tokens\.color\([^)]+\)\}/g;

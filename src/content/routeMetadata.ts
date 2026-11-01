@@ -1,4 +1,5 @@
 import content from "../../content/site-content.json" with { type: "json" };
+import seo from "../../content/seo.json" with { type: "json" };
 import posts from "./publishedBlogPosts.json" with { type: "json" };
 
 const homeImage = content.projects.find(
@@ -15,33 +16,41 @@ const personSchema = {
   sameAs: content.site.socials.map((social) => social.href),
 };
 
+function getSeoEntry<T extends Record<string, { title: string; description: string }>>(
+  entries: T,
+  key: string,
+  kind: string,
+) {
+  // SAFETY: The runtime guard below verifies that every route/content key has SEO copy.
+  const entry = entries[key as keyof T];
+  if (!entry) throw new Error(`Missing SEO metadata for ${kind}: ${key}`);
+  return entry;
+}
+
 export const routeMetadata = [
   {
     path: "/",
-    title: content.home.hero.title,
-    description: content.site.description,
+    title: seo.pages.home.title,
+    description: seo.pages.home.description,
     image: homeImage,
   },
-  { path: "/about", title: content.about.title, description: content.site.description },
-  { path: "/resume", title: content.resume.headline, description: content.resume.summary },
-  { path: "/contact", title: content.contact.form.title, description: content.site.description },
-  { path: "/projects", title: content.projectsPage.title, description: content.projectsPage.intro },
-  { path: "/blog", title: content.blogPage.title, description: content.blogPage.intro },
+  { path: "/about", ...seo.pages.about },
+  { path: "/resume", ...seo.pages.resume },
+  { path: "/contact", ...seo.pages.contact },
+  { path: "/projects", ...seo.pages.projects },
+  { path: "/blog", ...seo.pages.blog },
   {
     path: "/design-system",
-    title: content.designSystemPage.title,
-    description: content.designSystemPage.intro,
+    ...seo.pages.designSystem,
   },
   ...content.projects.map((project) => ({
     path: `/projects/${project.slug}`,
-    title: project.title,
-    description: project.summary,
+    ...getSeoEntry(seo.projects, project.slug, "project"),
     image: project.image?.src,
   })),
   ...posts.map((post) => ({
     path: `/blog/${post.slug}`,
-    title: post.title,
-    description: post.excerpt,
+    ...getSeoEntry(seo.blog, post.slug, "blog post"),
     date: post.date,
     image: post.coverImage,
   })),
@@ -51,8 +60,8 @@ export function getRouteMetadata(pathname: string) {
   const path = pathname.replace(/\/+$/, "") || "/";
   const entry = routeMetadata.find((route) => route.path === path);
   return {
-    title: `${entry?.title ?? content.notFoundPage.title} | ${content.site.name}`,
-    description: entry?.description ?? content.notFoundPage.intro,
+    title: entry?.title ?? seo.pages.notFound.title,
+    description: entry?.description ?? seo.pages.notFound.description,
     canonical: entry ? `${content.site.siteUrl}${entry.path}` : undefined,
     date: entry && "date" in entry ? String(entry.date) : undefined,
     image: entry?.image,

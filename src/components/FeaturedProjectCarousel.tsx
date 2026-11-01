@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import { LuArrowLeft, LuArrowRight, LuExternalLink } from "react-icons/lu";
 import {
   useDirectionalContentSwap,
@@ -7,6 +7,7 @@ import {
 } from "../animations/useDirectionalContentSwap";
 import { getPreferredProjectLink, type Project } from "../content/siteContent";
 import sty from "./FeaturedProjectCarousel.module.scss";
+import { AsciiRevealImage } from "./AsciiRevealImage";
 import { ProjectStack } from "./ProjectStack";
 import { PretextText } from "./PretextText";
 
@@ -143,58 +144,64 @@ export function FeaturedProjectCarousel({
               </PretextText>
               <PretextText measure="prose">{activeProject.summary}</PretextText>
             </div>
-            <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
+
+            <div className="">
+              <ProjectStack items={activeProject.stack} ariaLabel={stackLabel} />
+              <dl className={sty.projectMeta}>
+                <div>
+                  <dt>Client</dt>
+                  <dd>{activeProject.client}</dd>
+                </div>
+                {projectLink ? (
+                  <div>
+                    <dt>
+                      {new URL(projectLink.href).hostname === "github.com" ? "GitHub" : "Website"}
+                    </dt>
+                    <dd>
+                      <a
+                        className={sty.projectLink}
+                        href={projectLink.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {projectLink.label}
+                        <LuExternalLink aria-hidden="true" focusable="false" />
+                      </a>
+                    </dd>
+                  </div>
+                ) : (
+                  <div>
+                    <dt>Role</dt>
+                    <dd>{activeProject.role}</dd>
+                  </div>
+                )}
+                <div>
+                  <dt>Year</dt>
+                  <dd>{activeProject.year}</dd>
+                </div>
+              </dl>
+
+              <div className={sty.featuredLinks}>
+                <Link to={`/projects/${activeProject.slug}`} state={{ from: "/" }}>
+                  Read the case study
+                  <LuExternalLink aria-hidden="true" focusable="false" />
+                </Link>
+                <Link to="/projects">
+                  All projects
+                  <LuArrowRight aria-hidden="true" focusable="false" />
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className={sty.featuredData}>
-            <dl className={sty.projectMeta}>
-              <div>
-                <dt>Client</dt>
-                <dd>{activeProject.client}</dd>
-              </div>
-              {projectLink ? (
-                <div>
-                  <dt>
-                    {new URL(projectLink.href).hostname === "github.com" ? "GitHub" : "Website"}
-                  </dt>
-                  <dd>
-                    <a
-                      className={sty.projectLink}
-                      href={projectLink.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {projectLink.label}
-                      <LuExternalLink aria-hidden="true" focusable="false" />
-                    </a>
-                  </dd>
-                </div>
-              ) : (
-                <div>
-                  <dt>Role</dt>
-                  <dd>{activeProject.role}</dd>
-                </div>
-              )}
-              <div>
-                <dt>Year</dt>
-                <dd>{activeProject.year}</dd>
-              </div>
-              <div>
-                <dt>Discipline</dt>
-                <dd>{activeProject.stack[0]}</dd>
-              </div>
-            </dl>
-
-            <div className={sty.featuredLinks}>
-              <Link to={`/projects/${activeProject.slug}`} state={{ from: "/" }}>
-                Read the case study
-                <LuExternalLink aria-hidden="true" focusable="false" />
-              </Link>
-              <Link to="/projects">
-                All projects
-                <LuArrowRight aria-hidden="true" focusable="false" />
-              </Link>
-            </div>
+            {activeProject.image ? (
+              <AsciiRevealImage
+                className={sty.featuredMedia}
+                src={activeProject.image.src}
+                alt={activeProject.image.alt}
+              />
+            ) : null}
           </div>
         </div>
       </div>

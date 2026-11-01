@@ -151,10 +151,6 @@ export type SiteContent = {
     skills: {
       title: string;
       items: string[];
-      groups?: Array<{
-        title: string;
-        items: string[];
-      }>;
       cloudAriaLabel?: string;
     };
     notes: {

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { LuArrowLeft, LuFolderOpen } from "react-icons/lu";
 import { InternalHero } from "../components/InternalHero";
 import { PretextText } from "../components/PretextText";
