@@ -27,7 +27,6 @@ I build websites, turn designs into responsive pages, and help keep them working
 - [Another Markdown Viewer](https://384721.xyz/projects/another-markdown-viewer.md)
 - [Debase browser-local Base64 tools](https://384721.xyz/projects/debase.md)
 - [ABCDE Creative Studio website](https://384721.xyz/projects/abcde-creative.md)
-- [WordPress maintenance and Elementor system work](https://384721.xyz/projects/wordpress-maintenance-system.md)
 - [Nsight Index blog management system](https://384721.xyz/projects/nsight-index.md)
 - [Git-backed portfolio content system](https://384721.xyz/projects/portfolio-cms.md)
 - [Yay Nay feature voting platform](https://384721.xyz/projects/yay-nay-feature-vote.md)

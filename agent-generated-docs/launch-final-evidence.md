@@ -36,7 +36,6 @@ Reused existing Chrome 152 via http://127.0.0.1:9222; did not launch or close a 
 Each mode covers 390x844 and 1366x900 for:
 
 - /, /about, /resume, /contact, /projects, /blog, /design-system
-- /projects/wordpress-maintenance-system, /projects/abcde-creative, /projects/debase, /projects/nsight-index, /projects/portfolio-cms, /projects/gsap-animation, /projects/tetherly
 - /blog/build-correctness-is-not-visual-correctness, /blog/git-release-workflow-for-small-teams, /blog/git-backed-portfolio-cms, /blog/writing-useful-portfolio-case-studies
 - /unknown-final-qa, /blog/draft-final-qa (unknown unpublished route, not an invented source article)
 
@@ -49,7 +48,6 @@ Screenshot naming: .playwright/final/{production|preview}-{390|1366}-{home|route
 - .playwright/check-blog.mjs exit 0, raw final/blog-runtime.log: body-only reachability AND git-workflow yields the Git article; unrelated utm retained; reload and article-return preserve URL; incompatible category produces no results; back/forward restores filters; reset restores four notes. RSS browser DOMParser returns zero errors/four items.
 - .playwright/check-integration.mjs exit 0, raw final/integration-runtime.log: mobile Escape closes disclosure and restores toggle focus; contact required-name focus/live alert; homepage handoff disclosure; keyboard Enter on carousel descendant All projects navigates correctly; single main/four case-study headings; base-aware image and client metadata; missing route noindex.
 - final/interactions.mjs exit 0, raw interactions.log: keyboard skip link followed by Tab continues inside main; next/previous carousel changes/restores project; related project and blog links perform client navigation; invalid name/email focus and aria-invalid; actual resume page download.
-- Related transitions exercised: Debase -> WordPress maintenance and Git-backed CMS article -> build correctness article. related-project-mobile.png and related-blog-mobile.png show the new route. Existing related-content tests remain green; this script verifies route/H1 presence rather than an exhaustive related-card set comparison.
 - filter-mobile.png and empty-mobile.png recaptured after instant scroll and visually inspected with actual result/no-result content visible. The original contact-invalid-mobile.png was incorrectly described as showing errors: it showed only the hero/options. Its old interactions.mjs capture is superseded by the focused repair below; do not rerun that historical script to reproduce the repaired capture. The archive count uses singular/plural wording correctly.
 - final/mailto.mjs exit 0, raw mailto.log: valid synthetic QA inputs caused Page.frameRequestedNavigation with mailto scheme. No send action; no recipient/payload logged.
 - Actual a[download] activation saved PDF under .playwright/final. HTTP Content-Type application/pdf. Source, public copy, dist and actual browser download all SHA256 dd694da4e118042315c30eee3041550b4495dde6a7ad4c963078a4fa957200e7. pdf-integrity.json records only MIME/hash; no PDF contact information copied.
