@@ -7,7 +7,7 @@ import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
 import { ProjectCard } from "../components/ProjectCard";
 import { ProjectDetailPage } from "../pages/ProjectDetailPage";
 import { getPreferredProjectLink, siteContent, type ProjectLink } from "./siteContent";
-import { getRouteMetadata, metadataTags } from "./routeMetadata";
+import { getRouteMetadata, metadataTags, routeMetadata } from "./routeMetadata";
 import { publicUrl, readingMinutes } from "./publicUrl";
 
 describe("public launch boundaries", () => {
@@ -105,6 +105,12 @@ describe("public launch boundaries", () => {
   });
 
   it("keeps route metadata truthful and preview unindexed", () => {
+    expect(getRouteMetadata("/").title).toBe(
+      "Frontend Web Developer in the Philippines | Lance Carteciano",
+    );
+    expect(getRouteMetadata("/").title).not.toContain(siteContent.home.hero.title);
+    expect(routeMetadata).toHaveLength(20);
+
     expect(getRouteMetadata("/resume/").canonical).toBe("https://384721.xyz/resume");
     expect(getRouteMetadata("/blog/missing").found).toBe(false);
     expect(getRouteMetadata("/blog/missing").canonical).toBeUndefined();
@@ -119,6 +125,15 @@ describe("public launch boundaries", () => {
       "https://example.org/image.png",
     );
     expect(readingMinutes("word ".repeat(401))).toBe(3);
+  });
+
+  it("has dedicated SEO copy for every published route", () => {
+    for (const route of routeMetadata) {
+      const metadata = getRouteMetadata(route.path);
+      expect(metadata.title).toBeTruthy();
+      expect(metadata.description).toBeTruthy();
+      expect(metadata.title).not.toContain("HI, I’M LANCE");
+    }
   });
 
   it("rejects disabled or incompletely configured admin without assets or network", async () => {

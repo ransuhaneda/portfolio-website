@@ -12,7 +12,7 @@ Top-level pages are Home, About, Blog, Projects, Contact, Resume, and Design Sys
 
 Follow [content ownership](content.md) before editing copy or generated files. `src/content/siteContent.ts` defines site content types. `src/content/blogSchema.ts` validates blog sources. The generator creates the published-only snapshot consumed by `src/content/blogContent.ts`.
 
-`src/content/routeMetadata.ts` derives paths and metadata from site JSON and the generated blog snapshot. `src/content/routeMetaDescriptors.ts` supplies React Router metadata descriptors. `src/content/publicUrl.ts` handles local URLs for path-based preview hosting. Keep initial HTML metadata, client navigation metadata, production canonicals, and preview noindex behavior aligned.
+`src/content/routeMetadata.ts` derives paths from site JSON and the generated blog snapshot, while page titles and descriptions for search engines live in the separate editable `content/seo.json` source. `src/content/routeMetaDescriptors.ts` supplies React Router metadata descriptors. `src/content/publicUrl.ts` handles local URLs for path-based preview hosting. Keep initial HTML metadata, client navigation metadata, production canonicals, and preview noindex behavior aligned.
 
 Machine-readable mirrors live in `public/*.md`, `public/projects/*.md`, and `public/blog/*.md`. `functions/[[path]].ts` handles Cloudflare GET/HEAD requests with `Accept: text/markdown`, checks asset MIME, and adds discovery/negotiation headers. Static preview hosts do not run this Function.
 

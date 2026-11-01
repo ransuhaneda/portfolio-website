@@ -1,0 +1,95 @@
+{
+  "site": {
+    "name": "Lance Carteciano"
+  },
+  "pages": {
+    "home": {
+      "title": "Frontend Web Developer in the Philippines | Lance Carteciano",
+      "description": "Lance Carteciano is a frontend web developer in the Philippines who builds responsive React, WordPress, and Laravel websites."
+    },
+    "about": {
+      "title": "About Lance Carteciano | Frontend and WordPress Developer",
+      "description": "Learn about Lance Carteciano's work in frontend development, WordPress, responsive web design, accessibility, and website maintenance."
+    },
+    "resume": {
+      "title": "Lance Carteciano Resume | Frontend Web Developer",
+      "description": "View Lance Carteciano's resume, including frontend web development, WordPress, React, Laravel, design, and website maintenance experience."
+    },
+    "contact": {
+      "title": "Contact Lance Carteciano | Frontend Web Developer",
+      "description": "Contact Lance Carteciano about frontend web development, WordPress work, responsive websites, and selected freelance projects."
+    },
+    "projects": {
+      "title": "Web Development Projects | Lance Carteciano",
+      "description": "Explore Lance Carteciano's web development projects, including React interfaces, WordPress systems, Laravel applications, and browser tools."
+    },
+    "blog": {
+      "title": "Web Development Notes | Lance Carteciano",
+      "description": "Notes from Lance Carteciano about frontend development, WordPress, content systems, Git workflows, and maintaining websites."
+    },
+    "designSystem": {
+      "title": "Portfolio Design System | Lance Carteciano",
+      "description": "A reference for the typography, colors, spacing, components, and motion rules used in Lance Carteciano's portfolio website."
+    },
+    "notFound": {
+      "title": "Page Not Found | Lance Carteciano",
+      "description": "The page you requested is not available. Browse Lance Carteciano's projects, resume, or contact information."
+    }
+  },
+  "projects": {
+    "another-markdown-viewer": {
+      "title": "Another Markdown Viewer | Markdown Editor and PDF Export",
+      "description": "A browser-based Markdown workspace with source editing, rendered preview, local draft recovery, file operations, and print-to-PDF export."
+    },
+    "debase": {
+      "title": "Debase | Browser-Based Base64 Encoder and Decoder",
+      "description": "Debase is a browser tool for encoding and decoding text and files as Base64, Base64URL, or Data URLs while keeping data on the device."
+    },
+    "abcde-creative": {
+      "title": "ABCDE Creative Studio Website | React Frontend Case Study",
+      "description": "A case study about translating Figma designs into responsive React pages, reusable sections, accessibility checks, and delivery support."
+    },
+    "nsight-index": {
+      "title": "Nsight Index | Laravel Blog Management System",
+      "description": "A Laravel 12 blog management project with authentication, publishing, profiles, comments, likes, follows, media uploads, and scheduling."
+    },
+    "portfolio-cms": {
+      "title": "Git-Backed Portfolio Content System | Lance Carteciano",
+      "description": "The content system behind this portfolio, using JSON, Markdown, React, and generated mirrors to keep human and machine-readable pages in sync."
+    },
+    "yay-nay-feature-vote": {
+      "title": "Yay Nay | Laravel and React Feature Voting Platform",
+      "description": "An in-progress feature-voting platform built with Laravel, Inertia, and React for feature requests, comments, upvotes, accounts, and permissions."
+    },
+    "gsap-animation": {
+      "title": "React GSAP Animation Study | Lance Carteciano",
+      "description": "A tutorial-based React and GSAP animation study covering timing, scroll interaction, responsive behavior, and clear source attribution."
+    },
+    "tetherly": {
+      "title": "Tetherly | React and TypeScript Bio Link App",
+      "description": "An unfinished React and TypeScript bio link app exploring profile presentation, reusable cards, and responsive frontend structure."
+    }
+  },
+  "blog": {
+    "keeping-markdown-source-in-charge": {
+      "title": "Keeping Markdown Source in Charge | Lance Carteciano",
+      "description": "How a Markdown editor can keep source text canonical while preview, local recovery, file downloads, and PDF export remain separate jobs."
+    },
+    "build-correctness-is-not-visual-correctness": {
+      "title": "A Passing Build Is Not a Finished Interface | Lance Carteciano",
+      "description": "Why frontend work needs a rendered browser check after the build passes, including layout, hierarchy, text wrapping, and containment."
+    },
+    "git-release-workflow-for-small-teams": {
+      "title": "A Git Release Workflow for Small Teams | Lance Carteciano",
+      "description": "A practical branch, merge, tag, and cleanup workflow for small teams that want reviewable Git history without extra ceremony."
+    },
+    "git-backed-portfolio-cms": {
+      "title": "Why This Portfolio Uses a Git-Backed Content System | Lance Carteciano",
+      "description": "How JSON and Markdown keep this portfolio's visible pages, generated mirrors, project notes, and machine-readable indexes in sync."
+    },
+    "writing-useful-portfolio-case-studies": {
+      "title": "Writing Portfolio Case Studies People Can Trust | Lance Carteciano",
+      "description": "A direct way to turn real project work into a portfolio case study while keeping scope, evidence, and useful technical details intact."
+    }
+  }
+}
