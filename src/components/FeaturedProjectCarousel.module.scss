@@ -33,8 +33,7 @@
   gap: var(--space-sm);
 }
 
-.meta,
-.featuredMedia figcaption {
+.meta {
   color: var(--color-text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -85,6 +84,12 @@
   cursor: pointer;
 }
 
+.featuredMedia {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-accent-violet);
+}
+
 .featuredGrid:focus-visible {
   outline: 2px solid var(--color-action-primary);
   outline-offset: var(--space-xs);
@@ -120,10 +125,7 @@
 }
 
 .featuredData {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
-  align-content: start;
+  display: block;
 }
 
 .featuredHeading > *,
@@ -232,9 +234,19 @@
   .featuredCopy {
     grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: max-content;
+    align-items: start;
   }
 
   .featuredData {
     grid-column: 2;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .featuredMedia {
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
   }
 }
