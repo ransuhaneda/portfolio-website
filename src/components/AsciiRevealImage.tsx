@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { gsap, useGSAP } from "../animations/gsap";
+import { useEffect, useRef } from "react";
 import { renderAscii } from "./ascii/AsciiConverter";
 import sty from "./AsciiRevealImage.module.scss";
 
@@ -9,177 +8,104 @@ type AsciiRevealImageProps = {
   className?: string;
 };
 
-const COLUMN_COUNT = 3;
-const REVEAL_DURATION = 1.05;
-const STAGGER_FRACTION = 0.285;
+const PANEL_CLASSES = [sty.panel0, sty.panel1, sty.panel2];
+const PAINT_DEBOUNCE_MS = 65;
 
-function clamp(value: number) {
-  return Math.max(0, Math.min(1, value));
+/**
+ * Keyed by source so a new image never reuses the previous project's painted
+ * canvas or panel images; the fresh stage stays hidden until its ASCII is drawn.
+ */
+export function AsciiRevealImage(props: AsciiRevealImageProps) {
+  return <AsciiRevealStage key={props.src} {...props} />;
 }
 
-function ease(value: number) {
-  return value * value * (3 - 2 * value);
-}
-
-function copyCanvas(source: HTMLCanvasElement, target: HTMLCanvasElement) {
-  target.width = source.width;
-  target.height = source.height;
-  target.getContext("2d")?.drawImage(source, 0, 0);
-}
-
-export function AsciiRevealImage({ src, alt, className }: AsciiRevealImageProps) {
+function AsciiRevealStage({ src, alt, className }: AsciiRevealImageProps) {
   const scopeRef = useRef<HTMLDivElement>(null);
+  const asciiRef = useRef<HTMLCanvasElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
-  useGSAP(
-    (_context, contextSafe) => {
-      const scope = scopeRef.current;
-      const image = scope?.querySelector<HTMLImageElement>("[data-ascii-source]");
-      const ascii = scope?.querySelector<HTMLCanvasElement>("[data-ascii-static]");
-      const ribbons = Array.from(
-        scope?.querySelectorAll<HTMLCanvasElement>("[data-ascii-motion]") ?? [],
-      );
-      const reveal = scope?.querySelector<HTMLCanvasElement>("[data-ascii-reveal]");
-      if (!scope || !image || !ascii || ribbons.length !== 3 || !reveal) return;
+  useEffect(() => {
+    const scope = scopeRef.current;
+    const ascii = asciiRef.current;
+    const image = imageRef.current;
+    if (!scope || !ascii || !image) return;
 
-      const progress = { value: 0 };
-      let ready = false;
-      let resizeFrame = 0;
-      const safeCallback = (callback: () => void) =>
-        contextSafe ? contextSafe(callback) : callback;
+    let loaded = image.complete && image.naturalWidth > 0;
+    let near = false;
+    let drawnWidth = -1;
+    let drawnHeight = -1;
+    let paintTimer = 0;
 
-      const drawReveal = () => {
-        if (!ready || !reveal || !image.naturalWidth || !image.naturalHeight) return;
-        const width = scope.clientWidth;
-        const height = scope.clientHeight;
-        const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.8);
-        const canvasWidth = Math.max(1, Math.round(width * pixelRatio));
-        const canvasHeight = Math.max(1, Math.round(height * pixelRatio));
-        if (reveal.width !== canvasWidth || reveal.height !== canvasHeight) {
-          reveal.width = canvasWidth;
-          reveal.height = canvasHeight;
-        }
+    const paint = () => {
+      if (!loaded || !near) return;
+      const width = Math.round(scope.clientWidth);
+      const height = Math.round(scope.clientHeight);
+      if (width < 4 || height < 4) return;
+      if (drawnWidth === width && drawnHeight === height) return;
+      drawnWidth = width;
+      drawnHeight = height;
+      const color = getComputedStyle(scope).getPropertyValue("--color-action-primary").trim();
+      renderAscii(image, ascii, width, height, Math.min(window.devicePixelRatio || 1, 1.5), {
+        color: color || undefined,
+      });
+      scope.dataset.ready = "true";
+    };
 
-        const value = clamp(progress.value);
-        image.style.opacity = value >= 0.99999 ? "1" : "0";
-        reveal.style.visibility = value <= 0.00001 || value >= 0.99999 ? "hidden" : "visible";
-        const context = reveal.getContext("2d");
-        if (!context) return;
-        context.setTransform(1, 0, 0, 1, 0, 0);
-        context.clearRect(0, 0, canvasWidth, canvasHeight);
-        if (value <= 0.00001) return;
-        if (value >= 0.99999) {
-          context.drawImage(image, 0, 0, canvasWidth, canvasHeight);
-          return;
-        }
+    // The first paint runs immediately; only later resizes are debounced.
+    const schedulePaint = () => {
+      if (!loaded || !near) return;
+      window.clearTimeout(paintTimer);
+      if (drawnWidth < 0) paint();
+      else paintTimer = window.setTimeout(paint, PAINT_DEBOUNCE_MS);
+    };
 
-        const sourceWidth = image.naturalWidth;
-        const sourceHeight = image.naturalHeight;
-        for (let column = 0; column < COLUMN_COUNT; column += 1) {
-          const delay = column * (STAGGER_FRACTION / (COLUMN_COUNT - 1));
-          const local = clamp((value - delay) / (1 - STAGGER_FRACTION));
-          if (local <= 0) continue;
-          const revealHeight = Math.min(canvasHeight, Math.round(ease(local) * canvasHeight));
-          const x = Math.round((canvasWidth * column) / COLUMN_COUNT);
-          const nextX = Math.round((canvasWidth * (column + 1)) / COLUMN_COUNT);
-          const columnWidth = nextX - x;
-          if (!columnWidth || !revealHeight) continue;
-          const sourceX = (sourceWidth * x) / canvasWidth;
-          const sourceColumnWidth = (sourceWidth * columnWidth) / canvasWidth;
-          const sourceY = sourceHeight * (1 - revealHeight / canvasHeight);
-          const sourceHeightToDraw = sourceHeight * (revealHeight / canvasHeight);
-          context.drawImage(
-            image,
-            sourceX,
-            sourceY,
-            sourceColumnWidth,
-            sourceHeightToDraw,
-            x,
-            canvasHeight - revealHeight,
-            columnWidth,
-            revealHeight,
-          );
-        }
-      };
+    const onLoad = () => {
+      loaded = true;
+      schedulePaint();
+    };
 
-      const paint = () => {
-        if (!ready) return;
-        cancelAnimationFrame(resizeFrame);
-        resizeFrame = requestAnimationFrame(() => {
-          const width = scope.clientWidth;
-          const height = scope.clientHeight;
-          if (width < 4 || height < 4) return;
-          const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.35);
-          const actionColor = getComputedStyle(scope)
-            .getPropertyValue("--color-action-primary")
-            .trim();
-          renderAscii(image, ascii, width, height, pixelRatio, {
-            color: actionColor || undefined,
-          });
-          ribbons.forEach((ribbon) => copyCanvas(ascii, ribbon));
-          drawReveal();
-        });
-      };
-
-      const initialize = () => {
-        ready = true;
-        paint();
-      };
-
-      const enter = safeCallback(() => {
+    // Only mouse and pen hover reveal; touch never activates or pins it.
+    const onPointerEnter = (event: PointerEvent) => {
+      if (event.pointerType === "mouse" || event.pointerType === "pen") {
         scope.dataset.revealed = "true";
-        gsap.to(progress, {
-          value: 1,
-          duration: REVEAL_DURATION,
-          ease: "none",
-          overwrite: true,
-          onUpdate: drawReveal,
-          onComplete: drawReveal,
-        });
-      });
+      }
+    };
+    const onPointerLeave = () => {
+      scope.dataset.revealed = "false";
+    };
+    const onVisibilityChange = () => {
+      scope.dataset.paused = String(document.hidden);
+    };
 
-      const leave = safeCallback(() => {
-        scope.dataset.revealed = "false";
-        gsap.to(progress, {
-          value: 0,
-          duration: REVEAL_DURATION,
-          ease: "none",
-          overwrite: true,
-          onUpdate: drawReveal,
-          onComplete: drawReveal,
-        });
-      });
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        near = entry?.isIntersecting ?? false;
+        scope.dataset.offscreen = String(!near);
+        schedulePaint();
+      },
+      { rootMargin: "220px 0px" },
+    );
+    const resizeObserver = new ResizeObserver(schedulePaint);
 
-      const pauseWhenHidden = () => {
-        scope.dataset.paused = String(document.hidden);
-      };
-      const resizeObserver = new ResizeObserver(() => paint());
-      const onPointerEnter = (event: PointerEvent) => {
-        if (event.pointerType === "touch") return;
-        enter();
-      };
-      const onPointerLeave = (event: PointerEvent) => {
-        if (event.pointerType === "touch") return;
-        leave();
-      };
-      scope.addEventListener("pointerenter", onPointerEnter);
-      scope.addEventListener("pointerleave", onPointerLeave);
-      document.addEventListener("visibilitychange", pauseWhenHidden, { passive: true });
-      image.addEventListener("load", initialize);
-      if (image.complete && image.naturalWidth) initialize();
-      resizeObserver.observe(scope);
-      pauseWhenHidden();
+    image.addEventListener("load", onLoad);
+    scope.addEventListener("pointerenter", onPointerEnter);
+    scope.addEventListener("pointerleave", onPointerLeave);
+    document.addEventListener("visibilitychange", onVisibilityChange, { passive: true });
+    intersectionObserver.observe(scope);
+    resizeObserver.observe(scope);
+    onVisibilityChange();
 
-      return () => {
-        cancelAnimationFrame(resizeFrame);
-        resizeObserver?.disconnect();
-        scope.removeEventListener("pointerenter", onPointerEnter);
-        scope.removeEventListener("pointerleave", onPointerLeave);
-        document.removeEventListener("visibilitychange", pauseWhenHidden);
-        image.removeEventListener("load", initialize);
-      };
-    },
-    { scope: scopeRef, dependencies: [src], revertOnUpdate: true },
-  );
+    return () => {
+      window.clearTimeout(paintTimer);
+      intersectionObserver.disconnect();
+      resizeObserver.disconnect();
+      image.removeEventListener("load", onLoad);
+      scope.removeEventListener("pointerenter", onPointerEnter);
+      scope.removeEventListener("pointerleave", onPointerLeave);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      scope.dataset.revealed = "false";
+    };
+  }, [src]);
 
   return (
     <div
@@ -188,25 +114,21 @@ export function AsciiRevealImage({ src, alt, className }: AsciiRevealImageProps)
       role="img"
       aria-label={alt}
       data-revealed="false"
+      data-ready="false"
     >
-      <canvas className={`${sty.canvas} ${sty.ascii}`} data-ascii-static aria-hidden="true" />
-      <canvas
-        className={`${sty.canvas} ${sty.motion} ${sty.motionA}`}
-        data-ascii-motion
-        aria-hidden="true"
-      />
-      <canvas
-        className={`${sty.canvas} ${sty.motion} ${sty.motionB}`}
-        data-ascii-motion
-        aria-hidden="true"
-      />
-      <canvas
-        className={`${sty.canvas} ${sty.motion} ${sty.motionC}`}
-        data-ascii-motion
-        aria-hidden="true"
-      />
-      <img className={sty.source} data-ascii-source src={src} alt="" draggable={false} />
-      <canvas className={`${sty.canvas} ${sty.reveal}`} data-ascii-reveal aria-hidden="true" />
+      <canvas ref={asciiRef} className={sty.ascii} aria-hidden="true" />
+      {PANEL_CLASSES.map((panelClass, index) => (
+        <img
+          key={index}
+          ref={index === 0 ? imageRef : undefined}
+          className={`${sty.panel} ${panelClass}`}
+          src={src}
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+          draggable={false}
+        />
+      ))}
     </div>
   );
 }

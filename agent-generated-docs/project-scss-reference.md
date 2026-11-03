@@ -463,7 +463,7 @@ Pattern in the repo:
 
 Examples:
 
-- testimonial card: border, radius, hover background shift
+- testimonial card: border, hover background shift
 - project card: flex stack with image wrapper and title
 - service/process sections: two-column grid collapsing to one column
 
@@ -743,7 +743,6 @@ Use this as the carry-forward version, not a full clone of ABCDE.
    - type scale
    - spacing scale
    - breakpoints
-   - radius
    - shadow if needed
 
 4. Naming should be:

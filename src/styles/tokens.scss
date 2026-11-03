@@ -140,6 +140,12 @@ $color-primitives: (
   orange-500: #ff5e32,
   violet-500: #7154eb,
   red-600: #b42318,
+  contribution-empty: #172119,
+  contribution-level-1: #1a3925,
+  contribution-level-2: #206536,
+  contribution-level-3: #2c9f4c,
+  contribution-level-4: #39d353,
+  contribution-spark: #c8ffcf,
   transparent: transparent,
 ) !default;
 
@@ -171,6 +177,18 @@ $color-alpha: (
   form-helper: rgba(22, 22, 20, 0.5),
   shadow-card: rgba(0, 0, 0, 0.2),
   header-backdrop: rgba(22, 22, 20, 0.95),
+  contribution-glow-soft: rgba(57, 211, 83, 0.18),
+  contribution-glow-strong: rgba(57, 211, 83, 0.45),
+  contribution-tile-border: rgba(255, 255, 255, 0.025),
+  hero-scrim-strong: rgba(22, 22, 20, 0.97),
+  hero-scrim-medium: rgba(22, 22, 20, 0.84),
+  hero-scrim-soft: rgba(22, 22, 20, 0.08),
+  hero-scrim-faint: rgba(22, 22, 20, 0.06),
+  hero-scrim-tablet: rgba(22, 22, 20, 0.2),
+  hero-glow: #1a241b,
+  hero-glow-mobile: rgba(32, 85, 45, 0.16),
+  hero-scrim-mobile-soft: rgba(22, 22, 20, 0.03),
+  hero-scrim-mobile: rgba(22, 22, 20, 0.13),
 ) !default;
 
 $color-legacy-aliases: (
@@ -203,13 +221,6 @@ $breakpoints: (
   md: 768px,
   lg: 1024px,
   xl: 1280px,
-) !default;
-
-$radii: (
-  sm: 0.25rem,
-  md: 0.375rem,
-  lg: 0.5rem,
-  pill: 999px,
 ) !default;
 
 $effects: (
@@ -261,10 +272,6 @@ $max-width: 1312px !default;
   @return map.get(type-style($role), $property);
 }
 
-@function radius($key) {
-  @return map.get($radii, $key);
-}
-
 @function space($key) {
   @if $key == hairline {
     @return fluid(0.125rem, 0.25rem);
@@ -286,20 +293,12 @@ $max-width: 1312px !default;
     @return space(xs) space(sm);
   }
 
-  @if $key == button-radius {
-    @return radius(sm);
-  }
-
   @if $key == button-gap {
     @return space(xs);
   }
 
   @if $key == card-padding {
     @return space(sm);
-  }
-
-  @if $key == card-radius {
-    @return radius(md);
   }
 
   @if $key == form-padding {
@@ -310,24 +309,12 @@ $max-width: 1312px !default;
     @return space(xs);
   }
 
-  @if $key == form-field-radius {
-    @return radius(sm);
-  }
-
   @if $key == tag-padding {
     @return space(2xs) space(xs);
   }
 
-  @if $key == tag-radius {
-    @return radius(sm);
-  }
-
   @if $key == social-icon-padding-inline {
     @return space(hairline);
-  }
-
-  @if $key == social-icon-radius {
-    @return radius(sm);
   }
 
   @error "Unknown component token: #{$key}";

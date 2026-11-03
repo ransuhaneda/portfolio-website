@@ -7,7 +7,6 @@
   color: var(--color-text-primary);
 }
 
-.kicker,
 .lightLabel,
 .quoteLabel,
 .backLink,
@@ -20,7 +19,6 @@
   @include mix.type-style(body-xs, 700);
 }
 
-.kicker,
 .backLink,
 .relatedCard span,
 .viewAll {
@@ -35,7 +33,7 @@
 .heroInner {
   display: grid;
   gap: var(--space-xl);
-  padding-block: tokens.fluid(3rem, 5.5rem) var(--space-xl);
+  padding-block: tokens.fluid(3rem, 6rem) var(--space-xl);
 }
 
 .backLink,
@@ -144,7 +142,6 @@
   color: var(--color-text-primary);
   text-decoration: none;
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
   transition:
     color var(--motion-emphasized) var(--motion-ease-emphasized),
     border-color var(--motion-emphasized) var(--motion-ease-emphasized),
@@ -235,6 +232,7 @@
 .cardGrid {
   display: grid;
   gap: 1px;
+  @include mix.fluid-columns(18rem, 2, 1px);
   padding: 1px;
   margin-block: 0;
   list-style: none;
@@ -276,7 +274,6 @@
 .stackList li {
   padding: var(--space-xs) var(--space-sm);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
   @include mix.type-style(body-xs, 700);
 }
 
@@ -329,6 +326,7 @@
 .relatedGrid {
   display: grid;
   gap: var(--space-lg);
+  @include mix.fluid-columns(20rem, 2, var(--space-lg));
   padding-block-start: var(--space-lg);
 }
 
@@ -364,12 +362,6 @@
   color: var(--color-text-muted);
 }
 
-@include mix.mq(sm) {
-  .cardGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @include mix.mq(md) {
   .heroInner {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -395,19 +387,6 @@
     grid-template-columns: minmax(8rem, 0.28fr) minmax(0, 1fr);
   }
 
-  .imagePair {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .asymPair {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-    align-items: end;
-  }
-
-  .relatedGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .quoteBand > :global(.lg-wrapper) > div {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -431,17 +410,6 @@
 
   .relatedCard:last-child a {
     justify-items: end;
-  }
-}
-
-@include mix.mq(lg) {
-  .heroInner {
-    padding-block-start: tokens.fluid(4rem, 6rem);
-  }
-
-  .openingVisual,
-  .imageRhythm {
-    padding-block: tokens.fluid(4rem, 6rem);
   }
 }
 

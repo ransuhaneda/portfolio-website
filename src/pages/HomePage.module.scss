@@ -11,6 +11,49 @@
   border-bottom: var(--section-divider);
 }
 
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: max(36rem, calc(100svh - 4rem));
+  overflow: hidden;
+  background: var(--color-background-page);
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.hero::before {
+  background: radial-gradient(
+    ellipse at 72% 48%,
+    var(--color-hero-glow) 0%,
+    var(--color-background-page) 58%
+  );
+}
+
+.hero::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-page) 6%,
+    var(--color-hero-scrim-strong) 20%,
+    var(--color-hero-scrim-medium) 41%,
+    var(--color-hero-scrim-soft) 81%,
+    var(--color-hero-scrim-faint) 100%
+  );
+}
+
+.hero > :global(.lg-wrapper) {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+}
+
 .featured {
   scroll-margin-top: var(--header-height);
 }
@@ -50,6 +93,7 @@
 .notesGrid {
   display: grid;
   gap: var(--space-sm);
+  @include mix.fluid-columns(12rem, 3, var(--space-sm));
 }
 .noteCard {
   display: grid;
@@ -60,7 +104,6 @@
   color: inherit;
   text-decoration: none;
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
   transition:
     transform var(--motion-emphasized) var(--motion-ease-emphasized),
     border-color var(--motion-fast) var(--motion-ease-standard),
@@ -128,8 +171,8 @@
 
 .heroInner {
   display: grid;
-  min-height: 450px;
-  align-content: space-between;
+  min-height: max(36rem, calc(100svh - 4rem));
+  align-content: center;
   gap: var(--space-lg);
   padding-block: var(--space-xl);
 }
@@ -156,7 +199,7 @@
   @include mix.type-style(h1);
   font-size: clamp(3rem, 3vw + 1.5rem, 4rem);
   line-height: 1.06;
-  max-width: 768px;
+  max-width: 12em;
 }
 
 .heroGrid h1 span {
@@ -176,6 +219,65 @@
   gap: var(--gap-inline);
 }
 
+@media (max-width: 1000px) {
+  .hero::after {
+    background: linear-gradient(
+      90deg,
+      var(--color-background-page) 3%,
+      var(--color-hero-scrim-strong) 38%,
+      var(--color-hero-scrim-medium) 67%,
+      var(--color-hero-scrim-tablet) 100%
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 100svh;
+    padding-block: clamp(36px, 5.5vh, 56px) clamp(28px, 5vh, 50px);
+    background: var(--color-background-page);
+    flex-direction: column;
+  }
+
+  .hero::before {
+    background: radial-gradient(
+      ellipse 90% 28% at 60% 66%,
+      var(--color-hero-glow-mobile),
+      var(--color-background-page) 85%
+    );
+  }
+
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      var(--color-transparent) 0%,
+      var(--color-hero-scrim-mobile-soft) 53%,
+      var(--color-hero-scrim-mobile) 100%
+    );
+  }
+
+  // Auto margins here and on the grid centre the headline + grid group vertically.
+  .hero > :global(.lg-wrapper) {
+    order: 1;
+    flex: 0 0 auto;
+    margin-block-start: auto;
+  }
+
+  .hero > :global(.sr-only) {
+    order: 3;
+  }
+
+  .heroInner {
+    min-height: auto;
+    align-content: start;
+    padding-block: 0;
+  }
+
+  .heroGrid {
+    padding-block-start: 0;
+  }
+}
+
 .sectionInner,
 .skillsGrid,
 .contactGrid {
@@ -185,25 +287,20 @@
   padding-block: var(--space-xl);
 }
 
+.skillsGrid {
+  padding-block: 0;
+}
+
 .skills h2,
 .contact h2 {
   text-transform: uppercase;
   @include mix.type-style(h3);
 }
 
-.skillsGrid > div > p:last-child {
-  color: var(--color-text-muted);
-}
 .skillsGrid,
 .contactGrid {
   display: grid;
   gap: var(--space-lg);
-}
-
-.skillsGrid > div {
-  display: grid;
-  align-content: start;
-  gap: var(--space-sm);
 }
 
 .contact {
@@ -224,12 +321,6 @@
 .contactEmailLine,
 .contactEmailLine a {
   white-space: nowrap;
-}
-
-@include mix.mq(sm) {
-  .notesGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @include mix.mq(md) {

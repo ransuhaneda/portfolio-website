@@ -50,7 +50,6 @@ body {
 .admin-alert,
 .admin-status {
   border: var(--card-border);
-  border-radius: var(--card-radius);
   background: var(--color-surface-card);
 }
 
@@ -122,7 +121,6 @@ body {
   padding: var(--admin-gap-2xs);
   background: var(--color-background-surface-subtle);
   border: var(--card-border);
-  border-radius: var(--card-radius);
 }
 
 .admin-tabs a {
@@ -222,7 +220,6 @@ body {
   padding: var(--admin-gap-2xs);
   background: var(--color-surface-overlay);
   border: 1px solid var(--color-border-subtle);
-  border-radius: var(--card-radius);
 }
 
 .admin-editor-shell {
@@ -288,7 +285,6 @@ body {
   color: var(--color-text-primary);
   background: var(--color-background-surface-subtle);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--form-field-radius);
 }
 
 .admin-field input::placeholder,
@@ -355,7 +351,6 @@ body {
   color: var(--color-text-primary);
   background: var(--color-transparent);
   border: 1px solid var(--color-border-subtle);
-  border-radius: var(--card-radius);
   @include mix.interactive-transition;
 }
 
@@ -404,7 +399,6 @@ body {
   padding: var(--tag-padding);
   color: var(--color-text-inverse);
   background: var(--color-action-primary);
-  border-radius: var(--tag-radius);
   @include mix.type-style(body-xs, 700);
 }
 
@@ -514,7 +508,6 @@ body {
   object-fit: contain;
   background: var(--color-background-surface-subtle);
   border: 1px solid var(--color-border-subtle);
-  border-radius: var(--card-radius);
 }
 
 .admin-media-preview--field {

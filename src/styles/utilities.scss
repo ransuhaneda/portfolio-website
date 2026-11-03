@@ -13,12 +13,27 @@
   border: 0;
 }
 
-.eyebrow {
-  margin-block-start: 0;
+.kicker {
+  margin-block: 0;
   color: var(--color-action-primary);
   @include mix.type-style(body-xs, 700);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.kicker::before,
+.kicker::after {
+  color: inherit;
+}
+
+.kicker::before {
+  margin-inline-end: 0.35em;
+  content: "[";
+}
+
+.kicker::after {
+  margin-inline-start: 0.35em;
+  content: "]";
 }
 
 .backLink {
@@ -50,7 +65,6 @@
   color: var(--color-text-inverse);
   text-decoration: none;
   background: var(--color-action-primary);
-  border-radius: var(--button-radius);
   transform: translateY(calc(-100% - var(--space-xs)));
   transition: transform var(--motion-fast) var(--motion-ease-standard);
 
