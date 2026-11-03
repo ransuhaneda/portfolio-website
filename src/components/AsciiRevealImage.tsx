@@ -11,7 +11,15 @@ type AsciiRevealImageProps = {
 const PANEL_CLASSES = [sty.panel0, sty.panel1, sty.panel2];
 const PAINT_DEBOUNCE_MS = 65;
 
-export function AsciiRevealImage({ src, alt, className }: AsciiRevealImageProps) {
+/**
+ * Keyed by source so a new image never reuses the previous project's painted
+ * canvas or panel images; the fresh stage stays hidden until its ASCII is drawn.
+ */
+export function AsciiRevealImage(props: AsciiRevealImageProps) {
+  return <AsciiRevealStage key={props.src} {...props} />;
+}
+
+function AsciiRevealStage({ src, alt, className }: AsciiRevealImageProps) {
   const scopeRef = useRef<HTMLDivElement>(null);
   const asciiRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -40,17 +48,19 @@ export function AsciiRevealImage({ src, alt, className }: AsciiRevealImageProps)
       renderAscii(image, ascii, width, height, Math.min(window.devicePixelRatio || 1, 1.5), {
         color: color || undefined,
       });
+      scope.dataset.ready = "true";
     };
 
+    // The first paint runs immediately; only later resizes are debounced.
     const schedulePaint = () => {
       if (!loaded || !near) return;
       window.clearTimeout(paintTimer);
-      paintTimer = window.setTimeout(paint, PAINT_DEBOUNCE_MS);
+      if (drawnWidth < 0) paint();
+      else paintTimer = window.setTimeout(paint, PAINT_DEBOUNCE_MS);
     };
 
     const onLoad = () => {
       loaded = true;
-      drawnWidth = -1;
       schedulePaint();
     };
 
@@ -104,6 +114,7 @@ export function AsciiRevealImage({ src, alt, className }: AsciiRevealImageProps)
       role="img"
       aria-label={alt}
       data-revealed="false"
+      data-ready="false"
     >
       <canvas ref={asciiRef} className={sty.ascii} aria-hidden="true" />
       {PANEL_CLASSES.map((panelClass, index) => (
