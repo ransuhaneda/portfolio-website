@@ -29,6 +29,24 @@
   --color-form-placeholder: #{tokens.color(form-placeholder)};
   --color-form-helper: #{tokens.color(form-helper)};
   --color-header-backdrop: #{tokens.color(header-backdrop)};
+  --color-contribution-empty: #{tokens.color(contribution-empty)};
+  --color-contribution-level-1: #{tokens.color(contribution-level-1)};
+  --color-contribution-level-2: #{tokens.color(contribution-level-2)};
+  --color-contribution-level-3: #{tokens.color(contribution-level-3)};
+  --color-contribution-level-4: #{tokens.color(contribution-level-4)};
+  --color-contribution-spark: #{tokens.color(contribution-spark)};
+  --color-contribution-glow-soft: #{tokens.color(contribution-glow-soft)};
+  --color-contribution-glow-strong: #{tokens.color(contribution-glow-strong)};
+  --color-contribution-tile-border: #{tokens.color(contribution-tile-border)};
+  --color-hero-scrim-strong: #{tokens.color(hero-scrim-strong)};
+  --color-hero-scrim-medium: #{tokens.color(hero-scrim-medium)};
+  --color-hero-scrim-soft: #{tokens.color(hero-scrim-soft)};
+  --color-hero-scrim-faint: #{tokens.color(hero-scrim-faint)};
+  --color-hero-scrim-tablet: #{tokens.color(hero-scrim-tablet)};
+  --color-hero-glow: #{tokens.color(hero-glow)};
+  --color-hero-glow-mobile: #{tokens.color(hero-glow-mobile)};
+  --color-hero-scrim-mobile-soft: #{tokens.color(hero-scrim-mobile-soft)};
+  --color-hero-scrim-mobile: #{tokens.color(hero-scrim-mobile)};
 
   /* Legacy aliases */
   --bg: var(--color-background-page);

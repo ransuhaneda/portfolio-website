@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { LuArrowDown, LuArrowRight, LuArrowUpRight } from "react-icons/lu";
 import { ContactForm } from "../components/ContactForm";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
+import { GithubContributionBackground } from "../components/GithubContributionBackground";
 import { PretextText } from "../components/PretextText";
 import { SkillsMarquee } from "../components/SkillsMarquee";
 import { blogPosts } from "../content/blogContent";
@@ -30,6 +31,7 @@ export function HomePage() {
   return (
     <div className={sty.root}>
       <section className={sty.hero} data-text-reveal-group="entry">
+        <GithubContributionBackground />
         <div className="lg-wrapper">
           <div className={sty.heroInner}>
             <div className={sty.heroGrid}>

@@ -11,6 +11,49 @@
   border-bottom: var(--section-divider);
 }
 
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: max(36rem, calc(100svh - 4rem));
+  overflow: hidden;
+  background: var(--color-background-page);
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.hero::before {
+  background: radial-gradient(
+    ellipse at 72% 48%,
+    var(--color-hero-glow) 0%,
+    var(--color-background-page) 58%
+  );
+}
+
+.hero::after {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-page) 6%,
+    var(--color-hero-scrim-strong) 20%,
+    var(--color-hero-scrim-medium) 41%,
+    var(--color-hero-scrim-soft) 81%,
+    var(--color-hero-scrim-faint) 100%
+  );
+}
+
+.hero > :global(.lg-wrapper) {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+}
+
 .featured {
   scroll-margin-top: var(--header-height);
 }
@@ -128,8 +171,8 @@
 
 .heroInner {
   display: grid;
-  min-height: 28rem;
-  align-content: space-between;
+  min-height: max(36rem, calc(100svh - 4rem));
+  align-content: center;
   gap: var(--space-lg);
   padding-block: var(--space-xl);
 }
@@ -174,6 +217,65 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap-inline);
+}
+
+@media (max-width: 1000px) {
+  .hero::after {
+    background: linear-gradient(
+      90deg,
+      var(--color-background-page) 3%,
+      var(--color-hero-scrim-strong) 38%,
+      var(--color-hero-scrim-medium) 67%,
+      var(--color-hero-scrim-tablet) 100%
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 100svh;
+    padding-block: clamp(36px, 5.5vh, 56px) clamp(28px, 5vh, 50px);
+    background: var(--color-background-page);
+    flex-direction: column;
+  }
+
+  .hero::before {
+    background: radial-gradient(
+      ellipse 90% 28% at 60% 66%,
+      var(--color-hero-glow-mobile),
+      var(--color-background-page) 85%
+    );
+  }
+
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      var(--color-transparent) 0%,
+      var(--color-hero-scrim-mobile-soft) 53%,
+      var(--color-hero-scrim-mobile) 100%
+    );
+  }
+
+  // Auto margins here and on the grid centre the headline + grid group vertically.
+  .hero > :global(.lg-wrapper) {
+    order: 1;
+    flex: 0 0 auto;
+    margin-block-start: auto;
+  }
+
+  .hero > :global(.sr-only) {
+    order: 3;
+  }
+
+  .heroInner {
+    min-height: auto;
+    align-content: start;
+    padding-block: 0;
+  }
+
+  .heroGrid {
+    padding-block-start: 0;
+  }
 }
 
 .sectionInner,

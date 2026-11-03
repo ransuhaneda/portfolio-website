@@ -140,6 +140,12 @@ $color-primitives: (
   orange-500: #ff5e32,
   violet-500: #7154eb,
   red-600: #b42318,
+  contribution-empty: #172119,
+  contribution-level-1: #1a3925,
+  contribution-level-2: #206536,
+  contribution-level-3: #2c9f4c,
+  contribution-level-4: #39d353,
+  contribution-spark: #c8ffcf,
   transparent: transparent,
 ) !default;
 
@@ -171,6 +177,18 @@ $color-alpha: (
   form-helper: rgba(22, 22, 20, 0.5),
   shadow-card: rgba(0, 0, 0, 0.2),
   header-backdrop: rgba(22, 22, 20, 0.95),
+  contribution-glow-soft: rgba(57, 211, 83, 0.18),
+  contribution-glow-strong: rgba(57, 211, 83, 0.45),
+  contribution-tile-border: rgba(255, 255, 255, 0.025),
+  hero-scrim-strong: rgba(22, 22, 20, 0.97),
+  hero-scrim-medium: rgba(22, 22, 20, 0.84),
+  hero-scrim-soft: rgba(22, 22, 20, 0.08),
+  hero-scrim-faint: rgba(22, 22, 20, 0.06),
+  hero-scrim-tablet: rgba(22, 22, 20, 0.2),
+  hero-glow: #1a241b,
+  hero-glow-mobile: rgba(32, 85, 45, 0.16),
+  hero-scrim-mobile-soft: rgba(22, 22, 20, 0.03),
+  hero-scrim-mobile: rgba(22, 22, 20, 0.13),
 ) !default;
 
 $color-legacy-aliases: (
