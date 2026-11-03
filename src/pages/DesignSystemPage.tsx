@@ -244,9 +244,7 @@ export function DesignSystemPage() {
                   <PretextText as="h3" measure="heading">
                     Raised card
                   </PretextText>
-                  <PretextText measure="prose">
-                    Low-contrast border and restrained radius.
-                  </PretextText>
+                  <PretextText measure="prose">Low-contrast border.</PretextText>
                 </article>
                 <article>
                   <span>Top divider only</span>

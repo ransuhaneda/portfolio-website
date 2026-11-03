@@ -2381,50 +2381,6 @@
               "$value": "{Scale.200}"
             }
           },
-          "Border Radius": {
-            "none": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.0}"
-            },
-            "sm": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.50}"
-            },
-            "md": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.100}"
-            },
-            "lg": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.200}"
-            },
-            "xl": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.300}"
-            },
-            "round": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.1800}"
-            }
-          },
           "Font": {
             "Primary": {
               "300": {
@@ -3009,50 +2965,6 @@
               "$libraryName": "",
               "$collectionName": "Brand",
               "$value": "{Scale.200}"
-            }
-          },
-          "Border Radius": {
-            "none": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.0}"
-            },
-            "sm": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.50}"
-            },
-            "md": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.100}"
-            },
-            "lg": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.200}"
-            },
-            "xl": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.300}"
-            },
-            "round": {
-              "$scopes": ["CORNER_RADIUS"],
-              "$type": "float",
-              "$libraryName": "",
-              "$collectionName": "Brand",
-              "$value": "{Scale.1800}"
             }
           },
           "Font": {

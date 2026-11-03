@@ -205,13 +205,6 @@ $breakpoints: (
   xl: 1280px,
 ) !default;
 
-$radii: (
-  sm: 0.25rem,
-  md: 0.375rem,
-  lg: 0.5rem,
-  pill: 999px,
-) !default;
-
 $effects: (
   shadow-card: 0 20px 50px map.get($color-alpha, shadow-card),
   motion-fast: 140ms,
@@ -261,10 +254,6 @@ $max-width: 1312px !default;
   @return map.get(type-style($role), $property);
 }
 
-@function radius($key) {
-  @return map.get($radii, $key);
-}
-
 @function space($key) {
   @if $key == hairline {
     @return fluid(0.125rem, 0.25rem);
@@ -286,20 +275,12 @@ $max-width: 1312px !default;
     @return space(xs) space(sm);
   }
 
-  @if $key == button-radius {
-    @return radius(sm);
-  }
-
   @if $key == button-gap {
     @return space(xs);
   }
 
   @if $key == card-padding {
     @return space(sm);
-  }
-
-  @if $key == card-radius {
-    @return radius(md);
   }
 
   @if $key == form-padding {
@@ -310,24 +291,12 @@ $max-width: 1312px !default;
     @return space(xs);
   }
 
-  @if $key == form-field-radius {
-    @return radius(sm);
-  }
-
   @if $key == tag-padding {
     @return space(2xs) space(xs);
   }
 
-  @if $key == tag-radius {
-    @return radius(sm);
-  }
-
   @if $key == social-icon-padding-inline {
     @return space(hairline);
-  }
-
-  @if $key == social-icon-radius {
-    @return radius(sm);
   }
 
   @error "Unknown component token: #{$key}";

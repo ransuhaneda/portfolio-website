@@ -67,7 +67,6 @@
   padding: $padding;
   background: var(--color-surface-card);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   box-shadow: var(--shadow);
 }
 
@@ -112,7 +111,6 @@
   cursor: pointer;
   text-decoration: none;
   border: 1px solid var(--button-border-color, var(--color-border-default));
-  border-radius: var(--button-radius);
   @include type-style($role, $weight);
   @include interactive-transition;
 
@@ -131,6 +129,5 @@
 @mixin pill-base($role: body-sm, $weight: null) {
   padding: var(--tag-padding);
   border: 1px solid var(--tag-border-color, var(--color-border-default));
-  border-radius: var(--tag-radius);
   @include type-style($role, $weight);
 }

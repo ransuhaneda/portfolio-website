@@ -54,7 +54,6 @@
   text-decoration: none;
   background: var(--color-transparent);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--button-radius);
   @include mix.type-style(body-xs, 700);
   transition:
     color var(--motion-fast) var(--motion-ease-standard),
@@ -222,7 +221,6 @@
   gap: var(--space-xs);
   padding: var(--tag-padding);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--tag-radius);
   @include mix.type-style(body-xs, 400);
 }
 
@@ -231,7 +229,6 @@
   aspect-ratio: 1;
   content: "";
   background: var(--color-action-primary);
-  border-radius: 50%;
 }
 .capabilityList .skillFlare::before {
   background: var(--color-action-secondary);
@@ -403,7 +400,6 @@
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
 }
 .articleCover figcaption {
   color: var(--color-text-muted);
@@ -474,7 +470,6 @@
 .articleBody li {
   padding: var(--space-sm);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
 }
 .codeBlock {
   position: relative;
@@ -486,7 +481,6 @@
   background: var(--color-background-surface);
   border: 1px solid var(--color-border-default);
   border-inline-start: 3px solid var(--color-action-primary);
-  border-radius: var(--radius-sm);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.875rem;
   line-height: 1.7;
@@ -587,7 +581,6 @@
   place-items: center;
   color: var(--color-action-primary);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-sm);
   @include mix.type-style(body-xs, 700);
 }
 .contactMethods div {

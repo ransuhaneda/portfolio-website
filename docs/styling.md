@@ -2,7 +2,7 @@
 
 ## Ownership
 
-Use token-driven SCSS. `src/styles/tokens.scss` centralizes color, typography, spacing, breakpoint, radius, effect, and component tokens. `src/styles/base.scss` exposes semantic custom properties and base element rules. `src/styles/grid.scss` owns wrapper widths; layout, patterns, utilities, fonts, and mixins remain in their existing global files. Colocated SCSS modules own component and page internals.
+Use token-driven SCSS. `src/styles/tokens.scss` centralizes color, typography, spacing, breakpoint, effect, and component tokens. `src/styles/base.scss` exposes semantic custom properties and base element rules. `src/styles/grid.scss` owns wrapper widths; layout, patterns, utilities, fonts, and mixins remain in their existing global files. Colocated SCSS modules own component and page internals.
 
 Use explicit existing Sass imports and helpers. Keep the global foundation small. Reuse current components and patterns rather than importing the historical ABCDE blueprint or adding a utility framework.
 

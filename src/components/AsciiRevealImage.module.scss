@@ -14,7 +14,6 @@ $reveal-ease: cubic-bezier(0.45, 0, 0.2, 1);
   contain: paint;
   background: var(--color-background-surface-subtle);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   cursor: crosshair;
   user-select: none;
 }

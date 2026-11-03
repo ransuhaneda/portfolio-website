@@ -50,7 +50,6 @@
   color: var(--color-text-inverse);
   text-decoration: none;
   background: var(--color-action-primary);
-  border-radius: var(--button-radius);
   transform: translateY(calc(-100% - var(--space-xs)));
   transition: transform var(--motion-fast) var(--motion-ease-standard);
 

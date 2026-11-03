@@ -130,17 +130,14 @@
   color: var(--color-text-primary);
   background: var(--color-background-page);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--form-field-radius);
 }
 .surfaceDemo article {
   padding: var(--space-md);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   background: var(--color-surface-card);
 }
 .surfaceDemo article:last-child {
   border-width: 1px 0 0;
-  border-radius: 0;
   background: var(--color-transparent);
 }
 .surfaceDemo h3,
@@ -184,7 +181,6 @@
   aspect-ratio: 1.2;
   object-fit: cover;
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   transition: transform var(--motion-emphasized) var(--motion-ease-emphasized);
 }
 .imageDemo img:hover {
@@ -211,7 +207,6 @@
   overflow: hidden;
   background: var(--color-surface-card);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
 }
 .motionSpecimenFeatured {
   min-height: tokens.fluid(21rem, 22rem);

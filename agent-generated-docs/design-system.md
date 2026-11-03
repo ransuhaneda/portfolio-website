@@ -28,8 +28,8 @@ This is the working source of truth for the current portfolio design system. It 
 - `src/styles/tokens.scss`
   - typography families and type roles
   - color primitives, semantic colors, alpha colors, and temporary legacy aliases
-  - spacing, radii, effects, and component-token maps
-  - public helpers: `tokens.fluid(...)`, `tokens.color(...)`, `tokens.space(...)`, `tokens.radius(...)`, `tokens.type-prop(...)`, `tokens.effect(...)`, `tokens.component-token(...)`
+  - spacing, effects, and component-token maps
+  - public helpers: `tokens.fluid(...)`, `tokens.color(...)`, `tokens.space(...)`, `tokens.type-prop(...)`, `tokens.effect(...)`, `tokens.component-token(...)`
 
 ### 3. Runtime custom properties
 
@@ -111,16 +111,12 @@ Current shared consumers include:
 ### Component tokens
 
 - `--button-padding`
-- `--button-radius`
 - `--button-min-block-size`
 - `--card-padding`
-- `--card-radius`
 - `--form-padding`
 - `--form-field-padding`
-- `--form-field-radius`
 - `--form-field-min-block-size`
 - `--tag-padding`
-- `--tag-radius`
 - `--header-link-min-block-size`
 - `--footer-icon-size`
 - `--section-divider`
@@ -150,7 +146,6 @@ Current shared consumers include:
 2. If the change is repeated across components, prefer a mixin or shared component token.
 3. If the change is a one-off layout constraint with clear intent, keep it local.
 4. Do not introduce raw color values outside `src/styles/tokens.scss`.
-5. Do not use spacing tokens as substitutes for radius tokens.
 
 ## Validation
 
