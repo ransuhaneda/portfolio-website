@@ -14,6 +14,7 @@ Use explicit existing Sass imports and helpers. Keep the global foundation small
 - Keep wrapper widths owned by `.sm-wrapper`, `.md-wrapper`, and `.lg-wrapper`; do not duplicate wrapper `max-width` rules in modules.
 - Structural sizing is valid when it expresses layout intent: `width: 100%`, `height: 100%`, `min-width: 0`, image sizing, accessibility-only sizing, text measures in `ch`, and grid wrapper max-widths.
 - Use the existing breakpoint tokens and mixins. Keep container rhythm in gap/spacing rules rather than restoring inconsistent user-agent margins.
+- Prefer fluid, intrinsic layouts (Flexbox, Grid, clamp(), min(), max()) over fixed max-width and stacked @media queries. Only add breakpoints when content genuinely breaks. Do not cargo-cult responsive code.
 
 ## Color, typography, and motion
 
