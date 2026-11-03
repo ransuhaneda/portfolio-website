@@ -1,4 +1,5 @@
 @use "../styles/mixins" as mix;
+@use "../styles/tokens" as tokens;
 
 .page {
   background: var(--color-background-page);
@@ -127,6 +128,12 @@
 .gallery {
   display: grid;
   gap: var(--space-lg);
+}
+
+.cardGrid,
+.projectGrid,
+.gallery {
+  @include mix.fluid-columns(18rem, 2, var(--space-lg));
 }
 
 .projectGroup header {
@@ -291,7 +298,7 @@
   max-width: 8ch;
   margin-block: 0;
   color: var(--color-text-primary);
-  font-size: clamp(4rem, 10vw, 8.5rem);
+  font-size: tokens.fluid(3.5rem, 8.5rem);
   line-height: 0.88;
   letter-spacing: -0.05em;
   text-wrap: balance;
@@ -311,11 +318,11 @@
 
 .blogListHeader {
   display: grid;
-  grid-template-columns: 9.5rem minmax(0, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
   align-items: end;
   min-height: 2.5rem;
-  padding-inline: var(--space-lg) var(--space-sm);
+  padding-inline: tokens.fluid(0rem, 2.6rem) tokens.fluid(0rem, 1rem);
   padding-block-end: var(--space-xs);
   color: var(--color-text-muted);
   border-bottom: 1px solid var(--color-border-default);
@@ -327,12 +334,12 @@
 }
 
 .blogList .postRow {
-  grid-template-columns: 9.5rem minmax(0, 1fr);
-  gap: var(--space-lg);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
+  align-items: start;
   min-height: 5.5rem;
   padding-block: var(--space-md);
-  padding-inline: var(--space-lg) var(--space-sm);
+  padding-inline: tokens.fluid(0rem, 2.6rem) tokens.fluid(0rem, 1rem);
   background: var(--color-transparent);
   transition:
     background-color var(--motion-fast) var(--motion-ease-standard),
@@ -345,9 +352,8 @@
 }
 
 .blogList .postRow h2 {
-  grid-column: 2;
   margin-block: 0;
-  font-size: clamp(1.35rem, 2.1vw, 2.15rem);
+  font-size: tokens.fluid(1.25rem, 2.15rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
   text-transform: none;
@@ -367,37 +373,19 @@
   color: var(--color-text-muted);
 }
 
-@media (max-width: 48rem) {
-  .blogTitle {
-    font-size: clamp(3.5rem, 17vw, 5.5rem);
-  }
-
+@include mix.mq(sm) {
   .blogListHeader,
   .blogList .postRow {
-    grid-template-columns: 5.5rem minmax(0, 1fr);
-    gap: var(--space-sm);
-    padding-inline: 0;
+    grid-template-columns: tokens.fluid(5.5rem, 9.5rem) minmax(0, 1fr);
+    gap: tokens.fluid(0.85rem, 2.6rem);
+  }
+
+  .blogList .postRow {
+    align-items: center;
   }
 
   .blogList .postRow h2 {
-    font-size: clamp(1.25rem, 5vw, 1.6rem);
-  }
-}
-
-@media (max-width: 30rem) {
-  .blogListHeader,
-  .blogList .postRow {
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
-  }
-
-  .blogList .postRow {
-    align-items: start;
-  }
-
-  .blogList .postRow > .postMeta,
-  .blogList .postRow > h2 {
-    grid-column: 1;
+    grid-column: 2;
   }
 }
 
@@ -659,14 +647,6 @@
 .notFoundActions > :global(.lg-wrapper) > div {
   display: grid;
   gap: var(--space-md);
-}
-
-@include mix.mq(sm) {
-  .cardGrid,
-  .projectGrid,
-  .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @include mix.mq(md) {

@@ -50,6 +50,7 @@
 .notesGrid {
   display: grid;
   gap: var(--space-sm);
+  @include mix.fluid-columns(12rem, 3, var(--space-sm));
 }
 .noteCard {
   display: grid;
@@ -128,7 +129,7 @@
 
 .heroInner {
   display: grid;
-  min-height: 450px;
+  min-height: 28rem;
   align-content: space-between;
   gap: var(--space-lg);
   padding-block: var(--space-xl);
@@ -156,7 +157,7 @@
   @include mix.type-style(h1);
   font-size: clamp(3rem, 3vw + 1.5rem, 4rem);
   line-height: 1.06;
-  max-width: 768px;
+  max-width: 12em;
 }
 
 .heroGrid h1 span {
@@ -224,12 +225,6 @@
 .contactEmailLine,
 .contactEmailLine a {
   white-space: nowrap;
-}
-
-@include mix.mq(sm) {
-  .notesGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @include mix.mq(md) {

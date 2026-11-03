@@ -17,7 +17,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include mix.fluid-columns(9rem, 5, var(--space-xs));
   gap: var(--space-xs);
   padding-top: 0;
 }
@@ -105,16 +105,4 @@
 .root > li:focus-within .tooltip {
   opacity: 1;
   transform: translate(-50%, 0);
-}
-
-@include mix.mq(md) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@include mix.mq(lg) {
-  .grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
 }

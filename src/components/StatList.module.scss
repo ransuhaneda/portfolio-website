@@ -2,13 +2,9 @@
 
 .root {
   display: grid;
-  grid-template-columns: 1fr;
   gap: var(--gap-grid);
   margin-block: 0;
-
-  @include mix.mq(md) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  @include mix.fluid-columns(14rem, 3, var(--gap-grid));
 }
 
 .item {

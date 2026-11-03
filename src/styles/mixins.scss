@@ -8,6 +8,15 @@
   }
 }
 
+// Intrinsic equal-width columns: tracks wrap when narrower than $min and
+// never exceed $max-cols. $gap must match the grid's column gap.
+@mixin fluid-columns($min, $max-cols, $gap) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(min(100%, #{$min}), calc((100% - #{$max-cols - 1} * #{$gap}) / #{$max-cols})), 1fr)
+  );
+}
+
 @mixin flex($dir: row, $justify: null, $align: null, $gap: null, $wrap: null) {
   display: flex;
   flex-direction: $dir;
