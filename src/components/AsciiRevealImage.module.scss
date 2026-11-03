@@ -1,5 +1,9 @@
 @use "../styles/mixins" as mix;
 
+$reveal-duration: 750ms;
+$reveal-stagger: 150ms;
+$reveal-ease: cubic-bezier(0.45, 0, 0.2, 1);
+
 .root {
   position: relative;
   display: block;
@@ -15,8 +19,8 @@
   user-select: none;
 }
 
-.canvas,
-.source {
+.ascii,
+.panel {
   position: absolute;
   inset: 0;
   display: block;
@@ -25,127 +29,76 @@
   pointer-events: none;
 }
 
+// The text raster is drawn once per size; motion is composited transform/opacity only.
 .ascii {
   z-index: 1;
-  opacity: 0.32;
+  animation: ascii-wave 10.8s ease-in-out infinite alternate;
 }
 
-.motion {
+// All panels show the same full image. Clipped horizontal regions form three
+// seamless strips that rise from the bottom without a per-frame reveal canvas.
+.panel {
   z-index: 2;
-  object-fit: fill;
-  will-change: transform, opacity;
+  object-fit: cover;
+  clip-path: inset(100% var(--panel-right) 0 var(--panel-left));
+  transition: clip-path $reveal-duration $reveal-ease;
+  transition-delay: calc((2 - var(--panel-index)) * #{$reveal-stagger});
 }
 
-.motionA {
-  -webkit-mask-image: repeating-linear-gradient(
-    to bottom,
-    var(--color-text-inverse) 0 13px,
-    var(--color-transparent) 13px 42px
-  );
-  mask-image: repeating-linear-gradient(
-    to bottom,
-    var(--color-text-inverse) 0 13px,
-    var(--color-transparent) 13px 42px
-  );
-  animation: ascii-flow-a 10.4s ease-in-out infinite alternate;
+// A small clip overlap avoids 1px seams from fractional pixels.
+.panel0 {
+  --panel-index: 0;
+  --panel-left: 0%;
+  --panel-right: 66.56%;
 }
 
-.motionB {
-  -webkit-mask-image: repeating-linear-gradient(
-    to bottom,
-    var(--color-transparent) 0 14px,
-    var(--color-text-inverse) 14px 27px,
-    var(--color-transparent) 27px 42px
-  );
-  mask-image: repeating-linear-gradient(
-    to bottom,
-    var(--color-transparent) 0 14px,
-    var(--color-text-inverse) 14px 27px,
-    var(--color-transparent) 27px 42px
-  );
-  animation: ascii-flow-b 11.2s ease-in-out infinite alternate;
+.panel1 {
+  --panel-index: 1;
+  --panel-left: 33.23%;
+  --panel-right: 33.23%;
 }
 
-.motionC {
-  -webkit-mask-image: repeating-linear-gradient(
-    to bottom,
-    var(--color-transparent) 0 28px,
-    var(--color-text-inverse) 28px 42px
-  );
-  mask-image: repeating-linear-gradient(
-    to bottom,
-    var(--color-transparent) 0 28px,
-    var(--color-text-inverse) 28px 42px
-  );
-  animation: ascii-flow-c 12s ease-in-out infinite alternate;
+.panel2 {
+  --panel-index: 2;
+  --panel-left: 66.56%;
+  --panel-right: 0%;
 }
 
-.source {
-  z-index: 3;
-  opacity: 0;
-  object-fit: fill;
+.root[data-revealed="true"] .panel {
+  clip-path: inset(0% var(--panel-right) 0 var(--panel-left));
+  transition-delay: calc(var(--panel-index) * #{$reveal-stagger});
+  will-change: clip-path;
 }
 
-.reveal {
-  z-index: 4;
-  visibility: hidden;
-}
-
-@keyframes ascii-flow-a {
-  0% {
-    transform: translate3d(-1.2px, -0.18px, 0);
-    opacity: 0.85;
-  }
-  50% {
-    transform: translate3d(0.95px, 0.42px, 0);
-    opacity: 0.97;
-  }
-  100% {
-    transform: translate3d(1.7px, -0.28px, 0);
-    opacity: 0.8;
-  }
-}
-
-@keyframes ascii-flow-b {
-  0% {
-    transform: translate3d(1px, 0.42px, 0);
-    opacity: 0.91;
-  }
-  55% {
-    transform: translate3d(-1.6px, -0.34px, 0);
-    opacity: 0.82;
-  }
-  100% {
-    transform: translate3d(0.56px, 0.3px, 0);
-    opacity: 0.96;
-  }
-}
-
-@keyframes ascii-flow-c {
-  0% {
-    transform: translate3d(-0.84px, 0.22px, 0);
-    opacity: 0.86;
-  }
-  55% {
-    transform: translate3d(1.95px, -0.18px, 0);
-    opacity: 0.97;
-  }
-  100% {
-    transform: translate3d(-0.22px, 0.34px, 0);
-    opacity: 0.8;
-  }
-}
-
-.root[data-revealed="true"] .motion,
-.root[data-paused="true"] .motion,
-:global(html.page-hidden) .motion {
+.root[data-revealed="true"] .ascii,
+.root[data-paused="true"] .ascii,
+.root[data-offscreen="true"] .ascii {
   animation-play-state: paused;
 }
 
+@keyframes ascii-wave {
+  0% {
+    transform: translate3d(-1.1px, -0.25px, 0);
+    opacity: 0.85;
+  }
+  52% {
+    transform: translate3d(0.8px, 0.42px, 0);
+    opacity: 0.97;
+  }
+  100% {
+    transform: translate3d(1.75px, -0.3px, 0);
+    opacity: 0.8;
+  }
+}
+
 @include mix.reduced-motion {
-  .motion {
+  .ascii {
     animation: none;
     transform: none;
     opacity: 1;
+  }
+
+  .panel {
+    transition: none;
   }
 }
