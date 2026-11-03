@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { LuArrowLeft, LuArrowRight, LuExternalLink } from "react-icons/lu";
 import {
@@ -8,6 +8,7 @@ import {
 import { getPreferredProjectLink, type Project } from "../content/siteContent";
 import sty from "./FeaturedProjectCarousel.module.scss";
 import { AsciiRevealImage } from "./AsciiRevealImage";
+import { preloadImage } from "./ascii/preloadImage";
 import { ProjectStack } from "./ProjectStack";
 import { PretextText } from "./PretextText";
 
@@ -50,6 +51,16 @@ export function FeaturedProjectCarousel({
   const totalProjects = featuredProjects.length;
   const isBusy = isPreparing || isAnimating;
 
+  // Warm both neighbours so navigation rarely waits on the network.
+  useEffect(() => {
+    if (totalProjects < 2) return;
+    for (const offset of [-1, 1]) {
+      const src =
+        featuredProjects[getWrappedIndex(activeIndex + offset, totalProjects)]?.image?.src;
+      if (src) preloadImage(src).catch(() => {});
+    }
+  }, [activeIndex, featuredProjects, totalProjects]);
+
   const handleNavigate = useCallback(
     async (direction: SwapDirection) => {
       if (!activeProject || totalProjects < 2 || interactionLock.current || isBusy) return;
@@ -59,10 +70,14 @@ export function FeaturedProjectCarousel({
       if (!nextProject) return;
 
       interactionLock.current = true;
-      setIsPreparing(true);
-      setIsPreparing(false);
 
       try {
+        // Decode the next image before the swap so its ASCII can paint on commit.
+        if (nextProject.image) {
+          setIsPreparing(true);
+          await preloadImage(nextProject.image.src).catch(() => {});
+          setIsPreparing(false);
+        }
         await swap(direction, () => setActiveIndex(nextIndex));
       } finally {
         interactionLock.current = false;
@@ -98,7 +113,7 @@ export function FeaturedProjectCarousel({
   return (
     <div className={sty.featuredCarousel} data-text-reveal="copy" aria-busy={isBusy}>
       <div className={sty.featuredHeading}>
-        <p className="eyebrow">{title}</p>
+        <p className="kicker">{title}</p>
         <div className={sty.featuredHeaderActions}>
           <p className={sty.meta}>
             {position} / {total}

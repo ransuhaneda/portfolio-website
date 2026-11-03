@@ -172,7 +172,7 @@ Goal:
 
 - Review `/home/ransu/personal-projects/portfolio-website/src/pages/HomePage.module.scss`
 - Fix:
-  - match placeholder contrast, border color, label spacing, corner radius, and button height
+  - match placeholder contrast, border color, label spacing, and button height
   - verify the black submit button and cream card align with the Figma design
 - Acceptance:
   - Form feels visually closer to the design without changing behavior.

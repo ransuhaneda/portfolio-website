@@ -8,6 +8,15 @@
   }
 }
 
+// Intrinsic equal-width columns: tracks wrap when narrower than $min and
+// never exceed $max-cols. $gap must match the grid's column gap.
+@mixin fluid-columns($min, $max-cols, $gap) {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(min(100%, #{$min}), calc((100% - #{$max-cols - 1} * #{$gap}) / #{$max-cols})), 1fr)
+  );
+}
+
 @mixin flex($dir: row, $justify: null, $align: null, $gap: null, $wrap: null) {
   display: flex;
   flex-direction: $dir;
@@ -58,7 +67,6 @@
   padding: $padding;
   background: var(--color-surface-card);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   box-shadow: var(--shadow);
 }
 
@@ -103,7 +111,6 @@
   cursor: pointer;
   text-decoration: none;
   border: 1px solid var(--button-border-color, var(--color-border-default));
-  border-radius: var(--button-radius);
   @include type-style($role, $weight);
   @include interactive-transition;
 
@@ -122,6 +129,5 @@
 @mixin pill-base($role: body-sm, $weight: null) {
   padding: var(--tag-padding);
   border: 1px solid var(--tag-border-color, var(--color-border-default));
-  border-radius: var(--tag-radius);
   @include type-style($role, $weight);
 }

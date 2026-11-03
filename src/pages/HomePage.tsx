@@ -2,8 +2,9 @@ import { Link } from "react-router";
 import { LuArrowDown, LuArrowRight, LuArrowUpRight } from "react-icons/lu";
 import { ContactForm } from "../components/ContactForm";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
+import { GithubContributionBackground } from "../components/GithubContributionBackground";
 import { PretextText } from "../components/PretextText";
-import { ProjectStack } from "../components/ProjectStack";
+import { SkillsMarquee } from "../components/SkillsMarquee";
 import { blogPosts } from "../content/blogContent";
 import { readingMinutes } from "../content/publicUrl";
 import { siteContent } from "../content/siteContent";
@@ -30,6 +31,7 @@ export function HomePage() {
   return (
     <div className={sty.root}>
       <section className={sty.hero} data-text-reveal-group="entry">
+        <GithubContributionBackground />
         <div className="lg-wrapper">
           <div className={sty.heroInner}>
             <div className={sty.heroGrid}>
@@ -71,15 +73,9 @@ export function HomePage() {
       <section className={sty.skills}>
         <div className="lg-wrapper">
           <div className={sty.skillsGrid} data-text-reveal-group="scrub">
-            <div>
-              <PretextText as="h2" measure="heading" reveal="heading">
-                {siteContent.home.skills.title}
-              </PretextText>
-            </div>
-            <ProjectStack
+            <SkillsMarquee
               items={tools}
               ariaLabel={siteContent.home.skills.cloudAriaLabel ?? "Tools and technologies"}
-              variant="grid"
             />
           </div>
         </div>

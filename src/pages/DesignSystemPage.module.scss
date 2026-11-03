@@ -1,4 +1,5 @@
 @use "../styles/mixins" as mix;
+@use "../styles/tokens" as tokens;
 
 .page {
   background: var(--color-background-page);
@@ -24,7 +25,7 @@
 }
 .swatches {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include mix.fluid-columns(7rem, 4, 1px);
   gap: 1px;
   padding: 1px;
   background: var(--color-border-default);
@@ -106,6 +107,7 @@
 .surfaceDemo {
   display: grid;
   gap: var(--space-sm);
+  @include mix.fluid-columns(12rem, 3, var(--space-sm));
   margin-block-start: var(--space-md);
 }
 .wrapperList article {
@@ -128,17 +130,14 @@
   color: var(--color-text-primary);
   background: var(--color-background-page);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--form-field-radius);
 }
 .surfaceDemo article {
   padding: var(--space-md);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   background: var(--color-surface-card);
 }
 .surfaceDemo article:last-child {
   border-width: 1px 0 0;
-  border-radius: 0;
   background: var(--color-transparent);
 }
 .surfaceDemo h3,
@@ -182,7 +181,6 @@
   aspect-ratio: 1.2;
   object-fit: cover;
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
   transition: transform var(--motion-emphasized) var(--motion-ease-emphasized);
 }
 .imageDemo img:hover {
@@ -196,29 +194,25 @@
 }
 .motionShowcase {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-sm);
 }
 .motionSpecimen {
   position: relative;
   display: grid;
   min-width: 0;
-  min-height: 20rem;
+  min-height: tokens.fluid(17rem, 20rem);
   align-content: space-between;
   gap: var(--space-lg);
   padding: var(--space-md);
   overflow: hidden;
   background: var(--color-surface-card);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--card-radius);
 }
 .motionSpecimenFeatured {
-  grid-column: span 2;
-  min-height: 25rem;
+  min-height: tokens.fluid(21rem, 22rem);
   background: var(--color-background-surface-subtle);
 }
 .motionSpecimenWide {
-  grid-column: span 2;
   min-height: 15rem;
 }
 .specimenMeta,
@@ -310,15 +304,6 @@
   min-height: 12rem;
 }
 
-@include mix.mq(sm) {
-  .swatches {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .wrapperList,
-  .surfaceDemo {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 @include mix.mq(md) {
   .blockGrid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -340,24 +325,12 @@
 }
 
 @include mix.mq(sm) {
-  .motionSpecimenFeatured {
-    min-height: 22rem;
-  }
-}
-
-@media (max-width: 479px) {
   .motionShowcase {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .motionSpecimenFeatured,
   .motionSpecimenWide {
-    grid-column: auto;
-  }
-  .motionSpecimen {
-    min-height: 17rem;
-  }
-  .motionSpecimenFeatured {
-    min-height: 21rem;
+    grid-column: span 2;
   }
 }
 
