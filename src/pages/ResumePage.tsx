@@ -16,7 +16,7 @@ export function ResumePage() {
             </PretextText>
             <div className={sty.resumeHeroSummary} data-text-reveal="copy">
               <div className={sty.resumeHeroMeta}>
-                <span className={sty.resumeSummaryLabel}>{siteContent.resume.eyebrow}</span>
+                <span className="kicker">{siteContent.resume.eyebrow}</span>
                 <a
                   className={sty.resumeDownload}
                   href={publicUrl(siteContent.resume.download.href)}

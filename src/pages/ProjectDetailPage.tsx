@@ -8,7 +8,7 @@ import { ScrollOpacityText } from "../components/ScrollOpacityText";
 import { ProjectStack } from "../components/ProjectStack";
 import { getRelatedEntries } from "../content/relatedContent";
 
-const sectionLabel = (index: string, label: string) => `[ ${index} / ${label} ]`;
+const sectionLabel = (index: string, label: string) => `${index} / ${label}`;
 
 const getInternalBackPath = (state: { from?: string } | null, fallback: string) =>
   state?.from?.startsWith("/") && !state.from.startsWith("//") ? state.from : fallback;
@@ -112,7 +112,7 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className={sty.lightLabel} data-text-reveal="copy">
+            <p className={`kicker ${sty.lightLabel}`} data-text-reveal="copy">
               {sectionLabel("01", "OVERVIEW")}
             </p>
             <div>
@@ -131,7 +131,7 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className={sty.kicker} data-text-reveal="copy">
+            <p className="kicker" data-text-reveal="copy">
               {sectionLabel("02", "PROBLEM")}
             </p>
             <div className={sty.prose}>
@@ -153,7 +153,7 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className={sty.kicker} data-text-reveal="copy">
+            <p className="kicker" data-text-reveal="copy">
               {sectionLabel("03", "RESPONSIBILITY")}
             </p>
             <div className={sty.prose}>
@@ -175,7 +175,7 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className={sty.kicker} data-text-reveal="copy">
+            <p className="kicker" data-text-reveal="copy">
               {sectionLabel("04", "WORK")}
             </p>
             <div className={sty.prose}>
@@ -205,7 +205,7 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className={sty.kicker} data-text-reveal="copy">
+            <p className="kicker" data-text-reveal="copy">
               {sectionLabel("05", "RESULT")}
             </p>
             <div className={sty.prose}>
@@ -235,8 +235,8 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className={sty.kicker} data-text-reveal="copy">
-              [ PROJECT SCOPE ]
+            <p className="kicker" data-text-reveal="copy">
+              PROJECT SCOPE
             </p>
             <div>
               <PretextText as="h2" id="scope-title" measure="heading" reveal="heading">
@@ -259,7 +259,7 @@ export function ProjectDetailPage() {
       >
         <div className="lg-wrapper">
           <div>
-            <p className={sty.quoteLabel} data-text-reveal="copy">
+            <p className={`kicker ${sty.quoteLabel}`} data-text-reveal="copy">
               Project Reflection
             </p>
             <ScrollOpacityText as="blockquote">{`“${project.reflection}”`}</ScrollOpacityText>
@@ -275,8 +275,8 @@ export function ProjectDetailPage() {
         <div className="lg-wrapper">
           <div className={sty.relatedHeader}>
             <div>
-              <p className={sty.kicker} data-text-reveal="copy">
-                [ MORE PROJECTS ]
+              <p className="kicker" data-text-reveal="copy">
+                MORE PROJECTS
               </p>
             </div>
             <Link className={sty.viewAll} to="/projects">

@@ -38,12 +38,6 @@
   justify-items: start;
   gap: var(--space-sm);
 }
-.resumeSummaryLabel {
-  color: var(--color-action-primary);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  @include mix.type-style(body-xs, 700);
-}
 .resumeDownload {
   display: inline-flex;
   align-items: center;
@@ -149,7 +143,7 @@
   color: var(--color-text-muted);
 }
 
-.projectGroup header :global(.eyebrow) {
+.projectGroup header :global(.kicker) {
   color: var(--color-action-primary);
 }
 

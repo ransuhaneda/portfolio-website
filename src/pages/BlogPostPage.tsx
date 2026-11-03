@@ -157,8 +157,8 @@ export function BlogPostPage() {
         <div className="lg-wrapper">
           <div className={sty.relatedNotesHeader} data-text-reveal-group="scrub">
             <div>
-              <p className="eyebrow" data-text-reveal="copy">
-                [ MORE NOTES ]
+              <p className="kicker" data-text-reveal="copy">
+                MORE NOTES
               </p>
               <PretextText as="h2" id="related-notes-title" measure="heading" reveal="heading">
                 Read other notes

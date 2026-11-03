@@ -98,7 +98,7 @@ export function FeaturedProjectCarousel({
   return (
     <div className={sty.featuredCarousel} data-text-reveal="copy" aria-busy={isBusy}>
       <div className={sty.featuredHeading}>
-        <p className="eyebrow">{title}</p>
+        <p className="kicker">{title}</p>
         <div className={sty.featuredHeaderActions}>
           <p className={sty.meta}>
             {position} / {total}

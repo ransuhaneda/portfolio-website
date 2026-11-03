@@ -7,7 +7,6 @@
   color: var(--color-text-primary);
 }
 
-.kicker,
 .lightLabel,
 .quoteLabel,
 .backLink,
@@ -20,7 +19,6 @@
   @include mix.type-style(body-xs, 700);
 }
 
-.kicker,
 .backLink,
 .relatedCard span,
 .viewAll {
