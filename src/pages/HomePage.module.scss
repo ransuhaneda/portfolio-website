@@ -185,25 +185,20 @@
   padding-block: var(--space-xl);
 }
 
+.skillsGrid {
+  padding-block: 0;
+}
+
 .skills h2,
 .contact h2 {
   text-transform: uppercase;
   @include mix.type-style(h3);
 }
 
-.skillsGrid > div > p:last-child {
-  color: var(--color-text-muted);
-}
 .skillsGrid,
 .contactGrid {
   display: grid;
   gap: var(--space-lg);
-}
-
-.skillsGrid > div {
-  display: grid;
-  align-content: start;
-  gap: var(--space-sm);
 }
 
 .contact {

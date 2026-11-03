@@ -3,7 +3,7 @@ import { LuArrowDown, LuArrowRight, LuArrowUpRight } from "react-icons/lu";
 import { ContactForm } from "../components/ContactForm";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
 import { PretextText } from "../components/PretextText";
-import { ProjectStack } from "../components/ProjectStack";
+import { SkillsMarquee } from "../components/SkillsMarquee";
 import { blogPosts } from "../content/blogContent";
 import { readingMinutes } from "../content/publicUrl";
 import { siteContent } from "../content/siteContent";
@@ -71,15 +71,9 @@ export function HomePage() {
       <section className={sty.skills}>
         <div className="lg-wrapper">
           <div className={sty.skillsGrid} data-text-reveal-group="scrub">
-            <div>
-              <PretextText as="h2" measure="heading" reveal="heading">
-                {siteContent.home.skills.title}
-              </PretextText>
-            </div>
-            <ProjectStack
+            <SkillsMarquee
               items={tools}
               ariaLabel={siteContent.home.skills.cloudAriaLabel ?? "Tools and technologies"}
-              variant="grid"
             />
           </div>
         </div>
