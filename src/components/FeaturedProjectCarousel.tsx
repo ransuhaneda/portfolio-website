@@ -215,6 +215,7 @@ export function FeaturedProjectCarousel({
                 className={sty.featuredMedia}
                 src={activeProject.image.src}
                 alt={activeProject.image.alt}
+                hoverTargetRef={scopeRef}
               />
             ) : null}
           </div>
