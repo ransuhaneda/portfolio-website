@@ -22,6 +22,7 @@ Keep the portfolio content-first, case-study oriented, and easy for people and a
 
 [Documentation index](docs/README.md) defines rule ownership and the status of older notes. Keep detailed rules in their owner guide and link them here; do not grow this file into a second manual.
 
-## Browser Testing
+## Rules
 
-Browser google-chrome cdp is open on port 9222
+- Do not cargo-cult responsive code.
+- Do not write tombstone tests.
