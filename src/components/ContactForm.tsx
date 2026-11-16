@@ -1,5 +1,4 @@
 import { useEffect, useId, useState, type ChangeEvent, type FormEvent } from "react";
-import { LuSend } from "react-icons/lu";
 import type { ContactFormContent } from "../content/siteContent";
 import sty from "./ContactForm.module.scss";
 import { PretextText } from "./PretextText";
@@ -16,7 +15,7 @@ type ContactFormState = {
   message: string;
 };
 
-type ContactFormErrors = Partial<Record<keyof ContactFormState, string>>;
+type ContactFormErrors = Partial<Record<"email" | "message", string>>;
 
 type ContactFormToast = {
   id: number;
@@ -48,10 +47,6 @@ function buildMailtoHref(
 
 function validateForm(values: ContactFormState, contact: ContactFormContent) {
   const errors: ContactFormErrors = {};
-
-  if (!values.name.trim()) {
-    errors.name = contact.nameRequiredError;
-  }
 
   if (!values.email.trim()) {
     errors.email = contact.emailRequiredError;
@@ -92,7 +87,6 @@ export function ContactForm({ contact, recipientEmail, showTitle = true }: Conta
   }, [toast]);
 
   const nameInputId = `${formId}-name`;
-  const nameErrorId = `${formId}-name-error`;
   const emailInputId = `${formId}-email`;
   const emailErrorId = `${formId}-email-error`;
   const messageInputId = `${formId}-message`;
@@ -124,7 +118,7 @@ export function ContactForm({ contact, recipientEmail, showTitle = true }: Conta
         id: Date.now(),
         message: "Please check the highlighted fields and try again.",
       });
-      const firstField = errors.name ? "name" : errors.email ? "email" : "message";
+      const firstField = errors.email ? "email" : "message";
       event.currentTarget.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
       return;
     }
@@ -150,7 +144,7 @@ export function ContactForm({ contact, recipientEmail, showTitle = true }: Conta
         ) : null}
 
         <div className={sty.field}>
-          <label htmlFor={nameInputId}>{contact.nameLabel} *</label>
+          <label htmlFor={nameInputId}>{contact.nameLabel}</label>
           <input
             id={nameInputId}
             name="name"
@@ -158,15 +152,7 @@ export function ContactForm({ contact, recipientEmail, showTitle = true }: Conta
             placeholder={contact.namePlaceholder}
             value={formValues.name}
             onChange={handleFieldChange}
-            aria-invalid={Boolean(formErrors.name)}
-            aria-describedby={formErrors.name ? nameErrorId : undefined}
-            required
           />
-          {formErrors.name ? (
-            <p className={sty.error} id={nameErrorId}>
-              {formErrors.name}
-            </p>
-          ) : null}
         </div>
 
         <div className={sty.field}>
@@ -229,7 +215,6 @@ export function ContactForm({ contact, recipientEmail, showTitle = true }: Conta
 
         <button type="submit" className={sty.submitButton}>
           {contact.submitLabel}
-          <LuSend aria-hidden="true" focusable="false" />
         </button>
       </form>
     </div>
