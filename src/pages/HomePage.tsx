@@ -1,5 +1,12 @@
 import { Link } from "react-router";
-import { LuArrowDown, LuArrowRight, LuArrowUpRight } from "react-icons/lu";
+import {
+  LuArrowDown,
+  LuArrowRight,
+  LuArrowUpRight,
+  LuGithub,
+  LuLinkedin,
+  LuMail,
+} from "react-icons/lu";
 import { ContactForm } from "../components/ContactForm";
 import { FeaturedProjectCarousel } from "../components/FeaturedProjectCarousel";
 import { GithubContributionBackground } from "../components/GithubContributionBackground";
@@ -21,6 +28,15 @@ function renderAccentedTitle(title: string, accentPhrase?: string) {
       {after}
     </>
   );
+}
+
+function getContactIcon(title: string) {
+  const normalized = title.toLowerCase();
+
+  if (normalized.includes("linkedin")) return LuLinkedin;
+  if (normalized.includes("github")) return LuGithub;
+
+  return LuMail;
 }
 
 export function HomePage() {
@@ -131,18 +147,28 @@ export function HomePage() {
               <PretextText as="h2" measure="heading" reveal="heading">
                 {siteContent.home.contact.title}
               </PretextText>
-              <PretextText
-                measure="intro"
-                reveal="copy"
-                text={`Reach directly at ${siteContent.site.email}.`}
-              >
-                <span className={sty.contactMessage}>
-                  Reach directly at{" "}
-                  <span className={sty.contactEmailLine}>
-                    <a href={`mailto:${siteContent.site.email}`}>{siteContent.site.email}</a>.
-                  </span>
-                </span>
-              </PretextText>
+              <div className={sty.contactMethods} data-text-reveal="copy">
+                {siteContent.contact.methods.map((method) => {
+                  const Icon = getContactIcon(method.title);
+
+                  return (
+                    <a
+                      key={method.title}
+                      href={method.href}
+                      target={method.href.startsWith("http") ? "_blank" : undefined}
+                      rel={method.href.startsWith("http") ? "noreferrer" : undefined}
+                    >
+                      <span>
+                        <Icon aria-hidden="true" focusable="false" />
+                      </span>
+                      <div>
+                        <strong>{method.title}</strong>
+                        <small>{method.label}</small>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
             <ContactForm
               contact={siteContent.home.contact}
