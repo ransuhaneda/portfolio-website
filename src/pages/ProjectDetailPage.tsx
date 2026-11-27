@@ -127,17 +127,14 @@ export function ProjectDetailPage() {
       <section
         className={sty.narrativeSection}
         data-text-reveal-group="scrub"
-        aria-labelledby="challenge-title"
+        aria-labelledby="challenge-label"
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className="kicker" data-text-reveal="copy">
+            <p className="kicker" id="challenge-label" data-text-reveal="copy">
               {sectionLabel("02", "PROBLEM")}
             </p>
             <div className={sty.prose}>
-              <PretextText as="h2" id="challenge-title" measure="heading" reveal="heading">
-                Problem
-              </PretextText>
               <PretextText measure="prose" reveal="copy">
                 {project.challenge}
               </PretextText>
@@ -149,17 +146,14 @@ export function ProjectDetailPage() {
       <section
         className={sty.narrativeSection}
         data-text-reveal-group="scrub"
-        aria-labelledby="approach-title"
+        aria-labelledby="approach-label"
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className="kicker" data-text-reveal="copy">
+            <p className="kicker" id="approach-label" data-text-reveal="copy">
               {sectionLabel("03", "RESPONSIBILITY")}
             </p>
             <div className={sty.prose}>
-              <PretextText as="h2" id="approach-title" measure="heading" reveal="heading">
-                My responsibility
-              </PretextText>
               <PretextText measure="prose" reveal="copy">
                 {project.responsibility}
               </PretextText>
@@ -171,17 +165,14 @@ export function ProjectDetailPage() {
       <section
         className={sty.narrativeSection}
         data-text-reveal-group="scrub"
-        aria-labelledby="work-title"
+        aria-labelledby="work-label"
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className="kicker" data-text-reveal="copy">
+            <p className="kicker" id="work-label" data-text-reveal="copy">
               {sectionLabel("04", "WORK")}
             </p>
             <div className={sty.prose}>
-              <PretextText as="h2" id="work-title" measure="heading" reveal="heading">
-                What I did
-              </PretextText>
               <PretextText measure="prose" reveal="copy">
                 {project.approachSummary}
               </PretextText>
@@ -201,17 +192,14 @@ export function ProjectDetailPage() {
       <section
         className={sty.narrativeSection}
         data-text-reveal-group="scrub"
-        aria-labelledby="result-title"
+        aria-labelledby="result-label"
       >
         <div className="lg-wrapper">
           <div className={sty.editorialBlock}>
-            <p className="kicker" data-text-reveal="copy">
+            <p className="kicker" id="result-label" data-text-reveal="copy">
               {sectionLabel("05", "RESULT")}
             </p>
             <div className={sty.prose}>
-              <PretextText as="h2" id="result-title" measure="heading" reveal="heading">
-                Result
-              </PretextText>
               <PretextText measure="prose" reveal="copy">
                 {project.resultSummary}
               </PretextText>
@@ -223,30 +211,6 @@ export function ProjectDetailPage() {
                   </li>
                 ))}
               </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        className={sty.scopeSection}
-        data-text-reveal-group="scrub"
-        aria-labelledby="scope-title"
-      >
-        <div className="lg-wrapper">
-          <div className={sty.editorialBlock}>
-            <p className="kicker" data-text-reveal="copy">
-              PROJECT SCOPE
-            </p>
-            <div>
-              <PretextText as="h2" id="scope-title" measure="heading" reveal="heading">
-                Services / Role / Tools
-              </PretextText>
-              <ul className={sty.scopeList} data-text-reveal="copy">
-                {project.scope.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>

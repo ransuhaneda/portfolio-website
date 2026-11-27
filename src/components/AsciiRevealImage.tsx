@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 import { renderAscii } from "./ascii/AsciiConverter";
 import sty from "./AsciiRevealImage.module.scss";
 
@@ -6,6 +6,8 @@ type AsciiRevealImageProps = {
   src: string;
   alt: string;
   className?: string;
+  /** Element whose hover triggers the reveal. Defaults to the image itself. */
+  hoverTargetRef?: RefObject<HTMLElement | null>;
 };
 
 const PANEL_CLASSES = [sty.panel0, sty.panel1, sty.panel2];
@@ -19,7 +21,7 @@ export function AsciiRevealImage(props: AsciiRevealImageProps) {
   return <AsciiRevealStage key={props.src} {...props} />;
 }
 
-function AsciiRevealStage({ src, alt, className }: AsciiRevealImageProps) {
+function AsciiRevealStage({ src, alt, className, hoverTargetRef }: AsciiRevealImageProps) {
   const scopeRef = useRef<HTMLDivElement>(null);
   const asciiRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -29,6 +31,7 @@ function AsciiRevealStage({ src, alt, className }: AsciiRevealImageProps) {
     const ascii = asciiRef.current;
     const image = imageRef.current;
     if (!scope || !ascii || !image) return;
+    const hoverTarget = hoverTargetRef?.current ?? scope;
 
     let loaded = image.complete && image.naturalWidth > 0;
     let near = false;
@@ -88,8 +91,12 @@ function AsciiRevealStage({ src, alt, className }: AsciiRevealImageProps) {
     const resizeObserver = new ResizeObserver(schedulePaint);
 
     image.addEventListener("load", onLoad);
-    scope.addEventListener("pointerenter", onPointerEnter);
-    scope.addEventListener("pointerleave", onPointerLeave);
+    hoverTarget.addEventListener("pointerenter", onPointerEnter);
+    hoverTarget.addEventListener("pointerleave", onPointerLeave);
+    // A stage mounted under an already-hovered target (e.g. carousel swap) reveals at once.
+    if (hoverTarget.matches(":hover") && window.matchMedia("(hover: hover)").matches) {
+      scope.dataset.revealed = "true";
+    }
     document.addEventListener("visibilitychange", onVisibilityChange, { passive: true });
     intersectionObserver.observe(scope);
     resizeObserver.observe(scope);
@@ -100,12 +107,12 @@ function AsciiRevealStage({ src, alt, className }: AsciiRevealImageProps) {
       intersectionObserver.disconnect();
       resizeObserver.disconnect();
       image.removeEventListener("load", onLoad);
-      scope.removeEventListener("pointerenter", onPointerEnter);
-      scope.removeEventListener("pointerleave", onPointerLeave);
+      hoverTarget.removeEventListener("pointerenter", onPointerEnter);
+      hoverTarget.removeEventListener("pointerleave", onPointerLeave);
       document.removeEventListener("visibilitychange", onVisibilityChange);
       scope.dataset.revealed = "false";
     };
-  }, [src]);
+  }, [src, hoverTargetRef]);
 
   return (
     <div
