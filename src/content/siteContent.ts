@@ -52,7 +52,6 @@ export type ContactFormContent = {
   namePlaceholder: string;
   emailPlaceholder: string;
   messagePlaceholder: string;
-  nameRequiredError: string;
   emailRequiredError: string;
   emailInvalidError: string;
   messageRequiredError: string;
